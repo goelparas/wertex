@@ -2,13 +2,13 @@
 import clsx from "clsx";
 import React from "react";
 
-interface ButtonProps<T = void> extends React.ButtonHTMLAttributes<HTMLButtonElement>  {
+interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement>  {
   title: string;
   className?: string;
   children?: React.ReactElement
 }
 
-const Button = <T,>({ title, className }: ButtonProps<T>) => {
+const Button =({ title, className }: ButtonProps) => {
     const onClick = ()=>{
     }
   return (

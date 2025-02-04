@@ -31,7 +31,6 @@ const JoinSection = () => {
     handleSubmit,
     control,
     formState: { errors },
-    reset
   } = useForm<FormValues>({
     resolver: zodResolver(formSchema),
     defaultValues: {

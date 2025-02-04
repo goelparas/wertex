@@ -2,9 +2,8 @@
 import Image from 'next/image'
 import React from 'react'
 import arrow from "@/cdn/arrow.avif"
-type Props = {}
 
-const FooterSection = (props: Props) => {
+const FooterSection = () => {
     return (
         <footer className='bg-background grid grid-cols-2 w-full h-[60dvh] py-5 px-10'>
             <section className='flex flex-col gap-16 justify-center items-start px-6'>
