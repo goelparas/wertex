@@ -19,10 +19,9 @@ const Input = <TFieldValues extends FieldValues = FieldValues>({
     return (
         <div className="w-full">
             <input
-                autoComplete='shipping home tel-national webauthn'
                 {...register(name)}
                 className={clsx(
-                    'w-full px-3 py-2 bg-muted border border-border',
+                    'w-full px-3 py-2 bg-muted border border-border placeholder:text-muted',
                     'outline-none focus:ring-1 ',
                     'transition-colors duration-200',
                     {

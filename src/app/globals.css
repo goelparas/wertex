@@ -71,3 +71,28 @@ body {
     color: var(--muted-foreground);
   }
 }
+
+.custom-select {
+  position: relative;
+  display: inline-block;
+}
+.custom-select::after {
+  content: "▼"; /* Unicode arrow */
+  font-size: 12px;
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+.custom-select select {
+  appearance: none;
+  padding-right: 30px;
+}
+
+
+option {
+  background-color: #f8f8f8;
+  color: black;
+  padding: 10px;
+}
