@@ -14,7 +14,7 @@ import Dropdown from '@/components/common/Dropdown/drop-down';
 // Icons 
 // Zod schema
 const formSchema = z.object({
-  companyName: z.string().min(1,"Please enter Company Name"),
+  companyName: z.string().min(1, "Please enter Company Name"),
   industry: z.enum(['Textile', 'Automotive', 'Aerospace', 'Defence', "Energy", "Medical Device", "Agriculture Machinery", "Oil& Gas", "Industrial Equipment and Machinery", "Others"], {
     message: "Please Select Industry"
   }),
@@ -34,8 +34,8 @@ const JoinSection = () => {
     reset
   } = useForm<FormValues>({
     resolver: zodResolver(formSchema),
-    defaultValues:{
-      countryCode:"+91"
+    defaultValues: {
+      countryCode: "+91"
     }
   });
   const industryOptions = Object.values(formSchema.shape.industry._def.values);
@@ -46,9 +46,9 @@ const JoinSection = () => {
 
   };
   return (
-    <main className='relative m-9 p-5'>
+    <main className='relative my-2 p-2'>
       <Image src={gridBg} alt='grid-background' className='absolute  inset-0' fill />
-      <div className='bg-gradient-to-b bg-white/5 m-12 '>
+      <div className='bg-gradient-to-b bg-white/5 mx-12 my-10 '>
         <div className=' border-white border-2 mx-auto backdrop-blur-sm 
  border-white/20 
   p-10

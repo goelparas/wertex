@@ -72,27 +72,9 @@ body {
   }
 }
 
-.custom-select {
-  position: relative;
-  display: inline-block;
-}
-.custom-select::after {
-  content: "▼"; /* Unicode arrow */
-  font-size: 12px;
-  position: absolute;
-  right: 10px;
-  top: 50%;
-  transform: translateY(-50%);
-  pointer-events: none;
-}
-.custom-select select {
-  appearance: none;
-  padding-right: 30px;
-}
+ .clipped {
+  clip-path: polygon(100% 0, 100% 76%, 86% 100%, 0 100%, 0 0);
 
+ }
 
-option {
-  background-color: #f8f8f8;
-  color: black;
-  padding: 10px;
-}
+ 
