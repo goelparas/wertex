@@ -12,10 +12,12 @@ const HeroSection = () => {
     ];
     return (
         <div className="relative h-dvh w-screen flex items-center justify-center">
-            <Image src={cdn} fill alt="background" className="absolute inset-0" quality={100} />
+            <Image src={cdn} fill alt="background" className="absolute" quality={100}  />
             <Button title="Contact us" className=" border border-white px-6 py-4 absolute top-10 right-10" />
-            <div className="absolute w-[32rem] h-[11rem] left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 ">
-                <Image src={logo} alt="logo" className="w-full h-[9rem]" quality={100} />
+            <div className="absolute w-[35rem] h-[12rem] left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
+                <figure className=' w-full relative h-[9rem]'>
+                    <Image src={logo} alt="logo" quality={100} fill />
+                </figure>
                 <h1 className="font-medium text-xl text-center">Shaping the Future of Manufacturing</h1>
             </div>
             <div className="absolute m-12  left-0 bottom-5 right-0 ">

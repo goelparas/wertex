@@ -8,6 +8,9 @@ export default {
   ],
   theme: {
     extend: {
+      backgroundImage: {
+        'custom-gradient': 'linear-gradient(239.38deg, #B72C29 -5.27%, #F08F1B 44.83%, #E97713 65.26%, #C23C24 97.81%)'
+      },
       colors: {
         background: 'var(--background)',
         foreground: 'var(--foreground)',
@@ -18,7 +21,10 @@ export default {
         warning: 'var(--warning)',
         error: 'var(--error)',
         muted: 'var(--muted)',
+        border:'var(--border)'
       },
+
+      
       fontFamily: {
         sans: 'var(--font-sans)',
         mono: 'var(--font-mono)',
@@ -32,6 +38,7 @@ export default {
         xl: 'var(--screen-xl)',
         '2xl': 'var(--screen-2xl)',
       }
+
     },
   },
   plugins: [],
