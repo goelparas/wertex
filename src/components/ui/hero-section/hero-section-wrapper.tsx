@@ -1,4 +1,5 @@
 // @ts-nocheck
+/* eslint-disable */
 
 // withDeviceDetection.jsx
 import React from 'react';

@@ -2,7 +2,6 @@
 import Image from 'next/image'
 import React from 'react'
 import arrow from "@/cdn/arrow.avif"
-import { headers } from 'next/headers'
 const FooterSection = ({isMobile}:{isMobile:boolean}) => {
     return (
         <footer className='bg-background grid grid-cols-2 w-full sm:h-[60dvh] px-2 py-4 sm:py-5 sm:px-10 overflow-hidden'>
