@@ -1,6 +1,4 @@
-// @ts-nocheck
 /* eslint-disable */
-
 // withDeviceDetection.jsx
 import React from 'react';
 import { headers } from 'next/headers';
@@ -14,7 +12,8 @@ import { headers } from 'next/headers';
  */
 export function withDeviceDetection(WrappedComponent:any) {
   return function DeviceDetectionWrapper(props:any) {
-    const headersList = headers();
+    const headersList =   headers();
+    // @ts-ignore
     const userAgent = headersList.get('user-agent') || '';
     // A generic regex that checks for common mobile devices.
     const isMobile = /Mobi|Android|iPhone/i.test(userAgent);
