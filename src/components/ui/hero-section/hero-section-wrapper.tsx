@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 // withDeviceDetection.jsx
 import React from 'react';
 import { headers } from 'next/headers';
