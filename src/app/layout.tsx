@@ -19,7 +19,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${montSerrat.variable}  antialiased`}
+        className={`${montSerrat.variable}  antialiased `}
       >
         {children}
       </body>

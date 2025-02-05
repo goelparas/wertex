@@ -21,7 +21,7 @@ const Input = <TFieldValues extends FieldValues = FieldValues>({
             <input
                 {...register(name)}
                 className={clsx(
-                    'w-full px-3 py-2 bg-muted border border-border placeholder:text-muted',
+                    'w-full p-1 sm:px-3 sm:py-2 bg-muted border border-border placeholder:text-muted placeholder:text-sm',
                     'outline-none focus:ring-1 ',
                     'transition-colors duration-200',
                     {

@@ -23,7 +23,7 @@ const Dropdown: React.FC<DropdownProps> = ({ options, value, onChange ,defaultVa
     return (
         <div ref={dropdownRef} className="relative h-full w-full border-border">
             <div
-                className="h-full p-2 bg-muted cursor-pointer flex justify-between items-center"
+                className="h-full p-1 sm:p-2 bg-muted cursor-pointer flex justify-between items-center"
                 onClick={() => setIsOpen(!isOpen)}
             >
                 {value || defaultValue}

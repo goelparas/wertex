@@ -17,7 +17,7 @@
   --error: #dc2626;
   --muted: #64748b;
   --muted-foreground: #cbd5e1;
-  --border:#2F2F2F;
+  --border: #2F2F2F;
   /* Font variables */
 
   --font-sans: 'Inter', 'Arial', sans-serif;
@@ -27,6 +27,7 @@
   --font-size-xl: 1.25rem;
 
   /* Screen sizes */
+  --screen-xs: 300px;
   --screen-sm: 640px;
   --screen-md: 768px;
   --screen-lg: 1024px;
@@ -45,8 +46,8 @@
     --accent: #8b5cf6;
     --accent-foreground: #4c1d95;
     --muted: rgba(35, 35, 35, 1);
-    --muted-foreground:#7B7B7B;
-   
+    --muted-foreground: #7B7B7B;
+
   }
 }
 
@@ -63,18 +64,18 @@ body {
     max-width: var(--screen-sm);
     margin: 0 auto;
   }
+
   .container-md {
     max-width: var(--screen-md);
     margin: 0 auto;
   }
+
   .text-muted {
     color: var(--muted-foreground);
   }
 }
 
- .clipped {
-  clip-path: polygon(100% 0, 100% 76%, 86% 100%, 0 100%, 0 0);
+.clipped {
+  clip-path: polygon(100% 0, 100% 76%, 90% 100%, 0 100%, 0 0);
 
- }
-
- 
+}

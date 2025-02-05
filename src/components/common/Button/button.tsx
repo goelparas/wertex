@@ -12,7 +12,7 @@ const Button =({ title, className }: ButtonProps) => {
     const onClick = ()=>{
     }
   return (
-    <button onClick={onClick} className={clsx( "bg-custom-gradient font-bold",className)} >
+    <button onClick={onClick} className={clsx( "bg-custom-gradient font-bold text-xs sm:text-sm md:text-[1rem]",className)} >
       {title}
        
     </button>
