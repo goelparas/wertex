@@ -10,7 +10,7 @@ import { headers } from 'next/headers';
  * @returns {React.FC} A new component that renders the WrappedComponent with the `isMobile` prop.
  */
 export function withDeviceDetection(WrappedComponent:any) {
-  return function DeviceDetectionWrapper(props) {
+  return function DeviceDetectionWrapper(props:any) {
     const headersList = headers();
     const userAgent = headersList.get('user-agent') || '';
     // A generic regex that checks for common mobile devices.
