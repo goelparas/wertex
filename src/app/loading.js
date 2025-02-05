@@ -1,4 +1,3 @@
-import videoSource from "../cdn/logo_gif.gif"
 const loading = () => {
     return (
         <div className="w-dvw h-dvh bg-background">
