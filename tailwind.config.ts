@@ -23,6 +23,15 @@ export default {
         muted: 'var(--muted)',
         border:'var(--border)'
       },
+      textColor:{
+        primary : "var(--text-primary)"
+      },
+      fontSize:{
+        xxs:"0.5rem",
+        
+        lg:"1rem"
+
+      },
 
       
       fontFamily: {

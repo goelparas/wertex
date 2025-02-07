@@ -21,21 +21,21 @@ const Dropdown: React.FC<DropdownProps> = ({ options, value, onChange ,defaultVa
     }, []);
 
     return (
-        <div ref={dropdownRef} className="relative h-full w-full border-border">
+        <div ref={dropdownRef} className="relative h-full w-full border border-border">
             <div
-                className="h-full p-1 sm:p-2 bg-muted cursor-pointer flex justify-between items-center"
+                className="h-full  p-2 py-3 sm:py-3 bg-foreground text-xs sm:text-sm  text-primary cursor-pointer flex justify-between items-center"
                 onClick={() => setIsOpen(!isOpen)}
             >
                 {value || defaultValue}
-                <span className="ml-2">▼</span>
+                <span className="mx-2">▼</span>
             </div>
 
             {isOpen && (
-                <ul className="absolute w-full mt-1  bg-muted  shadow-lg z-10">
+                <ul className="absolute w-full mt-1  shadow-lg z-10 bg-foreground  text-primary">
                     {options.map((option) => (
                         <li
                             key={option}
-                            className="p-2 hover:bg-custom-gradient cursor-pointer"
+                            className="p-2 hover:bg-custom-gradient hover:text-white cursor-pointer text-xs sm:text-sm "
                             onClick={() => {
                                 onChange(option);
                                 setIsOpen(false);

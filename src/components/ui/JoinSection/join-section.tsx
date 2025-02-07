@@ -30,6 +30,7 @@ const JoinSection = () => {
     register,
     handleSubmit,
     control,
+    reset,
     formState: { errors },
   } = useForm<FormValues>({
     resolver: zodResolver(formSchema),
@@ -41,21 +42,24 @@ const JoinSection = () => {
   const countryCodeOptions = Object.values(formSchema.shape.countryCode._def.values)
 
   const onSubmit = (data: FormValues) => {
-    console.log('Form data:', data);
-
+    const formdata = new FormData();
+    Object.keys(data).forEach((key) => {
+      formdata.append(key, data[key as keyof typeof data]);
+    });
+    const xhr = new XMLHttpRequest();
+    xhr.open("POST", `https://formsubmit.co/ajax/contact@wertex.in`);
+    xhr.setRequestHeader("Accept", "application/json");
+    xhr.send(formdata);
+    reset();
   };
   return (
-    <main className='relative  my-1 sm:my-2  p-1 sm:p-2 h-[60dvh] sm:h-auto'>
+    <main className='relative  my-1 sm:my-2  p-1 sm:p-2 h-[80svh] sm:h-auto bg-black/50'>
       <Image src={gridBg} alt='grid-background' className='absolute  inset-0' fill />
-      <div className='bg-gradient-to-b bg-white/5  m-4 sm:mx-12 sm:my-10  h-[90%]'>
-        <div className=' border-white border-2 mx-auto backdrop-blur-sm 
- border-white/20 
- p-4
-  sm:p-10
-  transition-all  h-full'>
-          <h1 className='hidden sm:block text-3xl font-semibold text-center my-8 '>Share your details – our experts will be in <br /> touch—let’s create something remarkable.</h1>
-          <h1 className=' sm:hidden text-[16px] font-semibold text-center mt-4 mb-6'>Share your details – our experts will be in  touch—let’s create something remarkable.</h1>
-          <form onSubmit={handleSubmit(onSubmit)} className='w-full sm:w-1/2 mx-auto flex flex-col gap-4'>
+      <div className='bg-gradient-to-b from-transparent via-white/5 to-transparent  m-2 sm:mx-12 sm:my-10  h-[90%]'>
+        <div className='border mx-auto backdrop-blur-sm border-border  sm:p-10 transition-all  h-full'>
+          <h1 className='hidden sm:block text-2xl font-semibold text-center mt-4 mb-10 line'>Fill in the details, our manufacturing  <br /> experts will reach out shortly.</h1>
+          <h1 className=' sm:hidden text-lg font-semibold text-center mt-4 mb-10 '>Fill in the details, our manufacturing <br /> experts will reach out shortly.</h1>
+          <form onSubmit={handleSubmit(onSubmit)} className='w-full p-4   md:w-3/4 lg:w-3/5 mx-auto flex flex-col gap-4'>
             <FormField label="Industry" error={errors.industry?.message}>
               <Controller
                 name="industry"
@@ -71,7 +75,7 @@ const JoinSection = () => {
                 name='email'
                 register={register}
                 placeholder='Enter email'
-                className='w-full p-1 sm:px-3 sm:py-2    outline-none'
+
               />
 
             </FormField>
@@ -81,7 +85,7 @@ const JoinSection = () => {
                 name='companyName'
                 register={register}
                 placeholder='Exotic Mile Pvt Ltd'
-                className='w-full p-1 sm:px-3 sm:py-2 bg-gray-800  outline-none'
+
               />
 
             </FormField>
@@ -102,19 +106,19 @@ const JoinSection = () => {
                   name='phoneNumber'
                   register={register}
                   placeholder='920 XXX XXX X'
-                  className='w-full p-1 sm:px-3 sm:py-2  appearance-none   outline-none'
                 />
               </div>
             </FormField>
-            <FormField label=''>
+            <div className='w-full  flex justify-center items-center sm:justify-end gap-5'>
+              <div className='w-1/5 h-1 hidden sm:block' />
               <Button
                 title='Submit'
                 type='submit'
-                className='w-full bg-custom-gradient text-white px-4 py-3  transition-colors mt-6'
+                className='w-4/5  bg-custom-gradient text-white px-4 py-3  transition-colors mt-6'
               />
-            </FormField>
-          </form>
+            </div>
 
+          </form>
         </div>
       </div >
     </main >

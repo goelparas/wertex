@@ -11,7 +11,7 @@ const HeroSection = ({ isMobile }: { isMobile: boolean }) => {
         { value: "300+", label: "satisfied clients" }
     ];
     return (
-        <div className="relative h-dvh w-screen flex items-center justify-center border-b border-[#3F3F3F] overflow-x-hidden">
+        <div className="relative h-svh w-screen flex items-center justify-center border-b-[1.5px] border-[#3F3F3F] bg-background overflow-x-hidden">
             <div className="absolute inset-0" >
                 <Image src={isMobile ? heroBgMobile : heroBgDesktop} alt="background" fill quality={100} />
             </div>
@@ -19,7 +19,7 @@ const HeroSection = ({ isMobile }: { isMobile: boolean }) => {
             <Button title="Contact us" className=" px-5 py-2 sm:px-8 sm:py-4  absolute top-[2%] right-[2%] clipped uppercase font-bold" />
             <div className="absolute w-[20rem]  sm:w-[40rem] md:w-[49rem]   h-[12rem] left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
                 <div className='relative flex flex-col sm:flex-row gap-2  items-start sm:items-center justify-between  mb-2'>
-                    <p className='font-medium text-xs  '>Since 2010</p>
+                    <p className='font-medium text-xxs lg:text-xs  '>Since <br/>2010</p>
                     <figure className=' w-full relative  h-16 sm:h-[9rem] md:h-[10rem]'>
                         <Image src={logo} alt="logo" quality={100} fill />
                     </figure>
@@ -32,7 +32,7 @@ const HeroSection = ({ isMobile }: { isMobile: boolean }) => {
                         statsData.map((stat) => (
                             <div className='flex items-center justify-center sm:px-2' key={stat.value}>
                                 <div className="w-[12.5rem]">
-                                    <h1 className="font-bold text-sm sm:text-3xl">{stat.value}</h1><p className="uppercase text-end text-[10px] sm:text-sm">{stat.label}</p> </div>
+                                    <h1 className="font-bold text-sm sm:text-3xl text-center">{stat.value}</h1><p className="uppercase text-center text-[6px] sm:text-sm">{stat.label}</p> </div>
                             </div>))
                     }
                 </div>
