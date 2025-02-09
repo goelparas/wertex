@@ -1,6 +1,5 @@
 import React from 'react'
 import CustomImage from "@/components/common/Image/Image"
-import Button from '@/components/common/Button/button';
 import logo from "@/cdn/images/logo.avif"
 import bgDesktop from "@/cdn/images/hero_background.avif"
 import bgMobile from "@/cdn/images/hero_background_mobile.avif"
