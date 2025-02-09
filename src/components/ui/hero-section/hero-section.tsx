@@ -22,7 +22,7 @@ const HeroSection = () => {
                 />
             </div>
 
-            <Button title="Contact us" className=" px-5 py-2 sm:px-8 sm:py-4  absolute top-[2%] right-[2%] clipped uppercase font-bold" />
+            <a className=" bg-custom-gradient font-bold text-xs sm:text-sm md:text-[1rem] px-5 py-2 sm:px-8 sm:py-4  absolute top-[2%] right-[2%] clipped uppercase" href="mailto:contact@wertex.in?subject=Query%20Regarding%20Manufacturing&body=Hello,%0A%0AI%20have%20some%20queries%20regarding%20your%20manufacturing%20process.%0A%0AThank%20you.">Contact us</a>
             <div className="absolute w-[20rem]  sm:w-[40rem] md:w-[49rem]   h-[12rem] left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
                 <div className='relative flex flex-col sm:flex-row gap-2  items-start sm:items-center justify-between  mb-2'>
                     <p className='font-medium text-xxs lg:text-xs  '>Since <br />2010</p>

@@ -15,7 +15,6 @@ const CustomImg = (
     { isMobile,
         mobileImage,
         desktopImage, ...args }: ImageProp
-
 ) => {
 
     const Comp = isMobile ? mobileImage : desktopImage
