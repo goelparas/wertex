@@ -8,7 +8,8 @@ const montSerrat = Montserrat({
 });
 export const metadata: Metadata = {
   title: "Wertex",
-  description: "This is the Wertex website",
+  description: "From concept to production, Wertex provides precision manufacturing and contract manufacturing services, serving as your one stop solution for scalable production",
+  
 };
 
 export default function RootLayout({
@@ -18,6 +19,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+        <link rel="icon" href="/favicon.ico" />
       <body
         className={`${montSerrat.variable}  antialiased  bg-background text-white scroll-smooth`}
       >

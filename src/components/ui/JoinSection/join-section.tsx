@@ -1,7 +1,7 @@
 "use client"
 
 import React from 'react'
-import gridBg from "@/cdn/main_grid.avif"
+import gridBg from "@/cdn/images/main_grid.avif"
 import Image from 'next/image'
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from "zod"
