@@ -1,6 +1,6 @@
 "use client"
 
-import React from 'react'
+import React, { useState } from 'react'
 import gridBg from "@/cdn/images/main_grid.avif"
 import Image from 'next/image'
 import { zodResolver } from '@hookform/resolvers/zod';
@@ -31,27 +31,39 @@ const JoinSection = () => {
     handleSubmit,
     control,
     reset,
+
     formState: { errors },
+
   } = useForm<FormValues>({
     resolver: zodResolver(formSchema),
     defaultValues: {
       countryCode: "+91"
     }
   });
+  const [loading, setLoading] = useState(false);
+
   const industryOptions = Object.values(formSchema.shape.industry._def.values);
   const countryCodeOptions = Object.values(formSchema.shape.countryCode._def.values)
 
-  const onSubmit = (data: FormValues) => {
-    const formdata = new FormData();
-    Object.keys(data).forEach((key) => {
-      formdata.append(key, data[key as keyof typeof data]);
-    });
-    const xhr = new XMLHttpRequest();
-    xhr.open("POST", `https://formsubmit.co/ajax/contact@wertex.in`);
-    xhr.setRequestHeader("Accept", "application/json");
-    xhr.send(formdata);
-    reset();
+  const onSubmit = async (data: FormValues) => {
+    try {
+      setLoading(true);
+      // Sending form data to the Next.js API route
+      const response = await fetch('/api/send-email', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data), // sending the form data
+      });
+      await response.json();
+      setLoading(false);
+      reset()
+    } catch (error) {
+      console.error("Error submitting form:", error);
+    }
   };
+
   return (
     <main className='relative  my-1 sm:my-2  p-1 sm:p-2 h-auto max-h-max sm:h-auto bg-black/50'>
       <Image src={gridBg} alt='grid-background' className='absolute  inset-0' fill />
@@ -114,6 +126,7 @@ const JoinSection = () => {
               <Button
                 title='Submit'
                 type='submit'
+                loading={loading}
                 className='w-4/5  bg-custom-gradient text-white px-4 py-3  transition-colors mt-6'
               />
             </div>
