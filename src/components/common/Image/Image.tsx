@@ -20,7 +20,7 @@ const CustomImg = (
     const Comp = isMobile ? mobileImage : desktopImage
 
     return (
-        <Image  {...args} src={Comp.path} height={Comp?.height} width={Comp?.width}  />
+        <Image  {...args} src={Comp.path} height={Comp?.height} width={Comp?.width}  alt={args.alt} />
     )
 }
 
