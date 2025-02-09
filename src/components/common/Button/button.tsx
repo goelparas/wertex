@@ -6,7 +6,7 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   title: string;
   className?: string;
   children?: React.ReactElement;
-  loading: boolean;
+  loading?: boolean;
 }
 
 const Button = ({ title, className, loading, ...props }: ButtonProps) => {
