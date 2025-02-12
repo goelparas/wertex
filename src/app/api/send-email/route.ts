@@ -1,38 +1,53 @@
 import { NextResponse } from "next/server";
-import nodemailer from "nodemailer"
-
+import nodemailer from "nodemailer";
 export async function POST(req: Request) {
   try {
     const { companyName, email, countryCode, industry, phoneNumber } = await req.json();
 
-    if (!companyName || !email || !industry || !industry || !phoneNumber || !countryCode) {
+    if (!companyName || !email || !industry || !phoneNumber || !countryCode) {
       return NextResponse.json({ error: "All fields are required" }, { status: 400 });
     }
-    // Configure the transporter
+
+    // AWS Amplify-compatible configuration
     const transporter = nodemailer.createTransport({
-      host: process.env.EMAIL_HOST,
-      port: Number(process.env.EMAIL_PORT),
-      secure: true, // Use STARTTLS instead of SSL
+      host: process.env.EMAIL_HOST, // smtpout.secureserver.net
+      port: Number(process.env.EMAIL_PORT) || 587,
+      secure: process.env.NODE_ENV === 'development' ? true : false, // SSL for local, STARTTLS for Amplify
+      requireTLS: true,
       auth: {
         user: process.env.EMAIL_USER,
         pass: process.env.EMAIL_PASS,
       },
+      tls: {
+        ciphers: 'TLSv1.2',
+        rejectUnauthorized: false // Temporary for testing
+      }
     });
 
-    // Email content
     const mailOptions = {
-      from: process.env.EMAIL_USER,
-      to: "contact@wertex.in", // Replace with your recipient email
+      from: email,
+      to: "contact@wertex.in",
       subject: `New Message from ${companyName}`,
-      text:`CompanyName: ${companyName}\nEmail: ${email}\nIndustry: ${industry} \nphoneNumber ${countryCode}${phoneNumber}`
+      html: `<b>New submission:</b>
+        <p>Company: ${companyName}</p>
+        <p>Email: ${email}</p>
+        <p>Industry: ${industry}</p>
+        <p>Phone: ${countryCode}${phoneNumber}</p>`,
+      text: `Company: ${companyName}
+Email: ${email}
+Industry: ${industry}
+Phone: ${countryCode}${phoneNumber}`
     };
 
-    // Send email
     await transporter.sendMail(mailOptions);
 
-    return NextResponse.json({ success: true, message: "Email sent successfully!" }, { status: 200 });
+    return NextResponse.json({ success: true, message: "Email sent successfully!" });
+
   } catch (error) {
-    console.error("Error sending email:", error);
-    return NextResponse.json({ error: "Internal server error" }, { status: 500 });
+    console.error("Email error:", error);
+    return NextResponse.json(
+      { error: `Failed to send email: ${error instanceof Error ? error.message : 'Unknown error'}` },
+      { status: 500 }
+    );
   }
 }
