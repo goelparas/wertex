@@ -18,13 +18,13 @@ export async function POST(req: Request) {
 
     // AWS Amplify-compatible configuration
     const transporter = nodemailer.createTransport({
-      host: process.env.EMAIL_HOST, // smtpout.secureserver.net
+      host: "smtpout.secureserver.net", // smtpout.secureserver.net
       port: Number(process.env.EMAIL_PORT) || 587,
       secure: process.env.NODE_ENV === 'development' ? true : false, // SSL for local, STARTTLS for Amplify
       requireTLS: true,
       auth: {
-        user: process.env.EMAIL_USER,
-        pass: process.env.EMAIL_PASS,
+        user: "contact@wertex.in",
+        pass: "Wertex@123",
       },
       tls: {
         ciphers: 'TLSv1.2',
