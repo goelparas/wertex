@@ -1,5 +1,13 @@
 import { NextResponse } from "next/server";
 import nodemailer from "nodemailer";
+
+export const config = {
+  api: {
+    externalResolver: true,
+    bodyParser: false,
+  },
+};
+
 export async function POST(req: Request) {
   try {
     const { companyName, email, countryCode, industry, phoneNumber } = await req.json();
@@ -10,13 +18,13 @@ export async function POST(req: Request) {
 
     // AWS Amplify-compatible configuration
     const transporter = nodemailer.createTransport({
-      host: process.env.EMAIL_HOST || "smtpout.secureserver.net", // smtpout.secureserver.net
-      port: Number(process.env.EMAIL_PORT) || 465,
+      host: "smtpout.secureserver.net", // smtpout.secureserver.net
+      port: Number(process.env.EMAIL_PORT) || 587,
       secure: process.env.NODE_ENV === 'development' ? true : false, // SSL for local, STARTTLS for Amplify
       requireTLS: true,
       auth: {
-        user: process.env.EMAIL_USER || "contact@wertex.in",
-        pass: process.env.EMAIL_PASS || "Wertex@123",
+        user: "contact@wertex.in",
+        pass: "Wertex@123",
       },
       tls: {
         ciphers: 'TLSv1.2',
@@ -26,7 +34,7 @@ export async function POST(req: Request) {
 
     const mailOptions = {
       from: email,
-      to: process.env.EMAIL_USER || "contact@wertex.in",
+      to: "contact@wertex.in",
       subject: `New Message from ${companyName}`,
       html: `<b>New submission:</b>
         <p>Company: ${companyName}</p>
