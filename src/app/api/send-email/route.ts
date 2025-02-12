@@ -33,7 +33,7 @@ export async function POST(req: Request) {
     });
 
     const mailOptions = {
-      from: `"Website Form" <${process.env.EMAIL_USER}>`,
+      from: "contact@wertex.in",
       to: "contact@wertex.in",
       subject: `New Message from ${companyName}`,
       html: `<b>New submission:</b>
