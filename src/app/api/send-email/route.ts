@@ -60,10 +60,10 @@ Phone: ${countryCode}${phoneNumber}`
 
     return NextResponse.json({ success: true, message: "Email sent successfully!" });
 
-  } catch (error: any) {
+  } catch (error) {
     console.error("Email error:", error);
     return NextResponse.json(
-      { error: `Failed to send email: ${error.message}` },
+      { error: `Failed to send email: ${error}` },
       { status: 500 }
     );
   }
