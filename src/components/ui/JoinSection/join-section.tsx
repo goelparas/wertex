@@ -58,7 +58,7 @@ const JoinSection = () => {
       });
       await response.json();
       setLoading(false);
-      reset()
+      // reset()
     } catch (error) {
       console.error("Error submitting form:", error);
     }
