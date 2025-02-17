@@ -1,5 +1,8 @@
 import type { Config } from "tailwindcss";
-
+const colors = require("tailwindcss/colors");
+const {
+  default: flattenColorPalette,
+} = require("tailwindcss/lib/util/flattenColorPalette");
 export default {
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
@@ -11,6 +14,17 @@ export default {
       backgroundImage: {
         'custom-gradient': 'linear-gradient(239.38deg, #B72C29 -5.27%, #F08F1B 44.83%, #E97713 65.26%, #C23C24 97.81%)',
       },
+      animation: {
+        scroll:
+          "scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite",
+      },
+      keyframes: {
+        scroll: {
+          to: {
+            transform: "translate(calc(-50% - 0.5rem))",
+          },
+        },
+
       colors: {
         background: 'var(--background)',
         foreground: 'var(--foreground)',
@@ -21,7 +35,8 @@ export default {
         warning: 'var(--warning)',
         error: 'var(--error)',
         muted: 'var(--muted)',
-        border:'var(--border)'
+        border:'var(--border)',
+        orangeBg: `var(--orange-bg)`
       },
       textColor:{
         primary : "var(--text-primary)"
@@ -50,5 +65,18 @@ export default {
       }
     },
   },
-  plugins: [],
-} satisfies Config;
+  plugins: [addVariablesForColors],
+}
+}
+
+
+function addVariablesForColors({ addBase, theme }: any) {
+  let allColors = flattenColorPalette(theme("colors"));
+  let newVars = Object.fromEntries(
+    Object.entries(allColors).map(([key, val]) => [`--${key}`, val])
+  );
+ 
+  addBase({
+    ":root": newVars,
+  });
+}

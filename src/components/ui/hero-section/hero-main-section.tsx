@@ -13,7 +13,6 @@ export const MainSection = () => {
             <div className="absolute inset-0" >
                 <Image src={isMobile ? heroBgMobile : heroBgDesktop} alt="background" fill quality={100} />
             </div>
-
             <Button title="Contact us" className=" px-5 py-2 sm:px-8 sm:py-4  absolute top-[2%] right-[2%] clipped uppercase font-bold" />
         </>
 
