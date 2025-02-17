@@ -14,7 +14,7 @@ const FooterSection = () => {
             </section>
             <section className='flex flex-col w-full items-center justify-center  '>
                 <div className=' hover:cursor-pointer w-full relative flex justify-between items-center '>
-                    <a className='uppercase text-xs sm:text-5xl font-bold' href="mailto:contact@wertex.in?subject=Query%20Regarding%20Manufacturing&body=Hello,%0A%0AI%20have%20some%20queries%20regarding%20your%20manufacturing%20process.%0A%0AThank%20you.">contact@wertex.in</a>
+                    <a className='uppercase text-xs sm:text-2xl md:text-3xl lg:text-5xl font-bold' href="mailto:contact@wertex.in?subject=Query%20Regarding%20Manufacturing&body=Hello,%0A%0AI%20have%20some%20queries%20regarding%20your%20manufacturing%20process.%0A%0AThank%20you.">contact@wertex.in</a>
                     <CustomImage
                         mobileImage={{ path: arrow, height: 40, width: 40 }}
                         desktopImage={{ path: arrow, height: 80, width: 80 }}
