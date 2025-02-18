@@ -54,7 +54,7 @@ const DifferrenceCard = ({ heading, paragraph, index, className }: {
     index: number
     className: string
 }) => {
-    return <div className={clsx('w-80 h-80 p-2 flex flex-col items-center justify-between border border-black shadow-sm relative backdrop-blur-sm ', className)}>
+    return <div className={clsx('w-80 h-80 p-3 flex flex-col items-center justify-between border border-black shadow-sm relative backdrop-blur-sm ', className)}>
         <h1 className='text-start text-xl font-bold '> {heading}</h1>
         <div className='flex flex-col w-full '>
             <p className='font-normal text-start text-lg'>

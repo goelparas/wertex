@@ -71,25 +71,25 @@ export const BrandsShowCase = ({
         <div
             ref={containerRef}
             className={cn(
-                "scroller relative z-20  w-full overflow-hidden  ",
+                "scroller relative z-20  w-full overflow-hidden  [mask-image:linear-gradient(to_right,transparent,white_20%,white_80%,transparent)]",
                 className
             )}
         >
             <ul
                 ref={scrollerRef}
                 className={cn(
-                    " flex min-w-full shrink-0 gap-4 py-4 w-max flex-nowrap",
+                    "flex min-w-full shrink-0 gap-4 py-4 w-max flex-nowrap",
                     start && "animate-scroll ",
                     pauseOnHover && "hover:[animation-play-state:paused]"
                 )}
             >
                 {items.map((item, idx) => (
                     <li
-                        className="w-[330px] max-w-full relative  border  flex-shrink-0 p-8  "
+                        className="w-[330px] max-w-full relative  border  border-gray-500 flex-shrink-0 p-6  "
                         key={idx}
                     >
                         <div className="w-full p-2 h-full flex relative items-center justify-center">
-                            <Image src={item}  alt=""  className="object-contain"/>
+                            <Image src={item}  alt=""  className="object-cover"/>
                         </div>
 
                     </li>
