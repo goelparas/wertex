@@ -1,6 +1,5 @@
 "use client"
 
-import Button from "@/components/common/Button/button";
 import { StaticImport } from "next/dist/shared/lib/get-img-props";
 import Image from "next/image";
 import { FaArrowRight } from "react-icons/fa";

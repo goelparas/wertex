@@ -3,9 +3,9 @@ import React from 'react'
 import map from "@/cdn/images/map.avif"
 import mapBg from "@/cdn/images/bg-map.avif"
 import { HeaderBox } from '@/components/common/HeaderBox/HeaderBox'
-type Props = {}
 
-const CountryWork = (props: Props) => {
+
+const CountryWork = () => {
     return (
         <div className='h-screen relative '>
 
