@@ -68,10 +68,10 @@ const HeroSection = () => {
             </div>
 
             <WhatWeOffer />
-            <div className='mt-4 border-t flex flex-col  gap-8 items-center justify-between p-8 w-full'>
+            <div className='mt-8 border-t border-t-smokeWhite flex flex-col  gap-8 items-center justify-between p-8 w-full'>
                 <div className='flex justify-between w-full items-center py-6'>
-                    <h1 className='font-bold text-2xl uppercase  w-2/5'>OUR TRACK RECORD OF TRUSTED PARTNERS AND CLIENTS</h1>
-                    <p className='font-normal text-sm  md:w-3/12'>We've been fortunate to work with a lot of awesome people on even more awesome projects.</p>
+                    <h1 className='font-bold text-2xl uppercase  '>OUR TRACK RECORD OF <br/> TRUSTED PARTNERS AND CLIENTS</h1>
+                    <p className='font-normal text-lg  md:w-[30%]'>We've been fortunate to work with a lot of awesome people on even more awesome projects.</p>
                 </div>
                 <div className='w-full'>
                     <BrandsShowCase items={TESTIMONIALS.slice(0, 4)} />

@@ -5,6 +5,7 @@ export default {
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
@@ -31,9 +32,7 @@ export default {
       },
       fontSize: {
         xxs: "0.5rem",
-
         lg: "1rem"
-
       },
 
 
@@ -55,6 +54,7 @@ export default {
       backgroundImage: {
         'custom-gradient': 'linear-gradient(239.38deg, #B72C29 -5.27%, #F08F1B 44.83%, #E97713 65.26%, #C23C24 97.81%)',
         'custom-map-gradient': ' linear-gradient(31deg, rgba(248,88,10,1) 12%, rgba(240,143,27,1) 47%, rgba(212,94,34,1) 70%, rgba(194,60,36,1) 89%)',
+        'custom-card-gradient-lt-br' :'linear-gradient(239.38deg, #B72C29 -5.27%, #F08F1B 44.83%, #E97713 65.26%, #C23C24 97.81%)'
       },
       animation: {
         scroll:

@@ -69,6 +69,9 @@ body {
   clip-path: polygon(100% 0, 100% 76%, 90% 100%, 0 100%, 0 0);
 
 }
+::-webkit-scrollbar {
+  display: none;
+}
 
 
 input:-webkit-autofill,

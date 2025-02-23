@@ -27,7 +27,7 @@ const CountryWork = () => {
                 <div className='flex  p-6 absolute bottom-4 justify-between  rounded-md border-2 w-[90%]  mx-auto left-0 right-0'>
                     <div className='flex flex-col justify-between items-start gap-2'> <h1 className=' text-3xl font-bold'>Innovating Across Borders</h1>
                         <a className=" bg-white font-bold text-xs text-black text-left  md:text-[1rem] p-2  max-w-max  clipped uppercase" href="mailto:contact@wertex.in?subject=Query%20Regarding%20Manufacturing&body=Hello,%0A%0AI%20have%20some%20queries%20regarding%20your%20manufacturing%20process.%0A%0AThank%20you.">Contact us</a></div>
-                    <p className=''>Delivering excellence to businesses wherever they are</p>
+                    <p className='w-1/5'>Delivering excellence to businesses wherever they are</p>
                 </div>
             </HeaderBox>
         </div>

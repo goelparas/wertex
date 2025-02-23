@@ -54,6 +54,7 @@ export const WhatWeOfferConst = [
     "image": cncMachine,
     "text": "CNC Machining "
   },
+
   {
     "image": casting,
     "text": "Casting."
@@ -72,38 +73,66 @@ export const DetailCardConst = [
   {
     "heading": "Fast Turnaround Times",
     "text": "Quick deliveries without compromising precision—leveraging 40 years of manufacturing expertise and tech-driven processes for efficient results",
-    style:""
+    style: {
+      container: "bg-[#000000]/5",
+      heading: "string",
+      footer: "string"
+    }
 
   },
   {
     "heading": "Scalable and Flexible Production",
     "text": "Our business model enables unmatched flexibility, utilizing spare machinery capacity from an extensive, global vendor network to meet your needs",
-    style:""
+    style: {
+      container: "bg-custom-card-gradient-lt-br",
+      heading: "string",
+      footer: "string"
+    }
   },
   {
     "heading": "Strong Emphasis on Quality Control",
     "text": "Implementing rigorous quality checks across the entire production process to ensure flawless products, driven by advanced engineering tools",
-    style:""
+    style: {
+      container: "bg-[#000000]/5",
+      heading: "string",
+      footer: "string"
+    }
   },
   {
     "heading": "Competitive and Transparent Pricing",
     "text": "Highly detailed quotes with transparent pricing defined by production processes, ensuring fairness and clarity for every project",
-    style:""
+    style: {
+      container: "bg-[#5F5F5F]/15",
+      heading: "string",
+      footer: "string"
+    }
   },
   {
     "heading": "Network of Vetted Suppliers",
     "text": "We work exclusively with a carefully vetted network of trusted suppliers to ensure reliable materials and seamless execution on every order",
-    style:""
+    style: {
+      container: "bg-[#FFFFFF]/15",
+      heading: "string",
+      footer: "string"
+    }
   },
   {
     "heading": "Detailed Tracking and Project Management",
     "text": "Our engineering-led project management ensures full visibility at every stage, keeping you informed from start to finish",
-     style:""
+    style: {
+      container: "bg-[#5F5F5F]/15",
+      heading: "string",
+      footer: "string"
+    }
   },
   {
     "heading": "Emphasis on DFM (Design for Manufacturability)",
     "text": "Our engineers collaborate to optimize your designs, ensuring cost-effective, efficient, and error-free production",
-     style:"bg-white!"
+    style: {
+      container: "bg-white",
+      heading: "text-black",
+      footer: "text-black"
+    }
   }
 ]
 
@@ -118,8 +147,8 @@ export const ServiceSection = [
     },
   },
   {
-    title: "3D Printing",
-    paragraph: "Rapid prototyping and production with state-of-the-art 3D printing technology. Ideal for complex designs and fast iterations.",
+    title: "Casting",
+    paragraph: "Durable, complex parts through expendable and permanent mold casting. Perfect for projects requiring strength, detail, and dimensional accuracy.",
     image: image2,
     cta: {
       text: "Explore",
@@ -127,8 +156,8 @@ export const ServiceSection = [
     },
   },
   {
-    title: "Injection Molding",
-    paragraph: "High-volume production of plastic parts with precision injection molding. Consistent quality and cost-effective solutions.",
+    title: "Forging",
+    paragraph: "High-strength components built to endure demanding conditions. Achieved with expert forging processes and precise material control.",
     image: image4,
     cta: {
       text: "Discover",
@@ -137,7 +166,7 @@ export const ServiceSection = [
   },
   {
     title: "Sheet Metal Fabrication",
-    paragraph: "Custom sheet metal parts with high accuracy and durability. Suitable for a wide range of industrial applications.",
+    paragraph: "Lightweight, durable metal solutions with precision cutting, bending, and welding. Tailored to meet diverse design needs with efficiency.",
     image: image3,
     cta: {
       text: "View Details",
@@ -145,8 +174,8 @@ export const ServiceSection = [
     },
   },
   {
-    title: "Laser Cutting",
-    paragraph: "Precision laser cutting for intricate designs and clean edges. Perfect for metals, plastics, and composites.",
+    title: "Aluminium Extrusion",
+    paragraph: "Seamless, precise extrusions for structural and aesthetic applications. Designed for strength and flexibility in every industry.",
     image: image4,
     cta: {
       text: "See More",
@@ -154,8 +183,8 @@ export const ServiceSection = [
     },
   },
   {
-    title: "Quality Assurance",
-    paragraph: "Rigorous quality control processes to ensure every product meets the highest standards. Delivering reliability and trust.",
+    title: "Molding",
+    paragraph: "Accurate, flawless parts via injection and compression molding. Perfect for high-volume production with consistent quality.",
     image: image5,
     cta: {
       text: "Learn How",
@@ -163,8 +192,8 @@ export const ServiceSection = [
     },
   },
   {
-    title: "Mold",
-    paragraph: "Rigorous quality control processes to ensure every product meets the highest standards. Delivering reliability and trust.",
+    title: "Surface Treatment",
+    paragraph: "Durability and aesthetics redefined with advanced surface finishing techniques, enhancing wear resistance and visual appeal.",
     image: image6,
     cta: {
       text: "Learn How",
