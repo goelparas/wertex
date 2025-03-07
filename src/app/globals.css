@@ -73,6 +73,13 @@ body {
   display: none;
 }
 
+.clipped-left {
+  /* clip-path: polygon(20% 0%, 0% 21%, 0% 100%, 99% 100%, 100% 0%); */
+  clip-path: polygon(10% 0, 0 35%, 0% 99%, 100% 100%, 100% 0%);
+  
+
+}
+
 
 input:-webkit-autofill,
 input:-webkit-autofill:hover,

@@ -85,11 +85,11 @@ export const BrandsShowCase = ({
             >
                 {items.map((item, idx) => (
                     <li
-                        className="w-[330px] max-w-full relative  border  border-gray-500 flex-shrink-0 p-6  "
+                        className=" w-28  h-24   md:w-[330px] md:h-64  relative  border  border-gray-500 flex-shrink-0 p-6   flex items-center"
                         key={idx}
                     >
-                        <div className="w-full p-2 h-full flex relative items-center justify-center">
-                            <Image src={item}  alt=""  className="object-cover"/>
+                        <div className=" w-full h-full lg:w-[290px] lg:h-[120px] flex relative items-center justify-center">
+                            <Image src={item}  alt=""  className="absolute inset-0 m-auto"/>
                         </div>
 
                     </li>

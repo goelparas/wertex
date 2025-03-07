@@ -12,6 +12,7 @@ import Inovation from './inovation'
 import CountryWork from './country-work'
 import { HeaderBox } from '@/components/common/HeaderBox/HeaderBox'
 import wertex from "@/cdn/images/wertex.png"
+import frameBlack from "@/cdn/images/frame-black.png"
 const HeroSection = () => {
     const statsData = [
         { value: "38", label: "Year of Growth" },
@@ -29,31 +30,43 @@ const HeroSection = () => {
                         alt="background"
                     />
                 </div>
-                <HeaderBox>
-                    <nav className='flex justify-between bg-[#27272794] p-6 pl-8 shadow-sm items-center    absolute top-6 left-2 right-2 w-4/5 m-auto rounded-md'>
-                        <figure className='w-48  relative  h-11'>
+                
+                    <nav className='flex justify-between p-4  lg:justify-around   lg:p-6  shadow-sm items-center  absolute top-6 left-2 right-2 w-4/5   m-auto '>
+                    <Image alt='frame-black' src={frameBlack}  className='z-10 absolute  w-full h-16 lg:h-28'/>
+                        <div className='hidden lg:block'/>
+                        <figure className='w-28 lg:w-48  relative h-6 lg:h-11 z-20 mx-10'>
                             <Image src={wertex} alt="logo" quality={100} fill />
                         </figure>
-                        <span className='flex items-center justify-between gap-7'> <ul className='flex justify-between gap-5 '>
-                            <li className='text-[#CDCDCD] font-normal text-lg hover:cursor-pointer'>Home</li>
-                            <li className='text-[#CDCDCD] font-normal text-lg hover:cursor-pointer'>Why Wertex</li>
-                            <li className='text-[#CDCDCD] font-normal text-lg hover:cursor-pointer'> About us</li>
-                            <li className='text-[#CDCDCD] font-normal text-lg hover:cursor-pointer'>Industry</li>
-                            <li className='text-[#CDCDCD] font-normal text-lg hover:cursor-pointer'>Services</li>
-                            <li className='text-[#CDCDCD] font-normal text-lg hover:cursor-pointer'>CaseStudy</li> </ul> <span><a className=" bg-custom-gradient font-bold text-xs sm:text-sm md:text-[1rem] px-5 py-2 sm:px-8 sm:py-4   clipped uppercase" href="mailto:contact@wertex.in?subject=Query%20Regarding%20Manufacturing&body=Hello,%0A%0AI%20have%20some%20queries%20regarding%20your%20manufacturing%20process.%0A%0AThank%20you.">Contact us</a></span></span>
+                        <span className='lg:flex items-center justify-between gap-7 hidden z-20'>
+                            <ul className='justify-between gap-5  flex'>
+                                <li className='text-[#CDCDCD] font-normal text-lg hover:cursor-pointer'>Home</li>
+                                <li className='text-[#CDCDCD] font-normal text-lg hover:cursor-pointer'>Why Wertex</li>
+                                <li className='text-[#CDCDCD] font-normal text-lg hover:cursor-pointer'> About us</li>
+                                <li className='text-[#CDCDCD] font-normal text-lg hover:cursor-pointer'>Industry</li>
+                                <li className='text-[#CDCDCD] font-normal text-lg hover:cursor-pointer'>Services</li>
+                                <li className='text-[#CDCDCD] font-normal text-lg hover:cursor-pointer'>CaseStudy</li>
+                            </ul>
+                            <span className='flex shrink-0'>
+                                <a className="bg-custom-gradient font-bold  lg:text-[1rem] sm:px-8 sm:py-4   clipped uppercase " href="mailto:contact@wertex.in?subject=Query%20Regarding%20Manufacturing&body=Hello,%0A%0AI%20have%20some%20queries%20regarding%20your%20manufacturing%20process.%0A%0AThank%20you.">Contact us</a>
+                            </span>
+                        </span>
+                        <div className='border-y-2 w-4 h-4 block z-20 lg:hidden' />
                     </nav>
-                </HeaderBox>
+                 
+                <span className='absolute  bottom-6 mx-auto lg:hidden'>
+                    <a className=" bg-custom-gradient font-bold text-xs sm:text-sm md:text-[1rem] px-6 py-3 sm:px-8 sm:py-4   clipped uppercase" href="mailto:contact@wertex.in?subject=Query%20Regarding%20Manufacturing&body=Hello,%0A%0AI%20have%20some%20queries%20regarding%20your%20manufacturing%20process.%0A%0AThank%20you.">Contact us</a>
+                </span>
 
                 <div className="absolute w-[20rem]  sm:w-[40rem] md:w-[49rem]   h-[12rem] left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
                     <div className='relative flex flex-col sm:flex-row gap-2  items-start sm:items-center justify-between  mb-2'>
-                        <p className='font-medium text-xxs lg:text-xs  '>Since <br />2010</p>
+                        <p className='font-medium text-xxs lg:text-xs'>Since <br />2010</p>
                         <figure className=' w-full relative  h-16 sm:h-[9rem] md:h-[10rem]'>
                             <Image src={logo} alt="logo" quality={100} fill />
                         </figure>
                     </div>
                     <h1 className="font-medium text-sm sm:text-2xl text-center">Shaping the Future of Manufacturing</h1>
                 </div>
-                <div className="absolute m-2 sm:m-12  left-0 bottom-5 right-0 ">
+                <div className="absolute m-2 sm:m-12  left-0 bottom-20 lg:bottom-5 right-0 ">
                     <div className="grid  grid-cols-3 gap-8 sm:gap-32  mx-[2%]">
                         {
                             statsData.map((stat) => (
@@ -68,10 +81,12 @@ const HeroSection = () => {
             </div>
 
             <WhatWeOffer />
+
             <div className='mt-8 border-t border-t-smokeWhite flex flex-col  gap-8 items-center justify-between p-8 w-full'>
-                <div className='flex justify-between w-full items-center py-6'>
-                    <h1 className='font-bold text-2xl uppercase  '>OUR TRACK RECORD OF <br/> TRUSTED PARTNERS AND CLIENTS</h1>
-                    <p className='font-normal text-lg  md:w-[30%]'>We've been fortunate to work with a lot of awesome people on even more awesome projects.</p>
+                <div className='flex flex-col lg:flex-row justify-between w-full items-start lg:items-center py-6 gap-2'>
+                    <h1 className='font-bold lg:text-2xl uppercase hidden lg:block  '>OUR TRACK RECORD OF <br /> TRUSTED PARTNERS AND CLIENTS</h1>
+                    <h1 className='font-bold text-xl  uppercase lg:hidden'>OUR TRACK RECORD OF  TRUSTED PARTNERS AND CLIENTS</h1>
+                    <p className='font-normal  text-[10px] md:text-xs lg:text-lg  md:w-[30%] text-start'>We've been fortunate to work with a lot of awesome people on even more awesome projects.</p>
                 </div>
                 <div className='w-full'>
                     <BrandsShowCase items={TESTIMONIALS.slice(0, 4)} />
@@ -82,6 +97,7 @@ const HeroSection = () => {
             </div>
             <ServicesSection />
             <Inovation />
+
             <CountryWork />
         </>
 
