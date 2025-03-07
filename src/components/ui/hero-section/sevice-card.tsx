@@ -17,7 +17,7 @@ interface CardProps {
 export const ServiceCard: React.FC<CardProps> = ({ title, paragraph, image, cta, itemCount }) => {
     return (
         <div className="overflow-hidden  w-min  flex flex-col gap-5   shrink-0 ">
-            <div className=" relative w-44 h-36 md:w-56 md:h-44    lg:w-72 lg:h-60 text-center">
+            <div className=" relative  w-40 h-32 xsm:w-44 xsm:h-36 md:w-56 md:h-44    lg:w-72 lg:h-60 text-center">
                 <p className="absolute top-2 left-2 bg-lightGray shadow-sm font-semibold  lg:rounded-lg  p-1 lg:p-2">0{itemCount}</p>
                 <Image src={image} alt={title} className="object-cover rounded-md lg:rounded-xl w-full h-full" quality={100} />
                 {cta && (

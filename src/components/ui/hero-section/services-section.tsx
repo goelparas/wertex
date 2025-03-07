@@ -30,7 +30,7 @@ const ServicesSection = () => {
             </div>
             <div className='w-full relative  lg:p-6' >
                     <div className='bg-background absolute bottom-0 left-0 w-full h-1/2 lg:hidden -z-10 '/>
-            <div className='p-6 rounded-[20px] lg:rounded-2xl bg-custom-gradient  z-10 mx-6 lg:m-0'>
+            <div className=' p-3 lg:p-6 rounded-[20px] lg:rounded-2xl bg-custom-gradient  z-10 mx-6 lg:m-0'>
                 <div className='flex lg:flex-row flex-col justify-between  mb-6 gap-2'>
                     <h2 className='text-xl lg:text-2xl font-bold'>Value-Added Services</h2>
                     <ul className='flex lg:flex-row flex-col gap-2 lg:gap-5 text-sm font-light list-disc pl-3 lg:p-0'> <li className='text-xs' >Molding</li> <li className='text-xs'>Surface Treatment</li></ul>
