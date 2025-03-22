@@ -35,7 +35,7 @@ export default WhatWeOffer;
 
 
 
-const ImageCard = ({ image, text, className }: {
+export const ImageCard = ({ image, text, className }: {
     image: StaticImport,
     text: string,
     className: string
