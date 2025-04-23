@@ -14,11 +14,12 @@ const About = (props: Props) => {
   return (
     <>
       <div className="mt-44 w-[95%] mx-auto">
-        <div className=" w-full h-svh  relative  ">
+        <div className="w-full h-svh  relative  overflow-hidden ">
           <Image
             src={aboutUs}
             alt="AboutUs"
-            className="absolute top-0 left-0 "
+            height={950}
+            className="w-full "
           />
           <div className="absolute bottom-0   w-full    bg-black/30 backdrop-blur-xl">
             <div className="flex flex-col  items-center justify-between gap-5 p-4 ">
@@ -53,7 +54,7 @@ const About = (props: Props) => {
           </div>
         </div>
 
-        <div className="flex gap-5  w-full  mt-10">
+        <div className="flex gap-5  w-full  mt-10 h-max">
           {[
             {
               title: "MISSION",
@@ -116,10 +117,11 @@ const About = (props: Props) => {
         <div className="flex justify-between items-center mt-10">
           <H1 className="capitalize">Talk to Us </H1>
           <p className="text-xl2">
-          Business professionals collaborating with Wertex <br/>engineers to discuss custom manufacturing solutions.
+            Business professionals collaborating with Wertex <br />
+            engineers to discuss custom manufacturing solutions.
           </p>
         </div>
-        <JoinSection/>
+        <JoinSection />
       </div>
     </>
   );
