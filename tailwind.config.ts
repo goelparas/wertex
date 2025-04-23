@@ -24,7 +24,8 @@ export default {
         orangeBg: `var(--orange-bg)`,
         borderGray: 'var(--border-gray)',
         lightGray :"var(--light-gray)",
-        smokeWhite:"var(--white-smoke)"
+        smokeWhite:"var(--white-smoke)",
+        mutedGray : "var(--muted-gray)"
       },
       textColor: {
         primary: "var(--text-primary)",
@@ -32,7 +33,8 @@ export default {
       },
       fontSize: {
         xxs: "0.5rem",
-        lg: "1rem"
+        lg: "1rem",
+        xl2: '1.375rem' // 22px
       },
 
 

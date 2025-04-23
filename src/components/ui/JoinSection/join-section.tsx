@@ -1,28 +1,45 @@
-"use client"
+"use client";
 
-import React, { useState } from 'react'
-import gridBg from "@/cdn/images/main_grid.avif"
-import Image from 'next/image'
-import { zodResolver } from '@hookform/resolvers/zod';
-import { z } from "zod"
-import { Controller, useForm } from "react-hook-form"
-import { FormField } from '@/components/common/Form/FormField';
-import Button from '@/components/common/Button/button';
-import Input from '@/components/common/Input/Input';
-import Dropdown from '@/components/common/Dropdown/drop-down';
+import React, { useState } from "react";
+import gridBg from "@/cdn/images/main_grid.avif";
+import Image from "next/image";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { z } from "zod";
+import { Controller, useForm } from "react-hook-form";
+import { FormField } from "@/components/common/Form/FormField";
+import Button from "@/components/common/Button/button";
+import Input from "@/components/common/Input/Input";
+import Dropdown from "@/components/common/Dropdown/drop-down";
 
-// Icons 
+// Icons
 // Zod schema
 const formSchema = z.object({
   companyName: z.string().min(1, "Please enter Company Name"),
-  industry: z.enum(['Textile', 'Automotive', 'Aerospace', 'Defence', "Energy", "Medical Device", "Agriculture Machinery", "Oil& Gas", "Industrial Equipment and Machinery", "Others"], {
-    message: "Please Select Industry"
-  }),
-  email: z.string().email('Invalid email address').regex(/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/),
+  industry: z.enum(
+    [
+      "Textile",
+      "Automotive",
+      "Aerospace",
+      "Defence",
+      "Energy",
+      "Medical Device",
+      "Agriculture Machinery",
+      "Oil& Gas",
+      "Industrial Equipment and Machinery",
+      "Others",
+    ],
+    {
+      message: "Please Select Industry",
+    }
+  ),
+  email: z
+    .string()
+    .email("Invalid email address")
+    .regex(/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/),
   countryCode: z.enum(["+91", "+1", "+44", "+61", "+81"], {
     message: "Please select country code",
   }),
-  phoneNumber: z.string().min(10, 'Phone number must have 10 digits')
+  phoneNumber: z.string().min(10, "Phone number must have 10 digits"),
 });
 type FormValues = z.infer<typeof formSchema>;
 const JoinSection = () => {
@@ -33,41 +50,43 @@ const JoinSection = () => {
     reset,
 
     formState: { errors },
-
   } = useForm<FormValues>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      countryCode: "+91"
-    }
+      countryCode: "+91",
+    },
   });
   const [loading, setLoading] = useState(false);
 
   const industryOptions = Object.values(formSchema.shape.industry._def.values);
-  const countryCodeOptions = Object.values(formSchema.shape.countryCode._def.values)
+  const countryCodeOptions = Object.values(
+    formSchema.shape.countryCode._def.values
+  );
 
   const onSubmit = async (data: FormValues) => {
     try {
       setLoading(true);
       // Sending form data to the Next.js API route
-      const response = await fetch('/api/send-email', {
-        method: 'POST',
+      const response = await fetch("/api/send-email", {
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
         body: JSON.stringify(data), // sending the form data
       });
       await response.json();
       setLoading(false);
-      reset()
+      reset();
     } catch (error) {
       console.error("Error submitting form:", error);
     }
   };
 
   return (
-    <main className='relative  my-1 sm:my-2  p-1 sm:p-2 h-auto max-h-max sm:h-auto bg-black/50'>
-      <Image src={gridBg} alt='grid-background' className='absolute  inset-0' fill />
-      <div className='bg-gradient-to-b from-transparent via-white/5 to-transparent  m-2 sm:mx-12 sm:my-10  h-[90%] max-h-max'>
+    <>
+      <main className="relative mb-24 mt-12">
+        {/* <Image src={gridBg} alt='grid-background' className='absolute  inset-0' fill /> */}
+        {/* <div className='bg-gradient-to-b from-transparent via-white/5 to-transparent  m-2 sm:mx-12 sm:my-10  h-[90%] max-h-max'>
         <div className='border mx-auto backdrop-blur-sm border-border  sm:p-10 transition-all  h-full max-h-max'>
           <h1 className='hidden sm:block text-2xl font-semibold text-center mt-4 mb-10 line'>Fill in the details, our manufacturing  <br /> experts will reach out shortly.</h1>
           <h1 className=' sm:hidden text-lg font-semibold text-center mt-4 mb-10 '>Fill in the details, our manufacturing <br /> experts will reach out shortly.</h1>
@@ -133,9 +152,41 @@ const JoinSection = () => {
 
           </form>
         </div>
-      </div >
-    </main >
-  )
-}
+      </div > */}
 
-export default JoinSection
+        <textarea
+          className="w-full h-[40svh] text-black p-4 mt-12"
+          placeholder="Have an idea or a project in mind? We’re here to help you bring it to life. Our team is ready to assist you with tailor-made solutions that meet your unique needs. Let’s create something extraordinary together."
+        />
+        <div className="bg-borderGray flex justify-end px-3 py-6 ">
+          <div className="w-full flex justify-end items-center gap-4">
+            <a
+              className="z-10 bg-custom-gradient font-bold text-xxs text-center text-white     md:text-[1rem] px-4 py-3  w-48  clipped uppercase"
+              href="mailto:contact@wertex.in?subject=Query%20Regarding%20Manufacturing&body=Hello,%0A%0AI%20have%20some%20queries%20regarding%20your%20manufacturing%20process.%0A%0AThank%20you."
+            >
+              Contact us
+            </a>
+          </div>
+        </div>
+      </main>
+      <div className=" flex flex-col gap-11 mt-8 mb-28">
+        <div className="bg-borderGray p-12 h-72 flex flex-col justify-between items-start">
+          <h1 className="text-3xl font-bold">Join Our Team</h1>
+          <p className="text-xl2">
+            Wertex is more than just a company; it’s a community of innovators,
+            creators, and problem-solvers. If you’re passionate about making an
+            impact and thrive in a dynamic environment, we’d love to hear from
+            you. Join us and help shape the future of manufacturing.
+          </p>
+        </div>
+        <Button
+          className="w-full rounded-none text-center py-8 "
+        >
+          <p className="text-center text-white font-bold text-2xl w-full">Click Here</p>
+        </Button>
+      </div>
+    </>
+  );
+};
+
+export default JoinSection;

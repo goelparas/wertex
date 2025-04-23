@@ -3,7 +3,7 @@ import clsx from "clsx";
 import React from "react";
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  title: string;
+  title?: string;
   className?: string;
   children?: React.ReactElement;
   loading?: boolean;
