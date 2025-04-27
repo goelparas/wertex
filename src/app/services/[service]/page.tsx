@@ -1,11 +1,12 @@
 import React from "react";
 import { ServicesPageConst } from "@/utils/constants/services";
-const Page = ({
-  params,
-}: {
-  params: { service: (typeof ServicesPageConst)[number]["title"] };
-}) => {
-  const { service } = params;
+ 
+interface PageProps {
+  params: Promise<{ service: string }>; // Adjusted to be a Promise
+}
+
+const Page = async ({ params }: PageProps) => {
+  const { service } = await params;
 
   const component = ServicesPageConst.find(
     (item) => item.title === service
