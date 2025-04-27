@@ -1,14 +1,13 @@
+import { ServicesPageConst } from "@/utils/constants/services";
+import { headers } from "next/headers";
 
-import React from 'react'
+const Page = async () => {
+  const headersList = await headers();
+  const fullUrl = headersList.get("referer") || "";
+  const component = ServicesPageConst.find(
+    (item) => item.title === fullUrl.toString().split("/").pop()
+  )?.page;
+  return component;
+};
 
-const page = ({ searchParams }: { 
-    searchParams: { [key: string]: string | string[] | undefined }
-  }) => {
-    const service = searchParams.name
-    console.log(service)
-  return (
-    <div>page</div>
-  )
-}
-
-export default page
+export default Page;
