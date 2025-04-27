@@ -1,13 +1,25 @@
+import React from "react";
 import { ServicesPageConst } from "@/utils/constants/services";
-import { headers } from "next/headers";
+const Page = ({
+  params,
+}: {
+  params: { service: (typeof ServicesPageConst)[number]["title"] };
+}) => {
+  const { service } = params;
 
-const Page = async () => {
-  const headersList = await headers();
-  const fullUrl = headersList.get("referer") || "";
   const component = ServicesPageConst.find(
-    (item) => item.title === fullUrl.toString().split("/").pop()
+    (item) => item.title === service
   )?.page;
-  return component;
+  if (!component) {
+    return <div>Service not found</div>;
+  }
+  return React.createElement(component);
 };
 
 export default Page;
+
+export function generateStaticParams() {
+  return ServicesPageConst.map((service) => ({
+    service: service.title,
+  }));
+}

@@ -6,7 +6,6 @@ export function withDeviceDetection(WrappedComponent) {
     const headersList = await headers();
     const userAgent = headersList?.get("user-agent") || "";
     const isMobile = /Mobi|Android|iPhone/i.test(userAgent);
-
     return <WrappedComponent {...props} isMobile={isMobile} />;
   };
 }

@@ -1,34 +1,46 @@
+import dynamic from "next/dynamic";
+
+const CncMachine = dynamic(() => import("@/components/ui/services/cncmachine"));
+const Casting = dynamic(() => import("@/components/ui/services/casting"));
+const Forging = dynamic(() => import("@/components/ui/services/forging"));
+const SheetFabrication = dynamic(
+  () => import("@/components/ui/services/sheet-fabrication")
+);
+const AluminiumExtrusion = dynamic(
+  () => import("@/components/ui/services/aluminium-extrusion")
+);
+const Molding = dynamic(() => import("@/components/ui/services/molding"));
+const SurfaceTreatment = dynamic(
+  () => import("@/components/ui/services/surface-treatment")
+);
+
 export const ServicesPageConst = [
   {
     title: "cnc-machining",
-    page: <div className="text-white">CNC Machining</div>,
+    page: CncMachine,
   },
   {
     title: "casting",
-
-    page: <div>Casting</div>,
+    page: Casting
   },
   {
     title: "forging",
-
-    page: <div>Forging</div>,
+    page: Forging ,
   },
   {
     title: "sheet-metal-fabrication",
-
-    page: <div>Sheet Metal Fabrication</div>,
+    page: SheetFabrication,
   },
   {
     title: "aluminium-extrusion",
-
-    page: <div>Aluminium Extrusion</div>,
+    page: AluminiumExtrusion, 
   },
   {
     title: "molding",
-    page: <div>Molding</div>,
+    page: Molding,
   },
   {
     title: "surface-treatment",
-    page: <div>Surface Treatment</div>,
+    page: SurfaceTreatment,
   },
 ];
