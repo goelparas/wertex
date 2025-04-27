@@ -8,7 +8,9 @@ import { cn } from "@/lib/utils";
 import wertex from "@/cdn/images/wertex-hollow.avif";
 import TimeLine from "@/components/ui/about/timeline-section/TimeLine";
 import JoinSection from "@/components/ui/JoinSection/join-section";
+
 type Props = {};
+
 
 const About = (props: Props) => {
   return (
