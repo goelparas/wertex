@@ -1,6 +1,7 @@
 import React from "react";
 import { ServicesPageConst } from "@/utils/constants/services";
- 
+import Container from "@/components/common/Container/Container";
+
 interface PageProps {
   params: Promise<{ service: string }>; // Adjusted to be a Promise
 }
@@ -14,7 +15,11 @@ const Page = async ({ params }: PageProps) => {
   if (!component) {
     return <div>Service not found</div>;
   }
-  return React.createElement(component);
+  return (
+    <Container className="w-full">
+      {React.createElement(component)}
+    </Container>
+  );
 };
 
 export default Page;
