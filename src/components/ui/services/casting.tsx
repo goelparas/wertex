@@ -325,8 +325,8 @@ const Casting = (props: Props) => {
         </div>
       </div>
       <div className="p-6">
-        <div className="bg-borderGray flex justify-between p-6">
-          <div className="flex flex-col gap-12 justify-between items-start">
+        <div className="bg-borderGray flex justify-between p-8">
+          <div className="flex flex-col gap-12 justify-between items-start w-1/2">
             <FlexHeader
               title="Experience the Precision of "
               description=""
