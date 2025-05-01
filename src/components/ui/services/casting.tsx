@@ -8,6 +8,7 @@ import castingMain from "@/cdn/images/casting/casting-1.avif";
 import gridBg from "@/cdn/images/main_grid.avif";
 import Button from "@/components/common/Button/button";
 import HeroSection from "@/components/common/Container/HeroSection-service";
+import Footerservice from "@/components/common/footer-service/footerservice";
 type Props = {};
 
 const Casting = (props: Props) => {
@@ -295,7 +296,6 @@ const Casting = (props: Props) => {
           ))}
         </div>
       </div>
-
       <div className="h-auto relative p-8">
         <Image
           src={gridBg}
@@ -324,34 +324,15 @@ const Casting = (props: Props) => {
           ))}
         </div>
       </div>
-      <div className="p-6">
-        <div className="bg-borderGray flex justify-between p-8">
-          <div className="flex flex-col gap-12 justify-between items-start w-1/2">
-            <FlexHeader
-              title="Experience the Precision of "
-              description=""
-              heading="WERTEX Casting"
-            />
-            <p className="text-xl2 text-white">
-              Partner with Wertex for reliable casting solutions that meet your
-              industry’s toughest demands. Contact us today to discuss your
-              project and experience the precision of our advanced casting
-              capabilities.
-            </p>
-          </div>
-          <Image
-            src={castingMain}
-            alt="casting main"
-            width={200}
-            height={200}
-          />
-        </div>
-        <Button className="w-full rounded-none text-center py-6 mt-8">
-          <p className="text-center text-white font-bold text-2xl w-full uppercase">
-            Contact Us
-          </p>
-        </Button>
-      </div>
+      <Footerservice
+        title="Experience the Precision of "
+        description=""
+        heading="WERTEX Casting"
+        buttonText="Contact Us"
+        longDescription="Partner with Wertex for reliable casting solutions that meet your industry’s toughest demands. Contact us today to discuss your project and experience the precision of our advanced casting capabilities."
+      />
+        
+       
     </>
   );
 };
