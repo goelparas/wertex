@@ -8,6 +8,7 @@ import castingMain from "@/cdn/images/casting/casting-1.avif";
 import gridBg from "@/cdn/images/main_grid.avif";
 import Button from "@/components/common/Button/button";
 import HeroSection from "@/components/common/Container/HeroSection-service";
+import Footerservice from "@/components/common/footer-service/footerservice";
 type Props = {};
 
 const Casting = (props: Props) => {
@@ -295,7 +296,6 @@ const Casting = (props: Props) => {
           ))}
         </div>
       </div>
-
       <div className="h-auto relative p-8">
         <Image
           src={gridBg}
@@ -331,6 +331,8 @@ const Casting = (props: Props) => {
         buttonText="Contact Us"
         longDescription="Partner with Wertex for reliable casting solutions that meet your industry’s toughest demands. Contact us today to discuss your project and experience the precision of our advanced casting capabilities."
       />
+        
+       
     </>
   );
 };
