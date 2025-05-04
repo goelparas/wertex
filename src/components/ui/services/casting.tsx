@@ -5,6 +5,10 @@ import Image from "next/image";
 import React from "react";
 import castingHero from "@/cdn/images/casting/casting-hero.avif";
 import castingMain from "@/cdn/images/casting/casting-1.avif";
+import gridBg from "@/cdn/images/main_grid.avif";
+import Button from "@/components/common/Button/button";
+import HeroSection from "@/components/common/Container/HeroSection-service";
+import Footerservice from "@/components/common/footer-service/footerservice";
 type Props = {};
 
 const Casting = (props: Props) => {
@@ -37,36 +41,38 @@ const Casting = (props: Props) => {
     },
   ];
 
+  const newItems = [
+    {
+      title: "Expertise in Complex Geometries",
+      description:
+        "Capable of producing intricate shapes with repeatability and precision.",
+    },
+    {
+      title: "Cost-Effective Processes",
+      description:
+        "Advanced casting techniques for optimal quality and efficiency.",
+    },
+    {
+      title: "Commitment to Quality",
+      description:
+        "Rigorous inspections ensure each component meets the highest standards.",
+    },
+  ];
+
   return (
     <>
-      <div className="w-[90%] mx-auto ">
-        <FlexHeader
-          title="Precision Casting for Complex Applications"
-          description="Delivering high-quality components with precision, repeatability, and expertise."
-          heading="Casting"
-        />
-        <div className="w-full flex flex-col  justify-between items-center gap-8 h-[85svh] mt-12">
-          <div className="h-full relative w-full">
-            <Image
-              src={castingHero}
-              alt="casting hero"
-              quality={100}
-              objectFit="cover"
-              fill
-            />
-          </div>
+      <HeroSection
+        src={castingHero}
+        alt="casting hero"
+        title="Precision Casting for Complex Applications"
+        description="Delivering high-quality components with precision, repeatability, and expertise."
+        heading="Casting"
+        longDescription={
+          "Casting is a versatile manufacturing process where molten metal is poured into molds to create complex shapes with precision and repeatability. At Wertex, we specialize in investment casting, die casting, and sand casting, producing reliable and high-quality components for industries such as aerospace, automotive, defense, and industrial equipment. Our advanced techniques ensure each part is crafted with exceptional accuracy, durability, and performance."
+        }
+      />
+      {/* < */}
 
-          <p className="text-xl2 text-white">
-            Casting is a versatile manufacturing process where molten metal is
-            poured into molds to create complex shapes with precision and
-            repeatability. At Wertex, we specialize in investment casting, die
-            casting, and sand casting, producing reliable and high-quality
-            components for industries such as aerospace, automotive, defense,
-            and industrial equipment. Our advanced techniques ensure each part
-            is crafted with exceptional accuracy, durability, and performance.
-          </p>
-        </div>
-      </div>
       <div className="mt-12 w-full bg-black p-12">
         <FlexHeader2
           heading="Comprehensive Casting Capabilities"
@@ -115,16 +121,22 @@ const Casting = (props: Props) => {
               description:
                 "Reduces machining time and produces intricate shapes, making it perfect for prototypes and medium-scale production.",
             },
-          ].map((item) => (
+          ].map((item, index) => (
             <div
-              key={item.title}
-              className="bg-foreground p-4 rounded-2xl shadow-md flex flex-col items-start text-start"
+              key={index}
+              className="bg-borderGray p-6 rounded-lg shadow-lg flex flex-col items-center text-center"
             >
-              <div className="w-12 h-12  mb-4 flex items-center justify-center">
-                {/* Image slot */}
-                <Image src="/path/to/image" alt="icon" width={24} height={24} />
+              <div className="w-12 h-12 mb-4 flex items-center justify-center">
+                <Image
+                  src="/path/to/placeholder"
+                  alt="icon"
+                  width={24}
+                  height={24}
+                />
               </div>
-              <h1 className="text-xl2 font-bold mb-2">{item.title}</h1>
+              <h1 className="text-xl2 font-bold mb-2 text-white">
+                {item.title}
+              </h1>
               <p className="text-xl2 text-gray-300">{item.description}</p>
             </div>
           ))}
@@ -177,9 +189,11 @@ const Casting = (props: Props) => {
             >
               <h1 className="text-2xl font-bold mb-2">{item.title}</h1>
               <Image
-                src={null}
+                src={"/path/to/image"}
                 alt={item.title}
                 className="w-full h-48 object-cover mb-4"
+                width={100}
+                height={100}
               />
               <ul className="list-disc pl-5 leading-4">
                 {Object.entries(item.points).map(([key, value]) => (
@@ -241,7 +255,12 @@ const Casting = (props: Props) => {
               >
                 <div className="w-12 h-12 mb-4 flex items-center justify-center">
                   {/* Image slot */}
-                  <Image src={null} alt="icon" width={24} height={24} />
+                  <Image
+                    src="/path/to/placeholder"
+                    alt="icon"
+                    width={24}
+                    height={24}
+                  />
                 </div>
                 <h1 className="text-xl2 font-bold mb-2">{item.title}</h1>
                 <p className="text-xl2 text-gray-300">{item.description}</p>
@@ -256,18 +275,15 @@ const Casting = (props: Props) => {
           heading="Enhancing Component Performance and Quality"
           description="Ensuring each component meets exact specifications."
         />
-        <div className="grid grid-cols-3 gap-0">
+        <div className="grid grid-cols-3 gap-0 gap-y-8 mt-24">
           {cardItems.map((item, index) => (
-            <div
-              key={index}
-              className="bg-white py-4 text-foreground"
-            >
+            <div key={index} className="bg-white py-4 text-foreground">
               <div className="w-full mx-auto flex flex-col items-center gap-2">
-                <p className="text-borderGray text-center w-[90%] font-bold  text-4xl">
+                <p className="text-lightGray text-center w-[90%] font-bold  text-4xl">
                   0{index + 1}
                 </p>
-                <div className=" bg-foreground h-[2px] relative w-full ">
-                  <span className="absolute  -bottom-1  mx-auto left-0 right-0  h-2 w-2 rounded-full bg-foreground" />
+                <div className=" bg-foreground h-[1px] relative w-full ">
+                  <span className="absolute  -bottom-[6px]  mx-auto left-0 right-0  h-3 w-3 rounded-full bg-gray-400" />
                 </div>
                 <p className="text-2xl font-semibold mb-2 text-center w-[90%]">
                   {item.title}
@@ -280,6 +296,43 @@ const Casting = (props: Props) => {
           ))}
         </div>
       </div>
+      <div className="h-auto relative p-8">
+        <Image
+          src={gridBg}
+          alt="grid-background"
+          className="absolute  inset-0 -z-10"
+          fill
+        />
+
+        <FlexHeader2
+          className="text-white"
+          heading="Your Trusted Partner for Casting Solutions"
+          description=""
+        />
+        <div className="grid grid-cols-3 gap-8 mt-12 z-20">
+          {newItems.map((item, _) => (
+            <div className="w-96 h-[500px] mx-auto flex flex-col items-center justify-between gap-2 p-4 z-10 text-white bg-borderGray rounded-2xl">
+              <p className="text-center  font-bold  text-xl2 text-white">
+                {item.title}
+              </p>
+
+              <Image src={"/path/to/image"} alt="icon" width={24} height={24} />
+              <p className="text-xl2 text-borderGray text-center text-white">
+                {item.description}
+              </p>
+            </div>
+          ))}
+        </div>
+      </div>
+      <Footerservice
+        title="Experience the Precision of "
+        description=""
+        heading="WERTEX Casting"
+        buttonText="Contact Us"
+        longDescription="Partner with Wertex for reliable casting solutions that meet your industry’s toughest demands. Contact us today to discuss your project and experience the precision of our advanced casting capabilities."
+      />
+        
+       
     </>
   );
 };
