@@ -1,12 +1,12 @@
 const {
   default: flattenColorPalette,
-} = require("tailwindcss/lib/util/flattenColorPalette");
+} = require('tailwindcss/lib/util/flattenColorPalette');
 export default {
   content: [
-    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+    './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/components/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
     extend: {
@@ -23,68 +23,70 @@ export default {
         border: 'var(--border)',
         orangeBg: `var(--orange-bg)`,
         borderGray: 'var(--border-gray)',
-        lightGray :"var(--light-gray)",
-        smokeWhite:"var(--white-smoke)",
-        mutedGray : "var(--muted-gray)"
+        lightGray: 'var(--light-gray)',
+        smokeWhite: 'var(--white-smoke)',
+        mutedGray: 'var(--muted-gray)',
       },
       textColor: {
-        primary: "var(--text-primary)",
-        borderGray: 'var(--border-gray)'
+        primary: 'var(--text-primary)',
+        borderGray: 'var(--border-gray)',
       },
       fontSize: {
-        xxs: "0.5rem",
-        lg: "1rem",
-        xl2: '1.375rem' // 22px
+        xxs: '0.5rem',
+        lg: '1rem',
+        xl2: '1.375rem', // 22px
       },
-
 
       fontFamily: {
         sans: 'var(--font-sans)',
         mono: 'var(--font-mono)',
-        mont: "var(--font-mont-serrat)"
+        mont: 'var(--font-mont-serrat)',
       },
 
       screens: {
         xs: '300px',
-        xsm :"400px",
+        xsm: '400px',
         sm: '640px',
         md: '768px',
         lg: '1024px',
         xl: '1280px',
-        
+
         '2xl': '1536px',
       },
 
       backgroundImage: {
-        'custom-gradient': 'linear-gradient(239.38deg, #B72C29 -5.27%, #F08F1B 44.83%, #E97713 65.26%, #C23C24 97.81%)',
-        'custom-map-gradient': ' linear-gradient(31deg, rgba(248,88,10,1) 12%, rgba(240,143,27,1) 47%, rgba(212,94,34,1) 70%, rgba(194,60,36,1) 89%)',
-        'custom-card-gradient-lt-br' :'linear-gradient(239.38deg, #B72C29 -5.27%, #F08F1B 44.83%, #E97713 65.26%, #C23C24 97.81%)'
+        'custom-gradient':
+          'linear-gradient(239.38deg, #B72C29 -5.27%, #F08F1B 44.83%, #E97713 65.26%, #C23C24 97.81%)',
+        'custom-map-gradient':
+          ' linear-gradient(31deg, rgba(248,88,10,1) 12%, rgba(240,143,27,1) 47%, rgba(212,94,34,1) 70%, rgba(194,60,36,1) 89%)',
+        'custom-card-gradient-lt-br':
+          'linear-gradient(239.38deg, #B72C29 -5.27%, #F08F1B 44.83%, #E97713 65.26%, #C23C24 97.81%)',
+        'cnc-bg':
+          "url('/src/cdn/images/cnc/metalworking-cnc-milling-machine.png')",
       },
       animation: {
         scroll:
-          "scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite",
+          'scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite',
       },
       keyframes: {
         scroll: {
           to: {
-            transform: "translate(calc(-50% - 0.5rem))",
+            transform: 'translate(calc(-50% - 0.5rem))',
           },
         },
-
       },
     },
     plugins: [addVariablesForColors],
-  }
-}
-
+  },
+};
 
 function addVariablesForColors({ addBase, theme }: any) {
-  let allColors = flattenColorPalette(theme("colors"));
+  let allColors = flattenColorPalette(theme('colors'));
   let newVars = Object.fromEntries(
     Object.entries(allColors).map(([key, val]) => [`--${key}`, val])
   );
 
   addBase({
-    ":root": newVars,
+    ':root': newVars,
   });
 }
