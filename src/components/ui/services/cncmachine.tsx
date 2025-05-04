@@ -1,15 +1,23 @@
+'use client';
 
+import CncCapabilitiesSection from '@/components/cnc/CncCapabilitiesSection';
+import CncFeaturesSection from '@/components/cnc/CncFeaturesSection';
+import CncHeroSection from '@/components/cnc/CncHeroSection';
+import CncPerformanceSection from '@/components/cnc/CncPerformanceSection';
+import CncWorkflowSection from '@/components/cnc/CncWorkflowSection';
+import IndustriesAndMaterialsSection from '@/components/cnc/IndustriesAndMaterialsSection';
+import Container from '@/components/common/Container/Container';
+import React from 'react';
 
-
-
-import React from 'react'
-
-type Props = {}
-
-const CncMachine = (props: Props) => {
+export default function CncPage() {
   return (
-    <div>cncmachine</div>
-  )
-};
-
-export default CncMachine;
+    <Container className='bg-black px-0 w-full'>
+      <CncHeroSection />
+      <CncCapabilitiesSection />
+      <IndustriesAndMaterialsSection />
+      <CncWorkflowSection />
+      <CncFeaturesSection />
+      <CncPerformanceSection />
+    </Container>
+  );
+}
