@@ -331,8 +331,6 @@ const Casting = (props: Props) => {
         buttonText="Contact Us"
         longDescription="Partner with Wertex for reliable casting solutions that meet your industry’s toughest demands. Contact us today to discuss your project and experience the precision of our advanced casting capabilities."
       />
-        
-       
     </>
   );
 };

@@ -10,13 +10,13 @@ const FlexHeader = ({
 }: {
   title: string;
   description: string;
-  heading?: string;
+  heading: string;
   className?: string;
 }) => {
   return (
     <div
       className={cn(
-        "flex justify-between items-center w-full gap-6",
+        "flex justify-between items-start w-full gap-6",
         className
       )}
     >
