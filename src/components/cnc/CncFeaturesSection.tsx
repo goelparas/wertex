@@ -141,26 +141,21 @@ const FeatureCard = ({
     initial={{ opacity: 0, y: 20 }}
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true }}
-    className='bg-zinc-900 p-6 rounded-lg border border-zinc-800'
+    className='text-black p-6  border border-zinc-800'
   >
     <div className='mb-4 text-chart-1'>{icon}</div>
-    <h3 className='text-xl font-semibold mb-2 text-white'>{title}</h3>
+    <h3 className='text-xl font-semibold mb-2 '>{title}</h3>
     <p className='text-zinc-400'>{description}</p>
   </motion.div>
 );
 
 export default function CncFeaturesSection() {
   return (
-    <section className='py-20 bg-black'>
-      <div className='container mx-auto px-4'>
-        <motion.h2
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className='text-4xl font-bold text-white text-center mb-16'
-        >
+    <section className='py-8 bg-white'>
+      <div className=' px-4'>
+        <h2 className='text-2xl font-bold mb-4 text-black'>
           Why Choose Wertex for CNC Machining?
-        </motion.h2>
+        </h2>
 
         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6'>
           {features.map((feature, index) => (

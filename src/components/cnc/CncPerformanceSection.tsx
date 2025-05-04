@@ -60,16 +60,16 @@ const MachineLink = ({ name, href }: { name: string; href: string }) => {
 export default function CncPerformanceSection() {
   return (
     <section className='py-20 bg-black'>
-      <div className='container mx-auto px-4'>
+      <div className=''>
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className='text-4xl font-bold text-white mb-4'
+          className='text-4xl font-bold text-white mb-4 px-6'
         >
           Enhancing Component Performance and Quality
         </motion.h2>
-        <p className='text-zinc-400 mb-8'>
+        <p className='text-zinc-400 mb-8 px-6'>
           Advanced finishing techniques for durability and precision.
         </p>
         <div className='grid grid-cols-1 lg:grid-cols-2 gap-12 border-y border-zinc-800'>

@@ -37,7 +37,6 @@ export default function CapabilityCard({
       <div className='h-full flex items-center'>
         <div className='mb-4 p-4 bg-white/10 rounded-full '>{icon}</div>
       </div>
-      {/* <h3 className='text-xl font-semibold mb-3'>{title}</h3> */}
       <p className='text-gray-300'>{description}</p>
     </motion.div>
   );

@@ -16,11 +16,11 @@ import {
 
 export default function IndustriesAndMaterialsSection() {
   return (
-    <section className='relative w-full py-16 md:py-24 bg-white'>
+    <section className='relative w-full bg-white'>
       <div className='max-w-7xl mx-auto px-4 sm:px-6'>
-        <div className='grid grid-cols-1 lg:grid-cols-2 gap-12'>
+        <div className='grid grid-cols-1 lg:grid-cols-2'>
           {/* Industries Column */}
-          <div>
+          <div className='px-6 border-r-2 border-black py-8'>
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -29,7 +29,7 @@ export default function IndustriesAndMaterialsSection() {
               className='mb-8'
             >
               <h2 className='text-3xl font-bold mb-2 text-black'>
-                Delivering <span className='text-chart-4'>Excellence</span>{' '}
+                Delivering <span className='text-[#E97713]'>Excellence</span>{' '}
                 Across Industries
               </h2>
               <p className='text-black'>
@@ -76,7 +76,7 @@ export default function IndustriesAndMaterialsSection() {
           </div>
 
           {/* Materials Column */}
-          <div>
+          <div className='px-6 py-8'>
             <motion.div
               initial={{ opacity: 0, x: 20 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -86,7 +86,7 @@ export default function IndustriesAndMaterialsSection() {
             >
               <h2 className='text-3xl font-bold mb-2'>
                 Materials for{' '}
-                <span className='text-chart-4'>Every Application</span>
+                <span className='text-[#E97713]'>Every Application</span>
               </h2>
               <p className='text-muted-foreground'>
                 We specialize in machining an extensive range of materials
@@ -94,7 +94,7 @@ export default function IndustriesAndMaterialsSection() {
               </p>
             </motion.div>
 
-            <div className='space-y-4'>
+            <div className='space-y-4 '>
               <MaterialCard
                 icon={<Layers size={28} />}
                 title='Metals'
