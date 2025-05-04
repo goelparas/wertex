@@ -28,7 +28,7 @@ const Footerservice = ({
     <div>
       <div className="p-6">
         <div className="bg-borderGray flex justify-between p-8">
-          <div className="flex flex-col gap-12 justify-between items-start w-1/2">
+          <div className="flex flex-col gap-12 justify-between items-start w-2/3">
             <FlexHeader
               title={title}
               description={description}
