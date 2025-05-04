@@ -21,7 +21,7 @@ const WorkflowItem = ({ title, description, index }: WorkflowItemProps) => {
     >
       <div className='absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-chart-1 to-chart-2 opacity-80 rounded-t-lg'></div>
 
-      <h3 className='text-2xl font-bold text-white mb-4'>{title}</h3>
+      <h3 className='text-xl font-bold text-white mb-4'>{title}</h3>
 
       <div className='flex-1 flex items-center'>
         <div
@@ -139,20 +139,17 @@ const CncWorkflowSection = () => {
   ];
 
   return (
-    <section ref={sectionRef} className='py-20 overflow-hidden bg-black'>
-      <div className='container mx-auto px-4 md:px-6'>
+    <section ref={sectionRef} className='py-8 overflow-hidden bg-black'>
+      <div className=' mx-auto px-4 px-6'>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7 }}
           viewport={{ once: true }}
-          className='text-center mb-16'
+          className=''
         >
-          <h2 className='text-4xl md:text-5xl font-bold text-white mb-6'>
-            From Design to Delivery,{' '}
-            <span className='text-transparent bg-clip-text bg-gradient-to-r from-chart-1 to-chart-2'>
-              Streamlined for Success
-            </span>
+          <h2 className='text-2xl md:text-3xl font-bold text-white'>
+            From Design to Delivery, Streamlined for Success
           </h2>
           <div className='w-24 h-1 bg-chart-2 mx-auto'></div>
         </motion.div>

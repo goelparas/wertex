@@ -9,16 +9,16 @@ import machineHammer from '../../cdn/images/cnc/metalworking-cnc-milling-machine
 
 export default function CncCapabilitiesSection() {
   return (
-    <section className='relative w-full py-16 md:py-24 bg-black text-white'>
-      <div className='max-w-7xl mx-auto px-4 sm:px-6'>
+    <section className='relative w-full py-8  text-white px-6'>
+      <div className='max-w-7xl mx-auto'>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
           viewport={{ once: true }}
-          className='space-y-4 text-left mb-12'
+          className='text-left mb-12'
         >
-          <h2 className='text-3xl md:text-4xl font-bold'>
+          <h2 className='text-2xl md:text-3xl font-bold'>
             Comprehensive CNC Capabilities Tailored for Your Needs
           </h2>
           <p className='text-xl text-muted-foreground'>
@@ -26,8 +26,8 @@ export default function CncCapabilitiesSection() {
           </p>
         </motion.div>
 
-        <div className='grid grid-cols-1 md:grid-cols-3 gap-6'>
-          <div className='absolute inset-y-60 w-full h-[380px]'>
+        <div className='grid grid-cols-1 md:grid-cols-3 gap-6 p-4'>
+          <div className='absolute inset-y-40 w-full h-[480px]'>
             <Image
               src={machineHammer}
               alt='Precision Casting Process'

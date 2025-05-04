@@ -11,7 +11,7 @@ import React from 'react';
 
 export default function CncPage() {
   return (
-    <Container className=''>
+    <Container className='bg-black px-0 w-full'>
       <CncHeroSection />
       <CncCapabilitiesSection />
       <IndustriesAndMaterialsSection />

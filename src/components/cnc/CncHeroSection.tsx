@@ -8,7 +8,7 @@ import vidadigitalin from '../../cdn/images/cnc/vidadigitalin.png';
 
 export default function CncHeroSection() {
   return (
-    <div className='w-full max-h-[750px] space-y-5'>
+    <div className='w-full max-h-[750px] space-y-5 px-6'>
       <div className='flex justify-between items-center w-full'>
         <H4>
           Precision Redefined with{' '}
