@@ -24,7 +24,6 @@ const HeroSection = ({
         <div className="h-full relative w-full">
           <Image src={src} alt={alt} quality={100} objectFit="cover" fill />
         </div>
-
         <p className="text-xl2 text-white w-full">{longDescription}</p>
       </div>
     </div>

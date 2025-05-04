@@ -1,17 +1,25 @@
 import React from "react";
 import { HeaderBox } from "../HeaderBox/HeaderBox";
+import { cn } from "@/lib/utils";
 
 const FlexHeader = ({
   title,
   description,
   heading,
+  className,
 }: {
   title: string;
   description: string;
   heading: string;
+  className?: string;
 }) => {
   return (
-    <div className="flex justify-between items-center w-full gap-6">
+    <div
+      className={cn(
+        "flex justify-between items-start w-full gap-6",
+        className
+      )}
+    >
       <h1 className="text-3xl font-bold w-3/5  ">
         {title} <span className="text-orangeBg">{heading}</span>
       </h1>
