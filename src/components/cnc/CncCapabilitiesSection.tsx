@@ -9,7 +9,8 @@ import machineHammer from '../../cdn/images/cnc/metalworking-cnc-milling-machine
 
 export default function CncCapabilitiesSection() {
   return (
-    <section className='relative w-full py-8  text-white px-6'>
+    <div>
+ <div className="mt-12 p-12 relative">
       <div className='max-w-7xl mx-auto'>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -35,7 +36,7 @@ export default function CncCapabilitiesSection() {
               className='object-cover'
               priority
             />
-            <div className='absolute inset-0 bg-black/60 mix-blend-multiply' />
+           
           </div>
           <CapabilityCard
             icon={<Workflow size={48} className='text-chart-1' />}
@@ -59,6 +60,9 @@ export default function CncCapabilitiesSection() {
           />
         </div>
       </div>
-    </section>
+    </div>
+    <div className='absolute inset-0 bg-black/60 mix-blend-multiply' />
+    </div>
+   
   );
 }

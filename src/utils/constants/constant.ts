@@ -52,20 +52,9 @@ export const WindowSize = {
 export const WhatWeOfferConst = [
   {
     "image": cncMachine,
-    "text": "CNC Machining ",
+    "text": "CNC Machining",
     className: "flex flex-col gap-1 lg:flex-row lg:gap-0"
   },
-  {
-    "image": cncMachine,
-    "text": "CNC  ",
-    className: ""
-  },
-  {
-    "image": cncMachine,
-    "text": " Machining ",
-    className: ""
-  },
-
   {
     "image": casting,
     "text": "Casting.",
@@ -83,12 +72,12 @@ export const WhatWeOfferConst = [
   },
   {
     "image": cncMachine,
-    "text": "CNC Machining ",
+    "text": "Aluminium Extrusion",
      className: "flex flex-col gap-1 lg:flex-row lg:gap-0"
   },
   {
     "image": cncMachine,
-    "text": "CNC Machining ",
+    "text": "Moding",
     className: "flex flex-col gap-1 lg:flex-row lg:gap-0"
   }
 ]

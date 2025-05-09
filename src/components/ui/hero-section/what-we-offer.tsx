@@ -13,7 +13,7 @@ const WhatWeOffer = () => {
                 <h1 className='p-3 font-semibold text-base sm:text-xl md:text-2xl lg:text-3xl mb-10'>Your One-Stop Manufacturing Partner</h1>
                 <div className='grid grid-cols-4   lg:flex w-full justify-between gap-5  items-center my-6 overflow-hidden lg:overflow-x-scroll py-4'>
                     {
-                        WhatWeOfferConst.map((item) => <ImageCard image={item.image} text={item.text} key={item.text}  className={item.className}/>)
+                        WhatWeOfferConst.map((item, index) => <ImageCard image={item.image} text={item.text} key={item.text}  className={`${item.className} ${index === 0  && 'ml-12'}`}/>)
                     }
                 </div>
             </div>

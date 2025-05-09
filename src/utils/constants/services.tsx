@@ -1,4 +1,5 @@
 import CncPage from "@/app/cnc/page";
+import CncMachine from "@/components/ui/services/cncmachine";
 import dynamic from "next/dynamic";
 
 const Casting = dynamic(() => import("@/components/ui/services/casting"));
@@ -17,7 +18,7 @@ const SurfaceTreatment = dynamic(
 export const ServicesPageConst = [
   {
     title: "cnc-machining",
-    page: CncPage,
+    page: CncMachine,
   },
   {
     title: "casting",
