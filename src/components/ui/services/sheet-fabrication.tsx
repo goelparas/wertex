@@ -106,7 +106,6 @@ const SheetFabrication = (props: Props) => {
                 src={testImg}
                 alt={method.title}
                 className="mb-4 w-1/2 object-cover h-52"
-                 
               />
               <h3 className="text-xl2">{method.title}</h3>
               <p>{method.description}</p>
@@ -161,6 +160,7 @@ const SheetFabrication = (props: Props) => {
       </div>
       <div className="bg-black p-12">
         <FlexHeader
+          heading=""
           title="Advanced Welding Techniques for Robust Assemblies"
           description="Extensive welding options tailored for strength and consistency"
         />
