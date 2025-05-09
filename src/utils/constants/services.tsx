@@ -1,4 +1,3 @@
-import CncPage from "@/app/cnc/page";
 import CncMachine from "@/components/ui/services/cncmachine";
 import dynamic from "next/dynamic";
 
