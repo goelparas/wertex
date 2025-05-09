@@ -14,7 +14,7 @@ const HeroSection = ({
   alt: string;
   title: string;
   description: string;
-  heading?: string;
+  heading: string;
   longDescription: string;
 }) => {
   return (

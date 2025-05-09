@@ -205,6 +205,7 @@ const AluminiumExtrusion = (props: Props) => {
         <IndustryShowcase />
         <FlexHeader
           title='Your Trusted Partner for Premium Aluminum Extrusions'
+          heading=''
           description='Experience the difference with custom-engineered, high-performance solutions.'
         />
       </div>
