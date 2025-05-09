@@ -5,7 +5,7 @@ interface ContainerProps {
   className?: string;
 }
 
-const Container: React.FC<ContainerProps> = ({ children, className }) => {
+const Section: React.FC<ContainerProps> = ({ children, className }) => {
   return (
     <div className={`bg-[#242424] mt-12 p-12 ${className || ''}`}>
       {children}
@@ -13,4 +13,4 @@ const Container: React.FC<ContainerProps> = ({ children, className }) => {
   );
 };
 
-export default Container; 
+export default Section; 
