@@ -137,6 +137,7 @@ const ForgingPage: React.FC = () => {
       <FlexHeader
         title='Rigorously Tested for Superior Quality'
         description='Ensuring compliance with industry standards and client specifications.'
+        heading=''
       />
 
       <div className='mt-16 mb-16 bg-[#4F4F4F73] border p-4 rounded-xl'>
