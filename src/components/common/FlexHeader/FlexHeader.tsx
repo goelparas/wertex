@@ -8,9 +8,9 @@ const FlexHeader = ({
   heading,
   className,
 }: {
-  title: string;
+  title: string | React.ReactNode;
   description: string;
-  heading: string;
+  heading?: string;
   className?: string;
 }) => {
   return (
@@ -23,7 +23,7 @@ const FlexHeader = ({
       <h1 className="text-3xl font-bold w-3/5  ">
         {title} { heading && <span className="text-orangeBg">{heading}</span>}
       </h1>
-      <p className="text-xl2 text-white w-2/5 text-right">{description}</p>
+      <p className={cn("text-xl2 text-white w-2/5 text-right", className)} >{description}</p>
     </div>
   );
 };
