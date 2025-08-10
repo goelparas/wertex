@@ -44,7 +44,7 @@ export default function RootLayout({
             src={frameBlack}
             className="z-10 absolute  w-full h-16 lg:h-32"
           />
-          <div className="hidden lg:block" />
+          <span className="hidden lg:block" />
           <figure className="w-28 lg:w-48  relative h-6 lg:h-11 z-20 mx-10">
             <Image src={wertex} alt="logo" quality={100} fill />
           </figure>
@@ -68,7 +68,7 @@ export default function RootLayout({
               </a>
             </span>
           </span>
-          <div className="border-y-2 w-4 h-4 block z-20 lg:hidden" />
+          <span className="border-y-2 w-4 h-4 block z-20 lg:hidden" />
         </nav>
         {children}
         <FooterSection />

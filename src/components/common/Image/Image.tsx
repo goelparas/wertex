@@ -24,4 +24,4 @@ const CustomImg = (
     )
 }
 
-export default withDeviceDetection(CustomImg);
+export default  await withDeviceDetection(CustomImg);
