@@ -1,15 +1,96 @@
-import FlexHeader, {
+import {
   FlexHeader2,
 } from "@/components/common/FlexHeader/FlexHeader";
 import Image from "next/image";
 import React from "react";
 import castingHero from "@/cdn/images/casting/casting-hero.avif";
-import castingMain from "@/cdn/images/casting/casting-1.avif";
 import gridBg from "@/cdn/images/main_grid.avif";
-import Button from "@/components/common/Button/button";
 import HeroSection from "@/components/common/Container/HeroSection-service";
 import Footerservice from "@/components/common/footer-service/footerservice";
+import grid from "@/cdn/images/cross.png";
+
+// Import capability images
+import capability1 from "@/cdn/images/casting/capability-1.png";
+import capability2 from "@/cdn/images/casting/capability-2.png";
+import capability5 from "@/cdn/images/casting/capablity-5.png";
+import capability6 from "@/cdn/images/casting/capabilty-6.png";
+import capability8 from "@/cdn/images/casting/capablity-8.png";
+
+
+
+//import comaprison imags
+import ferrousMetal from "@/cdn/images/casting/ferrous.avif"
+import nonFerrous from "@/cdn/images/casting/non-ferrous.webp"
+
+import logo1 from '@/cdn/images/casting/logo-1.svg';
+import logo2 from '@/cdn/images/casting/logo-2.svg';
+import logo3 from '@/cdn/images/casting/logo-3.svg';
+import { ImageContainer } from "@/components/common/Container/ImageGrid";
+
+// Define casting capabilities with their respective images
+const CASTING_CAPABILITIES = [
+  {
+    title: "Investment Casting",
+    description:
+      "Produces high-precision components with intricate geometries and excellent surface finishes.",
+    image: capability1,
+    class: ""
+  },
+  {
+    title: "Die Casting",
+    description:
+      "Fast and cost-effective for complex shapes with superior dimensional accuracy.",
+    image: capability2,
+    class: ""
+  },
+  {
+    title: "Sand Casting",
+    description:
+      "Flexible and economical, ideal for low to medium production volumes.",
+    image: capability2,
+    class: "-rotate-90"
+  },
+  {
+    title: "Gravity Die Casting",
+    description:
+      "Creates high-density components with excellent structural integrity.",
+    image: capability5,
+    class: ""
+  },
+  {
+    title: "Centrifugal Casting",
+    description:
+      "Perfect for hollow components with superior mechanical properties.",
+    image: capability6,
+    class: ""
+  },
+  {
+    title: "Permanent Mold Casting",
+    description:
+      "Ensures smooth finishes and dimensional accuracy, ideal for medium to high production volumes.",
+    image: capability5,
+    class: "-rotate-90"
+  },
+  {
+    title: "Continuous Casting",
+    description:
+      "Ensures consistent quality for billets, rods, and other long-section parts.",
+    image: capability5,
+    class: "rotate-90"
+  },
+  {
+    title: "Lost Foam Casting",
+    description:
+      "Reduces machining time and produces intricate shapes, making it perfect for prototypes and medium-scale production.",
+    image: capability8,
+    class: ""
+  },
+] as const;
+
 type Props = {};
+
+
+
 
 const Casting = (props: Props) => {
   const cardItems = [
@@ -46,16 +127,20 @@ const Casting = (props: Props) => {
       title: "Expertise in Complex Geometries",
       description:
         "Capable of producing intricate shapes with repeatability and precision.",
+
+      img: logo1,
     },
     {
       title: "Cost-Effective Processes",
       description:
         "Advanced casting techniques for optimal quality and efficiency.",
+      img: logo2,
     },
     {
       title: "Commitment to Quality",
       description:
         "Rigorous inspections ensure each component meets the highest standards.",
+      img: logo3,
     },
   ];
 
@@ -71,7 +156,7 @@ const Casting = (props: Props) => {
           "Casting is a versatile manufacturing process where molten metal is poured into molds to create complex shapes with precision and repeatability. At Wertex, we specialize in investment casting, die casting, and sand casting, producing reliable and high-quality components for industries such as aerospace, automotive, defense, and industrial equipment. Our advanced techniques ensure each part is crafted with exceptional accuracy, durability, and performance."
         }
       />
-      {/* < */}
+
 
       <div className="mt-12 w-full bg-black p-12">
         <FlexHeader2
@@ -80,63 +165,24 @@ const Casting = (props: Props) => {
         />
 
         <div className="grid grid-cols-3 gap-4 mt-6">
-          {[
-            {
-              title: "Investment Casting",
-              description:
-                "Produces high-precision components with intricate geometries and excellent surface finishes.",
-            },
-            {
-              title: "Die Casting",
-              description:
-                "Fast and cost-effective for complex shapes with superior dimensional accuracy.",
-            },
-            {
-              title: "Sand Casting",
-              description:
-                "Flexible and economical, ideal for low to medium production volumes.",
-            },
-            {
-              title: "Gravity Die Casting",
-              description:
-                "Creates high-density components with excellent structural integrity.",
-            },
-            {
-              title: "Centrifugal Casting",
-              description:
-                "Perfect for hollow components with superior mechanical properties.",
-            },
-            {
-              title: "Permanent Mold Casting",
-              description:
-                "Ensures smooth finishes and dimensional accuracy, ideal for medium to high production volumes.",
-            },
-            {
-              title: "Continuous Casting",
-              description:
-                "Ensures consistent quality for billets, rods, and other long-section parts.",
-            },
-            {
-              title: "Lost Foam Casting:",
-              description:
-                "Reduces machining time and produces intricate shapes, making it perfect for prototypes and medium-scale production.",
-            },
-          ].map((item, index) => (
+          {CASTING_CAPABILITIES.map((item, index) => (
             <div
               key={index}
-              className="bg-borderGray p-6 rounded-lg shadow-lg flex flex-col items-center text-center"
+              className="bg-background-200 p-6 rounded-lg shadow-lg flex flex-col items-start text-start hover:scale-105 transition-transform duration-300 gap-4"
             >
-              <div className="w-12 h-12 mb-4 flex items-center justify-center">
+              <div className="relative flex items-center justify-center w-24 h-24 shrink-0 flex-none">
                 <Image
-                  src="/path/to/placeholder"
-                  alt="icon"
-                  width={24}
-                  height={24}
+                  src={item.image}
+                  alt="molding service"
+                  width={62}
+                  height={62}
+                  className={item.class}
                 />
+                <Image src={grid} alt="casting main" fill />
               </div>
-              <h1 className="text-xl2 font-bold mb-2 text-white">
+              <h3 className="text-xl2 font-bold mb-2 text-white text-start w-full">
                 {item.title}
-              </h1>
+              </h3>
               <p className="text-xl2 text-gray-300">{item.description}</p>
             </div>
           ))}
@@ -151,7 +197,7 @@ const Casting = (props: Props) => {
           {[
             {
               title: "Ferrous Materials",
-              image: "/path/to/image",
+              image: ferrousMetal,
               points: {
                 " Carbon Steel":
                   "Strong, durable, and suitable for heavy-duty applications.",
@@ -180,21 +226,23 @@ const Casting = (props: Props) => {
                 Titanium:
                   "High strength-to-weight ratio for aerospace and medical applications.",
               },
-              image: "/path/to/image",
+              image: nonFerrous,
             },
           ].map((item) => (
             <div
               key={item.title}
-              className=" bg-white/15 backdrop-blur-md rounded-3xl p-6 shadow-md mt-12"
+              className=" bg-white/15 backdrop-blur-md rounded-3xl py-16 px-8 shadow-md mt-12"
             >
-              <h1 className="text-2xl font-bold mb-2">{item.title}</h1>
-              <Image
-                src={"/path/to/image"}
-                alt={item.title}
-                className="w-full h-48 object-cover mb-4"
-                width={100}
-                height={100}
-              />
+              <h1 className="text-2xl font-bold mb-6">{item.title}</h1>
+              <div className="h-56 w-full rounded-2xl p-1 mb-4 relative ">
+                <Image
+                  src={item.image}
+                  alt={item.title}
+                  className="object-cover rounded-2xl"
+                  fill
+                />
+              </div>
+
               <ul className="list-disc pl-5 leading-4">
                 {Object.entries(item.points).map(([key, value]) => (
                   <li key={key} className="text-xl text-gray-300 ">
@@ -251,17 +299,9 @@ const Casting = (props: Props) => {
             ].map((item) => (
               <div
                 key={item.title}
-                className="bg-black border border-white p-4  shadow-md flex flex-col items-start text-start"
+                className="bg-black border border-white py-8 px-4  shadow-md flex flex-col items-start text-start"
               >
-                <div className="w-12 h-12 mb-4 flex items-center justify-center">
-                  {/* Image slot */}
-                  <Image
-                    src="/path/to/placeholder"
-                    alt="icon"
-                    width={24}
-                    height={24}
-                  />
-                </div>
+
                 <h1 className="text-xl2 font-bold mb-2">{item.title}</h1>
                 <p className="text-xl2 text-gray-300">{item.description}</p>
               </div>
@@ -311,12 +351,12 @@ const Casting = (props: Props) => {
         />
         <div className="grid grid-cols-3 gap-8 mt-12 z-20">
           {newItems.map((item, _) => (
-            <div className="w-96 h-[500px] mx-auto flex flex-col items-center justify-between gap-2 p-4 z-10 text-white bg-borderGray rounded-2xl">
+            <div key={item.title} className="w-96 h-[500px] mx-auto flex flex-col items-center justify-between gap-2 p-4 z-10 text-white bg-borderGray rounded-2xl">
               <p className="text-center  font-bold  text-xl2 text-white">
                 {item.title}
               </p>
 
-              <Image src={"/path/to/image"} alt="icon" width={24} height={24} />
+              <ImageContainer img={item.img} className="w-24 h-24" height={65} width={84} />
               <p className="text-xl2 text-borderGray text-center text-white">
                 {item.description}
               </p>
@@ -324,6 +364,7 @@ const Casting = (props: Props) => {
           ))}
         </div>
       </div>
+
       <Footerservice
         title="Experience the Precision of "
         description=""

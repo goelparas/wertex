@@ -26,6 +26,8 @@ export default {
         lightGray: 'var(--light-gray)',
         smokeWhite: 'var(--white-smoke)',
         mutedGray: 'var(--muted-gray)',
+        "gray-muted-100": 'var(--gray-muted-100)',
+        "background-200": 'var(--background-200)',
       },
       textColor: {
         primary: 'var(--text-primary)',
@@ -35,12 +37,12 @@ export default {
         xxs: '0.5rem',
         lg: '1rem',
         xl2: '1.375rem', // 22px
+        '3.5xl':'2rem'
       },
 
       fontFamily: {
-        sans: 'var(--font-sans)',
         mono: 'var(--font-mono)',
-        mont: 'var(--font-mont-serrat)',
+        mont:  'var(--font-montserrat)',
       },
 
       screens: {
@@ -50,8 +52,8 @@ export default {
         md: '768px',
         lg: '1024px',
         xl: '1280px',
-
         '2xl': '1536px',
+        '3xl': '1920px',
       },
 
       backgroundImage: {

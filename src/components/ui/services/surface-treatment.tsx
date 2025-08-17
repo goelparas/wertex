@@ -2,7 +2,7 @@ import React from "react";
 import HeroSection from "@/components/common/Container/HeroSection-service";
 import Section from "@/components/common/Section";
 import surfaceTreatment from "@/cdn/images/hero_background.avif";
-import FlexHeader from "@/components/common/FlexHeader/FlexHeader";
+import {FlexHeader} from "@/components/common/FlexHeader/FlexHeader";
 import { IndustryShowcase } from "./aluminium-extrusion";
 import FooterSection from "../footer-section/footer-section";
 import Footerservice from "@/components/common/footer-service/footerservice";

@@ -4,11 +4,9 @@ import CncHeroSection from "@/components/cnc/CncHeroSection";
 import CncPerformanceSection from "@/components/cnc/CncPerformanceSection";
 import CncWorkflowSection from "@/components/cnc/CncWorkflowSection";
 import IndustriesAndMaterialsSection from "@/components/cnc/IndustriesAndMaterialsSection";
-import Container from "@/components/common/Container/Container";
 import React from "react";
 import HeroSection from "@/components/common/Container/HeroSection-service";
 import vidadigitalin from "@/cdn/images/cnc/vidadigitalin.png";
-import FlexHeader from "@/components/common/FlexHeader/FlexHeader";
 import Footerservice from "@/components/common/footer-service/footerservice";
 type Props = {};
 

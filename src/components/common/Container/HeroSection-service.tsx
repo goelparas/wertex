@@ -1,7 +1,6 @@
 import React from "react";
-import FlexHeader from "../FlexHeader/FlexHeader";
+import {FlexHeader} from "../FlexHeader/FlexHeader";
 import Image, { StaticImageData } from "next/image";
-
 const HeroSection = ({
   src,
   alt,
@@ -18,7 +17,7 @@ const HeroSection = ({
   longDescription: string;
 }) => {
   return (
-    <div className="w-[90%] mx-auto ">
+    <div className="w-full px-12 ">
       <FlexHeader title={title} description={description} heading={heading} />
       <div className="w-full flex flex-col  justify-between items-center gap-8 h-[85svh] mt-12">
         <div className="h-full relative w-full">

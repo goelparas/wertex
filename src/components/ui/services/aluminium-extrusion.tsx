@@ -2,25 +2,30 @@
 import HeroSection from "@/components/common/Container/HeroSection-service";
 import React, { useEffect, useState } from "react";
 import vidadigitalin from "../../../cdn/images/cnc/vidadigitalin.png";
-import {
-  Gauge,
-  Hammer,
-  Ruler,
-  TestTube,
-  Layers,
-  SquareStack,
-  Scissors,
-  ThermometerSnowflake,
-  Settings2,
-  Sparkles,
-} from "lucide-react";
-import IndustriesAndMaterialsSection from "@/components/cnc/IndustriesAndMaterialsSection";
-import CncWorkflowSection from "@/components/cnc/CncWorkflowSection";
-import FlexHeader from "@/components/common/FlexHeader/FlexHeader";
-import { cn } from "@/lib/utils";
+// Import aluminum extrusion logos
+import logo1 from "@/cdn/images/aluminiumextrution/logo-1.png";
+import logo2 from "@/cdn/images/aluminiumextrution/logo-2.png";
+import logo3 from "@/cdn/images/aluminiumextrution/logo-3.png";
+import logo4 from "@/cdn/images/aluminiumextrution/logo-4.png";
+import logo5 from "@/cdn/images/aluminiumextrution/logo-5.png"; 
+//
+import logo1a from "@/cdn/images/aluminiumextrution/logo-1-a.png";
+import logo2a from "@/cdn/images/aluminiumextrution/logo-2-a.png";
+import logo3a from "@/cdn/images/aluminiumextrution/logo-3-a.png";
+import logo4a from "@/cdn/images/aluminiumextrution/logo-4-a.png";
+import capability2 from "@/cdn/images/casting/capability-2.png";
+import capability5 from "@/cdn/images/casting/capablity-5.png";
+import capability6 from "@/cdn/images/casting/capabilty-6.png";
+import capability8 from "@/cdn/images/casting/capablity-8.png";
+import {FlexHeader, FlexHeader2} from "@/components/common/FlexHeader/FlexHeader";
 import { motion, AnimatePresence } from "framer-motion";
 import Section from "@/components/common/Section";
 import { StaticImageData } from "next/image";
+import {ImageContainer} from '@/components/common/Container/ImageGrid'
+import Footerservice from "@/components/common/footer-service/footerservice";
+import DynamicShowCaseContainer from '@/components/common/ImageShowCaseContainer/ImageShowCaseContainer'
+import { aluminiumExtrusion } from "@/components/common/ImageShowCaseContainer/constant";
+import { cn } from "@/lib/utils";
 
 type Props = {};
 const industries: Industry[] = [
@@ -65,139 +70,117 @@ const industries: Industry[] = [
     image: "/lovable-uploads/101d802c-86ce-49a7-a1d5-7c6305342e6d.png",
   },
 ];
+const forgingTypes = [
+  {
+    title: "Lightweight",
+    icon: logo1,
+    description: "Perfect for applications requiring reduced weight without sacrificing strength.",
+  },
+  {
+    title: "Corrosion Resistance",
+    icon: logo2,
+    description: "Reliable performance in harsh environments, including marine and industrial settings.",
+  },
+  {
+    title: "High Strength-to-Weight Ratio",
+    icon: logo3,
+    description: "Ensures excellent structural integrity for demanding applications.",
+  },
+  {
+    title: "Thermal and Electrical Conductivity",
+    icon: logo4,
+    description: "Ideal for heat sinks and electrical components",
+  },
+  {
+    title: "Recyclability",
+    icon: logo5,
+    description: "Environmentally friendly and sustainable, aligning with modern industry standards.",
+  },
+];
 
+const extrusionServices = [
+  {
+    title: "Custom Profiles",
+    description:
+      "Tailored profiles to suit unique design and application requirements. Capable of producing complex geometries for specialized purposes.",
+    icon: logo1a,
+  },
+  {
+    title: "Structural Extrusions",
+    description:
+      "Lightweight structural components designed for aerospace, construction, and renewable energy applications.",
+    icon:  logo2a,
+  },
+  {
+    title: "Hollow and Solid Extrusions:",
+    description:
+      " Lightweight hollow profiles and robust solid shapes for versatile applications.",
+    icon:  logo3a,
+  },
+  {
+    title: "Surface Treatments",
+    description:
+      "Options like anodizing, powder coating, polishing, and brushing enhance durability and aesthetics.",
+    icon: logo4a,
+  },
+  {
+    title: "Secondary Operations",
+    description:
+      "Includes punching, drilling, assembly, and finishing for ready-to-use components.",
+    icon: logo4a,
+  },
+  {
+    title: "Heat Sink Extrusions",
+    description:
+      "Optimized for thermal management in electronics, automotive, and industrial systems.",
+    icon: logo4a,
+  },
+];
+
+
+const qualityStandards = [{
+  img:capability5,
+  heading:'Dimensional Accuracy',
+  description :"Verified using advanced tools for precise measurements."
+
+},{
+  img:capability2,
+  heading:'Material Testing',
+  description :"Confirms mechanical properties like tensile strength and hardness."
+
+},{
+  img:capability6,
+  heading:'Surface Inspection',
+  description :"Ensures uniformity and defect-free finishes."
+
+},
+{
+  img:capability8,
+  heading:'Load and Stress Testing',
+  description:"Validates performance under real-world conditions."
+
+}]
 const AluminiumExtrusion = (props: Props) => {
-  const forgingTypes = [
-    {
-      title: "Drop Forging",
-      icon: <Hammer className="w-10 h-10 text-blue-400" />,
-      description: [
-        "Utilizes gravity and drop hammers to precisely shape heated metal.",
-        "Produces components with consistent strength and fine grain structure.",
-        "Commonly used for tools, hardware, and automotive parts.",
-      ],
-    },
-    {
-      title: "Hot Forging",
-      icon: <Hammer className="w-10 h-10 text-blue-400" />,
-      description: [
-        "Conducted at high temperatures to make the metal more pliable and easier to shape.",
-        "Reduces strain hardening, improving ductility and material flow.",
-        "Suitable for large, high-strength parts.",
-      ],
-    },
-    {
-      title: "Cold Forging",
-      icon: <Hammer className="w-10 h-10 text-blue-400" />,
-      description: [
-        "Performed at room temperature, achieving tighter tolerances and superior surface finishes.",
-        "Offers excellent dimensional accuracy and material savings.",
-        "Ideal for small to medium-sized components like fasteners and shafts.",
-      ],
-    },
-    {
-      title: "Rolled Ring Forging",
-      icon: <Hammer className="w-10 h-10 text-blue-400" />,
-      description: [
-        "Produces seamless rings with exceptional strength and dimensional accuracy.",
-        "Commonly used in applications like bearings, flanges, and aerospace components.",
-        "Accommodates a variety of sizes, from small to large diameters.",
-      ],
-    },
-    {
-      title: "Press Forging",
-      icon: <Hammer className="w-10 h-10 text-blue-400" />,
-      description: [
-        "Applies controlled pressure to shape metal gradually for intricate geometries.",
-        "Offers better control over the deformation process.",
-        "Commonly used for creating complex shapes with high precision.",
-      ],
-    },
-    {
-      title: "Precision Forging",
-      icon: <Hammer className="w-10 h-10 text-blue-400" />,
-      description: [
-        "Achieves near-net shapes, minimizing post-forging machining requirements.",
-        "Optimizes material usage and reduces waste.",
-        "Ideal for high-accuracy components in automotive and aerospace industries",
-      ],
-    },
-    {
-      title: "Upset Forging",
-      icon: <Hammer className="w-10 h-10 text-blue-400" />,
-      description: [
-        "Focuses on increasing the cross-sectional area of the workpiece.",
-        "Commonly used for manufacturing bolts, rivets, and shafts.",
-        "Ensures superior tensile and shear strength.",
-      ],
-    },
-  ];
-
-  const extrusionServices = [
-    {
-      title: "Custom Profiles",
-      description:
-        "Tailored profiles to suit unique design and application requirements. Capable of producing complex geometries for specialized purposes.",
-      icon: <Layers className="w-8 h-8" />,
-    },
-    {
-      title: "Structural Extrusions",
-      description:
-        "Lightweight structural components designed for aerospace, construction, and renewable energy applications.",
-      icon: <SquareStack className="w-8 h-8" />,
-    },
-    {
-      title: "Hollow and Solid Extrusions",
-      description:
-        "Lightweight hollow profiles and robust solid shapes for versatile applications.",
-      icon: <SquareStack className="w-8 h-8" />,
-    },
-    {
-      title: "Surface Treatments",
-      description:
-        "Options like anodizing, powder coating, polishing, and brushing enhance durability and aesthetics.",
-      icon: <Sparkles className="w-8 h-8" />,
-    },
-    {
-      title: "Precision Cutting and Machining",
-      description:
-        "Post-extrusion CNC machining ensures exact dimensions and superior surface finishes.",
-      icon: <Scissors className="w-8 h-8" />,
-    },
-    {
-      title: "Secondary Operations",
-      description:
-        "Includes punching, drilling, assembly, and finishing for ready-to-use components.",
-      icon: <Settings2 className="w-8 h-8" />,
-    },
-    {
-      title: "Heat Sink Extrusions",
-      description:
-        "Optimized for thermal management in electronics, automotive, and industrial systems.",
-      icon: <ThermometerSnowflake className="w-8 h-8" />,
-    },
-  ];
-
+ 
   return (
-    <div>
+    <>
       <HeroSection
-        title="Precision Aluminum Extrusions for Lightweight and Durable Solutions"
+        title= {<>Precision <span className="text-orangeBg">Aluminum Extrusions</span> for Lightweight and Durable Solutions</>}
         description="Custom-engineered profiles to meet diverse industrial needs."
         heading=""
         alt="Forging"
         src={vidadigitalin}
         longDescription="Aluminum extrusions are a versatile manufacturing process used to create continuous cross-sectional profiles with exceptional lightweight, corrosion-resistant, and durable properties. At Wertex, we deliver premium aluminum extrusion solutions tailored to industries such as aerospace, automotive, construction, electronics, and renewable energy. With cutting-edge technology and precision engineering, we provide custom extrusions designed to meet exacting requirements while ensuring high performance and reliability."
       />
-      <div>
-        <h3>Why Aluminum is the Ideal Material for Extrusions</h3>
-        <p>
-          Explore the unmatched benefits of aluminum for modern manufacturing.
-        </p>
-        <div className="border p-4 mb-4">
+      <Section className="bg-black">
+      <FlexHeader2
+          heading="Why Aluminum is the Ideal Material for Extrusions"
+          description="Explore the unmatched benefits of aluminum for modern manufacturing."
+        />
+       <Section className="border bg-black ">
           <div className="mb-8">
             <h2 className="text-xl mb-6">
-              Wertex's wide range of forging capabilities ensures every project
-              is delivered <br /> with precision, quality, and efficiency:
+            Aluminium’s superior properties make it a preferred material for extrusion:
             </h2>
           </div>
 
@@ -207,59 +190,128 @@ const AluminiumExtrusion = (props: Props) => {
                 key={index}
                 className=" text-white p-8  hover:shadow-xl transition-shadow duration-300 border"
               >
-                <div className="flex items-center mb-4">
-                  <h3 className="text-xl font-bold">{type.title}</h3>
+                <div className="flex  mb-4 flex-col justify-center items-start gap-4">
+                  <ImageContainer img={type.icon} className="w-24 h-24" height={72} width={72}/>
+                  <h3 className="text-xl2 w-full font-bold text-start">{type.title}</h3>
+                  <p className="text-xl2 font-medium">{type.description}</p>
                 </div>
-                <ul className="space-y-3 list-disc list-outside pl-4">
-                  {type.description.map((item, idx) => (
-                    <li key={idx}>
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
               </div>
             ))}
           </div>
-        </div>
-
-        <div className="bg-white">
-          <div className="bg-white">
-            <h2>Comprehensive Aluminum Extrusion Services</h2>
-            <p>
-              Wertex offers a wide range of aluminum extrusion capabilities,
-              delivering tailored solutions to meet your needs
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16 ">
+        </Section>
+      </Section>
+        <Section className="bg-white mt-0">
+        <FlexHeader2
+          heading={<>Comprehensive <span className="text-orangeBg">Aluminum Extrusion Services </span></>}
+          description="Wertex offers a wide range of aluminum extrusion capabilities, delivering tailored solutions to meet your needs"
+          className="text-black"
+        />
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12 bg-white ">
             {extrusionServices.map((service, index) => (
               <div
                 key={index}
                 className="flex items-start bg-[#A7A7A773] text-black p-6 rounded-lg shadow-sm gap-4"
               >
-                {service.icon}
-                <div>
-                  <h4 className="font-semibold text-lg">{service.title}</h4>
-                  <p>{service.description}</p>
+                <ImageContainer img={service.icon}/>
+                <div className="gap-2">
+                  <span className="font-semibold text-xl2">{service.title}</span>
+                  <p className="font-light text-xl2">{service.description}</p>
                 </div>
               </div>
             ))}
           </div>
-        </div>
-        <IndustryShowcase
-          service={{
-            industries: industries,
-            title:
-              "Vertex aluminium extrusions are used in a wide variety of industries and applications:",
-          }}
+        </Section>
+
+      <Section className="bg-black mt-0"> 
+       <FlexHeader2
+          heading={<>Versatile Aluminium Extrusions for <span className="text-orangeBg">Every Industry </span></>}
+          description="From aerospace to consumer goods, we meet diverse industry needs."
         />
-        <FlexHeader
-          title="Your Trusted Partner for Premium Aluminum Extrusions"
+      </Section>
+      <Section className="mt-0 bg-custom-map-gradient"> 
+        <DynamicShowCaseContainer
+          items={aluminiumExtrusion}
+          variant="aluminiumExtrusion"
+          headerText="Wertex aluminium extrusions are used in a wide variety of industries and applications:"
+        />
+         </Section>
+       <Section>
+       <FlexHeader
+          title= "Stringent Quality Standards for Flawless Components"
+          description="Delivering reliability and performance through rigorous quality control."
+        />
+        <Section className="border border-white rounded-2xl ">
+        <FlexHeader2
           heading=""
+          description="At Wertex, quality is integral to our aluminum extrusion services. Our quality assurance measures include."
+        />
+          <div className="grid grid-cols-2 gap-4 my-6">
+{
+  qualityStandards.map((item)=><div className="bg-[#4F4F4F73]/45 flex p-4 flex-col gap-4 justify-start items-start rounded-2xl border border-white">
+
+  <ImageContainer img={item.img}/>
+  <h1 className="font-bold text-xl2">{item.heading}</h1>
+  <p className="font-light text-xl2">{item.description}</p>
+  </div>)
+}
+
+          </div>
+        </Section>
+        </Section> 
+        <Section className="bg-black">
+        <FlexHeader2
+          heading="Your Trusted Partner for Premium Aluminum Extrusions"
           description="Experience the difference with custom-engineered, high-performance solutions."
         />
-      </div>
-    </div>
+        <Section className="bg-black border border-[#E8E8E8]">
+        <FlexHeader2
+          heading=""
+          description="Why industries choose Wertex for aluminum extrusions:"
+        />
+        <div className="grid grid-cols-5  place-items-center h-48">
+        {
+    Array.from({ length: 5 }).map((item, index) => 
+      <ImageContainer className='h-40 w-40' key={index} img={''}  node={<span className="text-[6rem] font-semibold  text-[#999999] " > 0{index+1}</span>} />
+    )
+  }
+        </div>
+         <div className="w-[71rem] h-1 bg-white border-1 border-dashed  mx-auto my-12"/>
+        <div className="grid grid-cols-5  place-items-center h-40">
+        {
+     [
+      {
+ heading:"Customized Solutions",
+ description:"Expertise in developing tailored profiles for diverse applications."
+      },
+      {
+ heading:"End-to-End Service",
+ description:"Comprehensive support from design consultation to final finishing."
+      },{
+ heading:"Advanced Technology",
+ description:"State-of-the-art equipment ensures accuracy, consistency, and efficiency."
+      },{
+ heading:"Sustainability Focus",
+ description:"Environmentally friendly processes that align with global standards."
+      },{
+         heading:"Commitment to Quality",
+         description:"Stringent quality checks ensure flawless components every time."
+      }
+     ].map((item, index) => 
+      <div className="flex flex-col items-start justify-start text-lg gap-4"><h1 className="font-bold">{item.heading}</h1><p className="text-[#8C8C8C]">{item.description}</p></div>
+    )
+  }
+        </div>
+
+          </Section>
+          </Section>
+        <Footerservice
+        title="Elevate Your Projects with Wertex Aluminum Extrusions"
+        description=""
+        heading=""
+        longDescription="Let Wertex bring your ideas to life with cutting-edge aluminum extrusion solutions. Contact us today to learn more about our capabilities and experience the perfect blend of precision, quality, and innovation."
+        buttonText="Contact Us"
+      ></Footerservice>
+    </>
   );
 };
 
@@ -316,7 +368,7 @@ export function IndustryShowcase({
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.5 }}
-            className=" min-w-full h-[70svh]  rounded-2xl overflow-hidden border-4"
+            className="   rounded-2xl overflow-hidden border-2"
           >
             <img
               src={activeIndustry.image as string}
@@ -328,7 +380,7 @@ export function IndustryShowcase({
       </div>
 
       {/* Right side - Content */}
-      <div className="w-1/2 text-white">
+      <div className="w-1/2 text-white h-full">
         <h2 className="text-2xl font-medium mb-4">{service.title}</h2>
 
         {/* List of industries */}

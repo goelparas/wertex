@@ -20,7 +20,7 @@ const HeroSection = () => {
   ];
   return (
     <>
-      <div className="relative h-svh w-screen flex items-center justify-center border-b-[1.5px] border-[#3F3F3F] bg-background overflow-x-hidden">
+      <div className="relative h-svh w-screen  flex items-center justify-center border-b-[1.5px] border-[#3F3F3F] bg-background overflow-x-hidden">
         <div className="absolute inset-0">
           <CustomImage
             mobileImage={{ path: bgMobile }}

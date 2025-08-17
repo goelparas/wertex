@@ -1,3 +1,4 @@
+import { cn } from '@/lib/utils';
 import React from 'react';
 
 interface ContainerProps {
@@ -7,7 +8,7 @@ interface ContainerProps {
 
 const Section: React.FC<ContainerProps> = ({ children, className }) => {
   return (
-    <div className={`bg-[#242424] mt-12 p-12 ${className || ''}`}>
+    <div className={cn(`bg-[#242424] mt-12 p-12`, className)}>
       {children}
     </div>
   );

@@ -1,17 +1,20 @@
-import React from "react";
-import { HeaderBox } from "../HeaderBox/HeaderBox";
+import React, { ReactElement } from "react";
 import { cn } from "@/lib/utils";
 
-const FlexHeader = ({
+export const FlexHeader = ({
   title,
   description,
   heading,
   className,
+  headingClassName,
+  descriptionClassName,
 }: {
   title: string | React.ReactNode;
   description: string;
   heading?: string;
   className?: string;
+  headingClassName?: string;
+  descriptionClassName?: string;
 }) => {
   return (
     <div
@@ -20,15 +23,15 @@ const FlexHeader = ({
         className
       )}
     >
-      <h1 className="text-3xl font-bold w-3/5  ">
-        {title} { heading && <span className="text-orangeBg">{heading}</span>}
+      <h1 className={cn("text-3xl font-bold w-3/5 ", headingClassName)}>
+        {title} {heading && <span className="text-orangeBg">{heading}</span>}
       </h1>
-      <p className={cn("text-xl2 text-white w-2/5 text-right", className)} >{description}</p>
+      <p className={cn("text-xl2 text-white w-2/5 text-right", descriptionClassName)} >{description}</p>
     </div>
   );
 };
 
-export default FlexHeader;
+ 
 
 export const FlexHeader2 = ({
   heading,
@@ -36,13 +39,17 @@ export const FlexHeader2 = ({
   className,
 }: {
   description: string;
-  heading: string;
+  heading: string | ReactElement;
   className?: string;
 }) => {
+  const Heading = typeof heading === 'string' ? heading : heading;
+  
   return (
     <>
-      <h1 className={`text-3xl  font-bold ${className}`}>{heading}</h1>
-      <span className={`text-xl2 ${className}`}>{description}</span>
+      <h1 className={cn(`text-3xl font-bold mb-4`, className)}>
+        {typeof heading === 'string' ? heading : heading}
+      </h1>
+      <span className={cn(`text-xl`, className)}>{description}</span>
     </>
   );
 };

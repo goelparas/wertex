@@ -1,5 +1,5 @@
-import FlexHeader, { FlexHeader2 } from "../common/FlexHeader/FlexHeader";
-
+import  {FlexHeader} from "../common/FlexHeader/FlexHeader";
+import Section from "../common/Section";
 export default function TeamShowcase() {
   const teamMembers = [
     { id: "01", name: "Name 01", designation: "Designation & Bio" },
@@ -33,14 +33,14 @@ export default function TeamShowcase() {
   ];
 
   return (
-    <div className="bg-mutedGray  md:p-12 lg:p-12 min-h-dvh">
+    <Section className="bg-background200  md:p-12 lg:p-12 min-h-dvh mb-12">
       <div className="my-12">
         <FlexHeader title="WHAT OUR" description="" heading="CLIENTS SAYS!" />
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mt-8">
           {testimonials.map((testimonial) => (
             <div
               key={testimonial.id}
-              className="bg-mutedGray p-6 rounded-lg flex flex-col h-full"
+              className="bg-background200 p-6 rounded-lg flex flex-col h-full"
             >
               <div className="w-12 h-12 bg-white rounded-full mb-6 "></div>
               <p className="text-white text-lg leading-relaxed w-full h-44 p-4 clipped bg-[#282828]">
@@ -57,7 +57,7 @@ export default function TeamShowcase() {
           heading=""
         />
       </div>
-      <div className="flex w-full  items-start justify-between">
+      <div className="flex w-full  items-start justify-between gap-8">
         <div className="w-1/4">
           <p className="text-xl2">
             We've been fortunate to work with a lot of awesome people on even
@@ -70,8 +70,8 @@ export default function TeamShowcase() {
               <div className="flex items-center mb-4">
                 <div className="w-12 h-12 bg-gray-400 rounded-full mr-4"></div>
                 <div>
-                  <h3 className="font-medium text-xl">{member.name}</h3>
-                  <p className="text-gray-400">{member.designation}</p>
+                  <h3 className=" text-xl font-bold">{member.name}</h3>
+                  <p className="text-[#8C8C8C]">{member.designation}</p>
                 </div>
               </div>
               <div className="bg-gray-200 aspect-[4/3] w-full"></div>
@@ -79,6 +79,6 @@ export default function TeamShowcase() {
           ))}
         </div>
       </div>
-    </div>
+    </Section>
   );
 }

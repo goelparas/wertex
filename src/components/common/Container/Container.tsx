@@ -3,8 +3,8 @@ import React from "react";
 
 type Props = {};
 
-const Container = ({ children  , className}: { children: React.ReactNode , className?: string }) => {
-  return <div className={cn("mt-44 w-[95%] mx-auto" , className)}>
+const Container = ({ children, className }: { children: React.ReactNode, className?: string }) => {
+  return <div className={cn("w-full mx-auto", className)}>
     {children}
   </div>;
 };

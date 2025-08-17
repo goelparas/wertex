@@ -3,99 +3,131 @@ import React from "react";
 import { Gauge, Hammer, Ruler, TestTube } from "lucide-react";
 
 import HeroSection from "@/components/common/Container/HeroSection-service";
-import FlexHeader, {
+import   {
+  FlexHeader,
   FlexHeader2,
 } from "@/components/common/FlexHeader/FlexHeader";
 // import vidadigitalin from '../../cdn/images/cnc/vidadigitalin.png';
 import vidadigitalin from "../../../cdn/images/cnc/vidadigitalin.png";
 import Section from "@/components/common/Section";
-const ForgingPage: React.FC = () => {
-  const forgingTypes = [
-    {
-      title: "Drop Forging",
-      icon: <Hammer className="w-10 h-10 text-blue-400" />,
-      description: [
-        "Utilizes gravity and drop hammers to precisely shape heated metal.",
-        "Produces components with consistent strength and fine grain structure.",
-        "Commonly used for tools, hardware, and automotive parts.",
-      ],
-    },
-    {
-      title: "Hot Forging",
-      icon: <Hammer className="w-10 h-10 text-blue-400" />,
-      description: [
-        "Conducted at high temperatures to make the metal more pliable and easier to shape.",
-        "Reduces strain hardening, improving ductility and material flow.",
-        "Suitable for large, high-strength parts.",
-      ],
-    },
-    {
-      title: "Cold Forging",
-      icon: <Hammer className="w-10 h-10 text-blue-400" />,
-      description: [
-        "Performed at room temperature, achieving tighter tolerances and superior surface finishes.",
-        "Offers excellent dimensional accuracy and material savings.",
-        "Ideal for small to medium-sized components like fasteners and shafts.",
-      ],
-    },
-    {
-      title: "Rolled Ring Forging",
-      icon: <Hammer className="w-10 h-10 text-blue-400" />,
-      description: [
-        "Produces seamless rings with exceptional strength and dimensional accuracy.",
-        "Commonly used in applications like bearings, flanges, and aerospace components.",
-        "Accommodates a variety of sizes, from small to large diameters.",
-      ],
-    },
-    {
-      title: "Press Forging",
-      icon: <Hammer className="w-10 h-10 text-blue-400" />,
-      description: [
-        "Applies controlled pressure to shape metal gradually for intricate geometries.",
-        "Offers better control over the deformation process.",
-        "Commonly used for creating complex shapes with high precision.",
-      ],
-    },
-    {
-      title: "Precision Forging",
-      icon: <Hammer className="w-10 h-10 text-blue-400" />,
-      description: [
-        "Achieves near-net shapes, minimizing post-forging machining requirements.",
-        "Optimizes material usage and reduces waste.",
-        "Ideal for high-accuracy components in automotive and aerospace industries",
-      ],
-    },
-    {
-      title: "Upset Forging",
-      icon: <Hammer className="w-10 h-10 text-blue-400" />,
-      description: [
-        "Focuses on increasing the cross-sectional area of the workpiece.",
-        "Commonly used for manufacturing bolts, rivets, and shafts.",
-        "Ensures superior tensile and shear strength.",
-      ],
-    },
-  ];
+//images
+import logo1 from '@/cdn/images/casting/logo-1.svg';
+import logo2 from '@/cdn/images/casting/logo-2.svg';
+import logo3 from '@/cdn/images/casting/logo-3.svg';
+import { ImageContainer } from "@/components/common/Container/ImageGrid";
+import Image from "next/image";
+import gridBg from "@/cdn/images/main_grid.avif";
+const forgingTypes = [
+  {
+    title: "Drop Forging",
+    icon: <Hammer className="w-10 h-10 text-blue-400" />,
+    description: [
+      "Utilizes gravity and drop hammers to precisely shape heated metal.",
+      "Produces components with consistent strength and fine grain structure.",
+      "Commonly used for tools, hardware, and automotive parts.",
+    ],
+  },
+  {
+    title: "Hot Forging",
+    icon: <Hammer className="w-10 h-10 text-blue-400" />,
+    description: [
+      "Conducted at high temperatures to make the metal more pliable and easier to shape.",
+      "Reduces strain hardening, improving ductility and material flow.",
+      "Suitable for large, high-strength parts.",
+    ],
+  },
+  {
+    title: "Cold Forging",
+    icon: <Hammer className="w-10 h-10 text-blue-400" />,
+    description: [
+      "Performed at room temperature, achieving tighter tolerances and superior surface finishes.",
+      "Offers excellent dimensional accuracy and material savings.",
+      "Ideal for small to medium-sized components like fasteners and shafts.",
+    ],
+  },
+  {
+    title: "Rolled Ring Forging",
+    icon: <Hammer className="w-10 h-10 text-blue-400" />,
+    description: [
+      "Produces seamless rings with exceptional strength and dimensional accuracy.",
+      "Commonly used in applications like bearings, flanges, and aerospace components.",
+      "Accommodates a variety of sizes, from small to large diameters.",
+    ],
+  },
+  {
+    title: "Press Forging",
+    icon: <Hammer className="w-10 h-10 text-blue-400" />,
+    description: [
+      "Applies controlled pressure to shape metal gradually for intricate geometries.",
+      "Offers better control over the deformation process.",
+      "Commonly used for creating complex shapes with high precision.",
+    ],
+  },
+  {
+    title: "Precision Forging",
+    icon: <Hammer className="w-10 h-10 text-blue-400" />,
+    description: [
+      "Achieves near-net shapes, minimizing post-forging machining requirements.",
+      "Optimizes material usage and reduces waste.",
+      "Ideal for high-accuracy components in automotive and aerospace industries",
+    ],
+  },
+  {
+    title: "Upset Forging",
+    icon: <Hammer className="w-10 h-10 text-blue-400" />,
+    description: [
+      "Focuses on increasing the cross-sectional area of the workpiece.",
+      "Commonly used for manufacturing bolts, rivets, and shafts.",
+      "Ensures superior tensile and shear strength.",
+    ],
+  },
+];
 
-  const qualityControls = [
-    {
-      title: "Non-Destructive Testing (NDT)",
-      icon: <TestTube className="w-10 h-10 text-white" />,
-      description:
-        "Includes ultrasonic, magnetic particle, and dye penetrant inspections to guarantee structural integrity.",
-    },
-    {
-      title: "Dimensional Verification",
-      icon: <Ruler className="w-10 h-10 text-white" />,
-      description:
-        "Tools like Coordinate Measuring Machines (CMMs) and profile projectors ensure precise measurements.",
-    },
-    {
-      title: "Mechanical Testing",
-      icon: <Gauge className="w-10 h-10 text-white" />,
-      description:
-        "Confirms critical properties like strength, ductility, and wear resistance.",
-    },
-  ];
+const qualityControls = [
+  {
+    title: "Non-Destructive Testing (NDT)",
+    icon: <TestTube className="w-10 h-10 text-white" />,
+    description:
+      "Includes ultrasonic, magnetic particle, and dye penetrant inspections to guarantee structural integrity.",
+  },
+  {
+    title: "Dimensional Verification",
+    icon: <Ruler className="w-10 h-10 text-white" />,
+    description:
+      "Tools like Coordinate Measuring Machines (CMMs) and profile projectors ensure precise measurements.",
+  },
+  {
+    title: "Mechanical Testing",
+    icon: <Gauge className="w-10 h-10 text-white" />,
+    description:
+      "Confirms critical properties like strength, ductility, and wear resistance.",
+  },
+];
+
+const newItems = [
+  {
+    title: "Heat Treatment",
+    description:
+      "Enhances hardness, toughness, and overall mechanical properties for better performance.",
+
+    img: logo1,
+  },
+  {
+    title: "CNC Machining",
+    description:
+      "Achieves precise dimensions, tight tolerances, and impeccable surface finishes.",
+    img: logo2,
+  },
+  {
+    title: "Surface Treatments",
+    description:
+      "Options like polishing, anodizing, and specialized coatings improve durability, resistance to corrosion, and visual appeal.",
+    img: logo3,
+  },
+];
+
+const ForgingPage: React.FC = () => {
+  
 
   return (
     <>
@@ -133,7 +165,36 @@ const ForgingPage: React.FC = () => {
           ))}
         </div>
       </Section>
-      <Section>
+
+      <Section className="relative bg-black my-0">
+      <Image
+          src={gridBg}
+          alt="grid-background"
+          className="absolute  inset-0 z-10"
+          fill
+        />
+        <FlexHeader2
+          className="text-white"
+          heading="Your Trusted Partner for Casting Solutions"
+          description=""
+        />
+      <div className="grid grid-cols-3 gap-8 mt-12 z-20">
+
+          {newItems.map((item, _) => (
+            <div key={item.title} className="w-96 h-[500px] mx-auto flex flex-col items-center justify-between gap-2 p-4 z-10 text-white bg-borderGray rounded-2xl">
+              <p className="text-center  font-bold  text-xl2 text-white">
+                {item.title}
+              </p>
+
+              <ImageContainer img={item.img} className="w-24 h-24" height={65} width={84} />
+              <p className="text-xl2 text-borderGray text-center text-white">
+                {item.description}
+              </p>
+            </div>
+          ))}
+        </div>
+        </Section>
+      <Section className="mt-0">
         <FlexHeader
           title="Rigorously Tested for Superior Quality"
           description="Ensuring compliance with industry standards and client specifications."

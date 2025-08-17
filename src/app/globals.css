@@ -1,7 +1,7 @@
+@import url('./fonts.css');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
 :root {
   /* Color variables */
   --background: #151515;
@@ -23,12 +23,14 @@
   --text-primary :#7B7B7B;
   --border-gray : #3D3D3D;
   --white-smoke:#E2E2E273;
-  --muted-gray: #E2E2E273
+  --muted-gray: #E2E2E273;
+  --gray-muted-100: #C3C3C3;
+  --background-200 :rgba(79, 79, 79, 0.45);
+
   /* Font variables */
 
-  --font-sans: 'Inter', 'Arial', sans-serif;
-  --font-mono: 'SFMono-Regular', 'Menlo', monospace;
-  --font-mont-serrat: 'Montserrat', sans-serif;
+  --font-mono: 'SFMono-Regular', 'Menlo';
+  --font-montserrat: 'Montserrat';
   --font-size-base: 1rem;
   --font-size-lg: 1.125rem;
   --font-size-xl: 1.25rem;
@@ -45,7 +47,7 @@
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: var(--font-mont-serrat);
+  font-family: var(--font-montserrat);
   font-size: var(--font-size-base);
   box-sizing: border-box;
 }
