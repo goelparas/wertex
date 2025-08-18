@@ -26,7 +26,9 @@ export const FlexHeader = ({
       <h1 className={cn("text-3xl font-bold w-3/5 ", headingClassName)}>
         {title} {heading && <span className="text-orangeBg">{heading}</span>}
       </h1>
-      <p className={cn("text-xl2 text-white w-2/5 text-right", descriptionClassName)} >{description}</p>
+      <p className={cn(" text-white w-1/2 text-right", descriptionClassName)} style={{
+        fontSize:"22px"
+      }} >{description}</p>
     </div>
   );
 };
@@ -38,7 +40,7 @@ export const FlexHeader2 = ({
   description,
   className,
 }: {
-  description: string;
+  description:  string | ReactElement ;
   heading: string | ReactElement;
   className?: string;
 }) => {

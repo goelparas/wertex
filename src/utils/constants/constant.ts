@@ -204,15 +204,15 @@ export const ServiceSection = [
       onClick: () => alert("Quality Assurance Clicked!"),
     },
   },
-  {
-    title: "Surface Treatment",
-    paragraph: "Durability and aesthetics redefined with advanced surface finishing techniques, enhancing wear resistance and visual appeal.",
-    image: image6,
-    cta: {
-      text: "Learn How",
-      onClick: () => alert("Quality Assurance Clicked!"),
-    },
-  },
+  // {
+  //   title: "Surface Treatment",
+  //   paragraph: "Durability and aesthetics redefined with advanced surface finishing techniques, enhancing wear resistance and visual appeal.",
+  //   image: image6,
+  //   cta: {
+  //     text: "Learn How",
+  //     onClick: () => alert("Quality Assurance Clicked!"),
+  //   },
+  // },
 ];
 
 export const Innovation = [{

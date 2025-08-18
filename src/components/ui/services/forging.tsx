@@ -1,14 +1,13 @@
 import React from "react";
 
-import { Gauge, Hammer, Ruler, TestTube } from "lucide-react";
+import { Gauge, Ruler, TestTube } from "lucide-react";
 
 import HeroSection from "@/components/common/Container/HeroSection-service";
 import   {
   FlexHeader,
   FlexHeader2,
 } from "@/components/common/FlexHeader/FlexHeader";
-// import vidadigitalin from '../../cdn/images/cnc/vidadigitalin.png';
-import vidadigitalin from "../../../cdn/images/cnc/vidadigitalin.png";
+import forgingHero from '@/cdn/images/forging/forging-hero.webp'
 import Section from "@/components/common/Section";
 //images
 import logo1 from '@/cdn/images/casting/logo-1.svg';
@@ -17,10 +16,23 @@ import logo3 from '@/cdn/images/casting/logo-3.svg';
 import { ImageContainer } from "@/components/common/Container/ImageGrid";
 import Image from "next/image";
 import gridBg from "@/cdn/images/main_grid.avif";
+
+import logo1SVGs from '@/cdn/images/forging/logo-1.svg';
+import logo2SVGs from '@/cdn/images/forging/logo-2.svg';
+import logo3SVGs from '@/cdn/images/forging/logo-3.png';
+import logo4SVGs from '@/cdn/images/forging/logo-4.png';
+import logo5SVGs from '@/cdn/images/forging/logo-5.png';
+import logo6SVGs from '@/cdn/images/forging/logo-6.png';
+import logo7SVGs from '@/cdn/images/forging/logo-7.png';
+
+import divider from "@/cdn/images/aluminiumextrution/line.svg";
+import trapezium from "@/cdn/images/aluminiumextrution/trapezium.png";
+import { forging } from "@/components/common/ImageShowCaseContainer/constant";
+import DynamicShowcase from "@/components/common/ImageShowCaseContainer/ImageShowCaseContainer";
 const forgingTypes = [
   {
     title: "Drop Forging",
-    icon: <Hammer className="w-10 h-10 text-blue-400" />,
+    icon:   logo1SVGs,
     description: [
       "Utilizes gravity and drop hammers to precisely shape heated metal.",
       "Produces components with consistent strength and fine grain structure.",
@@ -29,7 +41,7 @@ const forgingTypes = [
   },
   {
     title: "Hot Forging",
-    icon: <Hammer className="w-10 h-10 text-blue-400" />,
+    icon:   logo2SVGs,
     description: [
       "Conducted at high temperatures to make the metal more pliable and easier to shape.",
       "Reduces strain hardening, improving ductility and material flow.",
@@ -38,7 +50,7 @@ const forgingTypes = [
   },
   {
     title: "Cold Forging",
-    icon: <Hammer className="w-10 h-10 text-blue-400" />,
+    icon:   logo3SVGs,
     description: [
       "Performed at room temperature, achieving tighter tolerances and superior surface finishes.",
       "Offers excellent dimensional accuracy and material savings.",
@@ -47,7 +59,7 @@ const forgingTypes = [
   },
   {
     title: "Rolled Ring Forging",
-    icon: <Hammer className="w-10 h-10 text-blue-400" />,
+    icon:   logo4SVGs,
     description: [
       "Produces seamless rings with exceptional strength and dimensional accuracy.",
       "Commonly used in applications like bearings, flanges, and aerospace components.",
@@ -56,7 +68,7 @@ const forgingTypes = [
   },
   {
     title: "Press Forging",
-    icon: <Hammer className="w-10 h-10 text-blue-400" />,
+    icon:   logo5SVGs,
     description: [
       "Applies controlled pressure to shape metal gradually for intricate geometries.",
       "Offers better control over the deformation process.",
@@ -65,7 +77,7 @@ const forgingTypes = [
   },
   {
     title: "Precision Forging",
-    icon: <Hammer className="w-10 h-10 text-blue-400" />,
+    icon:   logo6SVGs,
     description: [
       "Achieves near-net shapes, minimizing post-forging machining requirements.",
       "Optimizes material usage and reduces waste.",
@@ -74,7 +86,7 @@ const forgingTypes = [
   },
   {
     title: "Upset Forging",
-    icon: <Hammer className="w-10 h-10 text-blue-400" />,
+    icon:   logo7SVGs,
     description: [
       "Focuses on increasing the cross-sectional area of the workpiece.",
       "Commonly used for manufacturing bolts, rivets, and shafts.",
@@ -136,25 +148,32 @@ const ForgingPage: React.FC = () => {
         description="Precision forging solutions for demanding industrial applications."
         heading=""
         alt="Forging"
-        src={vidadigitalin}
+        className="bg-black"
+        src={forgingHero}
         longDescription="Forging is a cornerstone of manufacturing, shaping metal through compressive forces to create durable, high-strength components. At Wertex, we combine advanced techniques with industry expertise to deliver precision-forged parts for industries like aerospace, automotive, oil and gas, and industrial machinery. Every project is crafted to meet the highest standards of strength, consistency, and performance."
       />
 
-      <Section>
+      <Section className="bg-black mt-0">
         <FlexHeader2
           heading="Comprehensive Forging Capabilities Tailored to Your Needs"
           description="From precision forging to rolled rings, we deliver excellence in every process."
         />
-        <div className="grid grid-cols-1 md:grid-cols-3  gap-8 my-12">
+        <Section className=" bg-black  border border-white">
+        <FlexHeader2
+          heading=""
+          description="Wertex’s wide range of forging capabilities ensures every project is delivered with precision, quality, and efficiency:"
+        />
+          <div className="grid grid-cols-1 md:grid-cols-3  gap-8  mt-12">
           {forgingTypes.map((type, index) => (
             <div
               key={index}
-              className=" text-white p-8  hover:shadow-xl transition-shadow duration-300 border"
+              className=" text-white p-8  border "
             >
-              <div className="flex items-center mb-4">
-                <h3 className="text-xl font-bold">{type.title}</h3>
+              <ImageContainer img={type.icon} className="w-24 h-24" height={42} width={42} />
+              <div className="flex items-center my-4">
+                <h3 className="text-xl2 font-bold">{type.title}</h3>
               </div>
-              <ul className="space-y-3 list-disc list-outside pl-4">
+              <ul className="space-y-3 list-disc list-outside pl-4 text-xl2">
                 {type.description.map((item, idx) => (
                   <li key={idx}>
                     <span>{item}</span>
@@ -163,9 +182,23 @@ const ForgingPage: React.FC = () => {
               </ul>
             </div>
           ))}
-        </div>
+          </div>
+          
+        </Section>
       </Section>
-
+      <Section className="bg-black mt-0">
+        <FlexHeader2
+          heading="Versatile Material Options for Forging"
+          description="Delivering strength and reliability with a range of metals."
+        />
+      </Section>
+      <Section className="mt-0 bg-white"> 
+        <DynamicShowcase
+          items={forging}
+          variant="forging"
+          headerText={<> <span className="text-orangeBg">Wertex</span> works with an extensive selection of materials to ensure the right fit for every application</>}
+        />
+         </Section>
       <Section className="relative bg-black my-0">
       <Image
           src={gridBg}
@@ -194,105 +227,97 @@ const ForgingPage: React.FC = () => {
           ))}
         </div>
         </Section>
-      <Section className="mt-0">
+      <Section className="mt-0 bg-black">
         <FlexHeader
           title="Rigorously Tested for Superior Quality"
           description="Ensuring compliance with industry standards and client specifications."
           heading=""
         />
-        <div className="mt-16 mb-16 bg-[#4F4F4F73] border p-4 rounded-xl">
-          <h2 className="text-xl text-white mb-8 ">
+        <Section className="bg-background-200 border p-4 rounded-xl">
+          <FlexHeader2
+          heading=""
+          description={<h2 className="text-xl text-white mb-8 ">
             Every forging project at{" "}
             <span className="text-orangeBg">Wertex</span> undergoes <br />{" "}
             strict quality control measures:
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 ">
+          </h2>}
+        />
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 p-2">
             {qualityControls.map((control, index) => (
               <div
                 key={index}
-                className="bg-gradient-to-br from-orange-500 to-orange-700 text-white p-8 rounded-lg shadow-lg"
+                className=" bg-custom-map-gradient text-white p-8 rounded-lg shadow-lg"
               >
                 <div className="flex items-center mb-8">
-                  <h3 className="text-xl font-bold">{control.title}:</h3>
+                  <h3 className="text-xl2 font-bold">{control.title}:</h3>
                 </div>
                 <p className="text-white">{control.description}</p>
               </div>
             ))}
           </div>
-        </div>
+        </Section>
       </Section>
 
       <Section className="bg-black">
         <FlexHeader
-          title="Your Partner for High-Performance"
-          heading="Forging Solutions"
-          description="Ensuring compliance with industry standards and client specifications."
+         
+          title={<>Your Trusted Partner for  Premium <br/> Aluminum Extrusions </>}
+
+          description="Experience the difference with custom-engineered, high-performance solutions."
         />
-        <ProcessSteps />
-      </Section>
+        <Section className="bg-black border border-[#E8E8E8]">
+        
+        <div className="grid grid-cols-4  place-items-center h-48">
+        {
+    Array.from({ length: 4 }).map((item, index) => 
+      <ImageContainer className='h-40 w-40' key={index} img={''}  node={<span className="text-[6rem] font-semibold  text-[#999999] " > 0{index+1}</span>} />
+    )
+  }
+        </div>
+         <div className="w-[71rem] h-1  border-1 border-dashed  mx-auto my-12 relative flex items-center justify-between">
+          <Image src={divider} alt="divider" fill className="object-cover z-10"/>
+          
+            <Image src={trapezium} alt="trapezium" width={30} height={30} className="object-cover z-20"/>
+            <Image src={trapezium} alt="trapezium" width={30} height={30} className="object-cover z-20"/>
+            <Image src={trapezium} alt="trapezium" width={30} height={30} className="object-cover z-20"/>
+            <Image src={trapezium} alt="trapezium" width={30} height={30} className="object-cover z-20"/>
+           
+         </div>
+        <div className="grid grid-cols-4  place-items-center h-40">
+        {
+         [
+        {
+          title: "Unmatched Expertise",
+          description:
+            "Expertise in developing tailored profiles for diverse applications.",
+        },
+        {
+          title: "Advanced Techniques",
+          description:
+            "Comprehensive support from design consultation to final finishing.",
+        },
+        {
+          title: "End-to-End Solutions",
+          description:
+            "From forging to post-processing and quality assurance, we deliver complete solutions.",
+        },
+        {
+          title: "Commitment to Quality",
+          description:
+            "Environmentally friendly processes that align with global standards.",
+        },
+      ].map((item, index) => 
+      <div className="flex flex-col items-center  justify-start text-lg gap-4 mx-auto max-w-52"><h1 className="font-bold">{item.title}</h1><p className="text-[#8C8C8C] text-center ">{item.description}</p></div>
+    )
+  }
+        </div>
+
+          </Section>
+          </Section>
     </>
   );
 };
 
 export default ForgingPage;
 
-const ProcessSteps: React.FC = () => {
-  const steps = [
-    {
-      number: "01",
-      title: "Unmatched Expertise",
-      description:
-        "Expertise in developing tailored profiles for diverse applications.",
-    },
-    {
-      number: "02",
-      title: "Advanced Techniques",
-      description:
-        "Comprehensive support from design consultation to final finishing.",
-    },
-    {
-      number: "03",
-      title: "End-to-End Solutions",
-      description:
-        "From forging to post-processing and quality assurance, we deliver complete solutions.",
-    },
-    {
-      number: "04",
-      title: "Commitment to Quality",
-      description:
-        "Environmentally friendly processes that align with global standards.",
-    },
-  ];
-
-  return (
-    <div className="bg-black text-white py-16 px-4">
-      <div className="grid grid-cols-4 gap-12 relative">
-        {steps.map((step, index) => (
-          <div
-            key={index}
-            className="flex flex-col items-center text-center relative"
-          >
-            {/* Number */}
-            <div className="text-6xl font-bold text-gray-400 mb-4">
-              {step.number}
-            </div>
-
-            {/* Orange dot / mark */}
-            <div className="w-4 h-4 bg-orange-500 rotate-45 mb-4"></div>
-
-            {/* Title */}
-            <h3 className="font-semibold text-xl mb-2">{step.title}</h3>
-
-            {/* Description */}
-            <p className="text-gray-400">{step.description}</p>
-
-            {/* Dotted connector (for all except last) */}
-            {index < steps.length - 1 && (
-              <div className="hidden md:block absolute top-20 right-[-50%] w-[100%] border-t border-dotted border-gray-600"></div>
-            )}
-          </div>
-        ))}
-      </div>
-    </div>
-  );
-};
+ 

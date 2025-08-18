@@ -3,7 +3,6 @@ import HeroSection from "@/components/common/Container/HeroSection-service";
 import Section from "@/components/common/Section";
 import surfaceTreatment from "@/cdn/images/hero_background.avif";
 import {FlexHeader} from "@/components/common/FlexHeader/FlexHeader";
-import { IndustryShowcase } from "./aluminium-extrusion";
 import FooterSection from "../footer-section/footer-section";
 import Footerservice from "@/components/common/footer-service/footerservice";
 import anodizing from "@/cdn/images/about_us_background.png";
@@ -207,22 +206,7 @@ const SurfaceTreatment = () => {
         <p className="text-xl2">
           Advanced testing and inspections for consistent and reliable results.
         </p>
-        <IndustryShowcase
-          service={{
-            industries: [
-              {
-                id: 1,
-                name: "Anodizing",
-                image: anodizing,
-                description:
-                  "Anodizing is a process that creates a corrosion-resistant oxide layer on aluminum and other metals.",
-              },
-            ],
-            title:
-              "Every surface treatment process at Wertex undergoes strict quality control to ensure consistency and performance",
-          }}
-          cls="bg-custom-map-gradient"
-        />
+         
       </Section>
 
       <Footerservice

@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState, useEffect, ReactElement } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import {ShowcaseItem, variantStyles} from './constant'
 import { cn } from "@/lib/utils"
@@ -14,7 +14,7 @@ import Image from "next/image"
     hoverVariant?: "scale" | "glow" | "lift" | "slide"
     backgroundColor?: string
     className?: string
-    headerText?: string
+    headerText?: string | ReactElement
     descriptionText?: string
   }
 
@@ -86,7 +86,7 @@ export default function DynamicShowcase({
         {/* Content Section */}
         <div className={cn("flex flex-col justify-center h-full", styles.contentContainer)}>
           <motion.h2
-            className={cn("text-xl2   font-medium", styles.title)}
+            className={cn("text-xl2   font-medium mb-8", styles.title)}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
@@ -99,7 +99,7 @@ export default function DynamicShowcase({
               <motion.div
                 key={index}
                 className={cn(
-                  "group flex items-center justify-between p-4 relative transition-all duration-300 cursor-pointer",
+                  "group flex items-center justify-between py-4  hover:border-black pl-0 relative transition-all duration-300 cursor-pointer",
                   index === currentIndex ? styles.itemHighlighted : styles.itemDefault
                 )}
                 initial={{ opacity: 0, x: 20 }}
@@ -112,7 +112,7 @@ export default function DynamicShowcase({
                   <p className="text-5xl font-semibold">{getItemTitle(item)}</p>
                  
                 <motion.div
-                  className="bg-black  h-[4px] absolute bottom-0 left-0"
+                  className="bg-black  h-2 absolute bottom-0 left-0 z-10"
                   initial="initial"
                   animate={index === currentIndex ? "selected" : "initial"}
                   whileHover="hover"
@@ -123,13 +123,40 @@ export default function DynamicShowcase({
 
                     },
                     hover: {
-                      width: "100%",
+                      width: "50%",
                       opacity: 1,
                     },
                     selected: {
-                      width: "100%",
+                      width: "50%",
                       opacity: 1,
                     },
+                  }}
+                  transition={{
+                    type: "spring",
+                    stiffness: 200,
+                    damping: 25,
+                    duration: 0.3,
+                  }}
+                />
+                <motion.div
+                  className="bg-white border-2   h-2 absolute bottom-0 left-0 w-full"
+                  initial="initial"
+                  animate={index === currentIndex ? "selected" : "initial"}
+                  whileHover="hover"
+                  variants={{
+                    initial: {
+                      opacity: 0,
+
+                    },
+                    hover: {
+                      width: "50%",
+                      opacity: 1,
+                    },
+                    selected: {
+                      width: "50%",
+                      opacity: 1,
+                    },
+                    
                   }}
                   transition={{
                     type: "spring",

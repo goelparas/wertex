@@ -17,59 +17,19 @@ import capability2 from "@/cdn/images/casting/capability-2.png";
 import capability5 from "@/cdn/images/casting/capablity-5.png";
 import capability6 from "@/cdn/images/casting/capabilty-6.png";
 import capability8 from "@/cdn/images/casting/capablity-8.png";
+import heroImage from '@/cdn/images/aluminiumextrution/aluminium-hero.webp'
 import {FlexHeader, FlexHeader2} from "@/components/common/FlexHeader/FlexHeader";
-import { motion, AnimatePresence } from "framer-motion";
+
 import Section from "@/components/common/Section";
-import { StaticImageData } from "next/image";
+import Image, { StaticImageData } from "next/image";
 import {ImageContainer} from '@/components/common/Container/ImageGrid'
 import Footerservice from "@/components/common/footer-service/footerservice";
 import DynamicShowCaseContainer from '@/components/common/ImageShowCaseContainer/ImageShowCaseContainer'
 import { aluminiumExtrusion } from "@/components/common/ImageShowCaseContainer/constant";
-import { cn } from "@/lib/utils";
+import divider from "@/cdn/images/aluminiumextrution/line.svg";
+import trapezium from "@/cdn/images/aluminiumextrution/trapezium.png";
 
 type Props = {};
-const industries: Industry[] = [
-  {
-    id: 1,
-    name: "Aerospace",
-    description: "Lightweight frames, brackets, and structural supports.",
-    image: "/lovable-uploads/3a20ede0-d497-4a6d-b668-6500557c7b6c.png",
-  },
-  {
-    id: 2,
-    name: "Automotive",
-    description:
-      "Roof rails, trim, crash management systems, and heat exchangers.",
-    image: "/lovable-uploads/6052b9e6-9156-4d1a-81e5-547de0def317.png",
-  },
-  {
-    id: 3,
-    name: "Construction",
-    description:
-      "Window and door frames, curtain walls, and structural frameworks.",
-    image: "/lovable-uploads/101d802c-86ce-49a7-a1d5-7c6305342e6d.png",
-  },
-  {
-    id: 4,
-    name: "Electronics",
-    description: "Heatsinks, chassis components, and electronic enclosures.",
-    image: "/lovable-uploads/3a20ede0-d497-4a6d-b668-6500557c7b6c.png",
-  },
-  {
-    id: 5,
-    name: "Renewable Energy",
-    description:
-      "Solar panel frames, mounting systems, and wind turbine components.",
-    image: "/lovable-uploads/6052b9e6-9156-4d1a-81e5-547de0def317.png",
-  },
-  {
-    id: 6,
-    name: "Consumer Products",
-    description:
-      "Furniture components, appliance parts, and recreational equipment.",
-    image: "/lovable-uploads/101d802c-86ce-49a7-a1d5-7c6305342e6d.png",
-  },
-];
 const forgingTypes = [
   {
     title: "Lightweight",
@@ -169,8 +129,8 @@ const AluminiumExtrusion = (props: Props) => {
         description="Custom-engineered profiles to meet diverse industrial needs."
         heading=""
         alt="Forging"
-        src={vidadigitalin}
-        longDescription="Aluminum extrusions are a versatile manufacturing process used to create continuous cross-sectional profiles with exceptional lightweight, corrosion-resistant, and durable properties. At Wertex, we deliver premium aluminum extrusion solutions tailored to industries such as aerospace, automotive, construction, electronics, and renewable energy. With cutting-edge technology and precision engineering, we provide custom extrusions designed to meet exacting requirements while ensuring high performance and reliability."
+        src={heroImage}
+        longDescription="Aluminum extrusiExtrusionsons are a versatile manufacturing process used to create continuous cross-sectional profiles with exceptional lightweight, corrosion-resistant, and durable properties. At Wertex, we deliver premium aluminum extrusion solutions tailored to industries such as aerospace, automotive, construction, electronics, and renewable energy. With cutting-edge technology and precision engineering, we provide custom extrusions designed to meet exacting requirements while ensuring high performance and reliability."
       />
       <Section className="bg-black">
       <FlexHeader2
@@ -259,8 +219,10 @@ const AluminiumExtrusion = (props: Props) => {
         </Section>
         </Section> 
         <Section className="bg-black">
-        <FlexHeader2
-          heading="Your Trusted Partner for Premium Aluminum Extrusions"
+        <FlexHeader
+         
+          title={<>Your Trusted Partner for  Premium <br/> Aluminum Extrusions </>}
+
           description="Experience the difference with custom-engineered, high-performance solutions."
         />
         <Section className="bg-black border border-[#E8E8E8]">
@@ -275,7 +237,16 @@ const AluminiumExtrusion = (props: Props) => {
     )
   }
         </div>
-         <div className="w-[71rem] h-1 bg-white border-1 border-dashed  mx-auto my-12"/>
+         <div className="w-[71rem] h-1  border-1 border-dashed  mx-auto my-12 relative flex items-center justify-between">
+          <Image src={divider} alt="divider" fill className="object-cover z-10"/>
+          
+            <Image src={trapezium} alt="trapezium" width={30} height={30} className="object-cover z-20"/>
+            <Image src={trapezium} alt="trapezium" width={30} height={30} className="object-cover z-20"/>
+            <Image src={trapezium} alt="trapezium" width={30} height={30} className="object-cover z-20"/>
+            <Image src={trapezium} alt="trapezium" width={30} height={30} className="object-cover z-20"/>
+            <Image src={trapezium} alt="trapezium" width={30} height={30} className="object-cover z-20"/>
+           
+         </div>
         <div className="grid grid-cols-5  place-items-center h-40">
         {
      [
@@ -317,105 +288,3 @@ const AluminiumExtrusion = (props: Props) => {
 
 export default AluminiumExtrusion;
 
-interface Industry {
-  id: number;
-  name: string;
-  description: string;
-  image: StaticImageData | string;
-}
-
-export function IndustryShowcase({
-  service,
-  cls
-}: {
-  service: {
-    industries: Industry[];
-    title: string;
-  };
-  cls?: string;
-}) {
-  const [activeIndex, setActiveIndex] = useState(0);
-  const [activeName, setActiveName] = useState(industries[0].name);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setActiveIndex((current) => {
-        const nextIndex = (current + 1) % industries.length;
-        setActiveName(industries[nextIndex].name);
-        return nextIndex;
-      });
-    }, 5000);
-
-    return () => clearInterval(interval);
-  }, []);
-
-  const activeIndustry = industries[activeIndex];
-
-  return (
-    <div
-      className={cn(
-        "flex flex-col md:flex-row gap-[10%] items-center bg-custom-map-gradient",
-        service.title === "Elevate Your Components with Wertex Surface Treatments"
-          ? "bg-custom-map-gradient"
-          : ""
-       ,cls)}
-    >
-      <div className=" w-2/5 h-full relative overflow-hidden">
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={activeIndustry.id}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.5 }}
-            className="   rounded-2xl overflow-hidden border-2"
-          >
-            <img
-              src={activeIndustry.image as string}
-              alt={activeIndustry.name}
-              className="w-full h-full object-cover"
-            />
-          </motion.div>
-        </AnimatePresence>
-      </div>
-
-      {/* Right side - Content */}
-      <div className="w-1/2 text-white h-full">
-        <h2 className="text-2xl font-medium mb-4">{service.title}</h2>
-
-        {/* List of industries */}
-        <div className="space-y-4 mb-8">
-          {service.industries.map((industry) => (
-            <div
-              key={industry.id}
-              className={cn(
-                "text-3xl md:text-4xl font-bold transition-all duration-300 relative",
-                activeName === industry.name ? "text-white" : "text-white/60"
-              )}
-            >
-              {industry.name}
-              {activeName === industry.name && (
-                <div className="absolute -bottom-2 left-0 w-full max-w-xs h-1 bg-white" />
-              )}
-            </div>
-          ))}
-        </div>
-
-        {/* Active industry description */}
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={activeIndustry.id}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            transition={{ duration: 0.5 }}
-            className="bg-orange-600/60 backdrop-blur-sm p-6 rounded-lg mt-8"
-          >
-            <h3 className="text-2xl font-bold mb-2">{activeIndustry.name}</h3>
-            <p className="text-xl">{activeIndustry.description}</p>
-          </motion.div>
-        </AnimatePresence>
-      </div>
-    </div>
-  );
-}

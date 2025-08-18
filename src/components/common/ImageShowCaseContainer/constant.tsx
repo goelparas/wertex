@@ -3,6 +3,12 @@ import alCaroseul2 from '@/cdn/images/aluminiumextrution/carousel/carousel-2.web
 import alCaroseul3 from '@/cdn/images/aluminiumextrution/carousel/carousel-3.webp'
 import alCaroseul4 from '@/cdn/images/aluminiumextrution/carousel/carousel-4.webp'
 import alCaroseul5 from '@/cdn/images/aluminiumextrution/carousel/carousel-5.webp'
+
+import foCaroseul1 from '@/cdn/images/forging/forging-carousel-1.webp'
+import foCaroseul2 from '@/cdn/images/forging/forging-carousel-2.webp'
+import foCaroseul3 from '@/cdn/images/forging/forging-carousel-3.webp'
+import foCaroseul4 from '@/cdn/images/forging/forging-carousel-4.webp'
+import foCaroseul5 from '@/cdn/images/forging/forging-carousel-5.webp'
 import { StaticImageData } from 'next/image'
 export const variantStyles = {
     dark: {
@@ -26,14 +32,14 @@ export const variantStyles = {
       itemBox: "bg-[#ED994D]",
     },
     forging: {
-      container: "bg-white text-gray-900 border border-gray-200",
-      imageContainer: "bg-gray-50 border-gray-200",
-      contentContainer: "bg-white",
+      container: "bg-white text-gray-900 border-2 border-black p-8",
+      imageContainer: " rounded-2xl ",
+      contentContainer: "bg-transparent",
       title: "text-gray-900",
       description: "text-gray-600",
-      itemDefault: "text-gray-600 hover:text-gray-900 border-gray-200",
-      itemHighlighted: "text-gray-900 border-gray-900 bg-gray-50",
-      itemBox: "bg-gray-50",
+      itemDefault: "text-[#D4D4D4] hover:text-gray-900 border-gray-200",
+      itemHighlighted: "text-gray-900 border-gray-900 ",
+      itemBox: "bg-transparent",
     },
   }
 
@@ -72,5 +78,33 @@ export const variantStyles = {
       machine: "Consumer Products",
       image: alCaroseul5,
       detail: "Furniture parts, display fixtures, and appliance components.",
+    },
+  ]
+
+  export const  forging: ShowcaseItem[] = [
+    {
+      machine: "Steel",
+      image: foCaroseul1,
+      detail: "Carbon steel, alloy steel, and stainless steel for durability and versatility.",
+    },
+    {
+      machine: "Aluminum",
+      image: foCaroseul2,
+      detail: "Lightweight yet strong, ideal for aerospace and automotive. ",
+    },
+    {
+      machine: "Copper and Brass",
+      image: foCaroseul3,
+      detail: "High conductivity and corrosion resistance for electrical and industrial applications.",
+    },
+    {
+      machine: "Titanium",
+      image: foCaroseul4,
+      detail: "Lightweight with superior strength, perfect for critical applications.",
+    },
+    {
+      machine: "Inconel and Superalloys",
+      image: foCaroseul5,
+      detail: "Designed for extreme environments, offering excellent heat and corrosion resistance.",
     },
   ]
