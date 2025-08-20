@@ -28,6 +28,7 @@ export default {
         mutedGray: 'var(--muted-gray)',
         "gray-muted-100": 'var(--gray-muted-100)',
         "background-200": 'var(--background-200)',
+        "background-300": 'var(--background-300)',
       },
       textColor: {
         primary: 'var(--text-primary)',

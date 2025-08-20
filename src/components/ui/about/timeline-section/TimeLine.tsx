@@ -1,68 +1,9 @@
 import H1 from '@/components/common/H1/H1'
+import Image from 'next/image';
 import React from 'react'
-
-
-const timelineData = [
-  {
-    date: 1987,
-    heading: 'The Beginning of Precision Manufacturing',
-    description: 'Santhos Industries was founded by Mr. K. Ramamoorthy, pioneering the production of precision-turned components under 32 mm diameter using conventional CAM-actuated automates machines.'
-  },
-  {
-    date: 1994,
-    heading: 'Expansion into Advanced Machining',
-    description: 'Diversified into Conventional Milling, Grinding, and other precision manufacturing processes to meet growing industry demands.'
-  },
-  {
-    date: 2000,
-    heading: 'National Recognition for Excellence',
-    description: 'Santhos Industries, led by Mr. Ramamoorthy, received the prestigious award from the Chairman of LMW, Mr. Jayavarthanavelu, for innovation and excellence in developing precision prototypes and production parts.'
-  },
-  {
-    date: 2001,
-    heading: 'Venturing into Plastics Manufacturing',
-    description: 'Founded Santhos Polymers, marking a new chapter in plastic product manufacturing to complement existing metalworking capabilities.'
-  },
-  {
-    date: 2009,
-    heading: 'Diversification into Multi-Industry Solutions',
-    description: 'Expanded into diverse sectors such as automotive, textiles, irrigation, pneumatics, and defense, showcasing versatility in addressing unique industry challenges.'
-  },
-  {
-    date: 2014,
-    heading: 'Automation and Innovation in Manufacturing',
-    description: 'Introduced cutting-edge automation projects, including custom-designed gantry setups for CNC machines featuring robotic fingers, bowl feeders, and conveyor assemblies.'
-  },
-  {
-    date: 2019,
-    heading: 'Contributing to Landmark Infrastructure Projects',
-    description: 'Manufactured casted tunnel rings for Bengaluru Metro’s underground project in collaboration with L&T Heavy Civil Infrastructures, covering a span of 2.8 kilometers.'
-  },
-  {
-    date: 2020,
-    heading: "Expanding Manufacturing Expertise",
-    description: 'Began catering to diverse industries such as casting, sheet metal, machining, and forging across South India.Established a skilled and semi-skilled labor contracting model, ensuring a robust workforce for high-quality production.'
-
-  },
-  {
-    date: 2021,
-    heading: "Establishment of Rainer Engineering",
-    description: 'Co-founded by Gokul, Rainer Engineering brought in-house CNC machining, rapid prototyping, and tooling solutions, enabling precision manufacturing at scale.Strengthened capabilities in producing complex, custom-engineered components.'
-
-  },
-  {
-    date: 2022,
-    heading: 'The Genesis of WTX',
-    description: 'Leveraging decades of manufacturing expertise and a vast network of trusted vendors, WTX was born, embodying innovation and engineering excellence.'
-  },
-  {
-    date: 2025,
-    heading: 'A Growing Legacy of Excellence',
-    description: 'A team of over 250 skilled professionals delivering precision-engineered solutions.Achieved an impressive milestone of 3000+ completed projects for 200+ global customers, establishing Wertex as a trusted leader in manufacturing.Achieved an impressive milestone of 3000+ completed projects for 200+ global customers, establishing Wertex as a trusted leader in manufacturing.'
-  },
-  
-];
-
+import globe from '@/cdn/images/vectors/aboutus.png'
+import roadmap from '@/cdn/images/aboutus/aboutus.webp'
+ 
 const TimelineCard = ({date , heading ,  description} :{
   date: number, 
   heading:string,
@@ -83,16 +24,13 @@ const TimelineCard = ({date , heading ,  description} :{
 
 const TimeLine = () => {
   return (
-    <div className="relative w-full bg-background p-5 mt-16 grid grid-cols-3 gap-5">
+    <div className="relative w-full bg-background   mt-16 flex items-center justify-center  h-[210rem] p-8">
         
-        {timelineData.map((item, index) => (
-        <TimelineCard 
-          key={index}
-          date={item.date}
-          heading={item.heading}
-          description={item.description}
-        />
-      ))}
+    <Image src={globe} alt="globe" fill className='object-cover absolute inset-0 z-10'/>
+    <div className='h-full relative w-full p-8'>
+
+    <Image src={roadmap} alt="globe" fill className='object-contain  z-20' />
+    </div>
   </div>
   )
 

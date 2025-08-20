@@ -6,16 +6,16 @@ import Image from "next/image";
 import H1 from "@/components/common/H1/H1";
 import { cn } from "@/lib/utils";
 import wertex from "@/cdn/images/wertex-hollow.avif";
+import wertexWhite from '@/cdn/images/wertex.png'
 import TimeLine from "@/components/ui/about/timeline-section/TimeLine";
 import JoinSection from "@/components/ui/JoinSection/join-section";
-import Container from "@/components/common/Container/Container";
 
 type Props = {};
 
 const About = (props: Props) => {
   return (
-    <>
-      <div className="w-full h-svh  relative  overflow-hidden mx-8">
+    <div className="mx-12">
+      <div className="h-svh  relative  overflow-hidden  ">
         <Image src={aboutUs} alt="AboutUs" height={950} className="w-full " />
         <div className="absolute bottom-0   w-full    bg-black/30 backdrop-blur-xl">
           <div className="flex flex-col  items-center justify-between gap-5 p-4 ">
@@ -82,14 +82,14 @@ const About = (props: Props) => {
       </div>
       <div className="w-full bg-custom-gradient p-5 my-10">
         <div className="md:w-4/5 md:h-48 relative mx-auto">
-          <Image src={wertex} alt="logo" fill />
-          <H1 className="text-end">RoadMap</H1>
+          <Image src={wertexWhite} alt="logo" fill className="object-contain" />
+          <H1 className="text-end absolute -bottom-8 right-36">RoadMap</H1>
         </div>
         <TimeLine />
       </div>
       <div className="w-full my-8 ">
         <div className="flex justify-between items-center">
-          <H1>OUR LOGO</H1>
+          <h1 className="text-3xl font-bold">OUR LOGO</h1>
           <p className="text-xl2">
             Wertex logo representing precision <br />
             manufacturing and innovative solutions.
@@ -97,7 +97,7 @@ const About = (props: Props) => {
         </div>
         <div className="border h-[37.5rem] flex flex-col justify-around p-12 my-10">
           <div className="relative w-3/5 h-44 mx-auto">
-            <Image src={wertex} fill alt="wertex logo" />
+            <Image src={wertex} fill alt="wertex logo" className="object-contain" />
           </div>
           <p className="text-center w-full mt-10 text-xl2">
             The Wertex logo reflects our commitment to engineering excellence
@@ -118,8 +118,8 @@ const About = (props: Props) => {
         </p>
       </div>
       <JoinSection />
-    </>
-  );
+    </div>
+  ) ;
 };
 
 export default About;

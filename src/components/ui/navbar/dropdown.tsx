@@ -21,7 +21,7 @@ const Dropdown = ({ trigger, items }: DropdownProps) => {
     <>
       {/* Trigger */}
       <div className="flex items-center gap-1 text-[#CDCDCD] font-normal text-lg uppercase hover:cursor-pointer">
-        <span>{trigger}</span>
+        <span className="text-lg font-semibold">{trigger}</span>
         <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${isOpen ? "rotate-180" : "rotate-0"}`} />
       </div>
 

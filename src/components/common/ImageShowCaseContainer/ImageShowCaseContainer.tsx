@@ -97,7 +97,7 @@ export default function DynamicShowcase({
               <motion.div
                 key={index}
                 className={cn(
-                  "group flex items-center justify-between py-4  hover:border-black pl-0 relative transition-all duration-300 cursor-pointer",
+                  "group flex items-center justify-between py-4 w-min  hover:border-black pl-0 relative transition-all duration-300 cursor-pointer",
                   index === currentIndex ? styles.itemHighlighted : styles.itemDefault
                 )}
                 initial={{ opacity: 0, x: 20 }}
@@ -107,7 +107,7 @@ export default function DynamicShowcase({
                 onClick={() => handleItemClick(index)}
               >
              
-                  <p className="text-5xl font-semibold">{getItemTitle(item)}</p>
+                  <p className="text-5xl font-semibold text-nowrap pr-2">{getItemTitle(item)}</p>
                  
                 <motion.div
                   className="bg-black  h-2 absolute bottom-0 left-0 z-10"
@@ -121,11 +121,11 @@ export default function DynamicShowcase({
 
                     },
                     hover: {
-                      width: "50%",
+                      width: "100%",
                       opacity: 1,
                     },
                     selected: {
-                      width: "50%",
+                      width: "100%",
                       opacity: 1,
                     },
                   }}

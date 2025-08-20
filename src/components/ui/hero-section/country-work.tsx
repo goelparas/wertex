@@ -16,7 +16,7 @@ const CountryWork = () => {
                 ))}
             </ul>
 
-            <div className='h-3/4 lg:h-4/5 relative w-full '>
+            <div className='h-3/4 lg:h-4/5 relative w-full  bg-custom-map-gradient'>
                 <Image src={map} alt='' className='absolute' fill quality={100} />
                 <Image src={mapBg} alt='' fill className='-z-10 ' />
                 <div className='backdrop-blur-0  bg-[#D9D9D980] w-52 h-24 lg:w-96 lg:h-48 absolute top-1/3 p-3 left-5'> <h1 className='text-white text-2xl font-bold'>01</h1></div>
