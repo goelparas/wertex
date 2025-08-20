@@ -88,8 +88,8 @@ export const BrandsShowCase = ({
                         className=" w-28  h-24   md:w-[330px] md:h-64  relative  border  border-gray-500 flex-shrink-0 p-6   flex items-center"
                         key={idx}
                     >
-                        <div className=" w-full h-full lg:w-[290px] lg:h-[120px] flex relative items-center justify-center">
-                            <Image src={item}  alt=""  className="absolute inset-0 m-auto"/>
+                        <div className=" w-full h-full lg:w-72 lg:h-32 flex relative items-center justify-center">
+                            <Image src={item}  alt=""  className="absolute  m-auto object-contain w-full h-full"/>
                         </div>
 
                     </li>

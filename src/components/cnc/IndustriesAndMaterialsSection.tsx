@@ -13,14 +13,17 @@ import {
   Layers,
   Hammer,
 } from 'lucide-react';
-
+import Section from '../common/Section';
+import   {
+  FlexHeader2,
+} from "@/components/common/FlexHeader/FlexHeader";
 export default function IndustriesAndMaterialsSection() {
   return (
-    <section className='relative w-full bg-white'>
-      <div className='max-w-7xl mx-auto px-4 sm:px-6'>
+    <Section className='relative w-full bg-transparent pt-0 mt-0 '>
+      <Section className=' mx-auto px-4 sm:px-6  bg-white'>
         <div className='grid grid-cols-1 lg:grid-cols-2'>
           {/* Industries Column */}
-          <div className='px-6 border-r-2 border-black py-8'>
+          <div className='px-6 border-r-2 border-[#BCBCBC] py-8'>
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -28,13 +31,8 @@ export default function IndustriesAndMaterialsSection() {
               viewport={{ once: true }}
               className='mb-8'
             >
-              <h2 className='text-3xl font-bold mb-2 text-black'>
-                Delivering <span className='text-[#E97713]'>Excellence</span>{' '}
-                Across Industries
-              </h2>
-              <p className='text-black'>
-                Wertex provides CNC machining solutions for:
-              </p>
+            <FlexHeader2 className='p-0 text-black' heading={<p>Delivering <span className='text-orangeBg'>Excellence</span> Across Industries</p>} description='Wertex provides CNC machining solutions for:' />
+
             </motion.div>
 
             <div className='space-y-4'>
@@ -84,14 +82,7 @@ export default function IndustriesAndMaterialsSection() {
               viewport={{ once: true }}
               className='mb-8 text-black'
             >
-              <h2 className='text-3xl font-bold mb-2'>
-                Materials for{' '}
-                <span className='text-[#E97713]'>Every Application</span>
-              </h2>
-              <p className='text-muted-foreground'>
-                We specialize in machining an extensive range of materials
-                tailored to diverse needs:
-              </p>
+              <FlexHeader2 className='p-0 text-black' heading={<p>Materials for <span className='text-orangeBg'>Every Application</span> </p>} description='Wertex provides CNC machining solutions for:' />
             </motion.div>
 
             <div className='space-y-4 '>
@@ -111,7 +102,7 @@ export default function IndustriesAndMaterialsSection() {
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </Section>
+    </Section>
   );
 }

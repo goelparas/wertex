@@ -1,7 +1,6 @@
 "use client";
 import HeroSection from "@/components/common/Container/HeroSection-service";
-import React, { useEffect, useState } from "react";
-import vidadigitalin from "../../../cdn/images/cnc/vidadigitalin.png";
+import React from "react";
 // Import aluminum extrusion logos
 import logo1 from "@/cdn/images/aluminiumextrution/logo-1.png";
 import logo2 from "@/cdn/images/aluminiumextrution/logo-2.png";

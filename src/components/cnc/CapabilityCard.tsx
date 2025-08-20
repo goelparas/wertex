@@ -1,11 +1,13 @@
 'use client';
 
-import React, { ReactNode } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
 import { cn } from '@/lib/utils';
+import { ImageContainer } from '../common/Container/ImageGrid';
+import { StaticImageData, StaticImport } from 'next/dist/shared/lib/get-img-props';
 
 interface CapabilityCardProps {
-  icon: ReactNode;
+  icon: StaticImageData;
   title: string;
   description: string;
   delay?: number;
@@ -25,18 +27,16 @@ export default function CapabilityCard({
       viewport={{ once: true }}
       className={cn(
         // GLASS EFFECT
-        'bg-black/30 backdrop-blur-md',
-        'border border-white/20 rounded-2xl',
-        'p-6 flex flex-col items-center justify-between text-center',
+        'bg-[#4F4F4F73]/20 backdrop-blur-md',
+        'border border-white/10 rounded-2xl',
+        'p-6 flex flex-col items-center justify-around text-center',
         // FONTS + COLORS
         'text-white',
         // HOVER EFFECT
         'transition-all duration-300 hover:shadow-lg hover:shadow-white/10 hover:-translate-y-1 h-[400px] max-w-[380px]'
       )}
     >
-      <div className='h-full flex items-center'>
-        <div className='mb-4 p-4 bg-white/10 rounded-full '>{icon}</div>
-      </div>
+        <ImageContainer img={icon} className='w-24 h-24' width={85} height={85}/>
       <p className='text-gray-300'>{description}</p>
     </motion.div>
   );

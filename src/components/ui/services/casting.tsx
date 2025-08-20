@@ -1,9 +1,10 @@
 import {
   FlexHeader2,
 } from "@/components/common/FlexHeader/FlexHeader";
+
 import Image from "next/image";
 import React from "react";
-import castingHero from "@/cdn/images/casting/casting-hero.avif";
+import castingHero from "@/cdn/images/casting/casting-hero.webp";
 import gridBg from "@/cdn/images/main_grid.avif";
 import HeroSection from "@/components/common/Container/HeroSection-service";
 import Footerservice from "@/components/common/footer-service/footerservice";

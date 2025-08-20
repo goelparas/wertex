@@ -6,12 +6,20 @@ import CapabilityCard from './CapabilityCard';
 import { Workflow, Cog, GitFork } from 'lucide-react';
 import Image from 'next/image';
 import machineHammer from '../../cdn/images/cnc/metalworking-cnc-milling-machine.png';
+import Section from '../common/Section';
+
+
+import logo1 from '@/cdn/images/casting/logo-1.svg';
+import logo2 from '@/cdn/images/casting/logo-2.svg';
+import logo3 from '@/cdn/images/casting/logo-3.svg';
+import   {
+  FlexHeader2,
+} from "@/components/common/FlexHeader/FlexHeader";
 
 export default function CncCapabilitiesSection() {
   return (
-    <div>
- <div className="mt-12 p-12 relative">
-      <div className='max-w-7xl mx-auto'>
+  
+      <Section className=' mx-auto bg-transparent pb-0'>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -19,16 +27,10 @@ export default function CncCapabilitiesSection() {
           viewport={{ once: true }}
           className='text-left mb-12'
         >
-          <h2 className='text-2xl md:text-3xl font-bold'>
-            Comprehensive CNC Capabilities Tailored for Your Needs
-          </h2>
-          <p className='text-xl text-muted-foreground'>
-            Our CNC machining capabilities include:
-          </p>
+          <FlexHeader2 heading="Comprehensive CNC Capabilities Tailored for Your Needs" description={"Our CNC machining capabilities include:"}/>
         </motion.div>
-
-        <div className='grid grid-cols-1 md:grid-cols-3 gap-6 p-4'>
-          <div className='absolute inset-y-40 w-full h-[480px]'>
+        <div className='grid grid-cols-1 md:grid-cols-3 gap-6 p-4 w-full relative h-[50rem] justify-center items-center'>
+          <div className='w-full h-[50rem] absolute'>
             <Image
               src={machineHammer}
               alt='Precision Casting Process'
@@ -39,30 +41,28 @@ export default function CncCapabilitiesSection() {
            
           </div>
           <CapabilityCard
-            icon={<Workflow size={48} className='text-chart-1' />}
+            icon={logo1}
             title='Multi-Axis Milling'
             description='3-axis, 4-axis, and 5-axis milling machines for precision cuts and complex geometries'
             delay={0}
           />
 
           <CapabilityCard
-            icon={<Cog size={48} className='text-chart-1' />}
+            icon={logo2}
             title='Advanced Tooling'
             description='Precision lathes, Wire EDM, gear hobbing, and grinding machines for versatile manufacturing solutions'
             delay={0.2}
           />
 
           <CapabilityCard
-            icon={<GitFork size={48} className='text-chart-1' />}
+            icon={logo3}
             title='Synchronized Systems'
             description='Specialized equipment to handle stationary, rotating, or synchronized workpiece movements'
             delay={0.4}
           />
         </div>
-      </div>
-    </div>
-    <div className='absolute inset-0 bg-black/60 mix-blend-multiply' />
-    </div>
+      </Section>
+    
    
   );
 }

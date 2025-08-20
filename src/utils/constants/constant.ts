@@ -22,12 +22,12 @@ import brand11 from "@/cdn/images/testimonial-card/brand-11.avif"
 import { StaticImport } from "next/dist/shared/lib/get-img-props"
 
 
-import image1 from "@/cdn/images/services/image-1.avif";
-import image2 from "@/cdn/images/services/image-2.avif";
-import image3 from "@/cdn/images/services/image-3.avif";
-import image4 from "@/cdn/images/services/image-4.avif";
-import image5 from "@/cdn/images/services/image-5.avif";
-import image6 from "@/cdn/images/services/image-6.avif";
+import cncMachineImg from  "@/cdn/images/cnc/hero-cnc.webp";
+import castingImg from "@/cdn/images/casting/casting-hero.webp";
+import forgingImg from '@/cdn/images/forging/forging-hero.webp';
+import sheetfab from "@/cdn/images/sheet-fabrication/sheet-fabrication.jpg";
+import moulding from "@/cdn/images/moulding/moulding.webp";
+import aluminiumExtrusion from'@/cdn/images/aluminiumextrution/aluminium-hero.webp';
 
 
 
@@ -153,7 +153,7 @@ export const ServiceSection = [
   {
     title: "CNC Machining",
     paragraph: "Precision-crafted components with advanced CNC techniques. Optimized for intricate geometries, tight tolerances, and improved production efficiency.",
-    image: image1,
+    image: cncMachineImg,
     cta: {
       text: "Learn More",
       onClick: () => alert("CNC Machining Clicked!"),
@@ -162,7 +162,7 @@ export const ServiceSection = [
   {
     title: "Casting",
     paragraph: "Durable, complex parts through expendable and permanent mold casting. Perfect for projects requiring strength, detail, and dimensional accuracy.",
-    image: image2,
+    image: castingImg,
     cta: {
       text: "Explore",
       onClick: () => alert("3D Printing Clicked!"),
@@ -171,7 +171,7 @@ export const ServiceSection = [
   {
     title: "Forging",
     paragraph: "High-strength components built to endure demanding conditions. Achieved with expert forging processes and precise material control.",
-    image: image4,
+    image: forgingImg,
     cta: {
       text: "Discover",
       onClick: () => alert("Injection Molding Clicked!"),
@@ -180,7 +180,7 @@ export const ServiceSection = [
   {
     title: "Sheet Metal Fabrication",
     paragraph: "Lightweight, durable metal solutions with precision cutting, bending, and welding. Tailored to meet diverse design needs with efficiency.",
-    image: image3,
+    image: sheetfab,
     cta: {
       text: "View Details",
       onClick: () => alert("Sheet Metal Fabrication Clicked!"),
@@ -189,7 +189,7 @@ export const ServiceSection = [
   {
     title: "Aluminium Extrusion",
     paragraph: "Seamless, precise extrusions for structural and aesthetic applications. Designed for strength and flexibility in every industry.",
-    image: image4,
+    image: aluminiumExtrusion,
     cta: {
       text: "See More",
       onClick: () => alert("Laser Cutting Clicked!"),
@@ -198,7 +198,7 @@ export const ServiceSection = [
   {
     title: "Molding",
     paragraph: "Accurate, flawless parts via injection and compression molding. Perfect for high-volume production with consistent quality.",
-    image: image5,
+    image: moulding,
     cta: {
       text: "Learn How",
       onClick: () => alert("Quality Assurance Clicked!"),

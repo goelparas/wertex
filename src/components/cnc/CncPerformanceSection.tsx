@@ -1,101 +1,173 @@
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
-import Link from 'next/link';
 import { cn } from '@/lib/utils';
+import { FlexHeader2 } from '@/components/common/FlexHeader/FlexHeader';
+import Section from '../common/Section';
+import arrow from "@/cdn/images/arrow.avif"
+
+// Import carousel images
+import cncCarousel1 from "@/cdn/images/cnc/carousel/cnc-carousel-1.webp"
+import cncCarousel2 from "@/cdn/images/cnc/carousel/cnc-carousel-2.webp"
+import cncCarousel3 from "@/cdn/images/cnc/carousel/cnc-carousel-3.webp"
+import cncCarousel4 from "@/cdn/images/cnc/carousel/cnc-carousel-4.webp"
+import cncCarousel5 from "@/cdn/images/cnc/carousel/cnc-carousel-5.webp"
+import cncCarousel6 from "@/cdn/images/cnc/carousel/cnc-carousel-6.webp"
+import cncCarousel7 from "@/cdn/images/cnc/carousel/cnc-carousel-7.webp"
+import cncCarousel8 from "@/cdn/images/cnc/carousel/cnc-carousel-8.webp"
+import cncCarousel9 from "@/cdn/images/cnc/carousel/cnc-carousel-9.webp"
+
 
 const machineTypes = [
-  { name: 'CNC Horizontal Lathes', href: '/machines/horizontal-lathes' },
-  { name: 'Sliding Head Machines', href: '/machines/sliding-head' },
-  { name: 'CNC Milling Machines', href: '/machines/milling' },
-  { name: 'Double Column Fixed Bed Giant VMC', href: '/machines/vmc' },
-  { name: 'HMC (Horizontal Machining Center)', href: '/machines/hmc' },
-  { name: 'Turn Mills and Mill Turn Machines', href: '/machines/turn-mills' },
-  { name: 'VTL (Vertical Turning Lathes)', href: '/machines/vtl' },
-  { name: 'Gear Cutting Machines', href: '/machines/gear-cutting' },
-  { name: 'Grinding Machines', href: '/machines/grinding' },
-  { name: 'Wire EDM Machines', href: '/machines/edm' },
-  {
-    name: 'Gantry VMC (Vertical Machining Center)',
-    href: '/machines/gantry-vmc',
+  { 
+    name: 'CNC Horizontal Lathes',
+    image: cncCarousel1
   },
+  { 
+    name: 'Sliding Head Machines',
+    image: cncCarousel2
+  },
+  { 
+    name: 'CNC Milling Machines',
+    image: cncCarousel3
+  },
+  { 
+    name: 'Double Column Fixed Bed Giant VMC',
+    image: cncCarousel4
+  },
+  { 
+    name: 'HMC (Horizontal Machining Center)',
+    image: cncCarousel5
+  },
+   
+  { 
+    name: 'VTL (Vertical Turning Lathes)',
+    image: cncCarousel6
+  },
+  { 
+    name: 'Gear Cutting Machines',
+    image: cncCarousel7
+  },
+  { 
+    name: 'Grinding Machines',
+    image: cncCarousel8
+  },
+  { 
+    name: 'Wire EDM Machines',
+    image: cncCarousel9
+  },
+   
 ];
 
-const MachineLink = ({ name, href }: { name: string; href: string }) => {
+
+
+const MachineLink = ({ 
+  name, 
+  image, 
+  onClick, 
+  isActive 
+}: { 
+  name: string;
+  image: any; // Changed from string to any to handle StaticImageData
+  onClick: () => void;
+  isActive: boolean;
+}) => {
   return (
-    <Link
-      href={href}
+    <motion.div
+      onClick={onClick}
       className={cn(
-        'group flex items-center justify-start',
-        'p-4 border-b border-zinc-800 hover:bg-zinc-900/50 hover:text-[#E97713]',
-        'transition-all duration-300 '
+        'group flex items-center w-full justify-start hover:cursor-pointer border-b border-[#6A6A6A]',
+        'p-4 border-b  hover:text-orangeBg',
+        'transition-all duration-300',
+        isActive && 'text-orangeBg bg-zinc-900/30'
       )}
+      whileHover={{ x: 10 }}
+      whileTap={{ scale: 0.98 }}
     >
-      <span className='text-zinc-300 group-hover:text-[#E97713] transition-colors font-bold'>
+      <span className={cn(
+        'text-white text-3xl group-hover:text-orangeBg transition-colors font-bold',
+        isActive && 'text-orangeBg'
+      )}>
         {name}
       </span>
-      <motion.span initial={{ rotate: 0 }} className='text-chart-1'>
-        <svg
-          xmlns='http://www.w3.org/2000/svg'
-          width='24'
-          height='24'
-          viewBox='0 0 24 24'
-          fill='none'
-          stroke='currentColor'
-          strokeWidth='2'
-          strokeLinecap='round'
-          strokeLinejoin='round'
-          className='transform transition-transform duration-300 group-hover:rotate-45'
-        >
-          <path d='M7 7h10v10' />
-          <path d='M7 17 17 7' />
-        </svg>
+      <motion.span 
+        initial={{ rotate: 45 }} 
+        className='text-chart-1 pl-4'
+         animate={{ rotate: isActive ? 0 : 45 }}
+        transition={{ duration: 0.3 }}
+
+      >
+        <Image 
+          src={arrow} 
+          width={60}
+          height={60}
+          alt="arrow" 
+          className='rotate-0 '
+        />
       </motion.span>
-    </Link>
+    </motion.div>
   );
 };
 
 export default function CncPerformanceSection() {
+  const [selectedImage, setSelectedImage] = useState({
+    src: machineTypes[0].image,
+    name: machineTypes[0].name
+  });
+
+  const handleMachineClick = (machine: typeof machineTypes[0]) => {
+    setSelectedImage({
+      src: machine.image,
+      name: machine.name
+    });
+  };
+
   return (
-    <section className='py-20 bg-black'>
+    <Section className='bg-transparent'>
       <div className=''>
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className='text-4xl font-bold text-white mb-4 px-6'
+          className=' text-white mb-4'
         >
-          Enhancing Component Performance and Quality
+          <FlexHeader2  heading="Enhancing Component Performance and Quality" description="Advanced finishing techniques for durability and precision." />
         </motion.h2>
-        <p className='text-zinc-400 mb-8 px-6'>
-          Advanced finishing techniques for durability and precision.
-        </p>
-        <div className='grid grid-cols-1 lg:grid-cols-2 gap-12 border-y border-zinc-800'>
-          <div className='border-r  border-zinc-800 py-6 px-4'>
-            <p className='text-zinc-300 mb-8'>
-              Specializes in turning and facing cylindrical and complex parts
-              with high precision. Ideal for applications requiring smooth
-              finishes and dimensional accuracy in large and small components.
+        <div className='grid grid-cols-1 lg:flex   border-y border-[#6A6A6A]'>
+          <div className='border-r  border-[#6A6A6A] max-w-xl lg:w-2/5  py-6 pr-4  flex flex-col justify-between items-end '>
+            <p className='text-white mb-8'>
+            Specializes in turning and facing cylindrical and complex parts with high precision. Ideal for applications requiring smooth finishes and dimensional accuracy in large and small components.
             </p>
-            <div className='relative w-full aspect-square lg:aspect-[4/3] rounded-lg overflow-hidden'>
+            <motion.div 
+              className='relative  w-full h-[37.5rem]  mx-auto overflow-hidden'
+              key={selectedImage.name} // Changed from selectedImage.src to selectedImage.name
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5, ease: "easeOut" }}
+            >
               <Image
-                src='https://images.pexels.com/photos/3912982/pexels-photo-3912982.jpeg'
-                alt='CNC Machined Component'
+                src={selectedImage.src}
+                alt={selectedImage.name}
                 fill
                 className='object-cover'
               />
-            </div>
+            </motion.div>
           </div>
 
-          <div className='space-y-1 -ml-12'>
+          <div className='space-y-1    flex flex-col justify-center lg:w-3/5 items-start'>
             {machineTypes.map((machine, index) => (
-              <MachineLink key={index} {...machine} />
+              <MachineLink 
+                key={index} 
+                {...machine} 
+                onClick={() => handleMachineClick(machine)}
+                isActive={selectedImage.src === machine.image}
+              />
             ))}
           </div>
         </div>
       </div>
-    </section>
+    </Section>
   );
 }

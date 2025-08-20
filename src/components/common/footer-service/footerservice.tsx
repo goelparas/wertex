@@ -3,6 +3,7 @@ import {FlexHeader} from "../FlexHeader/FlexHeader";
 import Button from "../Button/button";
 import imag from "@/cdn/images/wtx_logo_service.png";
 import { ImageContainer } from "../Container/ImageGrid";
+import Section from "../Section";
 
 type Props = {
   title: string;
@@ -20,12 +21,11 @@ const Footerservice = ({
   longDescription,
   heading,
   buttonText,
-  buttonLink,
   children,
 }: Props) => {
   return (
 
-    <div className="p-6">
+    <Section className="p-6 bg-transparent">
       <div className="bg-borderGray flex justify-between p-8">
         <div className="flex flex-col gap-12 justify-between items-start w-3/5">
           <FlexHeader
@@ -43,7 +43,7 @@ const Footerservice = ({
           {buttonText}
         </p>
       </Button>
-    </div>
+    </Section>
 
   );
 };

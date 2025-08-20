@@ -1,13 +1,13 @@
 "use client"
 
-import { useState, useEffect, ReactElement } from "react"
+import { useState, ReactElement } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import {ShowcaseItem, variantStyles} from './constant'
 import { cn } from "@/lib/utils"
 import Image from "next/image"
  
 
-  export interface ShowcaseProps {
+export interface ShowcaseProps {
     items: ShowcaseItem[]
     autoRotateInterval?: number
     variant?: "dark" | "aluminiumExtrusion" | "forging"
@@ -17,8 +17,6 @@ import Image from "next/image"
     headerText?: string | ReactElement
     descriptionText?: string
   }
-
-
 
 export default function DynamicShowcase({
   items,

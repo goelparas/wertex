@@ -24,16 +24,16 @@ export default function IndustryCard({
       transition={{ duration: 0.5, delay }}
       viewport={{ once: true }}
       className={cn(
-        'bg-[#A7A7A775] rounded-lg p-4 text-black',
+        'bg-[#EEEEEE] rounded-lg p-4  text-xl2',
         'flex items-center gap-4',
         'transition-all duration-300 hover:bg-muted/80'
       )}
     >
       <div className='p-2  rounded-full'>{icon}</div>
       <div>
-        <p className='font-bold'>
+        <p className='font-bold text-black'>
           {title}:{' '}
-          <span className='text-muted-foreground text-sm font-normal'>
+          <span className='text-black  font-normal'>
             {description}
           </span>
         </p>

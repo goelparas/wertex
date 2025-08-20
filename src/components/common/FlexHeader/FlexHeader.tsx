@@ -23,7 +23,7 @@ export const FlexHeader = ({
         className
       )}
     >
-      <h1 className={cn("text-3xl font-bold w-3/5 ", headingClassName)}>
+      <h1 className={cn("text-[32px] font-bold w-3/5 ", headingClassName)}>
         {title} {heading && <span className="text-orangeBg">{heading}</span>}
       </h1>
       <p className={cn(" text-white w-1/2 text-right", descriptionClassName)} style={{
@@ -48,7 +48,7 @@ export const FlexHeader2 = ({
   
   return (
     <>
-      <h1 className={cn(`text-3xl font-bold mb-4`, className)}>
+      <h1 className={cn(`text-[32px] font-bold mb-4`, className)}>
         {typeof heading === 'string' ? heading : heading}
       </h1>
       <span className={cn(`text-xl`, className)}>{description}</span>

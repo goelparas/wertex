@@ -10,6 +10,7 @@ import foCaroseul3 from '@/cdn/images/forging/forging-carousel-3.webp'
 import foCaroseul4 from '@/cdn/images/forging/forging-carousel-4.webp'
 import foCaroseul5 from '@/cdn/images/forging/forging-carousel-5.webp'
 import { StaticImageData } from 'next/image'
+
 export const variantStyles = {
     dark: {
       container: "bg-gray-900 text-white",
@@ -106,5 +107,48 @@ export const variantStyles = {
       machine: "Inconel and Superalloys",
       image: foCaroseul5,
       detail: "Designed for extreme environments, offering excellent heat and corrosion resistance.",
+    },
+  ]
+
+  export const  cncMachine: ShowcaseItem[] = [
+    {
+      machine: "CNC Horizontal Lathes",
+      image: alCaroseul1,
+      detail: "Lightweight frames, brackets, and structural supports.",
+    },
+    {
+      machine: "Sliding Head Machines",
+      image: alCaroseul2,
+      detail: "Roof rails, trim, crash management systems, and heat exchangers. ",
+    },
+    {
+      machine: "Double Column Fixed Bed Giant VMC",
+      image: alCaroseul3,
+      detail: "Window and door frames, curtain walls, and structural frameworks.",
+    },
+    {
+      machine: "HMC (Horizontal Machining Center)",
+      image: alCaroseul4,
+      detail: "Heat sinks, housings, and cable management systems.",
+    },
+    {
+      machine: "VTL (Vertical Turning Lathes)",
+      image: alCaroseul5,
+      detail: "Solar panel frames, mounting systems, and wind turbine components.",
+    },
+    {
+      machine: "Gear Cutting Machines",
+      image: alCaroseul5,
+      detail: "Furniture parts, display fixtures, and appliance components.",
+    },
+    {
+      machine: "Grinding Machines",
+      image: alCaroseul5,
+      detail: "Furniture parts, display fixtures, and appliance components.",
+    },
+    {
+      machine: "Wire EDM Machines",
+      image: alCaroseul5,
+      detail: "Furniture parts, display fixtures, and appliance components.",
     },
   ]

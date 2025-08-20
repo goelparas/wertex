@@ -17,18 +17,19 @@ import { ImageContainer } from "@/components/common/Container/ImageGrid";
 import Image from "next/image";
 import gridBg from "@/cdn/images/main_grid.avif";
 
-import logo1SVGs from '@/cdn/images/forging/logo-1.svg';
-import logo2SVGs from '@/cdn/images/forging/logo-2.svg';
-import logo3SVGs from '@/cdn/images/forging/logo-3.png';
-import logo4SVGs from '@/cdn/images/forging/logo-4.png';
-import logo5SVGs from '@/cdn/images/forging/logo-5.png';
-import logo6SVGs from '@/cdn/images/forging/logo-6.png';
-import logo7SVGs from '@/cdn/images/forging/logo-7.png';
+import logo1SVGs from '@/cdn/images/forging/logo-1.svg'; 
+import logo2SVGs from '@/cdn/images/forging/logo-2.svg'; 
+import logo3SVGs from '@/cdn/images/forging/logo-3.png'; 
+import logo4SVGs from '@/cdn/images/forging/logo-4.png'; 
+import logo5SVGs from '@/cdn/images/forging/logo-5.png'; 
+import logo6SVGs from '@/cdn/images/forging/logo-6.png'; 
+import logo7SVGs from '@/cdn/images/forging/logo-7.png'; 
 
-import divider from "@/cdn/images/aluminiumextrution/line.svg";
-import trapezium from "@/cdn/images/aluminiumextrution/trapezium.png";
 import { forging } from "@/components/common/ImageShowCaseContainer/constant";
+import trapezium from "@/cdn/images/aluminiumextrution/trapezium.png";
+import divider from "@/cdn/images/aluminiumextrution/line.svg";
 import DynamicShowcase from "@/components/common/ImageShowCaseContainer/ImageShowCaseContainer";
+
 const forgingTypes = [
   {
     title: "Drop Forging",

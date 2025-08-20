@@ -1,20 +1,24 @@
 import CncCapabilitiesSection from "@/components/cnc/CncCapabilitiesSection";
 import CncFeaturesSection from "@/components/cnc/CncFeaturesSection";
-import CncHeroSection from "@/components/cnc/CncHeroSection";
 import CncPerformanceSection from "@/components/cnc/CncPerformanceSection";
 import CncWorkflowSection from "@/components/cnc/CncWorkflowSection";
 import IndustriesAndMaterialsSection from "@/components/cnc/IndustriesAndMaterialsSection";
 import React from "react";
 import HeroSection from "@/components/common/Container/HeroSection-service";
-import vidadigitalin from "@/cdn/images/cnc/vidadigitalin.png";
+import cncMachine from "@/cdn/images/cnc/hero-cnc.webp";
 import Footerservice from "@/components/common/footer-service/footerservice";
+import { CncCarousel } from "@/components/cnc/CncCarousel";
+
+
+// Import capability images
+
 type Props = {};
 
 const CncMachine = (props: Props) => {
   return (
     <>
       <HeroSection
-        src={vidadigitalin}
+        src={cncMachine}
         alt="casting hero"
         title="Precision Redefined with"
         description="High-accuracy manufacturing solutions for complex geometries across industries."
@@ -27,6 +31,7 @@ const CncMachine = (props: Props) => {
       <IndustriesAndMaterialsSection />
       <CncWorkflowSection />
       <CncFeaturesSection />
+       
       <CncPerformanceSection />
       <Footerservice
         title="Experience Precision Like Never Before"

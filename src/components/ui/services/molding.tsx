@@ -1,6 +1,6 @@
 import React from "react";
 import HeroSection from "@/components/common/Container/HeroSection-service";
-import mouldinghero from "@/cdn/images/moulding/moulding.avif";
+import mouldinghero from "@/cdn/images/moulding/moulding.webp";
 import {FlexHeader} from "@/components/common/FlexHeader/FlexHeader";
 import grid from "@/cdn/images/cross.png";
 import {

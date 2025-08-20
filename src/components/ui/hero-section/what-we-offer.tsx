@@ -6,17 +6,22 @@ import gridBg from "@/cdn/images/main_grid.avif"
 import gridBlock from "@/cdn/images/grid blocks.avif"
 import clsx from 'clsx';
 import { cn } from '@/lib/utils';
+import Section from '@/components/common/Section';
+import { FlexHeader } from '@/components/common/FlexHeader/FlexHeader';
 const WhatWeOffer = () => {
     return (
         <div className=' flex flex-col   overflow-hidden'>
-            <div className='my-6 relative '>
-                <h1 className='p-3 font-semibold text-base sm:text-xl md:text-2xl lg:text-3xl mb-10'>Your One-Stop Manufacturing Partner</h1>
-                <div className='grid grid-cols-4   lg:flex w-full justify-between gap-5  items-center my-6 overflow-hidden lg:overflow-x-scroll py-4'>
+            <Section className=' relative bg-transparent mr-0 px-0'>
+                <FlexHeader 
+                title='Your One-Stop Manufacturing Partner'
+                description=''
+                className='pl-12'/>
+                <div className='grid grid-cols-4  lg:flex w-full justify-between gap-12  items-center my-6 overflow-hidden lg:overflow-x-scroll py-4'>
                     {
                         WhatWeOfferConst.map((item, index) => <ImageCard image={item.image} text={item.text} key={item.text}  className={`${item.className} ${index === 0  && 'ml-12'}`}/>)
                     }
                 </div>
-            </div>
+            </Section>
             <div className='h-auto relative py-6'>
                 <Image src={gridBg} alt='grid-background' className='absolute  inset-0' fill />
                 <Image src={gridBlock} alt='grid-background' className='absolute  inset-0 z-10 opacity-50' fill />
@@ -41,7 +46,7 @@ export const ImageCard = ({ image, text, className }: {
     className: string
 
 }) => {
-    return <div className={cn('w-max h-max lg:w-56 lg:h-44  flex items-center justify-between  border border-white lg:p-3 bg-black relative', className)}>
+    return <div className={cn('w-max h-max lg:w-60 lg:h-48 shrink-0 flex items-center justify-between  border border-white lg:p-3 bg-black relative', className)}>
         <div className='w-56 h-44 lg:block border border-white absolute -top-2 -left-2 transition-all -z-10  ease-in-out hover:bg-orangeBg hidden'></div>
         <div className='w-28 h-24  relative z-10'>
             <Image src={image} fill alt={text} />
