@@ -2,7 +2,7 @@
 import Image from 'next/image'
 import React, { useState, useCallback, useMemo } from 'react'
 import map from "@/cdn/images/map.avif"
-import mapBg from "@/cdn/images/value-added/mapBg.svg"
+import mapBg from "@/cdn/images/bg-map.avif"
 import frame from "@/cdn/images/frame.png"
 
 // Constants extracted outside component to prevent recreation
@@ -172,7 +172,7 @@ const CountryWork: React.FC = () => {
       </div>
 
       {/* Bottom section */}
-      <div className="flex flex-col lg:flex-row gap-2 lg:gap-2 p-2 m-5 lg:p-6 lg:absolute lg:bottom-4 justify-between rounded-md w-[90%] lg:mx-auto left-0 right-0 relative">
+      <div className="flex flex-col lg:flex-row gap-2 lg:gap-2 p-2 m-5 lg:p-6 lg:absolute lg:bottom-4 justify-between rounded-md w-[90%] lg:mx-auto left-0 right-0 relative bg-custom-card-gradient-lt-br">
         <Image src={frame} fill alt="Frame decoration" className="z-10" />
         <div className="flex flex-col z-10 justify-between items-start gap-2 px-6">
           <h1 className="text-xl lg:text-3xl font-bold">Innovating Across Borders</h1>
