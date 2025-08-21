@@ -8,13 +8,15 @@ export const FlexHeader = ({
   className,
   headingClassName,
   descriptionClassName,
+  id,
 }: {
   title: string | React.ReactNode;
-  description: string;
+  description: string | ReactElement;
   heading?: string;
   className?: string;
   headingClassName?: string;
   descriptionClassName?: string;
+  id?: string;
 }) => {
   return (
     <div
@@ -22,6 +24,7 @@ export const FlexHeader = ({
         "flex justify-between items-start w-full gap-6",
         className
       )}
+      id={id}
     >
       <h1 className={cn("text-[32px] font-bold w-3/5 ", headingClassName)}>
         {title} {heading && <span className="text-orangeBg">{heading}</span>}

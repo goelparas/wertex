@@ -1,22 +1,23 @@
-import cncMachine from "@/cdn/images/what-we-offer/cnc-machine.avif"
-import casting from "@/cdn/images/what-we-offer/casting.avif"
-import forging from "@/cdn/images/what-we-offer/Forging.avif"
-import fabrication from "@/cdn/images/what-we-offer/fabrication.avif"
-
+import cncMachine from "@/cdn/images/what-we-offer/cnc-machine.png"
+import casting from "@/cdn/images/what-we-offer/casting.png"
+import forging from "@/cdn/images/what-we-offer/forging.png"
+import fabrication from "@/cdn/images/what-we-offer/sheet-fabrication.png"
+import heavyMetal from "@/cdn/images/what-we-offer/heavy-metal.png"
 
 // testimonials 
 
-import brand1 from "@/cdn/images/testimonial-card/pricol-brand.avif"
-import brand2 from "@/cdn/images/testimonial-card/lls-brand.avif"
-import brand3 from "@/cdn/images/testimonial-card/janatics.avif"
-import brand4 from "@/cdn/images/testimonial-card/inxeption.avif"
-import brand5 from "@/cdn/images/testimonial-card/bpl.avif"
-import brand6 from "@/cdn/images/testimonial-card/brand-6.avif"
-import brand7 from "@/cdn/images/testimonial-card/brand-7.avif"
-import brand8 from "@/cdn/images/testimonial-card/brand-8.avif"
-import brand9 from "@/cdn/images/testimonial-card/brand-9.avif"
-import brand10 from "@/cdn/images/testimonial-card/brand10.avif"
-import brand11 from "@/cdn/images/testimonial-card/brand-11.avif"
+import brand1 from "@/cdn/images/testimonial-card/brand1.png"
+import brand2 from "@/cdn/images/testimonial-card/brand2.png"
+import brand3 from "@/cdn/images/testimonial-card/brand3.png"
+import brand4 from "@/cdn/images/testimonial-card/brand4.png"
+import brand5 from "@/cdn/images/testimonial-card/brand5.png"
+import brand6 from "@/cdn/images/testimonial-card/brand6.png"
+import brand7 from "@/cdn/images/testimonial-card/brand7.png"
+import brand8 from "@/cdn/images/testimonial-card/brand8.png"
+import brand9 from "@/cdn/images/testimonial-card/brand9.png"
+import brand10 from "@/cdn/images/testimonial-card/brand10.png"
+import brand11 from "@/cdn/images/testimonial-card/brand11.png"
+import brand12 from "@/cdn/images/testimonial-card/brand12.png"
 
 
 import { StaticImport } from "next/dist/shared/lib/get-img-props"
@@ -31,15 +32,26 @@ import aluminiumExtrusion from'@/cdn/images/aluminiumextrution/aluminium-hero.we
 
 
 
-import inovation1 from "@/cdn/images/inovations/inovation-1.avif";
-import inovation2 from "@/cdn/images/inovations/inovation-2.avif";
-import inovation3 from "@/cdn/images/inovations/inovation-3.avif";
-import inovation4 from "@/cdn/images/inovations/inovation-4.avif";
-import inovation5 from "@/cdn/images/inovations/inovation-5.avif";
-import inovation6 from "@/cdn/images/inovations/inovation-6.avif";
-import inovation7 from "@/cdn/images/inovations/inovation-7.avif";
-import inovation8 from "@/cdn/images/inovations/inovation-8.avif";
-import inovation9 from "@/cdn/images/inovations/inovation-9.avif";
+import inovation1 from "@/cdn/images/inovations/showcase-1.webp";
+import inovation2 from "@/cdn/images/inovations/showcase-2.webp";
+import inovation3 from "@/cdn/images/inovations/showcase-3.webp";
+import inovation4 from "@/cdn/images/inovations/showcase-4.webp";
+import inovation5 from "@/cdn/images/inovations/showcase-5.webp";
+import inovation6 from "@/cdn/images/inovations/showcase-6.webp";
+import inovation7 from "@/cdn/images/inovations/showcase-7.webp";
+import inovation8 from "@/cdn/images/inovations/showcase-8.webp";
+import inovation9 from "@/cdn/images/inovations/showcase-9.webp";
+
+
+
+import valueVector1 from '@/cdn/images/value-added/vector-1.png'
+import valueVector2 from '@/cdn/images/value-added/vector-2.png'
+import valueVector3 from '@/cdn/images/value-added/vector-3.png'
+import valueVector4 from '@/cdn/images/value-added/vector-4.png'
+import valueVector5 from '@/cdn/images/value-added/vector-5.png'
+import valueVector6 from '@/cdn/images/value-added/vector-6.png'
+import valueVector7 from '@/cdn/images/value-added/vector-7.png'
+
 
 
 export const WindowSize = {
@@ -71,14 +83,9 @@ export const WhatWeOfferConst = [
     className: ""
   },
   {
-    "image": cncMachine,
-    "text": "Aluminium Extrusion",
+    "image": heavyMetal,
+    "text": "Heavy Metal Fabrication",
      className: "flex flex-col gap-1 lg:flex-row lg:gap-0"
-  },
-  {
-    "image": cncMachine,
-    "text": "Moding",
-    className: "flex flex-col gap-1 lg:flex-row lg:gap-0"
   }
 ]
 
@@ -245,5 +252,43 @@ export const Innovation = [{
 }]
 
 export const TESTIMONIALS: StaticImport[] = [
-  brand1, brand2, brand3, brand4, brand5, brand6, brand7, brand8, brand9, brand10, brand11
+  brand1, brand2, brand3, brand4, brand5, brand6, brand7, brand8, brand9, brand10, brand11, brand12
+]
+
+export const ValueAddedServices = [
+  {
+    title: "Quality Control (QC)",
+    description: "Rigorous quality control processes to ensure product reliability and compliance with international standards",
+    icon:   valueVector1
+  },
+  {
+    title: "Logistics",
+    description: " Comprehensive logistics solutions to streamline the delivery of your products worldwide.",
+    icon: valueVector2
+  },
+  {
+    title: "Die Making",
+    description: " Expertise in custom die making for precision manufacturing.",
+    icon: valueVector3
+  },
+  {
+    title: "DFM Analysis (Design for Manufacturing)", 
+    description: "Expert design analysis to optimize your product for manufacturability and cost-effectiveness.",
+    icon: valueVector4
+  },
+  {
+    title: "Rapid Prototyping",
+    description: "Fast turnaround for prototypes to accelerate your product development process.",
+    icon: valueVector5
+  },
+  {
+    title: "Assembly Services",
+    description: "Full assembly services for various components, ensuring high-quality finished products.",
+    icon: valueVector6
+  },
+  {
+    title: "Project Management",
+    description: "Efficient management of your projects from concept to completion, ensuring timely and cost-effective delivery.",
+    icon: valueVector7
+  }
 ]

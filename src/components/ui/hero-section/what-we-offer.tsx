@@ -16,11 +16,11 @@ const WhatWeOffer = () => {
                 title='Your One-Stop Manufacturing Partner'
                 description=''
                 className='pl-12'/>
-                <div className='grid grid-cols-4  lg:flex w-full justify-between gap-12  items-center my-6 overflow-hidden lg:overflow-x-scroll py-4'>
+                <Section className='grid grid-cols-4  lg:flex w-full justify-between gap-12  items-center py-12 overflow-hidden lg:overflow-x-scroll pl-12 bg-transparent transition-all duration-300'>
                     {
                         WhatWeOfferConst.map((item, index) => <ImageCard image={item.image} text={item.text} key={item.text}  className={`${item.className} ${index === 0  && 'ml-12'}`}/>)
                     }
-                </div>
+                </Section>
             </Section>
             <div className='h-auto relative py-6'>
                 <Image src={gridBg} alt='grid-background' className='absolute  inset-0' fill />
@@ -46,12 +46,15 @@ export const ImageCard = ({ image, text, className }: {
     className: string
 
 }) => {
-    return <div className={cn('w-max h-max lg:w-60 lg:h-48 shrink-0 flex items-center justify-between  border border-white lg:p-3 bg-black relative', className)}>
-        <div className='w-56 h-44 lg:block border border-white absolute -top-2 -left-2 transition-all -z-10  ease-in-out hover:bg-orangeBg hidden'></div>
-        <div className='w-28 h-24  relative z-10'>
+    return <div className={cn('w-max h-max lg:w-60 lg:h-48 hover:cursor-pointer shrink-0 relative hover:scale-105 transition-all duration-300  ', className)}>
+        <div className='w-full h-full flex items-center justify-between z-20 lg:p-3 bg-black relative border border-white '>
+        <div className='w-28 h-24  relative z-20 '>
             <Image src={image} fill alt={text} />
         </div>
         <h1 className='text-end  font-bold'>{text}</h1>
+        </div>
+        <div className='w-56 h-44 lg:block border border-white bg-transparent absolute -top-4 -left-4 transition-all z-10  ease-in-out hover:bg-orangeBg hidden'/>
+       
 
     </div>
 

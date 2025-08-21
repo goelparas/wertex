@@ -29,6 +29,7 @@ export default {
         "gray-muted-100": 'var(--gray-muted-100)',
         "background-200": 'var(--background-200)',
         "background-300": 'var(--background-300)',
+        "background-400": 'var(--background-400)',
       },
       textColor: {
         primary: 'var(--text-primary)',
@@ -66,6 +67,7 @@ export default {
           'linear-gradient(239.38deg, #B72C29 -5.27%, #F08F1B 44.83%, #E97713 65.26%, #C23C24 97.81%)',
         'cnc-bg':
           "url('/src/cdn/images/cnc/metalworking-cnc-milling-machine.png')",
+          "gradient-gray-shine":'linear-gradient(234.97deg, #353535 -49.8%, #161616 22.01%, #4A4A4A 51.29%, #141414 97.95%)',
       },
       animation: {
         scroll:

@@ -182,7 +182,7 @@ const JoinSection = () => {
         <Button
           className="w-full rounded-none text-center py-8 "
         >
-          <p className="text-center text-white font-bold text-2xl w-full">Click Here</p>
+          <p className="text-center text-white font-bold text-3xl w-full">Click Here</p>
         </Button>
       </div>
     </>

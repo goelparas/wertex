@@ -9,6 +9,7 @@ import wertex from "@/cdn/images/wertex-hollow.avif";
 import wertexWhite from '@/cdn/images/wertex.png'
 import TimeLine from "@/components/ui/about/timeline-section/TimeLine";
 import JoinSection from "@/components/ui/JoinSection/join-section";
+import Section from "@/components/common/Section";
 
 type Props = {};
 
@@ -17,13 +18,13 @@ const About = (props: Props) => {
     <div className="mx-12">
       <div className="h-svh  relative  overflow-hidden  ">
         <Image src={aboutUs} alt="AboutUs" height={950} className="w-full " />
-        <div className="absolute bottom-0   w-full    bg-black/30 backdrop-blur-xl">
+        <Section className="absolute bottom-0   w-full    bg-black/30 backdrop-blur-xl">
           <div className="flex flex-col  items-center justify-between gap-5 p-4 ">
-            <H1>
+            <H1 className="text-3xl">
               Rooted in Heritage, Driven by{" "}
               <span className="text-orangeBg">Technology</span>
             </H1>
-            <p className=" text-center md:text-xl">
+            <p className=" text-center text-xl2">
               Wertex was born out of a vision to redefine precision
               manufacturing. Nestled in Coimbatore, a city renowned for its
               engineering legacy, we’ve embraced the spirit of innovation and
@@ -32,7 +33,7 @@ const About = (props: Props) => {
               worldwide, delivering solutions that combine cutting-edge
               technology with unmatched craftsmanship.
             </p>
-            <p className=" text-center md:text-xl">
+            <p className=" text-center text-xl2">
               Our journey is built on the foundation of engineering expertise, a
               relentless commitment to quality, and a passion for solving
               complex challenges. Whether it's automotive, aerospace, medical,
@@ -40,17 +41,17 @@ const About = (props: Props) => {
               reality. Every component we create carries the hallmark of
               precision, collaboration, and trust.{" "}
             </p>
-            <p className=" text-center md:text-xl">
+            <p className=" text-center text-xl2">
               At Wertex, we don’t just manufacture parts—we create
               possibilities. With a focus on sustainability, scalability, and
               customer-centric solutions, we are shaping the future of
               manufacturing, one innovation at a time.
             </p>
           </div>
-        </div>
+        </Section>
       </div>
 
-      <div className="flex gap-5  w-full  mt-10 h-max">
+      <Section className="flex   w-full  mt-10 h-max  gap-12 bg-transparent">
         {[
           {
             title: "MISSION",
@@ -65,21 +66,20 @@ const About = (props: Props) => {
               "To be the world’s most trusted partner in manufacturing, delivering solutions that shape the future of industries.",
           },
         ].map(({ logo, title, description }) => (
-          <div
-            className={cn(
-              "w-max h-max lg:w-1/2 lg:h-80  flex flex-col p-4 items-center justify-between  border border-white   bg-black relative"
-            )}
-            key={title}
-          >
-            <div className="w-full h-full lg:block border border-white absolute -top-2 -left-2 transition-all -z-10  ease-in-out hover:bg-orangeBg hidden" />
-            <div className="flex gap-4 justify-start w-full">
-              <Image src={logo} alt={title} className="w-8 h-8" />
-              <H1>{title}</H1>
-            </div>
-            <p>{description}</p>
-          </div>
+          <div className={cn('w-1/2 h-[21rem] hover:cursor-pointer shrink-0 relative  bg-background hover:scale-105 transition-all duration-300 ')}>
+        <div className='w-full h-full flex flex-col items-center justify-between z-20 lg:p-3 bg-background relative border border-white '>
+        <div className=' z-20 flex justify-start items-center w-full gap-4'>
+            <Image src={logo}  alt={title} width={42} height={42} />
+            <H1 className="text-xl2">{title}</H1>
+        </div>
+        <h1 className='text-start   text-xl2'>{description}</h1>
+        </div>
+        <div className='w-full h-full lg:block border border-white bg-transparent absolute -top-4 -left-4 transition-all z-10  ease-in-out hover:bg-orangeBg hidden'/>
+       
+
+    </div>
         ))}
-      </div>
+      </Section>
       <div className="w-full bg-custom-gradient p-5 my-10">
         <div className="md:w-4/5 md:h-48 relative mx-auto">
           <Image src={wertexWhite} alt="logo" fill className="object-contain" />
@@ -111,7 +111,7 @@ const About = (props: Props) => {
         </div>
       </div>
       <div className="flex justify-between items-center mt-10">
-        <H1 className="capitalize">Talk to Us </H1>
+        <H1 className="capitalize ">Talk to Us </H1>
         <p className="text-xl2">
           Business professionals collaborating with Wertex <br />
           engineers to discuss custom manufacturing solutions.

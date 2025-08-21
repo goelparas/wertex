@@ -89,7 +89,7 @@ export const BrandsShowCase = ({
                         key={idx}
                     >
                         <div className=" w-full h-full lg:w-72 lg:h-32 flex relative items-center justify-center">
-                            <Image src={item}  alt=""  className="absolute  m-auto object-contain w-full h-full"/>
+                            <Image src={item}  alt=""  className="absolute  m-auto object-contain w-full h-full" quality={100}/>
                         </div>
 
                     </li>

@@ -27,7 +27,7 @@
   --gray-muted-100: #C3C3C3;
   --background-200 :rgba(79, 79, 79, 0.45);
   --background-300 :rgba(39, 39, 39, 0.58);
-
+  --background-400 :rgba(184, 184, 184, 1);
 
   /* Font variables */
 
@@ -36,6 +36,7 @@
   --font-size-base: 1rem;
   --font-size-lg: 1.125rem;
   --font-size-xl: 1.25rem;
+
 
   /* Screen sizes */
   --screen-xs: 300px;
