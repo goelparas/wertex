@@ -15,6 +15,7 @@ const WhatWeOffer = () => {
                 <FlexHeader 
                 title='Your One-Stop Manufacturing Partner'
                 description=''
+                id='#why-wertex'
                 className='pl-12'/>
                 <Section className='grid grid-cols-4  lg:flex w-full justify-between gap-12  items-center py-12 overflow-hidden lg:overflow-x-scroll pl-12 bg-transparent transition-all duration-300'>
                     {

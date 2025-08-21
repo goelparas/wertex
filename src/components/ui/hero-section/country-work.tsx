@@ -2,7 +2,7 @@
 import Image from 'next/image'
 import React, { useState, useCallback, useMemo } from 'react'
 import map from "@/cdn/images/map.avif"
-import mapBg from "@/cdn/images/bg-map.avif"
+import mapBg from "@/cdn/images/value-added/mapBg.svg"
 import frame from "@/cdn/images/frame.png"
 
 // Constants extracted outside component to prevent recreation
@@ -122,18 +122,18 @@ const CountryWork: React.FC = () => {
       <div className="h-3/4 lg:h-4/5 relative w-full bg-custom-map-gradient backdrop-brightness-0">
         <div className="absolute inset-0 bg-black/30 z-[1]"/>
         <Image src={map } alt="World map" className="absolute" fill quality={100} />
-        <Image src={mapBg} alt="Map background" fill className="-z-10" />
+        <Image src={mapBg} alt="Map background" fill className="-z-10 backdrop-brightness-110" />
         {/* Country information card */}
         <div
-          className={`backdrop-blur-0 bg-[#D9D9D980] w-52 h-32 lg:w-96 lg:h-48 absolute bottom-64 p-3 left-5 z-10 transition-all duration-300 ease-in-out transform ${
+          className={`backdrop-blur-0 bg-[#D9D9D980] w-52 h-32 lg:w-96 lg:h-48 absolute bottom-48 p-3 left-5 z-10 transition-all duration-300 ease-in-out transform ${
             isAnimating ? "scale-95 opacity-70" : "scale-100 opacity-100"
           }`}
         >
-          <h1 className="text-white text-2xl font-bold mb-2">{selectedCountry}</h1>
+          <h1 className="text-white text-3xl font-bold mb-2">{selectedCountry}</h1>
           <div className="text-white text-sm lg:text-base space-y-1 opacity-90">
-            <p>Ph no: {selectedContactData.phone}</p>
-            <p>Email: {selectedContactData.email}</p>
-            <p>LinkedIn: {selectedContactData.linkedin}</p>
+            <p className='font-semibold'>Ph no: {selectedContactData.phone}</p>
+            <p className='font-semibold'>Email: {selectedContactData.email}</p>
+            <p className='font-semibold'>LinkedIn: {selectedContactData.linkedin}</p>
           </div>
         </div>
 
@@ -173,7 +173,7 @@ const CountryWork: React.FC = () => {
 
       {/* Bottom section */}
       <div className="flex flex-col lg:flex-row gap-2 lg:gap-2 p-2 m-5 lg:p-6 lg:absolute lg:bottom-4 justify-between rounded-md w-[90%] lg:mx-auto left-0 right-0 relative">
-        <Image src={frame} fill alt="Frame decoration" className="-z-10" />
+        <Image src={frame} fill alt="Frame decoration" className="z-10" />
         <div className="flex flex-col z-10 justify-between items-start gap-2 px-6">
           <h1 className="text-xl lg:text-3xl font-bold">Innovating Across Borders</h1>
           <a

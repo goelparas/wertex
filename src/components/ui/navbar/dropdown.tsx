@@ -146,7 +146,7 @@ const Dropdown: React.FC<DropdownProps> = memo(({ trigger, items = [], className
     >
       <button 
         ref={triggerRef}
-        className="text-[#CDCDCD] font-semibold text-lg uppercase hover:cursor-pointer py-4 px-3 text-nowrap hover:text-white focus:text-white focus:outline-none focus:ring-2   focus:ring-offset-2 focus:ring-offset-black rounded-t-2xl roun transition-colors duration-200"
+        className="text-[#CDCDCD] font-semibold text-lg uppercase hover:cursor-pointer py-4 px-3 text-nowrap hover:text-white focus:text-white focus:outline-none    rounded-t-2xl roun transition-colors duration-200"
         onKeyDown={handleKeyDown}
         aria-expanded={isOpen}
         aria-haspopup="true"

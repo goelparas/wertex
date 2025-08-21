@@ -20,7 +20,7 @@ const HeroSection = ({
   className?: string;
 }) => {
   return (
-    <div className={cn(`w-full px-12 `, className)}>
+    <div className={cn(`w-full px-12 bg-background`, className)}>
       <FlexHeader title={title} description={description} heading={heading} />
       <div className="w-full flex flex-col  justify-between items-center gap-8 h-[85svh] mt-12">
         <div className="h-full relative w-full">

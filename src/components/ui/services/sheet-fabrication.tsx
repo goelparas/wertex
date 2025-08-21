@@ -59,7 +59,7 @@ const SheetFabrication = (props: Props) => {
           "Sheet metal fabrication transforms flat metal sheets into precise parts and assemblies through cutting, bending, punching, and welding. At Wertex, we deliver tailored solutions that meet the demands of industries like automotive, aerospace, and industrial manufacturing with exceptional quality and precision."
         }
       />
-      <Section className="bg-black"> <FlexHeader2
+      <Section className="bg-black mt12"> <FlexHeader2
         heading="Materials Built for Precision and Versatility"
         description="A wide variety of materials to suit your project needs."
       />

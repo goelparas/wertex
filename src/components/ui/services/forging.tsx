@@ -149,12 +149,12 @@ const ForgingPage: React.FC = () => {
         description="Precision forging solutions for demanding industrial applications."
         heading=""
         alt="Forging"
-        className="bg-black"
+        className="bg-background"
         src={forgingHero}
         longDescription="Forging is a cornerstone of manufacturing, shaping metal through compressive forces to create durable, high-strength components. At Wertex, we combine advanced techniques with industry expertise to deliver precision-forged parts for industries like aerospace, automotive, oil and gas, and industrial machinery. Every project is crafted to meet the highest standards of strength, consistency, and performance."
       />
 
-      <Section className="bg-black mt-0">
+      <Section className="bg-black mt-12">
         <FlexHeader2
           heading="Comprehensive Forging Capabilities Tailored to Your Needs"
           description="From precision forging to rolled rings, we deliver excellence in every process."
