@@ -1,7 +1,7 @@
 'use client'
 import Image from 'next/image'
 import React, { useState, useCallback, useMemo } from 'react'
-import map from "@/cdn/images/map.avif"
+import map from "@/cdn/images/map.webp"
 import mapBg from "@/cdn/images/bg-map.avif"
 import frame from "@/cdn/images/frame.png"
 
@@ -45,11 +45,11 @@ const CONTACT_DATA: Record<Country, ContactInfo> = {
 
 // Country markers configuration
 const COUNTRY_MARKERS: Record<Country, { top: string; left?: string; right?: string }> = {
-  India: { top: '45%', right: '15%' },
-  UAE: { top: '40%', right: '25%' },
-  Germany: { top: '25%', left: '45%' },
+  India: { top: '50%', right: '30%' },
+  UAE: { top: '45%', right: '36%' },
   USA: { top: '30%', left: '20%' },
-  Netherlands: { top: '20%', left: '47%' },
+  Germany: { top: '30%', left: '52%' },
+  Netherlands: { top: '20%', left: '55%' },
 }
 
 // Common className patterns
@@ -104,9 +104,9 @@ const CountryWork: React.FC = () => {
   )
 
   return (
-    <div className="h-screen relative">
+    <div className="h-dvh relative">
       {/* Desktop country navigation */}
-      <ul className="hidden justify-between items-end w-full list-disc bg-background lg:flex h-1/5 p-6">
+      <ul className="hidden justify-between items-end w-full list-disc bg-background lg:flex h-[10dvh] p-6">
         {countryListItems.map(({ country, className }) => (
           <li
             key={country}
@@ -119,9 +119,8 @@ const CountryWork: React.FC = () => {
       </ul>
 
       {/* Map section */}
-      <div className="h-3/4 lg:h-4/5 relative w-full bg-custom-map-gradient backdrop-brightness-0">
-        <div className="absolute inset-0 bg-black/30 z-[1]"/>
-        <Image src={map } alt="World map" className="absolute" fill quality={100} />
+      <div className="h-3/4 lg:h-[90dvh] relative w-full bg-custom-map-gradient backdrop-brightness-0">
+        <Image src={map } alt="World map" className="absolute object-contain" fill quality={100} />
         <Image src={mapBg} alt="Map background" fill className="-z-10 backdrop-brightness-110" />
         {/* Country information card */}
         <div
@@ -141,18 +140,41 @@ const CountryWork: React.FC = () => {
         <div className="absolute inset-0 z-10">
           {COUNTRIES.map((country) => {
             const position = COUNTRY_MARKERS[country]
+            const isSelected = selectedCountry === country
             return (
-              <button
-                key={country}
-                className={MARKER_BASE_CLASS}
-                style={{
-                  top: position.top,
-                  left: position.left,
-                  right: position.right,
-                }}
-                onClick={() => handleCountryClick(country)}
-                aria-label={`Select ${country}`}
-              />
+              <div key={country} className="absolute" style={{
+                top: position.top,
+                left: position.left,
+                right: position.right,
+              }}>
+                {/* Main marker dot */}
+                <button
+                  className={`${MARKER_BASE_CLASS} ${isSelected ? 'bg-white scale-150' : ''}`}
+                  onClick={() => handleCountryClick(country)}
+                  aria-label={`Select ${country}`}
+                />
+                
+                {/* Concentric circle animation for selected country */}
+                {isSelected && (
+                  <>
+                    <div className="absolute w-6 h-6 border-2 border-white rounded-full animate-ping" 
+                         style={{ top: '-6px', left: '-6px' }} />
+                    <div className="absolute w-8 h-8 border border-white rounded-full animate-pulse" 
+                         style={{ top: '-10px', left: '-10px' }} />
+                    <div className="absolute w-12 h-12 border border-white rounded-full animate-pulse" 
+                         style={{ top: '-18px', left: '-18px', animationDelay: '0.5s' }} />
+                  </>
+                )}
+                
+                {/* Country name label */}
+                <div className={`absolute top-4 left-1/2 transform -translate-x-1/2 whitespace-nowrap transition-all duration-300 ${
+                  isSelected ? 'opacity-100 scale-100' : 'opacity-0 scale-75'
+                }`}>
+                  <span className="bg-black bg-opacity-80 text-white text-xs px-2 py-1 rounded-md font-medium">
+                    {country}
+                  </span>
+                </div>
+              </div>
             )
           })}
         </div>
@@ -172,8 +194,8 @@ const CountryWork: React.FC = () => {
       </div>
 
       {/* Bottom section */}
-      <div className="flex flex-col lg:flex-row gap-2 lg:gap-2 p-2 m-5 lg:p-6 lg:absolute lg:bottom-4 justify-between rounded-md w-[90%] lg:mx-auto left-0 right-0 relative bg-custom-card-gradient-lt-br">
-        <Image src={frame} fill alt="Frame decoration" className="z-10" />
+      <div className="flex flex-col lg:flex-row gap-2 lg:gap-2 p-2 m-5 lg:p-6 lg:absolute lg:bottom-4 justify-between rounded-md w-[90%] lg:mx-auto left-0 right-0 relative">
+        <Image src={frame} fill alt="Frame decoration" className="z-10 mask" />
         <div className="flex flex-col z-10 justify-between items-start gap-2 px-6">
           <h1 className="text-xl lg:text-3xl font-bold">Innovating Across Borders</h1>
           <a

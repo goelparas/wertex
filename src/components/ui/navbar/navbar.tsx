@@ -18,7 +18,7 @@ const IndustryItems = [
 ]
 const menuItems = [
   { name: "HOME", href: "/" },
-  { name: "WHY WERTEX", href: "#" },
+  { name: "WHY WERTEX", href: "#why-wertex" },
   { name: "ABOUT US", href: "/about" },
   { name: "INDUSTRY", href: "#", hasDropdown: true, list: IndustryItems },
   { name: "SERVICES", href: "#" },
