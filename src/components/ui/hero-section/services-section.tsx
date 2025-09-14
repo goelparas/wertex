@@ -10,8 +10,8 @@ import { FlexHeader } from '@/components/common/FlexHeader/FlexHeader'
 
 const ServicesSection = () => {
     return (
-        <Section className=' bg-white   w-full overflow-x-hidden relative z-10 pt-6'>
-            <div className='flex flex-col lg:flex-row justify-between w-full items-center gap-2'>
+        <Section className=' bg-white   w-full overflow-x-hidden relative z-10 pt-6' >
+            <div className='flex flex-col lg:flex-row justify-between w-full items-center gap-2' id='services'>
                 <FlexHeader 
                 title='Comprehensive Manufacturing Services'
                 description={<p className='text-black'>Your <span className="text-orangeBg font-bold">One-Stop</span><br/> Manufacturing Partner</p>}

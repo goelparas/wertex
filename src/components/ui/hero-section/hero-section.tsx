@@ -38,14 +38,13 @@ const HeroSection = () => {
             Contact us
           </a>
         </span>
-
-        <div className="absolute w-[20rem]  sm:w-[40rem] md:w-[49rem]   h-[12rem] left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
+        <div className="absolute w-[20rem]  sm:w-[40rem] md:w-[49rem]   h-[12rem] left-1/2 top-[40%] -translate-x-1/2 -translate-y-[40%]">
           <div className="relative flex flex-col sm:flex-row gap-2  items-start sm:items-center justify-between  mb-2">
             <p className="font-medium text-xxs lg:text-xs">
               Since <br />
               2010
             </p>
-            <figure className=" w-full relative  h-16 sm:h-[9rem] md:h-[10rem]">
+            <figure className="w-full relative  h-16 sm:h-[9rem] md:h-[10rem]">
               <Image src={logo} alt="logo" quality={100} fill />
             </figure>
           </div>
@@ -53,6 +52,7 @@ const HeroSection = () => {
             Shaping the Future of Manufacturing
           </h1>
         </div>
+        
         <div className="absolute m-2 sm:m-12  left-0 bottom-20 lg:bottom-5 right-0 ">
           <div className="grid  grid-cols-3 gap-8 sm:gap-32  mx-[2%]">
             {statsData.map((stat) => (
@@ -60,13 +60,17 @@ const HeroSection = () => {
                 className="flex items-center justify-center sm:px-2"
                 key={stat.value}
               >
-                <div className="w-[12.5rem]">
-                  <h1 className="font-bold text-sm sm:text-3xl text-center">
+                <div className="w- flex flex-col">
+                  <h1 className="font-bold text-sm sm:text-4xl text-center">
                     {stat.value}
                   </h1>
-                  <p className="uppercase text-center text-[6px] sm:text-sm">
+                  <div className="flex justify-between">
+                    <div className="w-1/2"/>
+                   <p className="uppercase text-start text-[6px] sm:text-sm">
                     {stat.label}
                   </p>{" "}
+                  </div>
+                  
                 </div>
               </div>
             ))}

@@ -66,18 +66,20 @@ const About = (props: Props) => {
               "To be the world’s most trusted partner in manufacturing, delivering solutions that shape the future of industries.",
           },
         ].map(({ logo, title, description }) => (
-          <div className={cn('w-1/2 h-[21rem] hover:cursor-pointer shrink-0 relative  bg-background hover:scale-105 transition-all duration-300 ')}>
-        <div className='w-full h-full flex flex-col items-center justify-between z-20 lg:p-3 bg-background relative border border-white '>
-        <div className=' z-20 flex justify-start items-center w-full gap-4'>
-            <Image src={logo}  alt={title} width={42} height={42} />
-            <H1 className="text-xl2">{title}</H1>
-        </div>
-        <h1 className='text-start   text-xl2'>{description}</h1>
-        </div>
-        <div className='w-full h-full lg:block border border-white bg-transparent absolute -top-4 -left-4 transition-all z-10  ease-in-out hover:bg-orangeBg hidden'/>
-       
-
-    </div>
+          <div className={cn(
+            'group w-1/2 h-[21rem] hover:cursor-pointer shrink-0 relative bg-background hover:scale-105 transition-all duration-300'
+          )}>
+            <div className="w-full h-full flex flex-col items-center justify-between z-20 lg:p-3 bg-background relative border border-white">
+              <div className="z-20 flex justify-start items-center w-full gap-4">
+                <Image src={logo} alt={title} width={42} height={42} />
+                <H1 className="text-xl2">{title}</H1>
+              </div>
+              <h1 className="text-start text-xl2">{description}</h1>
+            </div>
+          
+            <div className="w-full h-full lg:block border border-white bg-transparent absolute -top-4 -left-4 transition-all duration-300 z-10 ease-in-out hidden group-hover:bg-orangeBg" />
+          </div>
+          
         ))}
       </Section>
       <div className="w-full bg-custom-gradient p-5 my-10">

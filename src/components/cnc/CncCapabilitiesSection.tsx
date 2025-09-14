@@ -31,13 +31,13 @@ export default function CncCapabilitiesSection() {
         </motion.div>
         <div className='grid grid-cols-1 md:grid-cols-3 gap-6 p-4 w-full relative h-[50rem] justify-center items-center'>
           <div className='w-full h-[50rem] absolute'>
-            <Image
+            {/* <Image
               src={machineHammer}
               alt='Precision Casting Process'
               fill
               className='object-cover'
               priority
-            />
+            /> */}
            
           </div>
           <CapabilityCard

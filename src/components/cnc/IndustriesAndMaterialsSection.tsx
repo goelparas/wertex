@@ -5,18 +5,53 @@ import { motion } from 'framer-motion';
 import IndustryCard from './IndustryCard';
 import MaterialCard from './MaterialCard';
 import {
-  Car,
-  Plane,
-  Stethoscope,
-  Bot,
-  Cpu,
   Layers,
   Hammer,
 } from 'lucide-react';
 import Section from '../common/Section';
+import bus from "@/cdn/images/cnc/bus.png"
+import aeroplane from "@/cdn/images/cnc/aeroplane.png"
+import medical from "@/cdn/images/cnc/metal.png"
+import robotics from "@/cdn/images/cnc/roboticsd.png"
+import electronic from "@/cdn/images/cnc/electronic.png"
+import metal from "@/cdn/images/cnc/metal.png"
+import plastics from "@/cdn/images/cnc/plastic.png"
 import   {
   FlexHeader2,
 } from "@/components/common/FlexHeader/FlexHeader";
+import { StaticImageData } from 'next/image';
+const industries = [
+  {
+    icon: bus,
+    title: "Automotive",
+    description: "Engine components, transmission parts",
+    delay: 0,
+  },
+  {
+    icon: aeroplane,
+    title: "Aerospace",
+    description: "Aircraft engines, structural parts",
+    delay: 0.1,
+  },
+  {
+    icon: medical,
+    title: "Medical",
+    description: "Surgical instruments, diagnostic devices",
+    delay: 0.2,
+  },
+  {
+    icon: robotics,
+    title: "Robotics",
+    description: "Precision components for automation",
+    delay: 0.3,
+  },
+  {
+    icon: electronic,
+    title: "Electronics",
+    description: "Custom parts for cutting-edge devices",
+    delay: 0.4,
+  },
+];
 export default function IndustriesAndMaterialsSection() {
   return (
     <Section className='relative w-full bg-transparent pt-0 mt-0 '>
@@ -35,42 +70,17 @@ export default function IndustriesAndMaterialsSection() {
 
             </motion.div>
 
-            <div className='space-y-4'>
-              <IndustryCard
-                icon={<Car size={28} />}
-                title='Automotive'
-                description='Engine components, transmission parts'
-                delay={0}
-              />
-
-              <IndustryCard
-                icon={<Plane size={28} />}
-                title='Aerospace'
-                description='Aircraft engines, structural parts'
-                delay={0.1}
-              />
-
-              <IndustryCard
-                icon={<Stethoscope size={28} />}
-                title='Medical'
-                description='Surgical instruments, diagnostic devices'
-                delay={0.2}
-              />
-
-              <IndustryCard
-                icon={<Bot size={28} />}
-                title='Robotics'
-                description='Precision components for automation'
-                delay={0.3}
-              />
-
-              <IndustryCard
-                icon={<Cpu size={28} />}
-                title='Electronics'
-                description='Custom parts for cutting-edge devices'
-                delay={0.4}
-              />
-            </div>
+            <div className="space-y-4">
+  {industries.map((industry, index) => (
+    <IndustryCard
+      key={index}
+      icon={industry.icon as StaticImageData}
+      title={industry.title}
+      description={industry.description}
+      delay={industry.delay}
+    />
+  ))}
+</div>
           </div>
 
           {/* Materials Column */}
@@ -87,14 +97,14 @@ export default function IndustriesAndMaterialsSection() {
 
             <div className='space-y-4 '>
               <MaterialCard
-                icon={<Layers size={28} />}
+                icon={metal}
                 title='Metals'
                 description='Aluminum, steel, stainless steel, titanium, Inconel, zinc, lead, copper, and graphite'
                 delay={0}
               />
 
               <MaterialCard
-                icon={<Hammer size={28} />}
+                icon={plastics}
                 title='Advanced Plastics'
                 description='ABS, Teflon, PEEK, PPS, and more'
                 delay={0.1}

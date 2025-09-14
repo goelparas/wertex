@@ -19,7 +19,7 @@ export default function RootLayout({
     <html lang="en" style={{ fontFamily: 'var(--font-montserrat)' }}>
       <link rel="icon" href="/favicon.ico" type="image" />
       <body
-        className="antialiased  text-white scroll-smooth max-w-screen-3xl mx-auto relative "
+        className="antialiased  text-white scroll-smooth max-w-screen-3xl mx-auto relative"
         style={{ fontFamily: 'var(--font-montserrat)' }}
       >
         <Navbar/>

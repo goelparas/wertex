@@ -8,7 +8,8 @@ import { ArrowLeft, ArrowRight } from "lucide-react"
 
 import { cn } from "@/lib/utils"
 import { Button } from "../button2/button"
-
+import { ImageContainer } from "../Container/ImageGrid"
+import arrowLeft from "@/cdn/images/cnc/left.png"
 type CarouselApi = UseEmblaCarouselType[1]
 type UseCarouselParameters = Parameters<typeof useEmblaCarousel>
 type CarouselOptions = UseCarouselParameters[0]
@@ -163,7 +164,7 @@ function CarouselItem({ className, ...props }: React.ComponentProps<"div">) {
       data-slot="carousel-item"
       className={cn(
         "min-w-0 shrink-0 grow-0 basis-full",
-        orientation === "horizontal" ? "pl-4" : "pt-4",
+        orientation === "horizontal" ? "pl-2" : "pt-4",
         className
       )}
       {...props}
@@ -185,7 +186,7 @@ function CarouselPrevious({
       variant={variant}
       size={size}
       className={cn(
-        "absolute size-16 ",
+        "absolute size-16 bg-black rounded-none opacity-100",
         orientation === "horizontal"
           ? "top-1/2 -left-12 -translate-y-1/2"
           : "-top-12 left-1/2 -translate-x-1/2 rotate-90",
@@ -195,8 +196,7 @@ function CarouselPrevious({
       onClick={scrollPrev}
       {...props}
     >
-      <span className="bg-black p-2 flex items-center justify-center"><ArrowLeft/></span>
-      <span className="sr-only">Previous slide</span>
+      <ImageContainer img={arrowLeft} className='w-12 h-12 z-10' variant='white' width={35} height={35}/>
     </Button>
   )
 }
@@ -225,8 +225,7 @@ function CarouselNext({
       onClick={scrollNext}
       {...props}
     >
-    <span className="bg-black p-2 flex items-center justify-center"><ArrowRight className="w-12 h-12" width={32} height={32}/></span>
-      <span className="sr-only">Next slide</span>
+   <ImageContainer img={arrowLeft} className='w-12 h-12 z-10 rotate-180' variant='white' width={35} height={35}/>
     </Button>
   )
 }

@@ -1,8 +1,11 @@
 import cncMachine from "@/cdn/images/what-we-offer/cnc-machine.png"
 import casting from "@/cdn/images/what-we-offer/casting.png"
 import forging from "@/cdn/images/what-we-offer/forging.png"
-import fabrication from "@/cdn/images/what-we-offer/sheet-fabrication.png"
-import heavyMetal from "@/cdn/images/what-we-offer/heavy-metal.png"
+import sheetMetal from "@/cdn/images/what-we-offer/sheet-metal.png"
+import molding from "@/cdn/images/what-we-offer/molding.png"
+import surfaceTreatMent from "@/cdn/images/what-we-offer/surface-treatment.png"
+import aluminiumExtrusionWWO from "@/cdn/images/what-we-offer/aluminium-extrusion.png"
+
 
 // testimonials 
 
@@ -69,7 +72,7 @@ export const WhatWeOfferConst = [
   },
   {
     "image": casting,
-    "text": "Casting.",
+    "text": "Casting",
     className: "flex flex-col gap-1 lg:flex-row lg:gap-0"
   },
   {
@@ -78,13 +81,23 @@ export const WhatWeOfferConst = [
     className: ""
   },
   {
-    image: fabrication,
+    image: sheetMetal,
     text: "Sheet Metal Fabrication",
     className: ""
   },
   {
-    "image": heavyMetal,
-    "text": "Heavy Metal Fabrication",
+    "image": aluminiumExtrusionWWO,
+    "text": "Aluminum Extrusion",
+     className: "flex flex-col gap-1 lg:flex-row lg:gap-0"
+  },
+  {
+    "image": surfaceTreatMent,
+    "text": "Surface Treatment",
+     className: "flex flex-col gap-1 lg:flex-row lg:gap-0"
+  },
+  {
+    "image": molding,
+    "text": "Molding",
      className: "flex flex-col gap-1 lg:flex-row lg:gap-0"
   }
 ]

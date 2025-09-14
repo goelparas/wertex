@@ -9,6 +9,7 @@ import {
 } from "@/components/common/BentoGrid/BentoGrid";
 import Image from "next/image";
 import moldingservice from "@/cdn/images/moulding/moulding-service.avif";
+import moldingservice2 from "@/cdn/images/moulding/moulding-service-2.webp";
 import Footerservice from "@/components/common/footer-service/footerservice";
 import vector1 from '@/cdn/images/vectors/vector-1.svg'
 import vector2 from '@/cdn/images/vectors/vector-2.svg'
@@ -195,14 +196,14 @@ const componentTwo1 = (
   </div>
 );
 const componentTwo2 = (
-  <div className="bg-custom-map-gradient flex items-center justify-center rounded-xl">
-    <Image
-      src={moldingservice}
-      alt="molding service"
-      width={490}
-      height={680}
-    />
-  </div>
+  <div className="bg-white flex items-center justify-center rounded-xl max-w-[31.25rem] mx-auto">
+  <Image
+    src={moldingservice2}
+    alt="molding service"
+    width={500}
+    height={680}
+  />
+</div>
 );
 const componentTwo3 = (
   <div>
@@ -219,29 +220,22 @@ const componentTwo3 = (
         {
           name: "Thermosets:",
           description: "Epoxy, Phenolic, and Melamine.",
+          img: vector1,
         },
         {
           name: "Rubbers:",
           description: "Silicone, Neoprene, and EPDM.",
+          img: vector2,
         },
       ].map((item, index) => (
         <div
           key={index}
           className="bg-borderGray rounded-xl p-4 flex  justify-between gap-8 "
         >
-          <div className="w-2/5 flex items-center justify-center">
-            <div className="relative flex items-center justify-center h-16 w-16 ">
-              <Image
-                src={moldingservice}
-                alt="molding service"
-                width={42}
-                height={42}
-              />
-              <Image src={grid} alt="casting main" fill />
-            </div>
+          <div className="flex flex-col items-center justify-center">
+            <ImageContainer img={item.img} />
           </div>
-
-          <div>
+          <div className="w-full flex justify-start items-center">
             <span className="text-xl2 font-bold">{item.name}</span>
             <span className="text-xl2">{item.description}</span>
           </div>

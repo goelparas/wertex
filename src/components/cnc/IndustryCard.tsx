@@ -3,9 +3,11 @@
 import React, { ReactNode } from 'react';
 import { motion } from 'framer-motion';
 import { cn } from '@/lib/utils';
+import { ImageContainer } from '../common/Container/ImageGrid';
+import { StaticImageData } from 'next/image';
 
 interface IndustryCardProps {
-  icon: ReactNode;
+  icon: StaticImageData;
   title: string;
   description: string;
   delay?: number;
@@ -29,7 +31,7 @@ export default function IndustryCard({
         'transition-all duration-300 hover:bg-muted/80'
       )}
     >
-      <div className='p-2  rounded-full'>{icon}</div>
+          <ImageContainer img={icon} className='w-16 h-16' variant='black' width={44} height={44}/>
       <div>
         <p className='font-bold text-black'>
           {title}:{' '}

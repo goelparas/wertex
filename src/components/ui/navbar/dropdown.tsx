@@ -2,7 +2,7 @@
 import type React from "react"
 import { useState, useCallback, useRef, useEffect, memo } from "react"
 import Link from "next/link"
-import { motion, AnimatePresence } from "framer-motion"
+import   { Variants , motion, AnimatePresence } from "framer-motion"
 import arrow from "@/cdn/images/aboutus/arrow-dot.svg"
 import Image from "next/image"
 interface DropdownItem {
@@ -30,7 +30,7 @@ const DEFAULT_SERVICE_ICONS: Record<string, string> = {
 } as const
 
 // Animation variants for better performance
-const dropdownVariants = {
+const dropdownVariants: Variants = {
   hidden: { 
     opacity: 0, 
     y: -10,
@@ -42,7 +42,7 @@ const dropdownVariants = {
     scale: 1,
     transition: {
       duration: 0.15,
-      ease: [0.4, 0.0, 0.2, 1] // Custom easing for smoother animation
+      ease: [0.4, 0.0, 0.2, 1] as [number, number, number, number] // ✅ tuple
     }
   },
   exit: { 
@@ -51,13 +51,13 @@ const dropdownVariants = {
     scale: 0.95,
     transition: {
       duration: 0.1,
-      ease: [0.4, 0.0, 1, 1]
+      ease: [0.4, 0.0, 1, 1] as [number, number, number, number] // ✅ tuple
     }
   }
 }
 
 const Dropdown: React.FC<DropdownProps> = memo(({ trigger, items = [], className = "" }) => {
-  const [isOpen, setIsOpen] = useState(true)
+  const [isOpen, setIsOpen] = useState(false)
   const [focusedIndex, setFocusedIndex] = useState(-1)
   const dropdownRef = useRef<HTMLDivElement>(null)
   const triggerRef = useRef<HTMLButtonElement>(null)
@@ -146,7 +146,7 @@ const Dropdown: React.FC<DropdownProps> = memo(({ trigger, items = [], className
     >
       <button 
         ref={triggerRef}
-        className="text-[#CDCDCD] font-semibold text-lg uppercase hover:cursor-pointer py-4 px-3 text-nowrap hover:text-white focus:text-white focus:outline-none    rounded-t-2xl roun transition-colors duration-200"
+        className="text-[#CDCDCD] font-semibold text-lg uppercase hover:cursor-pointer py-4 px-3 text-nowrap hover:text-white focus:text-white focus:outline-none    rounded-t-2xl roun transition-colors duration-200 z-50"
         onKeyDown={handleKeyDown}
         aria-expanded={isOpen}
         aria-haspopup="true"

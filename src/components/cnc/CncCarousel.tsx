@@ -20,10 +20,7 @@ import carousel5 from '@/cdn/images/cnc/carousel-2/carousel-5.webp'
 import carousel6 from '@/cdn/images/cnc/carousel-2/carousel-6.webp'
 
 const Items = [
-  {
-    title:"",
-    image:undefined
-  },
+
   {
     title:"Coordinate Measuring Machines (CMM)",
     image:carousel1
@@ -82,7 +79,7 @@ export const   CncCarousel  = ()=>{
     >
       <CarouselContent>
         {Items.map((item, index) => (
-          <CarouselItem key={index} className="md:basis-1/2 ">
+          <CarouselItem key={index} className="md:basis-1/3 ">
              <Card title={item.title} icon={item.image} />
           </CarouselItem>
         ))}

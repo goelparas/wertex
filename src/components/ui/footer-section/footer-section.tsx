@@ -5,12 +5,17 @@ import { ImageContainer } from '@/components/common/Container/ImageGrid'
 import logo from "@/cdn/images/wtx_logo_service.png";
 import Link from 'next/link';
 import { FaLinkedinIn } from 'react-icons/fa';
-
+import Image from "next/image"
+import circle from "@/cdn/images/circle.png"
 const FooterSection = () => {
     return (
          <Section className='flex items-start justify-between bg-transparent gap-2'>
-            <div className='flex flex-col  items-center justify-between gap-2  my-auto '>
+            <div className='flex flex-col  items-center justify-between gap-2  my-auto '> 
+              <div className="relative">
+                <Image src={circle} fill alt='circle'/>
             <ImageContainer img={logo} width={200} height={200} className='lg:w-80 lg:h-80' />
+              </div>
+
             </div>
             <div className='flex items-start gap-2 w-full justify-between text-xl2 h-full hover:cursor-pointer'>
                 <div className='w-1/4 text-center text-orangeBg'>Home</div>
