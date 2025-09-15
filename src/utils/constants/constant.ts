@@ -5,7 +5,7 @@ import sheetMetal from "@/cdn/images/what-we-offer/sheet-metal.png"
 import molding from "@/cdn/images/what-we-offer/molding.png"
 import surfaceTreatMent from "@/cdn/images/what-we-offer/surface-treatment.png"
 import aluminiumExtrusionWWO from "@/cdn/images/what-we-offer/aluminium-extrusion.png"
-
+import surfaceTreatment from "@/cdn/images/surface-treatment.webp";
 
 // testimonials 
 
@@ -224,15 +224,15 @@ export const ServiceSection = [
       onClick: () => alert("Quality Assurance Clicked!"),
     },
   },
-  // {
-  //   title: "Surface Treatment",
-  //   paragraph: "Durability and aesthetics redefined with advanced surface finishing techniques, enhancing wear resistance and visual appeal.",
-  //   image: image6,
-  //   cta: {
-  //     text: "Learn How",
-  //     onClick: () => alert("Quality Assurance Clicked!"),
-  //   },
-  // },
+  {
+    title: "Surface Treatment",
+    paragraph: "Durability and aesthetics redefined with advanced surface finishing techniques, enhancing wear resistance and visual appeal.",
+    image: surfaceTreatment,
+    cta: {
+      text: "Learn How",
+      onClick: () => alert("Quality Assurance Clicked!"),
+    },
+  },
 ];
 
 export const Innovation = [{

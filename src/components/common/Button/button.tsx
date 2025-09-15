@@ -13,7 +13,7 @@ const Button = ({ title, className, loading, children, ...props }: ButtonProps) 
   return (
     <button
       className={clsx(
-        "relative flex items-center justify-between gap-2 px-4 py-2 rounded-md bg-custom-gradient font-bold text-xs sm:text-sm md:text-[1rem] disabled:opacity-50",
+        "relative flex items-center justify-center gap-2 px-4 py-2 rounded-md bg-custom-gradient font-bold text-xs sm:text-sm md:text-[1rem] disabled:opacity-50",
         className
       )}
       disabled={loading}

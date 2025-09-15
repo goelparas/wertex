@@ -1,11 +1,23 @@
 import React from "react";
 import HeroSection from "@/components/common/Container/HeroSection-service";
 import Section from "@/components/common/Section";
-import surfaceTreatment from "@/cdn/images/hero_background.avif";
+import surfaceTreatment from "@/cdn/images/surface-treatment.webp";
 import {FlexHeader} from "@/components/common/FlexHeader/FlexHeader";
-import FooterSection from "../footer-section/footer-section";
 import Footerservice from "@/components/common/footer-service/footerservice";
-import anodizing from "@/cdn/images/about_us_background.png";
+import gridBg from "@/cdn/images/surface/grid-bg-surfce.png";
+import Image, { StaticImageData } from "next/image";
+import vector1 from "@/cdn/images/surface/vector-1.png"
+import vector2 from "@/cdn/images/surface/vector-2.png"
+import vector3 from "@/cdn/images/surface/vector-3.png"
+import vector4 from "@/cdn/images/surface/vector-4.png"
+import vector5 from "@/cdn/images/surface/vector-5.png"
+import vector6 from "@/cdn/images/surface/vector-6.png"
+import metal from "@/cdn/images/surface/metal.png"
+import plastic from "@/cdn/images/surface/inspection-panel.png"
+import sheet from "@/cdn/images/surface/sheet.png"
+import { ImageContainer } from "@/components/common/Container/ImageGrid";
+import IndustryCard from "@/components/cnc/IndustryCard"
+;
 const SurfaceTreatment = () => {
   const surfaceTreatments = [
     {
@@ -110,31 +122,76 @@ const SurfaceTreatment = () => {
     {
       title: "Corrosion Protection",
       description: "Extends lifespan in harsh conditions.",
+      img: vector1
     },
     {
       title: "Aesthetic Enhancement",
       description: "Custom finishes and colors.",
+      img: vector2
+
     },
     {
       title: "Wear Resistance",
       description: "Increases durability and reduces friction.",
+      img :vector3
     },
     {
       title: "Non-Stick Surfaces",
       description: "For medical and industrial products.",
+      img :vector4
     },
     {
       title: "Electrical & Thermal Properties",
       description: "Enhances conductivity or insulation.",
+      img :vector5
     },
     {
       title: "Adhesion Improvement",
       description: "Prepares surfaces for further coatings or paints.",
+      img :vector6
     },
   ];
-
+  const industries = [
+    {
+      icon: plastic,
+      title: "Coating Thickness Testing ",
+      description: "Verifies the uniformity and durability of applied layers.",
+      delay: 0,
+    },
+    {
+      icon: metal,
+      title: "Visual and Dimensional Inspection",
+      description: "Post-extrusion CNC machining ensures exact dimensions and superior surface finishes.",
+      delay: 0.1,
+    },
+    {
+      icon:sheet,
+      title: "Salt Spray Testing",
+      description: "Evaluates corrosion resistance under simulated conditions.",
+      delay: 0.2,
+    },
+    {
+      icon: metal,
+      title: "Hardness Testing",
+      description: "Measures the enhanced surface properties after processes like nitriding and PVD.",
+      delay: 0.3,
+    },
+    {
+      icon: metal,
+      title: "Adhesion Testing",
+      description: "Ensures coatings adhere securely to the base material.",
+      delay: 0.4,
+    },
+   
+    {
+      icon: metal,
+      title: "Secondary Operations",
+      description: "Confirms the finish meets aesthetic and specification requirements.",
+      delay: 0.5,
+    },
+  ];
   return (
-    <div>
+    <>
       <HeroSection
         title={
           <p>
@@ -149,7 +206,7 @@ const SurfaceTreatment = () => {
         longDescription="Surface treatment enhances the durability, functionality, and aesthetics of manufactured components by modifying their surface properties through advanced processes. At Wertex, we provide tailored solutions to meet the demands of industries like aerospace, automotive, defense, electronics, and industrial equipment."
       />
 
-      <Section className="bg-black">
+      <Section className="bg-black relative">
         <FlexHeader
           title="Comprehensive Surface Treatment Capabilities"
           description=""
@@ -157,15 +214,14 @@ const SurfaceTreatment = () => {
         <p className="text-white mb-8 text-xl2">
           Advanced processes tailored to meet diverse industrial needs.
         </p>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <Image src={gridBg} alt='grid-background' className='absolute  inset-0' fill />  
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6  border-[#FFFFFF]/45 border-4 p-12">
           {surfaceTreatments.map((treatment, index) => (
             <div key={index} className={`bg-black p-6 border border-white`}>
-              <div className="w-full h-72 bg-gray-300 mb-4"></div>
               <h3 className="text-white font-bold text-xl2 mb-3">
                 {treatment.title}
               </h3>
-              <ul className="text-white text-xl2 space-y-2 ">
+              <ul className="text-white text-xl2 space-y-2 list-disc list-inside">
                 {treatment.features.map((feature, featureIndex) => (
                   <li key={featureIndex}>{feature}</li>
                 ))}
@@ -186,11 +242,9 @@ const SurfaceTreatment = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8 bg-white">
           {treatmentBenefits.map((benefit, index) => (
-            <div key={index} className="bg-gray-100 p-6 rounded-lg">
-              <div className="w-16 h-16 bg-gray-300 rounded mb-4 flex items-center justify-center">
-                <div className="w-12 h-12 bg-gray-400 rounded"></div>
-              </div>
-              <h3 className="text-black font-bold text-xl2 mb-1">
+            <div key={index} className="bg-[#D0D0D073] p-6 rounded-lg">
+              <ImageContainer img={benefit.img} variant="black" className='w-24 h-24' width={62} height={62}/>
+              <h3 className="text-black font-bold text-xl2 my-2">
                 {benefit.title}
               </h3>
               <p className="text-gray-700 text-xl2">{benefit.description}</p>
@@ -198,7 +252,7 @@ const SurfaceTreatment = () => {
           ))}
         </div>
       </Section>
-      <Section className=" mt-0">
+      <Section className="bg-background">
         <FlexHeader
           title="Ensuring Superior Quality in Every Treatment"
           description=""
@@ -206,7 +260,23 @@ const SurfaceTreatment = () => {
         <p className="text-xl2">
           Advanced testing and inspections for consistent and reliable results.
         </p>
-         
+        
+      <div className="grid grid-cols-2 gap-4 mt-12" >
+        {industries.map((industry, index) => (
+      
+      <IndustryCard
+      key={index}
+      icon={industry.icon as StaticImageData}
+      title={industry.title}
+      description={industry.description}
+      delay={industry.delay}
+       className="bg-[#2C2C2C] rounded-2xl p-6 "
+       descriptionClassName="text-white"
+       titleClassName="text-white"
+       imageVariant="white"
+    />))}
+    </div>
+
       </Section>
 
       <Footerservice
@@ -237,13 +307,13 @@ const SurfaceTreatment = () => {
       >
         <div className="my-12">
           <FlexHeader
-            title="Elevate Your Components with Wertex Surface Treatments"
+            title={<p>Elevate Your Components with <br/> Wertex Surface Treatments</p>}
             description="Let Wertex enhance your components with cutting-edge surface treatment solutions designed to deliver unmatched durability, protection, and aesthetics. Contact us today to discuss your project requirements."
             heading=""
           />
         </div>
       </Footerservice>
-    </div>
+    </>
   );
 };
 

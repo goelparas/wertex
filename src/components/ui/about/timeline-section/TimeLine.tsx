@@ -29,7 +29,8 @@ const TimeLine = () => {
     <Image src={globe} alt="globe" fill className='object-cover absolute inset-0 z-10'/>
     <div className='h-full relative w-full p-8'>
 
-    <Image src={roadmap} alt="globe" fill className='object-contain  z-20' />
+    <Image src={roadmap} alt="globe" fill className='object-contain  z-20' unoptimized
+ />
     </div>
   </div>
   )

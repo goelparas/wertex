@@ -146,10 +146,8 @@ const JoinSection = () => {
                 title='Submit'
                 type='submit'
                 loading={loading}
-                className='w-4/5  bg-custom-gradient text-white px-4 py-3  transition-colors mt-6 '
-              >
-                {/* <h1 className="text-center w-full text-xl2">Submit</h1> */}
-              </Button>
+                className='w-4/5  bg-custom-gradient text-white px-4 py-3 rounded-none   mt-6 justify-center '
+              />
             </div>
 
           </form>

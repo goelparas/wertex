@@ -1,6 +1,6 @@
 'use client';
 
-import React, { ReactNode } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
 import { cn } from '@/lib/utils';
 import { ImageContainer } from '../common/Container/ImageGrid';
@@ -11,6 +11,10 @@ interface IndustryCardProps {
   title: string;
   description: string;
   delay?: number;
+  className?: string;
+  imageVariant?: "black" | "white";
+  titleClassName?: string;      // ✅ custom classes for <p>
+  descriptionClassName?: string; // ✅ custom classes for <span>
 }
 
 export default function IndustryCard({
@@ -18,6 +22,10 @@ export default function IndustryCard({
   title,
   description,
   delay = 0,
+  className,
+  imageVariant = "black",
+  titleClassName,
+  descriptionClassName,
 }: IndustryCardProps) {
   return (
     <motion.div
@@ -26,16 +34,23 @@ export default function IndustryCard({
       transition={{ duration: 0.5, delay }}
       viewport={{ once: true }}
       className={cn(
-        'bg-[#EEEEEE] rounded-lg p-4  text-xl2',
-        'flex items-center gap-4',
-        'transition-all duration-300 hover:bg-muted/80'
+        "bg-[#EEEEEE] rounded-lg p-4 text-xl2",
+        "flex items-center gap-4",
+        "transition-all duration-300 hover:bg-muted/80",
+        className
       )}
     >
-          <ImageContainer img={icon} className='w-16 h-16' variant='black' width={44} height={44}/>
+      <ImageContainer
+        img={icon}
+        className="w-16 h-16"
+        variant={imageVariant}
+        width={44}
+        height={44}
+      />
       <div>
-        <p className='font-bold text-black'>
-          {title}:{' '}
-          <span className='text-black  font-normal'>
+        <p className={cn("font-bold text-black", titleClassName)}>
+          {title}:{" "}
+          <span className={cn("text-black font-normal", descriptionClassName)}>
             {description}
           </span>
         </p>
