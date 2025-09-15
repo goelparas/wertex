@@ -235,9 +235,9 @@ const componentTwo3 = (
           <div className="flex flex-col items-center justify-center">
             <ImageContainer img={item.img} />
           </div>
-          <div className="w-full flex justify-start items-center">
+          <div className="w-full flex justify-start items-center gap-2">
             <span className="text-xl2 font-bold">{item.name}</span>
-            <span className="text-xl2">{item.description}</span>
+            <span className="text-xl2 text-nowrap">{item.description}</span>
           </div>
         </div>
       ))}
