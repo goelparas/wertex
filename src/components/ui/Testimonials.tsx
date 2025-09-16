@@ -33,17 +33,17 @@ export default function TeamShowcase() {
   ];
 
   return (
-    <Section className="bg-background200  md:p-12 lg:p-12 min-h-dvh mb-12">
-      <div className="my-12">
+    <Section className="bg-background200   lg:p-12 min-h-dvh mb-12 hidden lg:block">
+      <div className="lg:my-12">
         <FlexHeader title="WHAT OUR" description="" heading="CLIENTS SAYS!" />
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mt-8">
+        <div className=" flex flex-nowrap overflow-x-scroll gap-4 mt-8">
           {testimonials.map((testimonial) => (
             <div
               key={testimonial.id}
-              className="bg-background200 p-6 rounded-lg flex flex-col h-full"
+              className="bg-background200 p-6 rounded-lg flex flex-col lg:h-full lg:w-full  w-56 h-60"
             >
               <div className="w-12 h-12 bg-white rounded-full mb-6 "></div>
-              <p className="text-white text-lg leading-relaxed w-full h-44 p-4 clipped bg-[#282828]">
+              <p className="text-white text-xxs lg:text-lg leading-relaxed w-full h-44 p-4 clipped bg-[#282828]">
                 {testimonial.quote}
               </p>
             </div>

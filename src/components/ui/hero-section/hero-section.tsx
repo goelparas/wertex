@@ -11,6 +11,7 @@ import ServicesSection from "./services-section";
 import Inovation from "./inovation";
 import CountryWork from "./country-work";
 import Testimonials from "@/components/ui/Testimonials";
+import Section from "@/components/common/Section";
 
 const HeroSection = () => {
   const statsData = [
@@ -80,7 +81,7 @@ const HeroSection = () => {
 
       <WhatWeOffer />
 
-      <div className="mt-8 border-t border-t-smokeWhite flex flex-col  gap-8 items-center justify-between p-8 w-full">
+      <Section className="mt-8 border-t border-t-smokeWhite flex flex-col  gap-8 items-center justify-between  w-full bg-transparent">
         <div className="flex flex-col lg:flex-row justify-between w-full items-start lg:items-center py-6 gap-2">
           <h1 className="font-bold lg:text-2xl uppercase hidden lg:block  ">
             OUR TRACK RECORD OF <br /> TRUSTED PARTNERS AND CLIENTS
@@ -98,7 +99,7 @@ const HeroSection = () => {
           <BrandsShowCase items={TESTIMONIALS.slice(4, 8)} direction="right" />
           <BrandsShowCase items={TESTIMONIALS.slice(8)} />
         </div>
-      </div>
+      </Section>
       <ServicesSection />
       <Inovation />
 

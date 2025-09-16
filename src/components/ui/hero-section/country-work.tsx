@@ -4,6 +4,7 @@ import React, { useState, useCallback, useMemo } from 'react'
 import map from "@/cdn/images/map.webp"
 import mapBg from "@/cdn/images/bg-map.avif"
 import frame from "@/cdn/images/frame.png"
+import { useWindowSize } from '@/utils/hooks/useWindowSize'
 
 // Constants extracted outside component to prevent recreation
 const COUNTRIES = ['India', 'UAE', 'Germany', 'USA', 'Netherlands'] as const
@@ -60,7 +61,7 @@ const CONTACT_BUTTON_BASE_CLASS = "bg-white font-bold text-black text-left clipp
 const CountryWork: React.FC = () => {
   const [selectedCountry, setSelectedCountry] = useState<Country>("India")
   const [isAnimating, setIsAnimating] = useState(false)
-
+  const { isMobile } = useWindowSize()
   // Memoized contact data for selected country
   const selectedContactData = useMemo(() => 
     CONTACT_DATA[selectedCountry], 
@@ -104,7 +105,7 @@ const CountryWork: React.FC = () => {
   )
 
   return (
-    <div className="h-dvh relative">
+    <div className="h-[32rem] lg:h-dvh relative">
       {/* Desktop country navigation */}
       <ul className="hidden justify-between items-end w-full list-disc bg-background lg:flex h-[10dvh] p-6">
         {countryListItems.map(({ country, className }) => (
@@ -119,25 +120,24 @@ const CountryWork: React.FC = () => {
       </ul>
 
       {/* Map section */}
-      <div className="h-3/4 lg:h-[90dvh] relative w-full bg-custom-map-gradient backdrop-brightness-0">
-        <Image src={map } alt="World map" className="absolute object-contain" fill quality={100} />
+      <div className="h-full lg:h-[90dvh] relative w-full bg-custom-map-gradient backdrop-brightness-0">
+        <Image src={map } alt="World map" className="absolute object-cover lg:object-contain" fill quality={100} />
         <Image src={mapBg} alt="Map background" fill className="-z-10 backdrop-brightness-110" />
         {/* Country information card */}
         <div
-          className={`backdrop-blur-0 bg-[#D9D9D980] w-52 h-32 lg:w-96 lg:h-48 absolute bottom-48 p-3 left-5 z-10 transition-all duration-300 ease-in-out transform ${
+          className={`backdrop-blur-0 bg-[#D9D9D980] w-52  h-24 lg:w-96 lg:h-48 absolute  top-24 lg:bottom-48 p-3 left-5 z-10 transition-all duration-300 ease-in-out transform ${
             isAnimating ? "scale-95 opacity-70" : "scale-100 opacity-100"
           }`}
         >
-          <h1 className="text-white text-3xl font-bold mb-2">{selectedCountry}</h1>
-          <div className="text-white text-sm lg:text-base space-y-1 opacity-90">
-            <p className='font-semibold'>Ph no: {selectedContactData.phone}</p>
-            <p className='font-semibold'>Email: {selectedContactData.email}</p>
-            <p className='font-semibold'>LinkedIn: {selectedContactData.linkedin}</p>
+          <h1 className="text-white text-lg lg:text-3xl font-bold mb-2">{selectedCountry}</h1>
+          <div className="text-white text-xxs lg:text-base space-y-1 opacity-90">
+            <p className=' font-semibold'>Ph no: {selectedContactData.phone}</p>
+            <p className=' font-semibold'>Email: {selectedContactData.email}</p>
           </div>
         </div>
 
         {/* Country markers */}
-        <div className="absolute inset-0 z-10">
+       {isMobile ? null : <div className="absolute inset-0 z-10">
           {COUNTRIES.map((country) => {
             const position = COUNTRY_MARKERS[country]
             const isSelected = selectedCountry === country
@@ -177,7 +177,7 @@ const CountryWork: React.FC = () => {
               </div>
             )
           })}
-        </div>
+        </div>}
 
         {/* Mobile country navigation */}
         <ul className="absolute bottom-6 left-6 z-20 flex flex-col justify-between items-start list-disc lg:hidden">
@@ -194,7 +194,7 @@ const CountryWork: React.FC = () => {
       </div>
 
       {/* Bottom section */}
-      <div className="flex flex-col lg:flex-row gap-2 lg:gap-2 p-2 m-5 lg:p-6 lg:absolute lg:bottom-4 justify-between rounded-md w-[90%] lg:mx-auto left-0 right-0 relative">
+      <div className=" hidden lg:flex flex-col lg:flex-row gap-2 lg:gap-2 p-2 m-5 lg:p-6 lg:absolute lg:bottom-4 justify-between rounded-md w-[90%] lg:mx-auto left-0 right-0 relative">
         <Image src={frame} fill alt="Frame decoration" className="z-10 mask" />
         <div className="flex flex-col z-10 justify-between items-start gap-2 px-6">
           <h1 className="text-xl lg:text-3xl font-bold">Innovating Across Borders</h1>

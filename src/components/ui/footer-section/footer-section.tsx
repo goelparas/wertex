@@ -9,7 +9,7 @@ import Image from "next/image"
 import circle from "@/cdn/images/circle.png"
 const FooterSection = () => {
     return (
-         <Section className='flex items-start justify-between bg-transparent gap-2'>
+         <Section className=' items-start justify-between bg-transparent gap-2 hidden lg:flex'>
             <div className='flex flex-col  items-center justify-between gap-2  my-auto '> 
               <div className="relative">
                 <Image src={circle} fill alt='circle'/>

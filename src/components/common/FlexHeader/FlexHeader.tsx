@@ -21,17 +21,15 @@ export const FlexHeader = ({
   return (
     <div
       className={cn(
-        "flex justify-between items-start w-full gap-6",
+        "flex flex-col lg:flex-row justify-between items-start w-full lg:gap-6",
         className
       )}
       id={id}
     >
-      <h1 className={cn("text-[32px] font-bold w-3/5 ", headingClassName)}>
+      <h1 className={cn("text-xl lg:text-[32px] font-bold w-full lg:w-3/5 ", headingClassName)}>
         {title} {heading && <span className="text-orangeBg">{heading}</span>}
       </h1>
-      <p className={cn(" text-white w-1/2 text-right", descriptionClassName)} style={{
-        fontSize:"22px"
-      }} >{description}</p>
+      <p className={cn("text-sm lg:text-xl2 text-white w-full lg:w-1/2 text-left lg:text-right", descriptionClassName)}>{description}</p>
     </div>
   );
 };

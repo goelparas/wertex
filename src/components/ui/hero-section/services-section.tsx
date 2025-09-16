@@ -10,7 +10,7 @@ import { FlexHeader } from '@/components/common/FlexHeader/FlexHeader'
 
 const ServicesSection = () => {
     return (
-        <Section className=' bg-white   w-full overflow-x-hidden relative z-10 pt-6' >
+        <Section className=' bg-white   w-full overflow-x-hidden relative z-10 ' >
             <div className='flex flex-col lg:flex-row justify-between w-full items-center gap-2' id='services'>
                 <FlexHeader 
                 title='Comprehensive Manufacturing Services'
@@ -35,17 +35,10 @@ const ServicesSection = () => {
             </div>
             <Section className='w-full relative  lg:p-6 rounded-2xl bg-gradient-gray-shine' >
             <div className='bg-background absolute bottom-0 left-0 w-full h-1/2 lg:hidden -z-10 '/>
-            <div className=' p-3 lg:p-6 rounded-[20px] lg:rounded-2xl bg-gradient-gray-shine  z-10 mx-6 lg:m-0'>
+            
                  
-                 <FlexHeader
-                    title='Value-Added Services'
-                    description={<p className='text-lg text-start w-full'>These services comprehensively outlines the capabilities and added value that <span className='text-orangeBg font-bold'>WERTEX</span> offers to its clients.
-                         It showcases the full range of services, from CNC machining to value-added project management,
-                          ensuring that potential customers can see the breadth and depth of your offerings</p>}
-                        headingClassName='w-1/4 gap-2 justify-around'
-                />
-
-                <Section className='bg-transparent flex flex-wrap gap-12 justify-center px-0'>
+                <h1 className='text-xl lg:text-3.5xl font-bold w-full   text-center '>Value-Added Services</h1>
+                <Section className='bg-transparent grid grid-cols-1 lg:flex lg:flex-wrap gap-2 lg:gap-12 justify-center px-0'>
                         {ValueAddedServices.map((service, index) => (
                             <ValueAddedServiceCard
                                 key={service.title}
@@ -55,7 +48,6 @@ const ServicesSection = () => {
                             />
                         ))}
                 </Section>
-            </div>
 
             </Section>
             
