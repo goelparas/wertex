@@ -26,18 +26,15 @@ export default function CapabilityCard({
       transition={{ duration: 0.5, delay }}
       viewport={{ once: true }}
       className={cn(
-        // GLASS EFFECT
-        'bg-[#4F4F4F73]/20 backdrop-blur-md',
+        'bg-[#4F4F4F]/20 backdrop-blur-md',
         'border border-white/10 rounded-2xl',
-        'p-6 flex flex-col items-center justify-around text-center',
-        // FONTS + COLORS
+        ' p-3 lg:p-6 flex flex-row lg:flex-col items-center justify-around text-center gap-4',
         'text-white',
-        // HOVER EFFECT
-        'transition-all duration-300 hover:shadow-lg hover:shadow-white/10 hover:-translate-y-1 h-[400px] max-w-[380px]'
+        'transition-all duration-300 hover:shadow-lg cursor-pointer hover:shadow-white/10 hover:-translate-y-1 lg:h-[400px] max-w-[380px]'
       )}
     >
-        <ImageContainer img={icon} className='w-24 h-24' width={85} height={85}/>
-      <p className='text-gray-300'>{description}</p>
+      <ImageContainer img={icon} className='lg:w-24 lg:h-24 w-12 h-12' width={85} height={85}/>
+      <p className=' w-4/5 lg:w-auto text-start leading-relaxed lg:text-center  text-xs lg:text-xl2 text-gray-300'>{description}</p>
     </motion.div>
   );
 }

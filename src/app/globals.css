@@ -111,4 +111,6 @@ input:-webkit-autofill:focus {
    border: 1px solid #FFFFFF91;
  }
 
-  
+p  {
+   line-height: 1.625;
+  }

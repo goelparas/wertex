@@ -125,7 +125,7 @@ const CountryWork: React.FC = () => {
         <Image src={mapBg} alt="Map background" fill className="-z-10 backdrop-brightness-110" />
         {/* Country information card */}
         <div
-          className={`backdrop-blur-0 bg-[#D9D9D980] w-52  h-24 lg:w-96 lg:h-48 absolute  top-24 lg:bottom-48 p-3 left-5 z-10 transition-all duration-300 ease-in-out transform ${
+          className={`backdrop-blur-0 bg-[#D9D9D980] w-52  h-24 lg:w-96 lg:h-48 absolute  top-24 lg:top-auto lg:bottom-48 p-3 left-5 z-10 transition-all duration-300 ease-in-out transform ${
             isAnimating ? "scale-95 opacity-70" : "scale-100 opacity-100"
           }`}
         >

@@ -16,7 +16,7 @@ const Page = async ({ params }: PageProps) => {
     return <div>Service not found</div>;
   }
   return (
-    <Container className="w-full overflow-hidden mt-40">
+    <Container className="w-full overflow-hidden  mt-14 lg:mt-40">
       {React.createElement(component)}
     </Container>
   );

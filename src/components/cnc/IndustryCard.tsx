@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 import { cn } from '@/lib/utils';
 import { ImageContainer } from '../common/Container/ImageGrid';
 import { StaticImageData } from 'next/image';
+import { useWindowSize } from '@/utils/hooks/useWindowSize';
 
 interface IndustryCardProps {
   icon: StaticImageData;
@@ -27,6 +28,7 @@ export default function IndustryCard({
   titleClassName,
   descriptionClassName,
 }: IndustryCardProps) {
+  const { isMobile } = useWindowSize()
   return (
     <motion.div
       initial={{ opacity: 0, x: -20 }}
@@ -34,7 +36,7 @@ export default function IndustryCard({
       transition={{ duration: 0.5, delay }}
       viewport={{ once: true }}
       className={cn(
-        "bg-[#EEEEEE] rounded-lg p-4 text-xl2",
+        "bg-[#EEEEEE] rounded-lg p-2 lg:p-4  text-xs lg:text-xl2",
         "flex items-center gap-4",
         "transition-all duration-300 hover:bg-muted/80",
         className
@@ -42,10 +44,10 @@ export default function IndustryCard({
     >
       <ImageContainer
         img={icon}
-        className="w-16 h-16"
+        className="w-12 h-12 lg:w-16 lg:h-16"
         variant={imageVariant}
-        width={44}
-        height={44}
+        width={isMobile? 32 : 44}
+        height={isMobile? 32 : 44}
       />
       <div>
         <p className={cn("font-bold text-black", titleClassName)}>

@@ -18,8 +18,7 @@ import   {
 
 export default function CncCapabilitiesSection() {
   return (
-  
-      <Section className=' mx-auto bg-transparent pb-0'>
+   <Section className=' mx-auto bg-transparent '>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -29,8 +28,8 @@ export default function CncCapabilitiesSection() {
         >
           <FlexHeader2 heading="Comprehensive CNC Capabilities Tailored for Your Needs" description={"Our CNC machining capabilities include:"}/>
         </motion.div>
-        <div className='grid grid-cols-1 md:grid-cols-3 gap-6 p-4 w-full relative h-[50rem] justify-center items-center'>
-          <div className='w-full h-[50rem] absolute'>
+        <div className='grid grid-cols-1 md:grid-cols-3 gap-6 p-4 w-full relative   justify-center items-center'>
+          <div className='w-full   absolute'>
             {/* <Image
               src={machineHammer}
               alt='Precision Casting Process'

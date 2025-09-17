@@ -7,7 +7,7 @@ import React from 'react'
 const Inovation = () => {
     return (
         <Section  className='bg-transparent'>
-            <div className='flex justify-between w-full  items-start lg:items-center  lg:my-10 lg:mt-20 lg:flex-row flex-col'>
+            <div className='flex justify-between w-full  items-start lg:items-center   lg:flex-row flex-col'>
                 <h1 className='font-bold text-xl lg:text-3xl  w-full lg:w-2/5  uppercase'>Driving Innovation <br /> Across Industries</h1>
                 <p className='font-normal text-start text-xxs lg:text-base items-center  md:w-1/5 '>From concept to delivery, we serve industries across the world.</p>
             </div>

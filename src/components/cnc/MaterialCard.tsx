@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 import { cn } from '@/lib/utils';
 import { ImageContainer } from '../common/Container/ImageGrid';
 import { StaticImageData } from 'next/image';
+import { useWindowSize } from '@/utils/hooks/useWindowSize';
 
 interface MaterialCardProps {
   icon: StaticImageData;
@@ -19,6 +20,7 @@ export default function MaterialCard({
   description,
   delay = 0,
 }: MaterialCardProps) {
+  const { isMobile } = useWindowSize();
   return (
     <motion.div
       initial={{ opacity: 0, x: 20 }}
@@ -31,15 +33,15 @@ export default function MaterialCard({
         'transition-all duration-300 hover:bg-muted/80 '
       )}
     >
-    <ImageContainer img={icon} className='w-16 h-16' variant='black' width={44} height={44}/>
-      <div>
-        <p className='font-bold text-xl2'>
+    <ImageContainer img={icon} className='w-12 h-12 lg:w-16 lg:h-16' variant='black' width={isMobile? 32 : 44} height={isMobile? 32 : 44}/>
+       
+        <p className='font-bold text-xs lg:text-xl2 leading-relaxed'>
           {title}:{' '}
-          <span className='text-muted-foreground font-normal'>
+          <span className='text-xs lg:text-xl2 text-muted-foreground font-normal'>
             {description}
           </span>
         </p>
-      </div>
+
     </motion.div>
   );
 }

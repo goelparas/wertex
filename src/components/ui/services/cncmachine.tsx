@@ -7,7 +7,7 @@ import React from "react";
 import HeroSection from "@/components/common/Container/HeroSection-service";
 import cncMachine from "@/cdn/images/cnc/hero-cnc.webp";
 import Footerservice from "@/components/common/footer-service/footerservice";
-import { CncCarousel } from "@/components/cnc/CncCarousel";
+
 
 
 // Import capability images

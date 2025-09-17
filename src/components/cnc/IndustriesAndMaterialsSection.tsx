@@ -55,7 +55,7 @@ const industries = [
 export default function IndustriesAndMaterialsSection() {
   return (
     <Section className='relative w-full bg-transparent pt-0 mt-0 '>
-      <Section className=' mx-auto px-4 sm:px-6  bg-white'>
+      <Section className=' mx-auto p-0 lg:px-4 sm:px-6  bg-white'>
         <div className='grid grid-cols-1 lg:grid-cols-2'>
           {/* Industries Column */}
           <div className='px-6 border-r-2 border-[#BCBCBC] py-8'>
@@ -64,13 +64,13 @@ export default function IndustriesAndMaterialsSection() {
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5 }}
               viewport={{ once: true }}
-              className='mb-8'
+              className='lg:mb-8'
             >
             <FlexHeader2 className='p-0 text-black' heading={<p>Delivering <span className='text-orangeBg'>Excellence</span> Across Industries</p>} description='Wertex provides CNC machining solutions for:' />
 
             </motion.div>
 
-            <div className="space-y-4">
+            <div className="space-y-2 lg:space-y-4">
   {industries.map((industry, index) => (
     <IndustryCard
       key={index}
@@ -95,7 +95,7 @@ export default function IndustriesAndMaterialsSection() {
               <FlexHeader2 className='p-0 text-black' heading={<p>Materials for <span className='text-orangeBg'>Every Application</span> </p>} description='Wertex provides CNC machining solutions for:' />
             </motion.div>
 
-            <div className='space-y-4 '>
+            <div className='space-y-2 lg:space-y-4 '>
               <MaterialCard
                 icon={metal}
                 title='Metals'

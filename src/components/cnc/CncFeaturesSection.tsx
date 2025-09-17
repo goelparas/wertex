@@ -11,6 +11,7 @@ import image2 from '@/cdn/images/vectors/diagonal.png';
 import image3 from '@/cdn/images/vectors/trapezium.png';
 import image4 from '@/cdn/images/vectors/diagonal.png';
 import Section from '../common/Section';
+import { useWindowSize } from '@/utils/hooks/useWindowSize';
 
 const features = [
   {
@@ -43,23 +44,26 @@ const FeatureCard = ({
   title: string;
   description: string;
   icon: StaticImageData;
-}) => (
+}) => {
+  const { isMobile } = useWindowSize()
+  return(
   <motion.div
     initial={{ opacity: 0, y: 20 }}
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true }}
-    className='text-black p-6  border border-black w-80 h-72 flex flex-col items-center justify-between'
+    className='text-black p-2 lg:p-6  border border-black lg:w-80 lg:h-72 flex  flex-row lg:flex-col gap-4 items-center justify-between'
   >
-    <ImageContainer variant="black" img={icon} className='w-24 h-24'  width={62} height={62} />
+    <ImageContainer variant="black" img={icon} className='w-12 h-12 lg:w-24 lg:h-24'  width={isMobile ? 26 : 62} height={isMobile ? 26 : 62} />
     <div>
-    <h3 className='text-xl2 font-semibold mb-2 text-left w-full'>{title}</h3>
-    <p className='text-black text-lg text-left w-full'>{description}</p>
+    <h3 className='text-xs lg:text-xl2 font-semibold mb-2 text-left w-full'>{title}</h3>
+    <p className='text-black text-xs lg:text-lg text-left w-full'>{description}</p>
     </div>
     
   </motion.div>
-);
+)};
 
 export default function CncFeaturesSection() {
+  
   return (
     <Section className=' bg-white'>
       <div className='px-4'>

@@ -18,6 +18,7 @@ import cncCarousel6 from "@/cdn/images/cnc/carousel/cnc-carousel-6.webp"
 import cncCarousel7 from "@/cdn/images/cnc/carousel/cnc-carousel-7.webp"
 import cncCarousel8 from "@/cdn/images/cnc/carousel/cnc-carousel-8.webp"
 import cncCarousel9 from "@/cdn/images/cnc/carousel/cnc-carousel-9.webp"
+import { useWindowSize } from '@/utils/hooks/useWindowSize';
 
 
 const machineTypes = [
@@ -74,12 +75,13 @@ const MachineLink = ({
   onClick: () => void;
   isActive: boolean;
 }) => {
+  const { isMobile } = useWindowSize()
   return (
     <motion.div
       onClick={onClick}
       className={cn(
         'group flex items-center w-full justify-start hover:cursor-pointer border-b border-[#6A6A6A]',
-        'p-4 border-b  hover:text-orangeBg',
+        'p-2 md:p-4 border-b  hover:text-orangeBg',
         'transition-all duration-300',
         isActive && 'text-orangeBg bg-zinc-900/30'
       )}
@@ -87,7 +89,7 @@ const MachineLink = ({
       whileTap={{ scale: 0.98 }}
     >
       <span className={cn(
-        'text-white text-3xl group-hover:text-orangeBg transition-colors font-bold',
+        'text-white text-nowrap text-lg md:text-3xl group-hover:text-orangeBg transition-colors font-bold',
         isActive && 'text-orangeBg'
       )}>
         {name}
@@ -101,8 +103,8 @@ const MachineLink = ({
       >
         <Image 
           src={arrow} 
-          width={60}
-          height={60}
+          width={isMobile ? 30 : 60}
+          height={isMobile ? 30 : 60}
           alt="arrow" 
           className='rotate-0 '
         />
@@ -127,22 +129,22 @@ export default function CncPerformanceSection() {
   return (
     <Section className='bg-transparent'>
       <div className=''>
-        <motion.h2
+        <motion.h1
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           className=' text-white mb-4'
         >
           <FlexHeader2  heading="Enhancing Component Performance and Quality" description="Advanced finishing techniques for durability and precision." />
-        </motion.h2>
-        <div className='grid grid-cols-1 lg:flex   border-y border-[#6A6A6A]'>
-          <div className='border-r  border-[#6A6A6A] max-w-xl lg:w-2/5  py-6 pr-4  flex flex-col justify-between items-end '>
+        </motion.h1>
+        <div className='grid grid-cols-1 md:flex   border-y border-[#6A6A6A]'>
+          <div className='lg:border-r  lg:border-[#6A6A6A] max-w-xl md:w-2/5   py-6 pr-4  flex flex-col justify-between items-end '>
             <p className='text-white mb-8'>
             Specializes in turning and facing cylindrical and complex parts with high precision. Ideal for applications requiring smooth finishes and dimensional accuracy in large and small components.
             </p>
             <motion.div 
-              className='relative  w-full h-[37.5rem]  mx-auto overflow-hidden'
-              key={selectedImage.name} // Changed from selectedImage.src to selectedImage.name
+              className='relative  w-full h-80 md:h-[28rem] lg:h-[37.5rem] bg-borderGray lg:bg-transparent   mx-auto overflow-hidden'
+              key={selectedImage.name}  
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5, ease: "easeOut" }}
@@ -156,7 +158,7 @@ export default function CncPerformanceSection() {
             </motion.div>
           </div>
 
-          <div className='space-y-1    flex flex-col justify-center lg:w-3/5 items-start'>
+          <div className='space-y-1    flex flex-col justify-center md:w-3/5 items-start'>
             {machineTypes.map((machine, index) => (
               <MachineLink 
                 key={index} 
