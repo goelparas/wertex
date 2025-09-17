@@ -27,6 +27,7 @@ import DynamicShowCaseContainer from '@/components/common/ImageShowCaseContainer
 import { aluminiumExtrusion } from "@/components/common/ImageShowCaseContainer/constant";
 import divider from "@/cdn/images/aluminiumextrution/line.svg";
 import trapezium from "@/cdn/images/aluminiumextrution/trapezium.png";
+import { useWindowSize } from "@/utils/hooks/useWindowSize";
 
 type Props = {};
 const forgingTypes = [
@@ -120,7 +121,7 @@ const qualityStandards = [{
 
 }]
 const AluminiumExtrusion = (props: Props) => {
- 
+  const { isMobile } = useWindowSize()
   return (
     <>
       <HeroSection
@@ -138,21 +139,21 @@ const AluminiumExtrusion = (props: Props) => {
         />
        <Section className="border bg-black ">
           <div className="mb-8">
-            <h2 className="text-xl mb-6">
+            <h2 className=" text-lg lg:text-xl lg:mb-6">
             Aluminium’s superior properties make it a preferred material for extrusion:
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3  gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-3  gap-2 lg:gap-8">
             {forgingTypes.map((type, index) => (
               <div
                 key={index}
-                className=" text-white p-8  hover:shadow-xl transition-shadow duration-300 border"
+                className=" text-white p-2 lg:p-8  hover:shadow-xl transition-shadow duration-300 border"
               >
                 <div className="flex  mb-4 flex-col justify-center items-start gap-4">
-                  <ImageContainer img={type.icon} className="w-24 h-24" height={72} width={72}/>
-                  <h3 className="text-xl2 w-full font-bold text-start">{type.title}</h3>
-                  <p className="text-xl2 font-medium">{type.description}</p>
+                  <ImageContainer img={type.icon} className="w-16 h-16 lg:w-24 lg:h-24" height={isMobile ? 40 : 72} width={isMobile ? 40 : 72}/>
+                  <h3 className="text-xs leading-relaxed  lg:text-xl2 w-full font-bold text-start">{type.title}</h3>
+                  <p className="text-xs  leading-relaxed lg:text-xl2 font-light">{type.description}</p>
                 </div>
               </div>
             ))}
@@ -165,16 +166,16 @@ const AluminiumExtrusion = (props: Props) => {
           description="Wertex offers a wide range of aluminum extrusion capabilities, delivering tailored solutions to meet your needs"
           className="text-black"
         />
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12 bg-white ">
+          <div className="grid grid-cols-2  gap-2 lg:gap-6 mt-12 bg-white ">
             {extrusionServices.map((service, index) => (
               <div
                 key={index}
-                className="flex items-start bg-[#A7A7A773] text-black p-6 rounded-lg shadow-sm gap-4"
+                className="flex items-start flex-col lg:flex-row bg-[#A7A7A773] text-black p-2 lg:p-6 rounded-lg shadow-sm gap-4"
               >
                 <ImageContainer img={service.icon}/>
                 <div className="gap-2">
-                  <span className="font-semibold text-xl2">{service.title}</span>
-                  <p className="font-light text-xl2">{service.description}</p>
+                  <span className="font-semibold text-xs leading-relaxed  lg:text-xl2">{service.title}</span>
+                  <p className="font-light text-xs leading-relaxed  lg:text-xl2">{service.description}</p>
                 </div>
               </div>
             ))}
@@ -204,13 +205,13 @@ const AluminiumExtrusion = (props: Props) => {
           heading=""
           description="At Wertex, quality is integral to our aluminum extrusion services. Our quality assurance measures include."
         />
-          <div className="grid grid-cols-2 gap-4 my-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 my-6">
 {
-  qualityStandards.map((item)=><div className="bg-[#4F4F4F73]/45 flex p-4 flex-col gap-4 justify-start items-start rounded-2xl border border-white">
+  qualityStandards.map((item)=><div className="bg-[#4F4F4F73]/45 flex p-2 lg:p-4 flex-col gap-4 justify-start items-start rounded-2xl border border-white">
 
   <ImageContainer img={item.img}/>
-  <h1 className="font-bold text-xl2">{item.heading}</h1>
-  <p className="font-light text-xl2">{item.description}</p>
+  <h1 className="font-bold text-lg lg:text-xl2">{item.heading}</h1>
+  <p className="font-light text-lg lg:text-xl2">{item.description}</p>
   </div>)
 }
 

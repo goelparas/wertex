@@ -63,12 +63,13 @@ const Tab = ({
 }
 
 const Navbar = () => {
-  const { isMobile , width } = useWindowSize();
+  const { isMobile } = useWindowSize();
   const { scrollDirection, scrollY, isScrolling } = useScroll();
 
 
   const shouldShowNavbar = scrollY <= 100 || (scrollDirection === 'up' && scrollY > 100 && isScrolling);
-  const Component = isMobile ? <div>  </div> :<motion.div
+  const Component = isMobile ? <div>  </div> :
+  <motion.div
   initial={{ y: -100, opacity: 0 }}
   animate={{ y: 0, opacity: 1 }}
   exit={{ y: -100, opacity: 0 }}

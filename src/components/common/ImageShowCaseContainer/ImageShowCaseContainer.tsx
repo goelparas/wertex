@@ -44,7 +44,7 @@ export default function DynamicShowcase({
 
   return (
     <motion.div
-      className={cn("relative w-full  h-[90svh] overflow-hidden", styles.container, className)}
+      className={cn("relative w-full h-max  lg:h-[90svh] overflow-hidden", styles.container, className)}
       transition={{ duration: 0.3, ease: "easeOut" }}
     >
       <div className="grid lg:grid-cols-2 h-full ">
@@ -84,7 +84,7 @@ export default function DynamicShowcase({
         {/* Content Section */}
         <div className={cn("flex flex-col justify-center h-full", styles.contentContainer)}>
           <motion.h2
-            className={cn("text-xl2   font-medium mb-8", styles.title)}
+            className={cn("text-lg lg:text-xl2   font-medium mb-8", styles.title)}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
@@ -92,12 +92,12 @@ export default function DynamicShowcase({
             {headerText}
           </motion.h2>
 
-          <div className="space-y-3 flex-1">
+          <div className=" space-y-2 lg:space-y-3 flex-1">
             {items.map((item, index) => (
               <motion.div
                 key={index}
                 className={cn(
-                  "group flex items-center justify-between py-4 w-min  hover:border-black pl-0 relative transition-all duration-300 cursor-pointer",
+                  "group flex items-center justify-between  py-2 lg:py-4 w-min  hover:border-black pl-0 relative transition-all duration-300 cursor-pointer",
                   index === currentIndex ? styles.itemHighlighted : styles.itemDefault
                 )}
                 initial={{ opacity: 0, x: 20 }}
@@ -107,10 +107,10 @@ export default function DynamicShowcase({
                 onClick={() => handleItemClick(index)}
               >
              
-                  <p className="text-5xl font-semibold text-nowrap pr-2">{getItemTitle(item)}</p>
+                  <p className="text-xl lg:text-5xl font-semibold text-nowrap pr-2">{getItemTitle(item)}</p>
                  
                 <motion.div
-                  className="bg-black  h-2 absolute bottom-0 left-0 z-10"
+                  className="bg-black h-1 lg:h-2 absolute bottom-0 left-0 z-10"
                   initial="initial"
                   animate={index === currentIndex ? "selected" : "initial"}
                   whileHover="hover"
@@ -137,7 +137,7 @@ export default function DynamicShowcase({
                   }}
                 />
                 <motion.div
-                  className="bg-white border-2   h-2 absolute bottom-0 left-0 w-full"
+                  className="bg-white border-2   h-1 lg:h-2 absolute bottom-0 left-0 w-full"
                   initial="initial"
                   animate={index === currentIndex ? "selected" : "initial"}
                   whileHover="hover"
@@ -176,8 +176,8 @@ export default function DynamicShowcase({
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.3 }}
             >
-              <h3 className={cn("font-semibold text-2xl mb-2", styles.title)}>{getItemTitle(currentItem)}</h3>
-              <p className={cn("text-xl", styles.description)}>{currentItem.detail}</p>
+              <h3 className={cn("font-semibold text-lg lg:text-2xl mb-2", styles.title)}>{getItemTitle(currentItem)}</h3>
+              <p className={cn("text-lg lg:text-xl", styles.description)}>{currentItem.detail}</p>
             </motion.div>
           </AnimatePresence>
         </div>

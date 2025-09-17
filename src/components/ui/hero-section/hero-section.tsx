@@ -15,7 +15,7 @@ import Section from "@/components/common/Section";
 
 const HeroSection = () => {
   const statsData = [
-    { value: "38", label: "Year of Growth" },
+    { value: "40", label: "Year of Growth" },
     { value: "3000+", label: "Projects completions" },
     { value: "300+", label: "satisfied clients" },
   ];
@@ -43,7 +43,7 @@ const HeroSection = () => {
           <div className="relative flex flex-col sm:flex-row gap-2  items-start sm:items-center justify-between  mb-2">
             <p className="font-medium text-xxs lg:text-xs">
               Since <br />
-              2010
+              1985
             </p>
             <figure className="w-full relative  h-16 sm:h-[9rem] md:h-[10rem]">
               <Image src={logo} alt="logo" quality={100} fill />
