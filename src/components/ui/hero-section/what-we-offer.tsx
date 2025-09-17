@@ -11,13 +11,14 @@ import { FlexHeader } from '@/components/common/FlexHeader/FlexHeader';
 const WhatWeOffer = () => {
     return (
         <div className=' flex flex-col   overflow-hidden'>
-            <Section className=' relative bg-transparent mr-0'>
+            <Section className='relative bg-transparent   lg:p-0'>
                 <FlexHeader 
                 title='Your One-Stop Manufacturing Partner'
                 description=''
                 id='why-wertex'
                 className='lg:pl-12'/>
-                <Section className='flex w-full justify-between gap-8 lg:gap-12  items-center py-12 overflow-hidden overflow-x-scroll pl-12 bg-transparent transition-all duration-300'>
+
+                <Section className='flex w-full justify-between gap-8 lg:gap-12  items-center py-12 overflow-hidden overflow-x-scroll lg:pl-12 bg-transparent transition-all duration-300'>
                     {
                         WhatWeOfferConst.map((item, index) => <ImageCard image={item.image} text={item.text} key={item.text}  className={`${item.className} ${index === 0  && 'ml-12'}`}/>)
                     }
@@ -27,7 +28,7 @@ const WhatWeOffer = () => {
                 <Image src={gridBg} alt='grid-background' className='absolute  inset-0' fill />
                 <Image src={gridBlock} alt='grid-background' className='absolute  inset-0 z-10 opacity-50' fill />
                 <h1 className=' font-bold  text-xl lg:text-3xl mb-10 uppercase px-6'>The Wertex Difference</h1>
-                <div className='flex items-center justify-between overflow-x-scroll lg:grid  lg:grid-cols-4 gap-4 z-20 relative lg:p-6'>
+                <div className='flex items-center justify-between overflow-x-scroll lg:grid  lg:grid-cols-4 gap-4 z-20 relative p-3 lg:p-6'>
                     {
                         DetailCardConst.map((item, index) => <DifferrenceCard heading={item.heading} paragraph={item.text} index={index + 1} key={item.text} style={item.style} />)
                     }
