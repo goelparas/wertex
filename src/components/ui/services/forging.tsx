@@ -164,20 +164,26 @@ const ForgingPage: React.FC = () => {
           heading=""
           description="Wertex’s wide range of forging capabilities ensures every project is delivered with precision, quality, and efficiency:"
         />
-          <div className="grid grid-cols-1 md:grid-cols-3  gap-8  mt-12">
+          <div className="grid grid-cols-2 lg:grid-cols-3 gap-2 lg:gap-8  mt-12">
           {forgingTypes.map((type, index) => (
             <div
               key={index}
-              className=" text-white p-8  border "
+              className=" text-white p-2 leading-3 lg:p-8  border"
             >
-              <ImageContainer img={type.icon} className="w-24 h-24" height={42} width={42} />
+              <div className="lg:block hidden">
+               <ImageContainer img={type.icon} className="w-24 h-24" height={42} width={42} /> 
+              </div>
+              <div className="lg:hidden block">
+                <ImageContainer img={type.icon} className="w-16 h-16" height={34} width={34} /> 
+              </div>
+              
               <div className="flex items-center my-4">
-                <h3 className="text-xl2 font-bold">{type.title}</h3>
+                <h3 className="text-lg lg:text-xl2 font-bold">{type.title}</h3>
               </div>
               <ul className="space-y-3 list-disc list-outside pl-4 text-xl2">
                 {type.description.map((item, idx) => (
                   <li key={idx}>
-                    <span>{item}</span>
+                    <span className="text-xs lg:leading-8 lg:text-xl2">{item}</span>
                   </li>
                 ))}
               </ul>
@@ -209,48 +215,56 @@ const ForgingPage: React.FC = () => {
         />
         <FlexHeader2
           className="text-white"
-          heading="Your Trusted Partner for Casting Solutions"
+          heading="Enhanced Performance with 
+Advanced Post-Processing"
           description=""
         />
-      <div className="grid grid-cols-3 gap-8 mt-12 z-20">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mt-12 z-20">
 
           {newItems.map((item, _) => (
-            <div key={item.title} className="w-96 h-[500px] mx-auto flex flex-col items-center justify-between gap-2 p-4 z-10 text-white bg-borderGray rounded-2xl">
-              <p className="text-center  font-bold  text-xl2 text-white">
+            <div
+            key={_}
+            className="bg-background-200 p-4 lg:p-6 rounded-3xl shadow-lg flex flex-row lg:flex-col items-start text-start z-20 hover:scale-105 transition-transform duration-300 gap-4"
+          >
+            <h3 className="hidden lg:block lg:text-xl2 font-bold mb-2 text-white text-start w-full">
+              {item.title}
+            </h3>
+            <ImageContainer img={item.img} variant='white' size={{smWidth:32,smHeight:32,smClassName:'w-24 h-24'}} />
+            <div className='block lg:hidden'>
+              <h3 className="lg:text-xl2 font-bold mb-2 text-white text-start w-full">
                 {item.title}
-              </p>
-
-              <ImageContainer img={item.img} className="w-24 h-24" height={65} width={84} />
-              <p className="text-xl2 text-borderGray text-center text-white">
-                {item.description}
-              </p>
+              </h3>
+              <p className="text-xs leading-relaxed lg:text-xl2 text-gray-300">{item.description}</p>
             </div>
+            <p className="hidden lg:block text-xs leading-relaxed lg:text-xl2 text-gray-300">{item.description}</p>
+          </div>
           ))}
         </div>
         </Section>
-      <Section className="mt-0 bg-black">
+      <Section className="mt-0 p-0 pl-3 lg:p-3 bg-black">
         <FlexHeader
           title="Rigorously Tested for Superior Quality"
           description="Ensuring compliance with industry standards and client specifications."
           heading=""
+          className="p-3 lg:p-0"
         />
-        <Section className="bg-background-200 border p-4 rounded-xl">
+        <Section className="bg-background-200 border  border-r-0 lg:border-r-2  pl-3 py-3 pr-0  rounded-xl lg:rounded-xl rounded-tr-none rounded-br-none">
           <FlexHeader2
           heading=""
-          description={<h2 className="text-xl text-white mb-8 ">
-            Every forging project at{" "}
-            <span className="text-orangeBg">Wertex</span> undergoes <br />{" "}
+          description={<h2 className="text-xs lg:text-xl text-white mb-2 lg:mb-8 ">
+            Every forging project at {" "}
+            <span className="text-orangeBg ">Wertex</span> undergoes <br />{" "}
             strict quality control measures:
           </h2>}
         />
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 p-2">
+          <div className="lg:grid flex lg:grid-cols-3 gap-6 p-2 overflow-x-scroll w-full">
             {qualityControls.map((control, index) => (
               <div
                 key={index}
-                className=" bg-custom-map-gradient text-white p-8 rounded-lg shadow-lg"
+                className=" bg-custom-map-gradient text-white p-4  lg:p-8 rounded-lg shadow-lg w-[20rem]  lg:w-full shrink-0"
               >
                 <div className="flex items-center mb-8">
-                  <h3 className="text-xl2 font-bold">{control.title}:</h3>
+                  <h3 className="text-sm lg:text-xl2 font-bold">{control.title}:</h3>
                 </div>
                 <p className="text-white">{control.description}</p>
               </div>
@@ -268,14 +282,14 @@ const ForgingPage: React.FC = () => {
         />
         <Section className="bg-black border border-[#E8E8E8]">
         
-        <div className="grid grid-cols-4  place-items-center h-48">
+        <div className="grid grid-cols-1 lg:grid-cols-4  place-items-center h-48">
         {
     Array.from({ length: 4 }).map((item, index) => 
       <ImageContainer className='h-40 w-40' key={index} img={''}  node={<span className="text-[6rem] font-semibold  text-[#999999] " > 0{index+1}</span>} />
     )
   }
         </div>
-         <div className="w-[71rem] h-1  border-1 border-dashed  mx-auto my-12 relative flex items-center justify-between">
+         <div className="w-[71rem] h-1 lg:block  border-1 border-dashed  mx-auto my-12 relative flex items-center justify-between">
           <Image src={divider} alt="divider" fill className="object-cover z-10"/>
           
             <Image src={trapezium} alt="trapezium" width={30} height={30} className="object-cover z-20"/>

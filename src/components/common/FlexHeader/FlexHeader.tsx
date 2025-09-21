@@ -49,7 +49,7 @@ export const FlexHeader2 = ({
   
   return (
     <>
-      <h1 className={cn(`text-lg  lg:text-3.5xl font-bold mb-4`, className)}>
+      <h1 className={cn(`text-lg  lg:text-3.5xl font-bold lg:mb-4`, className)}>
         {Heading}
       </h1>
       <span className={cn(`text-xs lg:text-xl`, className)}>{description}</span>

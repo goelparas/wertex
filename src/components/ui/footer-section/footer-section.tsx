@@ -13,7 +13,11 @@ const FooterSection = () => {
             <div className='flex flex-col  items-center justify-between gap-2  my-auto '> 
               <div className="relative">
                 <Image src={circle} fill alt='circle'/>
-            <ImageContainer img={logo} width={200} height={200} className='lg:w-80 lg:h-80' />
+            <ImageContainer img={logo} width={200} height={200} size={{
+              smWidth: 100,
+              smHeight: 100,
+              smClassName: 'w-80 h-80'
+            }} />
               </div>
 
             </div>

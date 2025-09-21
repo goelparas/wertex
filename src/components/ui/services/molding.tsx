@@ -1,3 +1,4 @@
+'use client'
 import React from "react";
 import HeroSection from "@/components/common/Container/HeroSection-service";
 import mouldinghero from "@/cdn/images/moulding/moulding.webp";
@@ -20,9 +21,9 @@ import { ImageContainer } from "@/components/common/Container/ImageGrid";
 type Props = {};
 
 const component1 = (
-  <div className="flex flex-col gap-8 justify-between items-center w-[31.25rem]  mx-auto">
+  <div className="flex flex-col gap-8 justify-between items-center w-full lg:w-[31.25rem]  mx-auto">
     <div className="flex flex-col items-center justify-center relative w-60 h-60 ">
-      <p className="text-[150px] font-bold">01</p>
+      <p className="text-[82px] lg:text-[150px] font-bold">01</p>
       <Image
         src={grid}
         alt="casting main"
@@ -32,10 +33,10 @@ const component1 = (
       />
     </div>
     <div className="flex flex-col gap-4">
-      <h3 className="text-xl2 font-bold text-center">
+      <h3 className="text-lg lg:text-xl2 font-bold text-center">
         <span className="text-orangeBg">Injection</span> Molding
       </h3>
-      <p className="text-xl2 w-full text-left ">
+      <p className="text-lg lg:text-xl2 w-full text-left ">
         Ideal for producing precise, repeatable parts using thermoplastics and
         engineered polymers. Suitable for industries like automotive, aerospace,
         medical, and electronics.
@@ -44,7 +45,7 @@ const component1 = (
   </div>
 );
 const component2 = (
-  <div className="bg-custom-map-gradient flex items-center justify-center rounded-xl max-w-[31.25rem] mx-auto">
+  <div className="bg-custom-map-gradient flex items-center justify-center rounded-xl w-full lg:max-w-[31.25rem] mx-auto">
     <Image
       src={moldingservice}
       alt="molding service"
@@ -55,13 +56,13 @@ const component2 = (
 );
 
 const component3 = (
-  <div className="flex flex-col gap-14">
+  <div className="flex flex-col gap-8 lg:gap-14">
     <div>
-      <p className="text-3.5xl font-bold">
+      <p className="text-2xl lg:text-3.5xl font-bold">
         <span className="text-orangeBg">Versatile Materials</span> for Every
         Need
       </p>
-      <p className="text-xl2 mt-4 text-gray-muted-100">
+      <p className="text-lg lg:text-xl2 mt-4 text-gray-muted-100">
         We work with a wide range of thermoplastics and engineered polymers,
         including:
       </p>
@@ -95,15 +96,15 @@ const component3 = (
       ].map((item, index) => (
         <div
           key={index}
-          className="bg-borderGray rounded-xl p-4 flex  justify-between gap-8 "
+          className="bg-borderGray rounded-xl p-3 lg:p-4 flex  justify-between gap-8 "
         >
           <div className="flex flex-col items-center justify-center">
             <ImageContainer img={item.img} />
           </div>
 
           <div>
-            <span className="text-xl2 font-bold">{item.name}</span>
-            <span className="text-xl2">{item.description}</span>
+            <span className="text-lg lg:text-xl2 font-bold">{item.name}</span>
+            <span className="text-lg lg:text-xl2">{item.description}</span>
           </div>
         </div>
       ))}
@@ -112,14 +113,14 @@ const component3 = (
 );
 const component4 = (
   <div>
-    <p className="text-3.5xl font-bold">
+    <p className="text-2xl lg:text-3.5xl font-bold">
       <span className="text-orangeBg">High-Precision Solutions </span> for
       Complex Designs
     </p>
-    <p className="text-xl2 mt-4 text-[#FFFFFF91]">
+    <p className="text-lg lg:text-xl2 mt-4 text-[#FFFFFF91]">
       Delivering repeatable, high-quality components for critical industries.
     </p>
-    <p className="text-xl2 mt-4">
+    <p className="text-lg lg:text-xl2 mt-4">
       Injection molding is a precise and efficient process where molten plastic
       is injected into a mold cavity to produce complex, repeatable parts. At
       Wertex, we excel in delivering top-notch injection molding solutions
@@ -130,15 +131,15 @@ const component4 = (
 );
 const component5 = (
   <div className="flex flex-col gap-4">
-    <p className="text-3.5xl font-bold">
+    <p className="text-2xl lg:text-3.5xl font-bold">
       <span className="text-orangeBg">Finishing Touches </span> That Perfect
       Every Component
     </p>
-    <p className="text-xl2 mt-4 text-[#FFFFFF91]">
+    <p className="text-lg lg:text-xl2 mt-4 text-[#FFFFFF91]">
       Wertex offers a range of post-processing services to enhance the quality
       and functionality of injection-molded parts:
     </p>
-    <ul className="text-xl2 mt-4 list-disc leading-loose">
+    <ul className="text-lg lg:text-xl2 mt-4 list-disc leading-loose">
       <li><span className="font-bold">Deburring and Trimming:</span> Ensures clean, precise finishes.</li>
       <li><span className="font-bold">Surface Texturing:</span> Provides custom aesthetic finishes.</li>
       <li><span className="font-bold">Assembly Services:</span> Combines multiple components into finished assemblies </li>
@@ -148,15 +149,15 @@ const component5 = (
 
 const component6 = (
   <div className="flex flex-col gap-4">
-    <p className="text-3.5xl font-bold">
+    <p className="text-2xl lg:text-3.5xl font-bold">
       Ensuring{" "}
       <span className="text-orangeBg"> Precision and Performance </span>
     </p>
-    <p className="text-xl2 mt-4 text-[#FFFFFF91]">
+    <p className="text-lg lg:text-xl2 mt-4 text-[#FFFFFF91]">
       To guarantee the highest quality standards, Wertex implements rigorous
       quality control measures:
     </p>
-    <ul className="text-xl2 mt-4 list-disc leading-loose">
+    <ul className="text-lg lg:text-xl2 mt-4 list-disc leading-loose">
       <li>
         Dimensional Verification: Advanced tools ensure precise measurements.
       </li>
@@ -172,9 +173,9 @@ const component6 = (
 );
 
 const componentTwo1 = (
-  <div className="flex flex-col gap-8 justify-between items-center w-[31.25rem]  mx-auto">
-    <div className="flex flex-col items-center justify-center relative w-60 h-60 ">
-      <p className="text-[150px] font-bold">02</p>
+  <div className="flex flex-col gap-8 justify-between items-center w-full lg:w-[31.25rem]  mx-auto">
+    <div className="flex flex-col items-center justify-center relative w-40 lg:w-60 h-40 lg:h-60 ">
+      <p className="text-[82px] lg:text-[150px] font-bold">02</p>
       <Image
         src={grid}
         alt="casting main"
@@ -185,10 +186,10 @@ const componentTwo1 = (
     </div>
 
     <div className="flex flex-col gap-4">
-      <h3 className="text-xl2 font-bold text-center">
+      <h3 className="text-lg lg:text-xl2 font-bold text-center">
         <span className="text-orangeBg">Compression</span> Molding
       </h3>
-      <p className="text-xl2">
+      <p className="text-lg lg:text-xl2">
         Best for shaping thermosetting plastics and rubber into high-strength,
         durable components.
       </p>
@@ -196,7 +197,7 @@ const componentTwo1 = (
   </div>
 );
 const componentTwo2 = (
-  <div className="bg-white flex items-center justify-center rounded-xl max-w-[31.25rem] mx-auto">
+  <div className="bg-white flex items-center justify-center rounded-xl w-full lg:max-w-[31.25rem] mx-auto">
   <Image
     src={moldingservice2}
     alt="molding service"
@@ -206,16 +207,16 @@ const componentTwo2 = (
 </div>
 );
 const componentTwo3 = (
-  <div>
-    <p className="text-3.5xl font-bold">
+  <div className="w-full">
+    <p className="text-2xl lg:text-3.5xl font-bold">
       Engineered for{" "}
       <span className="text-orangeBg">Durability and Performance </span>
     </p>
-    <p className="text-xl2 mt-4 text-[#FFFFFF91]">
+    <p className="text-lg lg:text-xl2 mt-4 text-[#FFFFFF91]">
       We work with a wide range of thermoplastics and engineered polymers,
       including:
     </p>
-    <div className="flex flex-col gap-4 mt-12">
+    <div className="flex flex-col gap-4 mt-6 lg:mt-12">
       {[
         {
           name: "Thermosets:",
@@ -230,14 +231,14 @@ const componentTwo3 = (
       ].map((item, index) => (
         <div
           key={index}
-          className="bg-borderGray rounded-xl p-4 flex  justify-between gap-8 "
+          className="bg-borderGray rounded-xl p-2 lg:p-4 flex  justify-between gap-2 lg:gap-8 "
         >
-          <div className="flex flex-col items-center justify-center">
+          <div className="flex flex-col items-center justify-start lg:justify-center">
             <ImageContainer img={item.img} />
           </div>
-          <div className="w-full flex justify-start items-center gap-2">
-            <span className="text-xl2 font-bold">{item.name}</span>
-            <span className="text-xl2 text-nowrap">{item.description}</span>
+          <div className="w-full flex flex-col lg:flex-row justify-start items-center gap-2">
+            <span className="text-lg text-left w-full lg:text-xl2 font-bold">{item.name}</span>
+            <span className="text-lg text-left w-full lg:text-xl2 text-nowrap">{item.description}</span>
           </div>
         </div>
       ))}
@@ -245,16 +246,16 @@ const componentTwo3 = (
   </div>
 );
 const componentTwo4 = (
-  <div>
-    <p className="text-3.5xl font-bold">
+  <div className="w-full">
+    <p className="text-2xl lg:text-3.5xl font-bold">
       <span className="text-orangeBg">Durable Solutions for </span>{" "}
       High-Strength Components
     </p>
-    <p className="text-xl2 mt-4 text-[#FFFFFF91]">
+    <p className="text-lg lg:text-xl2 mt-4 text-[#FFFFFF91]">
       Specializing in thermosetting plastics and rubber for intricate, reliable
       designs
     </p>
-    <p className="text-xl2 mt-4">
+    <p className="text-lg lg:text-xl2 mt-4">
       Compression molding uses heat and pressure to transform thermosetting
       plastics and rubber into durable components. This robust process is ideal
       for applications requiring high strength and intricate designs.
@@ -263,16 +264,16 @@ const componentTwo4 = (
 );
 const componentTwo5 = (
 
-  <div>
-    <p className="text-3.5xl font-bold">
+  <div className="w-full">
+    <p className="text-2xl lg:text-3.5xl font-bold">
       Refining Components for  <span className="text-orangeBg"> Optimal
         Performance</span>
     </p>
-    <p className="text-xl2 mt-4 text-[#FFFFFF91]">
+    <p className="text-lg lg:text-xl2 mt-4 text-[#FFFFFF91]">
       Our post-processing services ensure each compression-molded component is
       delivered to exact specifications:
     </p>
-    <ul className="text-xl2 mt-4 list-disc">
+    <ul className="text-lg lg:text-xl2 mt-4 list-disc">
       <li>
         Deburring and Trimming: Removes excess material for a precise finish.
       </li>
@@ -285,14 +286,14 @@ const componentTwo5 = (
   </div>
 );
 const componentTwo6 = (
-  <div>
-    <p className="text-3.5xl font-bold">
+  <div className="w-full" >
+    <p className="text-2xl lg:text-3.5xl font-bold">
       Precision Delivered Through  <span className="text-orangeBg"> Rigorous Quality Control </span>
     </p>
-    <p className="text-xl2 mt-4 text-[#FFFFFF91]">
+    <p className="text-lg lg:text-xl2 mt-4 text-[#FFFFFF91]">
       To meet stringent quality standards, Wertex conducts:
     </p>
-    <ul className="text-xl2 mt-4 list-disc ">
+    <ul className="text-lg lg:text-xl2 mt-4 list-disc ">
       <li className="font-normal">
         <span className="font-bold"> Dimensional Checks:</span> Ensures precise measurements for all components.
       </li>
@@ -300,7 +301,7 @@ const componentTwo6 = (
       <li className="font-normal">
         <span className="font-bold">Defect Inspection:</span> Identifies and eliminates surface and internal
         inconsistencies.
-      </li>
+      </li>   
     </ul>
   </div>
 );
@@ -311,11 +312,11 @@ const renderBentoGrid = (
   className?: string
 ) => {
   return (
-    <BentoGrid className={`mt-12 ${bgColor} ${className}`}>
+    <BentoGrid className={`mt-8 lg:mt-12 ${bgColor} ${className}`}>
       {components.map((item, index) => (
         <BentoGridItem
           key={index}
-          className={`box-item-${index + 1} p-12`}
+          className={`box-item-${index + 1} p-6 lg:p-12`}
           style={{
             gridArea: `box-${index + 1}`,
           }}
@@ -343,6 +344,7 @@ const Molding = (props: Props) => {
     { component: componentTwo4 },
     { component: componentTwo5 },
     { component: componentTwo6 },
+    
   ];
 
   return (
@@ -358,22 +360,22 @@ const Molding = (props: Props) => {
         }
       />
 
-      <div className="bg-[#242424] mt-12 p-12">
+      <div className="bg-[#242424] p-3 mt-6 lg:mt-12 lg:p-12">
         <FlexHeader
           title={`Tailored Molding Solutions for  Every Application`}
           heading=""
-          className="text-xl2"
+          className="text-lg lg:text-xl2"
           description="From thermoplastics to rubber, we offer customized techniques to suit your needs."
           headingClassName=" text-gray-muted-100"
           descriptionClassName="text-xl2 text-gray-muted-100"
         />
-        <p className="text-xl2">
+        <p className="text-lg lg:text-xl2 mt-2">
           <span className="text-orangeBg">Wertex</span> specializes in two
           primary molding techniques:
         </p>
         {renderBentoGrid(componentItems, "bg-[#242424]")}
       </div>
-      <div className="p-12 bg-black">
+      <div className="p-3 lg:p-12 bg-black ">
         {renderBentoGrid(componentItems2, "bg-black")}
       </div>
       <Footerservice

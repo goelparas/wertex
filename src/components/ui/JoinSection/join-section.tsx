@@ -84,10 +84,10 @@ const JoinSection = () => {
 
   return (
     <>
-      <main className="relative mb-24 mt-12">
+      <main className="relative mb-10 lg:mb-24 mt-12">
         <Image src={gridBg} alt='grid-background' className='absolute  inset-0' fill />  
           <div className='bg-gradient-to-b from-transparent via-white/5 to-transparent  m-2 sm:mx-12 sm:my-10  h-[90%] max-h-max'>
-        <div className='border mx-auto backdrop-blur-sm border-border  sm:p-10 transition-all  h-full max-h-max'>
+        <div className='border mx-auto backdrop-blur-sm border-border  p-4 lg:p-10 transition-all  h-full max-h-max'>
           <h1 className='hidden sm:block text-xl2 font-semibold text-center mt-4 mb-10 line'>Fill in the details, our manufacturing  <br /> experts will reach out shortly.</h1>
           <h1 className=' sm:hidden text-lg font-semibold text-center mt-4 mb-10 '>Fill in the details, our manufacturing <br /> experts will reach out shortly.</h1>
           <form onSubmit={handleSubmit(onSubmit)} className='w-full p-4   md:w-3/4 lg:w-3/5 mx-auto flex flex-col gap-4 max-h-max'>
@@ -154,10 +154,10 @@ const JoinSection = () => {
         </div>
       </div >  
       </main>
-      <div className=" flex flex-col gap-11 mt-8 mb-28">
-        <div className="bg-borderGray p-12 h-72 flex flex-col justify-between items-start">
-          <h1 className="text-3xl font-bold">Join Our Team</h1>
-          <p className="text-xl2">
+      <div className=" flex flex-col gap-6 lg:gap-11 mt-8 mb-28">
+        <div className="bg-borderGray p-6 lg:p-12 h-72 flex flex-col justify-between items-start">
+          <h1 className="text-lg lg:text-3xl font-bold">Join Our Team</h1>
+          <p className="text-sm lg:text-xl2">
             Wertex is more than just a company; it’s a community of innovators,
             creators, and problem-solvers. If you’re passionate about making an
             impact and thrive in a dynamic environment, we’d love to hear from

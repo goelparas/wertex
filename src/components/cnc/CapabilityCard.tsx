@@ -33,7 +33,11 @@ export default function CapabilityCard({
         'transition-all duration-300 hover:shadow-lg cursor-pointer hover:shadow-white/10 hover:-translate-y-1 lg:h-[400px] max-w-[380px]'
       )}
     >
-      <ImageContainer img={icon} className='lg:w-24 lg:h-24 w-12 h-12' width={85} height={85}/>
+      <ImageContainer img={icon} className='lg:w-24 lg:h-24 ' width={85} height={85}
+        size={{
+          smClassName: 'w-12 h-12'
+        }}
+      />
       <p className=' w-4/5 lg:w-auto text-start leading-relaxed lg:text-center  text-xs lg:text-xl2 text-gray-300'>{description}</p>
     </motion.div>
   );

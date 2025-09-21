@@ -65,7 +65,7 @@ const SheetFabrication = (props: Props) => {
       />
         <Section className="bg-black">
 
-          <div className="grid grid-cols-3 gap-4 ">
+          <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 ">
             {[
               {
                 title: "Cold-Rolled Steel (CRS)",
@@ -98,9 +98,9 @@ const SheetFabrication = (props: Props) => {
             ].map((item, index) => (
               <div
                 key={index}
-                className="bg-background-200  p-6 rounded-lg shadow-lg flex flex-col items-center text-center"
+                className="bg-background-200  p-3 lg:p-6 rounded-lg shadow-lg flex flex-col items-center text-center  last:col-span-2 lg:last:col-span-1 "
               >
-                <h3 className="text-xl2 ">{item.title}</h3>
+                <h3 className=" text-lg lg:text-xl2 ">{item.title}</h3>
               </div>
             ))}
           </div>
@@ -112,20 +112,20 @@ const SheetFabrication = (props: Props) => {
           heading="Precision Cutting Methods for Complex Designs"
           description="Advanced technologies ensure accurate and efficient shaping."
         />
-        <div className="grid grid-cols-3 justify-between items-center gap-8 mt-12">
+        <div className="grid grid-cols-1 lg:grid-cols-3 justify-between items-center gap-8 mt-12">
           {cuttingMethods.map((method, index) => (
             <div
               key={index}
-              className=" p-4 gap-4  shadow-lg border  flex flex-row items-left text-left"
+              className="p-2 lg:p-4 gap-4  shadow-lg border  flex flex-row items-left text-left"
             >
               <Image
                 src={method.imageSrc}
                 alt={method.title}
-                className="mb-4 w-40 object-cover h-52"
+                className="lg:mb-4 min-w-32 max-w-32 lg:min-w-40 lg:max-w-40 lg:w-40 object-cover h-32 lg:h-52"
               />
-              <div className="w-full ">
-              <h3 className="text-xl2 font-bold mb-2 ">{method.title}</h3>
-              <p className="text-lg">{method.description}</p>
+              <div className="w-full">
+              <h3 className="text-lg lg:text-xl2 font-bold mb-2 ">{method.title}</h3>
+              <p className="text-sm lg:text-lg">{method.description}</p>
               </div>
             
             </div>
@@ -137,7 +137,7 @@ const SheetFabrication = (props: Props) => {
           heading="Accurate and Consistent Bending Solutions"
           description="Shaping sheet metal with precision and reliability."
         />
-        <div className="grid grid-cols-2 gap-5">
+        <div className="grid grid-cols-1 lg:grid-cols-2   gap-3 lg:gap-5">
           {[
             {
               title: "Press Brakes",
@@ -156,18 +156,18 @@ const SheetFabrication = (props: Props) => {
           ].map((item) => (
             <div
               key={item.title}
-              className="bg-white/10 backdrop-blur-md rounded-3xl py-16 px-8 shadow-md mt-12"
+              className="bg-white/10 backdrop-blur-sm lg:backdrop-blur-md rounded-2xl lg:rounded-3xl p-4 lg:py-16 lg:px-8 shadow-md mt-6 lg:mt-12"
             >
-              <h1 className="text-2xl font-bold mb-4">{item.title}</h1>
+              <h1 className="text-lg  lg:text-2xl font-bold mb-4">{item.title}</h1>
               <Image
                 src={item.image}
                 alt={item.title}
-                className="w-full h-60 object-cover mb-4 rounded-2xl"
+                className="w-full h-32 lg:h-60 object-cover mb-4 rounded-2xl"
                 
               />
-              <ul className="list-none  leading-4 font-semibold">
+              <ul className="list-none leading-2 lg:leading-4 font-semibold">
                 {Object.entries(item.points).map(([key, value]) => (
-                  <li key={key} className="text-xl text-white ">
+                  <li key={key} className="text-sm lg:text-xl text-white ">
                     {value}
                   </li>
                 ))}
@@ -182,7 +182,7 @@ const SheetFabrication = (props: Props) => {
           title="Advanced Welding Techniques for Robust Assemblies"
           description="Extensive welding options tailored for strength and consistency"
         />
-        <div className="grid grid-cols-4 gap-5 my-12">
+        <div className="flex overflow-x-scroll lg:grid lg:grid-cols-4 gap-5 my-12">
           {[
             {
               title: "MIG Welding",
@@ -207,25 +207,25 @@ const SheetFabrication = (props: Props) => {
           ].map((item, index) => (
             <div
               key={index}
-              className="bg-borderGray py-8 px-4 rounded-2xl shadow-lg flex flex-col items-center justify-start text-left h-[31.75rem] gap-4"
+              className="bg-borderGray px-3 py-6 shrink-0 w-80 lg:w-auto  lg:py-8 lg:px-4 rounded-xl lg:rounded-2xl shadow-lg flex flex-col items-center justify-start text-left lg:h-[31.75rem] gap-4"
             >
               <Image
                 src={item.image}
                 alt={item.title}
-                className="w-full h-80 object-cover mb-4 rounded-2xl"
+                className="w-full h-40 lg:h-80 object-cover mb-4 rounded-2xl"
               />
-              <h2 className="text-xl2 font-semibold text-left w-full">{item.title}</h2>
-              <p className="text-lg text-left  ">{item.description}</p>
+              <h2 className="text-lg lg:text-xl2 font-semibold text-left w-full">{item.title}</h2>
+              <p className="text-sm lg:text-lg text-left  ">{item.description}</p>
             </div>
           ))}
         </div>
-        <div className="my-24">
+        <div className=" my-12 lg:my-24">
         <FlexHeader2
           heading="Ensuring Every Weld Meets Stringent Standards"
           description="Comprehensive checks for quality and precision"
         />
        
-        <div className="grid grid-cols-3 gap-6 mt-12">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-3 lg:gap-6 mt-6 lg:mt-12">
           {[
             {
               title: "Assembly Planning",
@@ -245,33 +245,33 @@ const SheetFabrication = (props: Props) => {
           ].map((item, index) => (
             <div
               key={index}
-              className="bg-borderGray p-6 rounded-lg shadow-lg flex flex-col items-start justify-start text-left"
+              className="bg-borderGray p-3 lg:p-6 rounded-lg shadow-lg flex flex-col items-start justify-start text-left"
             >
-              <p className="text-xl2 font-bold text-left">{item.title}</p>
-              <p className="text-xl2 ">{item.description}</p>
+              <p className="text-lg lg:text-xl2 leading-8 font-bold text-left mb-6">{item.title}</p>
+              <p className="text-sm leading-8 lg:text-xl2 ">{item.description}</p>
             </div>
           ))}
         </div>
         </div>
       </Section>
-      <div className="bg-white relative h-svh py-12">
+      <div className="bg-white relative lg:h-svh py-12">
         <FlexHeader2
-          className="text-black px-12 "
+          className="text-black px-3 lg:px-12 "
           heading="Enhancing Durability and Aesthetics"
           description="Surface treatments tailored to your project’s needs."
         />
-        <div className="relative h-[80svh] flex items-center justify-center mt-12">
+        <div className="relative h-full lg:h-[80svh] flex items-center justify-center mt-12">
           <div className="absolute top-0 left-0 w-full h-full z-10">
             <Image src={grid} alt="sheet fabrication" fill priority />
           </div>
 
-          <div className="mt-12 border border-black  relative h-[90%] p-12 m-12 z-20">
-            <p className="text-xl2 text-black">
+          <div className="mt-12 border border-black  relative h-[90%] p-4 lg:p-12 m-4 lg:m-12 z-20">
+            <p className="text-sm lg:text-xl2 text-black">
               <span className="text-orangeBg">Wertex</span> offers various surface
               treatments to enhance durability and appearance:
             </p>
 
-            <div className="grid grid-cols-3 gap-6  bg-white  mt-12 relative z-10">
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-6  bg-white mt-6 lg:mt-12 relative z-10">
               {[
                 {
                   title: "Polishing",
@@ -291,18 +291,18 @@ const SheetFabrication = (props: Props) => {
               ].map((item, index) => (
                 <div
                   key={index}
-                  className="border border-black p-8 relative flex flex-col items-center gap-8 bg-[#1717171A]/10 text-black"
+                  className="border border-black p-4 lg:p-8 relative flex flex-col items-center gap-4 lg:gap-8 bg-[#1717171A]/10 text-black"
                 >
                   <Image
                     src={item.image}
                     alt={item.title}
-                    className="w-full h-60 object-cover"
+                    className="w-full h-48 lg:h-60 object-cover"
                   />
-                  <div className="flex flex-col gap-2 text-left">
-                    <h3 className="text-xl2 font-bold text-left">
+                  <div className="flex flex-col gap-2 text-left w-full">
+                    <h3 className="text-lg lg:text-xl2 font-bold text-left">
                       {item.title}
                     </h3>
-                    <p className="text-xl2">{item.description}</p>
+                    <p className="text-sm leading-8 lg:text-xl2">{item.description}</p>
                   </div>
                 </div>
               ))}

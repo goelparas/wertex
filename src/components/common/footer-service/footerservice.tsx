@@ -1,12 +1,11 @@
-'use client'
 import React from "react";
 import {FlexHeader} from "../FlexHeader/FlexHeader";
 import Button from "../Button/button";
 import imag from "@/cdn/images/wtx_logo_service.png";
 import { ImageContainer } from "../Container/ImageGrid";
 import Section from "../Section";
-import { useWindowSize } from "@/utils/hooks/useWindowSize";
-
+import Image from "next/image";
+import grid from "@/cdn/images/cross.png";
 type Props = {
   title: string;
   description: string;
@@ -25,7 +24,6 @@ const Footerservice = ({
   buttonText,
   children,
 }: Props) => {
-  const { isMobile } = useWindowSize()
   return (
 
     <Section className="lg:p-6 bg-transparent">
@@ -33,11 +31,11 @@ const Footerservice = ({
             title={title}
             description={description}
             heading={""}
-            className="w-4/5 lg:hidden"
+            className="w-4/5 mb-6 lg:hidden"
       />
 
-      <div className="bg-borderGray flex items-center lg:items-start justify-between p-3 lg:p-8">
-        <div className=" flex-col gap-12 justify-between items-center lg:items-start w-3/5  flex">
+      <div className="bg-borderGray flex items-center flex-col lg:flex-row  lg:items-start justify-between p-3 lg:p-8 gap-6">
+        <div className="flex-col gap-12 justify-between items-center lg:items-start w-full lg:w-3/5  flex ">
           <FlexHeader
             title={title}
             description={description}
@@ -46,13 +44,27 @@ const Footerservice = ({
           />
           <p className="leading-relaxed text-xs lg:text-xl2 text-white">{longDescription}</p>
         </div>
-        <ImageContainer className="w-14 h-14 flex-none lg:w-1/5 lg:h-80" img={imag} height={isMobile ? 40 : 238} width={isMobile ? 40 : 238} />
+        <div className="lg:block hidden">
+        <ImageContainer className="w-80 h-80" img={imag}   height={238} width={238}
+         />
+        </div>
+      <div className="lg:hidden relative h-1/2 w-full flex items-center justify-center">
+       <Image src={grid} alt="casting main" fill  />
+        <ImageContainer className="w-40 h-40 flex-none " img={imag} height={238} width={238}
+        size={{
+          smClassName: 'w-40 h-40',
+          smHeight: 238,
+          smWidth: 238,
+        }}
+         />
+        </div>
+      
       </div>
 
       {children}
 
       <Button className="w-full rounded-none text-center py-3 lg:py-6 mt-8">
-        <p className="text-center text-white font-bold text-xs lg:text-xl2 w-full uppercase">
+        <p className="text-center text-white font-bold text-xs leading-relaxed lg:text-xl2 w-full uppercase">
           {buttonText}
         </p>
       </Button>

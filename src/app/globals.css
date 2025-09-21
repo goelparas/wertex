@@ -96,16 +96,31 @@ input:-webkit-autofill:focus {
   -webkit-text-fill-color: var(--text-primary)!important;
   
 }
- .grid-container {
+  .grid-container {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: 1fr;
   grid-template-areas: 
-  "box-1 box-2"
-  "box-3 box-2"
-  "box-3 box-4"
-  "box-3 box-6"
-  "box-5 box-6";  
- }
+  "box-1"
+  "box-2"
+  "box-3"
+  "box-4"
+  "box-5"
+  "box-6";  
+}
+
+@media (min-width: 768px) {
+  .grid-container {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas: 
+    "box-1 box-2"
+    "box-3 box-2"
+    "box-3 box-4"
+    "box-3 box-6"
+    "box-5 box-6";  
+  }
+}
+ 
+
  
  [class^="box-item-"] {
    border: 1px solid #FFFFFF91;
