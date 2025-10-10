@@ -225,7 +225,7 @@ const AluminiumExtrusion = (props: Props) => {
 
           description="Experience the difference with custom-engineered, high-performance solutions."
         />
-        <Section className="bg-black border border-[#E8E8E8]">
+        <Section className="bg-black border border-[#E8E8E8] lg:block hidden">
         <FlexHeader2
           heading=""
           description="Why industries choose Wertex for aluminum extrusions:"

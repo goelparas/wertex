@@ -27,37 +27,30 @@ const Footerservice = ({
   return (
 
     <Section className="lg:p-6 bg-transparent">
-      <FlexHeader
+      {/* <FlexHeader
             title={title}
             description={description}
-            heading={""}
+            heading={heading}
             className="w-4/5 mb-6 lg:hidden"
-      />
+      /> */}
 
-      <div className="bg-borderGray flex items-center flex-col lg:flex-row  lg:items-start justify-between p-3 lg:p-8 gap-6">
-        <div className="flex-col gap-12 justify-between items-center lg:items-start w-full lg:w-3/5  flex ">
+      <div className="bg-borderGray flex items-start flex-row justify-between p-3 lg:p-8 gap-6">
+        <div className="flex-col gap-12  lg:justify-between items-start lg:items-start w-full lg:w-3/5  flex ">
           <FlexHeader
             title={title}
             description={description}
             heading={heading}
-            className="hidden lg:block"
+            className=""
           />
           <p className="leading-relaxed text-xs lg:text-xl2 text-white">{longDescription}</p>
         </div>
-        <div className="lg:block hidden">
-        <ImageContainer className="w-80 h-80" img={imag}   height={238} width={238}
+          <ImageContainer className="w-80 h-80" img={imag}   height={238} width={238}
+           size={{
+            smClassName: 'w-16 h-16',
+            smHeight: 42,
+            smWidth: 42,
+           }}
          />
-        </div>
-      <div className="lg:hidden relative h-1/2 w-full flex items-center justify-center">
-       <Image src={grid} alt="casting main" fill  />
-        <ImageContainer className="w-40 h-40 flex-none " img={imag} height={238} width={238}
-        size={{
-          smClassName: 'w-40 h-40',
-          smHeight: 238,
-          smWidth: 238,
-        }}
-         />
-        </div>
       
       </div>
 

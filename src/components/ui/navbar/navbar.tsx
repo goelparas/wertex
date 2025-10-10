@@ -50,7 +50,7 @@ const Tab = ({
     ) : (
       <Link
         key={item.name}
-        className="text-[#CDCDCD] font-semibold hover:font-bold text-lg uppercase hover:cursor-pointer py-4 px-3 text-nowrap"
+        className="text-[#CDCDCD] font-semibold hover:font-bold text-lg hover:text-orangeBg uppercase hover:cursor-pointer py-4 px-3 text-nowrap"
         href={href}
       >
         {item.name}

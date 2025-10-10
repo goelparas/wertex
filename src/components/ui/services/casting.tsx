@@ -27,6 +27,7 @@ import logo1 from '@/cdn/images/casting/logo-1.svg';
 import logo2 from '@/cdn/images/casting/logo-2.svg';
 import logo3 from '@/cdn/images/casting/logo-3.svg';
 import { ImageContainer } from "@/components/common/Container/ImageGrid";
+import Section from "@/components/common/Section";
 
 // Define casting capabilities with their respective images
 const CASTING_CAPABILITIES = [
@@ -159,42 +160,41 @@ const Casting = (props: Props) => {
       />
 
 
-      <div className="mt-12 w-full bg-black p-12">
+      <div className="mt-4 lg:mt-12 w-full bg-black p-3 lg:p-12">
         <FlexHeader2
           heading="Comprehensive Casting Capabilities"
           description="Advanced casting methods tailored to your needs."
         />
 
-        <div className="grid grid-cols-3 gap-4 mt-6">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-2 lg:gap-4 mt-6">
           {CASTING_CAPABILITIES.map((item, index) => (
             <div
               key={index}
-              className="bg-background-200 p-6 rounded-lg shadow-lg flex flex-col items-start text-start hover:scale-105 transition-transform duration-300 gap-4"
+              className="bg-background-200 p-3 lg:p-6 rounded-lg shadow-lg flex lg:flex-col items-start text-start hover:scale-105 transition-transform duration-300 gap-4"
             >
-              <div className="relative flex items-center justify-center w-24 h-24 shrink-0 flex-none">
-                <Image
-                  src={item.image}
-                  alt="molding service"
-                  width={62}
-                  height={62}
-                  className={item.class}
-                />
-                <Image src={grid} alt="casting main" fill />
+              <div className="flex items-center justify-center">
+              <ImageContainer img={item.image} variant="white" className='w-28  h-28' width={62} height={62} size={{
+                smWidth: 20,
+                smHeight: 20,
+                smClassName: 'w-8 h-8'
+              }}/>
               </div>
-              <h3 className="text-xl2 font-bold mb-2 text-white text-start w-full">
+              
+              <h3 className="text-lg lg:text-xl2  font-bold hidden lg:block mb-2 text-white text-start w-full ">
                 {item.title}
               </h3>
-              <p className="text-xl2 text-gray-300">{item.description}</p>
-            </div>
+                <p className="text-sm lg:text-xl2 lg:leading-relaxed text-gray-300">{item.description}</p>
+                </div>
+              
           ))}
         </div>
       </div>
-      <div className="bg-custom-gradient p-12">
+      <div className="bg-custom-gradient p-3 lg:p-12">
         <FlexHeader2
           heading="Versatile Material Options"
           description="Ferrous and non-ferrous materials for diverse applications."
         />
-        <div className="grid grid-cols-2 gap-5">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-5">
           {[
             {
               title: "Ferrous Materials",
@@ -232,10 +232,10 @@ const Casting = (props: Props) => {
           ].map((item) => (
             <div
               key={item.title}
-              className=" bg-white/15 backdrop-blur-md rounded-3xl py-16 px-8 shadow-md mt-12"
+              className=" bg-white/15 max-w-96 mx-auto lg:max-w-none backdrop-blur-md rounded-3xl p-4 lg:py-16  lg:px-8 shadow-sm lg:shadow-md mt-12"
             >
-              <h1 className="text-2xl font-bold mb-6">{item.title}</h1>
-              <div className="h-56 w-full rounded-2xl p-1 mb-4 relative ">
+              <h1 className="text-xs lg:text-xl2 font-bold mb-6">{item.title}</h1>
+              <div className="h-72 w-full rounded-lg lg:rounded-2xl p-1 mb-4 relative ">
                 <Image
                   src={item.image}
                   alt={item.title}
@@ -246,7 +246,7 @@ const Casting = (props: Props) => {
 
               <ul className="list-disc pl-5 leading-4">
                 {Object.entries(item.points).map(([key, value]) => (
-                  <li key={key} className="text-xl text-gray-300 ">
+                  <li key={key} className="text-xs lg:text-xl2 leading-relaxed text-gray-300 ">
                     <strong>{key}:</strong> {value}
                   </li>
                 ))}
@@ -255,18 +255,16 @@ const Casting = (props: Props) => {
           ))}
         </div>
       </div>
-      <div className="w-full bg-black p-12">
+      <Section className=" bg-black">
         <FlexHeader2
           heading="Enhancing Component Performance and Quality"
           description="Advanced finishing techniques for durability and precision."
         />
         <div className="border border-white p-4 mt-12">
-          <p className="text-xl2 p-4 ">
-            <span className="text-orangeBg">Wertex</span> employs a range of
+        <FlexHeader2 heading={<p className="font-normal">  <span className="text-orangeBg">Wertex</span> employs a range of
             post-processing techniques to ensure <br /> optimal performance and
-            aesthetics:
-          </p>
-          <div className="grid grid-cols-3 p-4 gap-8">
+            aesthetics:</p>} description={""}/> 
+          <div className="grid grid-cols-2 lg:grid-cols-3 p-2 lg:p-4 gap-8 mt-6">
             {[
               {
                 title: "Shot Blasting",
@@ -300,23 +298,24 @@ const Casting = (props: Props) => {
             ].map((item) => (
               <div
                 key={item.title}
-                className="bg-black border border-white py-8 px-4  shadow-md flex flex-col items-start text-start"
+                className="bg-black border border-white p-2 lg:py-8 lg:px-4  shadow-md flex flex-col items-start text-start"
               >
 
-                <h1 className="text-xl2 font-bold mb-2">{item.title}</h1>
-                <p className="text-xl2 text-gray-300">{item.description}</p>
+                <h1 className="text-lg lg:text-xl2 font-bold mb-2">{item.title}</h1>
+                <p className="text-sm lg:text-xl2 text-gray-300">{item.description}</p>
               </div>
             ))}
           </div>
         </div>
-      </div>
+      </Section>
       <div className="w-full bg-white p-12">
         <FlexHeader2
           className="text-background"
           heading="Enhancing Component Performance and Quality"
           description="Ensuring each component meets exact specifications."
         />
-        <div className="grid grid-cols-3 gap-0 gap-y-8 mt-24">
+
+        <div className="lg:grid grid-cols-3 gap-0 gap-y-8 mt-24 hidden">
           {cardItems.map((item, index) => (
             <div key={index} className="bg-white py-4 text-foreground">
               <div className="w-full mx-auto flex flex-col items-center gap-2">
@@ -350,15 +349,22 @@ const Casting = (props: Props) => {
           heading="Your Trusted Partner for Casting Solutions"
           description=""
         />
-        <div className="grid grid-cols-3 gap-8 mt-12 z-20">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mt-12 z-20">
           {newItems.map((item, _) => (
-            <div key={item.title} className="w-96 h-[500px] mx-auto flex flex-col items-center justify-between gap-2 p-4 z-10 text-white bg-borderGray rounded-2xl">
-              <p className="text-center  font-bold  text-xl2 text-white">
+            <div key={item.title} className="lg:w-96 h-40 lg:h-[500px] mx-auto flex flex-col items-start lg:items-center justify-between gap-2 p-4 z-10 text-white bg-borderGray rounded-2xl">
+              <p className="text-center  font-bold hidden lg:block text-lg leading-relaxed lg:text-xl2 text-white">
                 {item.title}
               </p>
 
-              <ImageContainer img={item.img} className="w-24 h-24" height={65} width={84} />
-              <p className="text-xl2 text-borderGray text-center text-white">
+              <ImageContainer img={item.img} className="w-24  h-24" height={65} width={84} size={{
+                smWidth: 38,
+                smHeight: 38,
+                smClassName: 'w-12 h-12'
+              }} />
+              <p className="text-center lg:text-start font-bold block lg:hidden text-lg leading-relaxed lg:text-xl2 text-white">
+                {item.title}
+              </p>
+              <p className="text-sm lg:text-xl2 leading-relaxed text-borderGray lg:text-center text-white text-start">
                 {item.description}
               </p>
             </div>

@@ -165,9 +165,9 @@ const JoinSection = () => {
           </p>
         </div>
         <Button
-          className="w-full rounded-none text-center py-8 "
+          className="w-full rounded-none text-center py-3 lg:py-8 "
         >
-          <p className="text-center text-white font-bold text-3xl w-full">Click Here</p>
+          <p className="text-center text-white font-bold text-lg lg:text-3xl w-full">Click Here</p>
         </Button>
       </div>
     </>

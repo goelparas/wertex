@@ -18,7 +18,7 @@ export const ImageContainer = ({ img, width, height, className , node , variant=
   size?: {
     smWidth?: number,
     smHeight?: number,
-    smClassName:string
+    smClassName?:string
   }
 }) => {
   const {isMobile} = useWindowSize();
