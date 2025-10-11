@@ -217,11 +217,11 @@ const SurfaceTreatment = () => {
         <Image src={gridBg} alt='grid-background' className='absolute  inset-0' fill />  
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 lg:gap-6  border-[#FFFFFF]/45 border-4 p-2 lg:p-12">
           {surfaceTreatments.map((treatment, index) => (
-            <div key={index} className={`bg-black p-6 border border-white`}>
+            <div key={index} className={`bg-black p-3 lg:p-6 border border-white`}>
               <h3 className="text-white font-bold text-sm lg:text-xl2 mb-3">
                 {treatment.title}
               </h3>
-              <ul className="text-white text-sm lg:text-xl2 space-y-2 list-disc list-inside">
+              <ul className="text-white text-sm lg:text-xl2 leading-relaxed space-y-2 list-disc list-inside">
                 {treatment.features.map((feature, featureIndex) => (
                   <li key={featureIndex}>{feature}</li>
                 ))}
@@ -240,13 +240,13 @@ const SurfaceTreatment = () => {
           Meeting the demands of industries with tailored solutions.
         </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8 bg-white">
+        <div className="grid grid-cols-2 lg:grid-cols-3 gap-6 mt-8 bg-white">
           {treatmentBenefits.map((benefit, index) => (
-            <div key={index} className="bg-[#D0D0D073] p-6 rounded-lg">
+            <div key={index} className="bg-[#D0D0D073] p-3 lg:p-6 rounded-lg">
               <ImageContainer img={benefit.img} variant="black" className='w-28 h-28' width={62} height={62} size={{
-                smWidth: 62,
-                smHeight: 62,
-                smClassName: 'w-24 h-24'
+                smWidth: 30,
+                smHeight: 30,
+                smClassName: 'w-12 h-12'
               }}/>
               <h3 className="text-black font-bold text-lg lg:text-xl2 my-2">
                 {benefit.title}
@@ -265,7 +265,7 @@ const SurfaceTreatment = () => {
           Advanced testing and inspections for consistent and reliable results.
         </p>
         
-      <div className="grid grid-cols-2 gap-4 mt-12" >
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 mt-6 lg:mt-12" >
         {industries.map((industry, index) => (
       
       <IndustryCard
@@ -274,7 +274,7 @@ const SurfaceTreatment = () => {
       title={industry.title}
       description={industry.description}
       delay={industry.delay}
-       className="bg-[#2C2C2C] rounded-2xl p-2 lg:p-6  flex-col lg:flex-row justify-center items-center"
+       className="bg-[#2C2C2C] rounded-2xl p-2 lg:p-6  flex-row justify-center items-center"
        descriptionClassName="text-white"
        titleClassName="text-white"
        imageVariant="white"
