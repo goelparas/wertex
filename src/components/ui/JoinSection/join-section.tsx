@@ -157,7 +157,7 @@ const JoinSection = () => {
       <div className=" flex flex-col gap-6 lg:gap-11 mt-8 mb-28">
         <div className="bg-borderGray p-6 lg:p-12 h-72 flex flex-col justify-between items-start">
           <h1 className="text-lg lg:text-3xl font-bold">Join Our Team</h1>
-          <p className="text-sm lg:text-xl2">
+          <p className="text-sm lg:text-xl2 leading-relaxed">
             Wertex is more than just a company; it’s a community of innovators,
             creators, and problem-solvers. If you’re passionate about making an
             impact and thrive in a dynamic environment, we’d love to hear from

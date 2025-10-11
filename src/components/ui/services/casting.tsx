@@ -302,7 +302,7 @@ const Casting = (props: Props) => {
               >
 
                 <h1 className="text-lg lg:text-xl2 font-bold mb-2">{item.title}</h1>
-                <p className="text-sm lg:text-xl2 text-gray-300">{item.description}</p>
+                <p className="text-sm lg:text-xl2 leading-relaxed text-gray-300">{item.description}</p>
               </div>
             ))}
           </div>

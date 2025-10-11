@@ -40,16 +40,18 @@ export const FlexHeader2 = ({
   heading,
   description,
   className,
+  id
 }: {
   description:  string | ReactElement ;
   heading: string | ReactElement;
   className?: string;
+  id?: string;
 }) => {
   const Heading = typeof heading === 'string' ? heading : heading;
   
   return (
     <>
-      <h1 className={cn(`text-lg  lg:text-3.5xl font-bold lg:mb-4`, className)}>
+      <h1 className={cn(`text-lg  lg:text-3.5xl font-bold lg:mb-4`, className)} id={id}>
         {Heading}
       </h1>
       <span className={cn(`text-xs lg:text-xl`, className)}>{description}</span>

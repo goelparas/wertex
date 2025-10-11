@@ -287,24 +287,28 @@ const SurfaceTreatment = () => {
         title="Your Trusted Partner in Surface Treatment Solutions"
         description=""
         longDescription={
-          <ul>
-            <li>
-              -Comprehensive Solutions: From corrosion protection to non-stick
-              finishes, we provide end-to-end surface treatment services.
-            </li>
-            <li>
-              -State-of-the-Art Facilities: Equipped with advanced tools and
-              technologies for precise and reliable results.
-            </li>
-            <li>
-              -Industry Expertise: Serving a wide range of sectors, including
-              aerospace, automotive, medical, and more.
-            </li>
-            <li>
-              -Commitment to Quality: Rigorous inspections and testing ensure
-              flawless, high-performance finishes.
-            </li>
-          </ul>
+          <div className=""> 
+          <ul className="hidden lg:block">
+          <li>
+            -Comprehensive Solutions: From corrosion protection to non-stick
+            finishes, we provide end-to-end surface treatment services.
+          </li>
+          <li>
+            -State-of-the-Art Facilities: Equipped with advanced tools and
+            technologies for precise and reliable results.
+          </li>
+          <li>
+            -Industry Expertise: Serving a wide range of sectors, including
+            aerospace, automotive, medical, and more.
+          </li>
+          <li>
+            -Commitment to Quality: Rigorous inspections and testing ensure
+            flawless, high-performance finishes.
+          </li>
+        </ul>
+        
+        </div>
+         
         }
         heading=""
         buttonText="Get in touch"

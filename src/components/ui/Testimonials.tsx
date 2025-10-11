@@ -1,15 +1,23 @@
 import  {FlexHeader} from "../common/FlexHeader/FlexHeader";
 import Section from "../common/Section";
+import krishnanImage from '@/cdn/images/thinkersanddoes/krishnan.webp';
+import justin from '@/cdn/images/thinkersanddoes/justin.webp';
+import kalamani from '@/cdn/images/thinkersanddoes/kalamani.webp';
+import Gokul from '@/cdn/images/thinkersanddoes/gokul.webp';
+import Ravi from '@/cdn/images/thinkersanddoes/ravi.webp';
+import ArjunR from '@/cdn/images/thinkersanddoes/arjunr.webp';
+import Image from "next/image";
+
+import wertexlogo from "@/cdn/images/wtx_logo_service.png";
 export default function TeamShowcase() {
   const teamMembers = [
-    { id: "01", name: "Name 01", designation: "Designation & Bio" },
-    { id: "02", name: "Name 02", designation: "Designation & Bio" },
-    { id: "03", name: "Name 03", designation: "Designation & Bio" },
-    { id: "04", name: "Name 04", designation: "Designation & Bio" },
-    { id: "05", name: "Name 05", designation: "Designation & Bio" },
-    { id: "06", name: "Name 06", designation: "Designation & Bio" },
+    { id: "01", name: "Krishnan Ramamoorthy", designation: "Chief Engineer" ,image:krishnanImage },
+    { id: "02", name: "Justin Dhiraviam", designation: "Chief Technical Advisor" ,image:justin },
+    { id: "03", name: "Kalamani Ramamoorthy", designation: "Head of Administration and Compliance" ,image:kalamani },
+    { id: "04", name: "Gokul K R", designation: "Head of Business Development – US, EU & GCC" ,image:Gokul },
+    { id: "05", name: "Ravi Chandra ", designation: "Chief Product Development" ,image:Ravi },
+    { id: "06", name: "Arjun R ", designation: "Business Development - GCC " ,image:ArjunR },
   ];
-
   const testimonials = [
     {
       id: 1,
@@ -67,14 +75,18 @@ export default function TeamShowcase() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-3/4">
           {teamMembers.map((member, index) => (
             <div key={member.id} className={`${index >= 3 ? "mt-8" : ""}`}>
-              <div className="flex items-center mb-4">
-                <div className="w-12 h-12 bg-gray-400 rounded-full mr-4"></div>
+              <div className="flex items-center  max-h-10">
+                <div className="w-12 h-12 shrink-0 bg-[#2B2B2B] rounded-full mr-4 flex items-center justify-center">
+                  <Image src={wertexlogo} alt="logo" className="w-8 h-8" />
+                </div>
                 <div>
-                  <h3 className=" text-xl font-bold">{member.name}</h3>
-                  <p className="text-[#8C8C8C]">{member.designation}</p>
+                  <h3 className="text-xl font-bold">{member.name}</h3>
+                  <p className="text-[#8C8C8C] leading-tight">{member.designation}</p>
                 </div>
               </div>
-              <div className="bg-gray-200 aspect-[4/3] w-full"></div>
+                <div className="relative aspect-[4/3] w-full mt-6 overflow-hidden">
+                  <Image src={member.image} alt={member.name} fill className="object-cover grayscale" />
+              </div>
             </div>
           ))}
         </div>

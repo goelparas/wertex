@@ -56,7 +56,7 @@ export default function IndustriesAndMaterialsSection() {
   return (
     <Section className='relative w-full bg-transparent pt-0 mt-0 '>
       <Section className=' mx-auto p-0 lg:px-4 sm:px-6  bg-white'>
-        <div className='grid grid-cols-1 lg:grid-cols-2'>
+        <div className='grid grid-cols-1 lg:grid-cols-2' id='industry'>
           {/* Industries Column */}
           <div className='px-6 border-r-2 border-[#BCBCBC] py-8'>
             <motion.div
@@ -66,7 +66,7 @@ export default function IndustriesAndMaterialsSection() {
               viewport={{ once: true }}
               className='lg:mb-8'
             >
-            <FlexHeader2 className='p-0 text-black' heading={<p>Delivering <span className='text-orangeBg'>Excellence</span> Across Industries</p>} description='Wertex provides CNC machining solutions for:' />
+            <FlexHeader2  className='p-0 text-black' heading={<p>Delivering <span className='text-orangeBg'>Excellence</span> Across Industries</p>} description='Wertex provides CNC machining solutions for:' />
 
             </motion.div>
 

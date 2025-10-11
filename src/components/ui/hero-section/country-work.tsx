@@ -13,34 +13,29 @@ type Country = typeof COUNTRIES[number]
 interface ContactInfo {
   phone: string
   email: string
-  linkedin: string
 }
 
 const CONTACT_DATA: Record<Country, ContactInfo> = {
   India: {
-    phone: "+91 8745 6123",
-    email: "india@wertex.in",
-    linkedin: "linkedin.com/company/wertex-india",
+    phone: "+917907651046",
+    email: "contact@wertex.in",
+
   },
   UAE: {
-    phone: "+971 4 123 4567",
-    email: "uae@wertex.in",
-    linkedin: "linkedin.com/company/wertex-uae",
+    phone: "+917907651046",
+    email: "contact@wertex.in",
   },
   Germany: {
-    phone: "+49 30 123 4567",
-    email: "germany@wertex.in",
-    linkedin: "linkedin.com/company/wertex-germany",
+    phone: "+917907651046",
+    email: "contact@wertex.in",
   },
   USA: {
-    phone: "+1 555 123 4567",
-    email: "usa@wertex.in",
-    linkedin: "linkedin.com/company/wertex-usa",
+    phone: "+917907651046",
+    email: "contact@wertex.in",
   },
   Netherlands: {
-    phone: "+31 20 123 4567",
-    email: "netherlands@wertex.in",
-    linkedin: "linkedin.com/company/wertex-netherlands",
+    phone: "+917907651046",
+    email: "contact@wertex.in",
   },
 }
 

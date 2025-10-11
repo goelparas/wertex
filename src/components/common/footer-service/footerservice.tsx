@@ -5,7 +5,7 @@ import imag from "@/cdn/images/wtx_logo_service.png";
 import { ImageContainer } from "../Container/ImageGrid";
 import Section from "../Section";
 import Image from "next/image";
-import grid from "@/cdn/images/cross.png";
+import grid from "@/cdn/images/footer-grid.png";
 type Props = {
   title: string;
   description: string;
@@ -26,15 +26,9 @@ const Footerservice = ({
 }: Props) => {
   return (
 
-    <Section className="lg:p-6 bg-transparent">
-      {/* <FlexHeader
-            title={title}
-            description={description}
-            heading={heading}
-            className="w-4/5 mb-6 lg:hidden"
-      /> */}
-
-      <div className="bg-borderGray flex items-start flex-row justify-between p-3 lg:p-8 gap-6">
+    <Section className="lg:p-6 p-0  bg-transparent relative">
+      
+      <div className="lg:bg-borderGray relative flex items-start flex-row justify-between p-3 lg:p-8 gap-6 ">
         <div className="flex-col gap-12  lg:justify-between items-start lg:items-start w-full lg:w-3/5  flex ">
           <FlexHeader
             title={title}
@@ -51,16 +45,19 @@ const Footerservice = ({
             smWidth: 42,
            }}
          />
-      
+         <Image src={grid} alt="grid"fill className="lg:hidden"/>
       </div>
+      <div className="p-4 lg:p-0">
 
       {children}
+     
 
-      <Button className="w-full rounded-none text-center py-3 lg:py-6 mt-8">
+      <Button className="w-full rounded-none text-center py-3  mt-8">
         <p className="text-center text-white font-bold text-xs leading-relaxed lg:text-xl2 w-full uppercase">
           {buttonText}
         </p>
       </Button>
+      </div>
     </Section>
 
   );

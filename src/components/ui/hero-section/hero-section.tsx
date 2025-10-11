@@ -31,14 +31,6 @@ const HeroSection = () => {
           />
         </div>
 
-        <span className="absolute  bottom-6 mx-auto lg:hidden">
-          <a
-            className=" bg-custom-gradient font-bold text-xs sm:text-sm md:text-[1rem] px-6 py-3 sm:px-8 sm:py-4   clipped uppercase"
-            href="mailto:contact@wertex.in?subject=Query%20Regarding%20Manufacturing&body=Hello,%0A%0AI%20have%20some%20queries%20regarding%20your%20manufacturing%20process.%0A%0AThank%20you."
-          >
-            Contact us
-          </a>
-        </span>
         <div className="absolute w-[20rem]  sm:w-[40rem] md:w-[49rem]   h-[12rem] left-1/2 top-[40%] -translate-x-1/2 -translate-y-[40%]">
           <div className="relative flex flex-col sm:flex-row gap-2  items-start sm:items-center justify-between  mb-2">
             <p className="font-medium text-xxs lg:text-xs">
