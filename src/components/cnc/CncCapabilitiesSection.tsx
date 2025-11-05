@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 import CapabilityCard from './CapabilityCard';
 import { Workflow, Cog, GitFork } from 'lucide-react';
 import Image from 'next/image';
-import machineHammer from '../../cdn/images/cnc/metalworking-cnc-milling-machine.png';
+import machineHammer from '@/cdn/images/cnc/hammer.webp';
 import Section from '../common/Section';
 
 
@@ -18,7 +18,7 @@ import   {
 
 export default function CncCapabilitiesSection() {
   return (
-   <Section className=' mx-auto bg-transparent '>
+   <Section className=' mx-auto bg-transparent my-0 py-0'>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -28,16 +28,15 @@ export default function CncCapabilitiesSection() {
         >
           <FlexHeader2 heading="Comprehensive CNC Capabilities Tailored for Your Needs" description={"Our CNC machining capabilities include:"}/>
         </motion.div>
-        <div className='grid grid-cols-1 md:grid-cols-3 gap-6 p-4 w-full relative   justify-center items-center'>
-          <div className='w-full   absolute'>
-            {/* <Image
+        <div className='grid grid-cols-1 md:grid-cols-3 gap-6 p-4 w-full relative lg:min-h-[800px]  justify-center items-center'>
+          <div className='w-full   absolute top-0 left-0 h-full '>
+            <Image
               src={machineHammer}
               alt='Precision Casting Process'
               fill
               className='object-cover'
               priority
-            /> */}
-           
+            />
           </div>
           <CapabilityCard
             icon={logo1}

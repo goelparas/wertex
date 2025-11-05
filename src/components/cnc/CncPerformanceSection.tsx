@@ -81,7 +81,7 @@ const MachineLink = ({
       onClick={onClick}
       className={cn(
         'group flex items-center w-full justify-start hover:cursor-pointer border-b border-[#6A6A6A]',
-        'p-2 md:p-4 border-b  hover:text-orangeBg',
+        'p-1 md:p-4 border-b  hover:text-orangeBg',
         'transition-all duration-300',
         isActive && 'text-orangeBg bg-zinc-900/30'
       )}
@@ -89,7 +89,7 @@ const MachineLink = ({
       whileTap={{ scale: 0.98 }}
     >
       <span className={cn(
-        'text-white text-nowrap text-lg md:text-3xl group-hover:text-orangeBg transition-colors font-bold',
+        'text-white text-nowrap text-sm md:text-3xl group-hover:text-orangeBg transition-colors font-bold',
         isActive && 'text-orangeBg'
       )}>
         {name}
@@ -137,8 +137,8 @@ export default function CncPerformanceSection() {
         >
           <FlexHeader2  heading="Enhancing Component Performance and Quality" description="Advanced finishing techniques for durability and precision." />
         </motion.h1>
-        <div className='grid grid-cols-1 md:flex   border-y border-[#6A6A6A]'>
-          <div className='lg:border-r  lg:border-[#6A6A6A] max-w-xl md:w-2/5   py-6 pr-4  flex flex-col justify-between items-end '>
+        <div className='grid grid-cols-1 md:flex   border-y lg:border border-[#6A6A6A]'>
+          <div className='lg:border-r  lg:p-4 p-0 lg:border-[#6A6A6A] max-w-xl md:w-2/5   py-6 pr-4  flex flex-col justify-between items-end '>
             <p className='text-white mb-8'>
             Specializes in turning and facing cylindrical and complex parts with high precision. Ideal for applications requiring smooth finishes and dimensional accuracy in large and small components.
             </p>

@@ -12,6 +12,16 @@ const Section: React.FC<ContainerProps> = ({ children, className }) => {
       {children}
     </div>
   );
+  
+};
+
+
+export const ServiceSection = ({children, className}:{children:React.ReactNode, className?:string})=>{
+  return (
+    <div className={cn(className)}>
+      {children}
+    </div>
+  );
 };
 
 export default Section; 

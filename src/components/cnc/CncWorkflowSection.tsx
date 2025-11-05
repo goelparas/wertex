@@ -103,7 +103,7 @@ const CncWorkflowSection = () => {
 
       <Section className='bg-transparent  border-t-2 border-white' >
         <FlexHeader title="Uncompromising Quality at Every Step" description='Advanced instruments and thorough checks ensure unparalleled precision in every product' />
-        <FlexHeader2 heading="" description="Wertex employs state-of-the-art quality assurance tools, including:" />
+        <p className='text-xs lg:text-xl2'>Wertex employs state-of-the-art quality assurance tools, including:</p>
       </Section>
       <CncCarousel />
     </>

@@ -11,8 +11,7 @@ export function useWindowSize() {
       return {
         width,
         height,
-        isMobile: width < 768,
-        isTablet: width >= 768 && width < 1024,
+        isMobile: width < 1024,
         isDesktop: width >= 1024,
       };
     }
@@ -36,8 +35,7 @@ export function useWindowSize() {
       setSize({
         width,
         height,
-        isMobile: width < 768,
-        isTablet: width >= 768 && width < 1024,
+        isMobile:width < 1024,
         isDesktop: width >= 1024,
       });
     };

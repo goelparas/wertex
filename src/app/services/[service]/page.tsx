@@ -1,6 +1,7 @@
 import React from "react";
 import { ServicesPageConst } from "@/utils/constants/services";
 import Container from "@/components/common/Container/Container";
+import { ServiceSection } from "@/components/common/Section";
 
 interface PageProps {
   params: Promise<{ service: string }>; // Adjusted to be a Promise
@@ -17,7 +18,10 @@ const Page = async ({ params }: PageProps) => {
   }
   return (
     <Container className="w-full overflow-hidden  mt-14 lg:mt-40">
+      <ServiceSection>
+
       {React.createElement(component)}
+      </ServiceSection>
     </Container>
   );
 };

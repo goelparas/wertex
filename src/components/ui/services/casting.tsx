@@ -5,10 +5,10 @@ import {
 import Image from "next/image";
 import React from "react";
 import castingHero from "@/cdn/images/casting/casting-hero.webp";
-import gridBg from "@/cdn/images/main_grid.avif";
+import gridBg from "@/cdn/images/grid-casting.png";
+import gridBgLargeScreen from '@/cdn/images/main_grid.avif'
 import HeroSection from "@/components/common/Container/HeroSection-service";
 import Footerservice from "@/components/common/footer-service/footerservice";
-import grid from "@/cdn/images/cross.png";
 
 // Import capability images
 import capability1 from "@/cdn/images/casting/capability-1.png";
@@ -260,11 +260,11 @@ const Casting = (props: Props) => {
           heading="Enhancing Component Performance and Quality"
           description="Advanced finishing techniques for durability and precision."
         />
-        <div className="border border-white p-4 mt-12">
+        <div className="border border-white p-2 lg:p-4 mt-12">
         <FlexHeader2 heading={<p className="font-normal">  <span className="text-orangeBg">Wertex</span> employs a range of
             post-processing techniques to ensure <br /> optimal performance and
             aesthetics:</p>} description={""}/> 
-          <div className="grid grid-cols-2 lg:grid-cols-3 p-2 lg:p-4 gap-8 mt-6">
+          <div className="grid grid-cols-2 lg:grid-cols-3 p-1 lg:p-4 gap-8 mt-6">
             {[
               {
                 title: "Shot Blasting",
@@ -301,46 +301,56 @@ const Casting = (props: Props) => {
                 className="bg-black border border-white p-2 lg:py-8 lg:px-4  shadow-md flex flex-col items-start text-start"
               >
 
-                <h1 className="text-lg lg:text-xl2 font-bold mb-2">{item.title}</h1>
-                <p className="text-sm lg:text-xl2 leading-relaxed text-gray-300">{item.description}</p>
+                <h1 className="text-xs lg:text-xl2 font-bold mb-2">{item.title}</h1>
+                <p className="text-xs lg:text-xl2 leading-relaxed text-gray-300">{item.description}</p>
               </div>
             ))}
           </div>
         </div>
       </Section>
-      <div className="w-full bg-white p-12">
+      <Section className="w-full bg-white m-0 lg:m-0 ">
         <FlexHeader2
           className="text-background"
           heading="Enhancing Component Performance and Quality"
           description="Ensuring each component meets exact specifications."
         />
 
-        <div className="lg:grid grid-cols-3 gap-0 gap-y-8 mt-24 hidden">
+        <div className="lg:grid grid-cols-3 gap-0 gap-y-8 mt-12 lg:mt-24 ">
           {cardItems.map((item, index) => (
-            <div key={index} className="bg-white py-4 text-foreground">
-              <div className="w-full mx-auto flex flex-col items-center gap-2">
-                <p className="text-lightGray text-center w-[90%] font-bold  text-4xl">
+            <div key={index} className="bg-white  lg:py-4 text-foreground">
+              <div className="w-full mx-auto flex flex-row  lg:flex-col justify-center  items-start lg:items-end gap-2 lg:gap-4">
+                <p className="text-lightGray text-center w-16  lg:w-full font-bold text-3xl lg:text-4xl">
                   0{index + 1}
                 </p>
-                <div className=" bg-foreground h-[1px] relative w-full ">
-                  <span className="absolute  -bottom-[6px]  mx-auto left-0 right-0  h-3 w-3 rounded-full bg-gray-400" />
+                <div className="bg-foreground w-[1px] h-32 lg:h-[1px] bg-[#B4B4B4] relative lg:w-full ">
+                <span className="absolute  hidden lg:block  -bottom-[6px]   mx-auto left-0 right-0  h-3 w-3 rounded-full bg-[#B4B4B4]" />
+                  <span className="w-2 h-2 rounded-full lg:hidden   bg-[#B4B4B4] absolute  top-3 -left-1 -right-1"/>
                 </div>
-                <p className="text-2xl font-semibold mb-2 text-center w-[90%]">
+                <div className="flex flex-col w-4/5 lg:w-full items-start lg:items-center justify-center">
+                  <p className="text-lg lg:text-2xl leading-relaxed font-semibold mb-2 text-start lg:text-center w-[90%]">
                   {item.title}
                 </p>
-                <p className="text-xl2 text-borderGray text-center">
+                <p className="text-xs lg:text-xl2 leading-relaxed text-borderGray text-start lg:text-center">
                   {item.description}
                 </p>
+                </div>
+                
               </div>
             </div>
           ))}
         </div>
-      </div>
-      <div className="h-auto relative p-8">
+      </Section>
+      <Section className="h-auto relative m-0 lg:m-0 bg-transparent p-8">
         <Image
           src={gridBg}
           alt="grid-background"
-          className="absolute  inset-0 -z-10"
+          className="absolute lg:hidden  inset-0 z-10"
+          fill
+        />
+        <Image
+          src={gridBgLargeScreen}
+          alt="grid-background"
+          className="absolute hidden lg:block  inset-0 z-10"
           fill
         />
 
@@ -352,7 +362,7 @@ const Casting = (props: Props) => {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mt-12 z-20">
           {newItems.map((item, _) => (
             <div key={item.title} className="lg:w-96 h-40 lg:h-[500px] mx-auto flex flex-col items-start lg:items-center justify-between gap-2 p-4 z-10 text-white bg-borderGray rounded-2xl">
-              <p className="text-center  font-bold hidden lg:block text-lg leading-relaxed lg:text-xl2 text-white">
+              <p className="text-center  font-bold hidden lg:block text-xs leading-relaxed lg:text-xl2 text-white">
                 {item.title}
               </p>
 
@@ -361,16 +371,16 @@ const Casting = (props: Props) => {
                 smHeight: 38,
                 smClassName: 'w-12 h-12'
               }} />
-              <p className="text-center lg:text-start font-bold block lg:hidden text-lg leading-relaxed lg:text-xl2 text-white">
+              <p className="text-center lg:text-start font-bold block lg:hidden text-xs leading-relaxed lg:text-xl2 text-white">
                 {item.title}
               </p>
-              <p className="text-sm lg:text-xl2 leading-relaxed text-borderGray lg:text-center text-white text-start">
+              <p className="text-xs lg:text-xl2 leading-relaxed text-borderGray lg:text-center text-white text-start">
                 {item.description}
               </p>
             </div>
           ))}
         </div>
-      </div>
+      </Section>
 
       <Footerservice
         title="Experience the Precision of "

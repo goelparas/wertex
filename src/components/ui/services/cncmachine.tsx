@@ -7,6 +7,7 @@ import React from "react";
 import HeroSection from "@/components/common/Container/HeroSection-service";
 import cncMachine from "@/cdn/images/cnc/hero-cnc.webp";
 import Footerservice from "@/components/common/footer-service/footerservice";
+import { ServiceSection } from "@/components/common/Section";
 
 
 
@@ -41,7 +42,7 @@ const CncMachine = (props: Props) => {
           "Let Wertex help you achieve your project goals with precision and reliability. Get in touch with us to learn how our CNC machining solutions can elevate your manufacturing needs."
         }
         buttonText="Contact Us"
-      ></Footerservice>
+      />
     </>
   );
 };

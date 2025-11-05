@@ -1,6 +1,6 @@
 'use client'
 import { motion, AnimatePresence } from 'framer-motion';
-import React  ,{ useRef} from 'react'
+import React  ,{ useEffect, useRef} from 'react'
 import Image from "next/image";
 import wertex from "@/cdn/images/wertex.png";
 import Link from 'next/link';
@@ -81,6 +81,18 @@ const NavbarMobile = ()=>{
   const [pendingHref, setPendingHref] = useState<string | null>(null) // navigate after exit
   const router = useRouter()
 
+  useEffect(() => {
+    if (open) {
+      document.body.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = 'unset'
+    }
+
+    // Cleanup on unmount
+    return () => {
+      document.body.style.overflow = 'unset'
+    }
+  }, [open])
   const closeThenNavigate = (href: string) => (e?: React.MouseEvent | React.KeyboardEvent) => {
     if (e) e.preventDefault()
     if (!open) {
@@ -91,6 +103,8 @@ const NavbarMobile = ()=>{
     setOpen(false)
     setServicesOpen(false)
   }
+
+
   return <>
   {/* Bottom bar trigger (brand left, hamburger right) */}
   <div className="fixed bottom-4 left-4 h-[4.5rem] right-4 z-40 max-w-xl flex items-center justify-between rounded-2xl  bg-[#272727]/90 p-4 backdrop-blur-md border-foreground/10">
