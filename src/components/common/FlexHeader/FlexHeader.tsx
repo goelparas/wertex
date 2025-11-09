@@ -21,7 +21,7 @@ export const FlexHeader = ({
   return (
     <div
       className={cn(
-        "flex flex-col lg:flex-row justify-between items-start w-full lg:gap-6",
+        "flex flex-col lg:flex-row justify-between items-start w-full  lg:gap-6",
         className
       )}
       id={id}
@@ -51,7 +51,7 @@ export const FlexHeader2 = ({
   
   return (
     <>
-      <h1 className={cn(`text-lg  lg:text-3.5xl font-bold lg:mb-4`, className)} id={id}>
+      <h1 className={cn(`text-lg  lg:text-3.5xl font-bold mb-2 lg:mb-4`, className)} id={id}>
         {Heading}
       </h1>
       <span className={cn(`text-xs lg:text-xl`, className)}>{description}</span>

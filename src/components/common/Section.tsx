@@ -8,7 +8,7 @@ interface ContainerProps {
 
 const Section: React.FC<ContainerProps> = ({ children, className }) => {
   return (
-    <div className={cn(`bg-[#242424]  p-4 mt-3 lg:mt-12 lg:p-12 overflow-x-hidden`, className)}>
+    <div className={cn(`p-4 mt-3 lg:mt-12  lg:p-12 overflow-x-hidden`, className)}>
       {children}
     </div>
   );
@@ -18,7 +18,7 @@ const Section: React.FC<ContainerProps> = ({ children, className }) => {
 
 export const ServiceSection = ({children, className}:{children:React.ReactNode, className?:string})=>{
   return (
-    <div className={cn(className)}>
+    <div className={cn('bg-background',className)}>
       {children}
     </div>
   );

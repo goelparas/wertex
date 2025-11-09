@@ -19,7 +19,6 @@ const Page = async ({ params }: PageProps) => {
   return (
     <Container className="w-full overflow-hidden  mt-14 lg:mt-40">
       <ServiceSection>
-
       {React.createElement(component)}
       </ServiceSection>
     </Container>
