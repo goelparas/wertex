@@ -21,16 +21,24 @@ const FooterSection = () => {
               </div>
 
             </div>
-            <div className='lg:flex grid grid-cols-3 items-start gap-6 lg:gap-2 w-full justify-items-start justify-between text-xs leading-relaxed lg:text-xl2 h-full hover:cursor-pointer'>
+            <div className='lg:flex grid grid-cols-3 items-start gap-6 lg:gap-2 w-full justify-items-start justify-between text-xs leading-normal lg:text-xl2 h-full hover:cursor-pointer'>
                 <Link  href="/"className='lg:w-1/4 text-center text-orangeBg'>Home</Link>
                 <div className='lg:w-1/4 text-center flex flex-col items-center justify-between'>
                 <ul className='text-left  mx-auto '>
                   <li className='text-orangeBg'>Services</li>
-                  <li className='text-nowrap '><Link href='/services/casting'>Casting</Link></li>
-                  <li className='text-nowrap '><Link href='/services/forging'>Forging</Link></li>
-                  <li className='text-nowrap '><Link href='/services/sheet-metal-fabrication'>Sheet Metal Fabrication</Link></li>
-                  <li className='text-nowrap '><Link href='/services/aluminium'>Aluminium</Link></li>
-                  <li className='text-nowrap '><Link href='/services/steel'>Steel</Link></li>
+                  {
+                    [
+                      { name: "CNC Machining", href: "/services/cnc-machining" },
+                      { name: "Aluminium Extrusion", href: "/services/aluminium-extrusion" },
+                      { name: "Casting", href: "/services/casting" },
+                      { name: "Surface Treatment", href: "/services/surface-treatment" },
+                      { name: "Forging", href: "/services/forging" },
+                      { name: "Molding", href: "/services/molding" },
+                      { name: "Sheet Metal Fabrication", href: "/services/sheet-metal-fabrication" },
+                    ].map((item) => (
+                      <li key={item.name} className='text-nowrap text-xs lg:text-xl mt-2 text-[#72716D]'><Link href={item.href}>{item.name}</Link></li>
+                    ))
+                  }
                   <li className='text-orangeBg mt-12 hidden lg:block'>Contact Us</li>
                 <li className='text-nowrap hidden lg:block'>+917907651046</li>
                 <li className='text-nowrap hidden lg:block'>contact@wertex.in</li>

@@ -39,7 +39,7 @@ const Footerservice = ({
             heading={heading}
             className=""
           />
-          <p className="leading-relaxed text-xs lg:text-xl2 text-white">{longDescription}</p>
+          <p className="leading-normal text-xs lg:text-xl2 text-white">{longDescription}</p>
         </div>
           <ImageContainer className="w-80 h-80" img={imag}   height={238} width={238}
            size={{
@@ -56,7 +56,7 @@ const Footerservice = ({
      
 
       <Button className="w-full rounded-none text-center py-3 mt-4 lg:mt-8">
-        <p className="text-center text-white font-bold text-xs leading-relaxed lg:text-xl2 w-full uppercase">
+        <p className="text-center text-white font-bold text-xs leading-normal lg:text-xl2 w-full uppercase">
           {buttonText}
         </p>
       </Button>

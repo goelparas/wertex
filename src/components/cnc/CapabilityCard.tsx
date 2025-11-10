@@ -38,7 +38,7 @@ export default function CapabilityCard({
           smClassName: 'w-12 h-12'
         }}
       />
-      <p className=' w-4/5 lg:w-auto text-start leading-relaxed lg:text-center  text-xs lg:text-xl2 text-gray-300'>{description}</p>
+      <p className=' w-4/5 lg:w-auto text-start leading-normal lg:text-center  text-xs lg:text-xl2 text-gray-300'>{description}</p>
     </motion.div>
   );
 }

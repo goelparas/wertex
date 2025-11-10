@@ -35,7 +35,7 @@ export default function MaterialCard({
     >
     <ImageContainer img={icon} className='w-12 h-12 lg:w-16 lg:h-16' variant='black' width={isMobile? 32 : 44} height={isMobile? 32 : 44}/>
        
-        <p className='font-bold text-xs lg:text-xl2 leading-relaxed'>
+        <p className='font-bold text-xs lg:text-xl2 leading-normal'>
           {title}:{' '}
           <span className='text-xs lg:text-xl2 text-muted-foreground font-normal'>
             {description}

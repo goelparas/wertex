@@ -31,7 +31,7 @@ const HeroSection = ({
           <Image src={src} alt={alt} quality={100}  className="object-cover" fill />
         </div>
         <FlexHeader title={''} description={ isMobile? description:''} heading={''}  className="my-0"/>
-        <p className="text-xs lg:text-xl2 text-white w-full leading-relaxed">{longDescription}</p>
+        <p className="text-xs lg:text-xl2 text-white w-full leading-normal">{longDescription}</p>
       </div>
     </div>
   );

@@ -102,7 +102,7 @@ const SheetFabrication = (props: Props) => {
                 key={index}
                 className="bg-background-200 w-28 h-28 p-3 lg:h-auto lg:w-auto  lg:p-6 rounded-lg shadow-lg flex flex-col items-center text-center "
               >
-                <h3 className="text-xs lg:text-xl2 leading-relaxed my-auto">{item.title}</h3>
+                <h3 className="text-xs lg:text-xl2 leading-normal my-auto">{item.title}</h3>
               </div>
             ))}
           </div>
@@ -249,7 +249,7 @@ const SheetFabrication = (props: Props) => {
               className="bg-[#272727] p-3 lg:p-6 rounded-lg shadow-lg flex flex-col items-start justify-start text-left"
             >
               <p className="text-lg lg:text-xl2 leading-8 font-bold text-left mb-3 lg:mb-6">{item.title}</p>
-              <p className="text-sm leading-relaxed lg:text-xl2 ">{item.description}</p>
+              <p className="text-sm leading-normal lg:text-xl2 ">{item.description}</p>
             </div>
           ))}
         </div>
@@ -267,7 +267,7 @@ const SheetFabrication = (props: Props) => {
           </div>
 
           <div className=" my-6  border border-black  relative w-full h-full lg:p-12 ml-4 mr-0 lg:m-12 z-20">
-            <p className="text-sm lg:text-xl2 leading-relaxed text-black p-2">
+            <p className="text-sm lg:text-xl2 leading-normal text-black p-2">
               <span className="text-orangeBg">Wertex</span> offers various surface
               treatments to enhance durability and appearance:
             </p>
@@ -300,10 +300,10 @@ const SheetFabrication = (props: Props) => {
                     className="w-full h-48 lg:h-60 object-cover overflow-hidden"
                   />
                   <div className="flex flex-col gap-0 lg:gap-2 text-left w-full">
-                    <h3 className="text-xs lg:text-xl2 leading-relaxed font-bold text-left">
+                    <h3 className="text-xs lg:text-xl2 leading-normal font-bold text-left">
                       {item.title}
                     </h3>
-                    <p className="text-xs leading-relaxed lg:text-xl2">{item.description}</p>
+                    <p className="text-xs leading-normal lg:text-xl2">{item.description}</p>
                   </div>
                 </div>
               ))}
@@ -315,7 +315,7 @@ const SheetFabrication = (props: Props) => {
                 heading="Your Trusted Partner in Sheet Metal Fabrication"
                 description=""
             >
-             <p className="text-xs lg:text-xl2 leading-relaxed">
+             <p className="text-xs lg:text-xl2 leading-normal">
             <span className="text-orangeBg ">Wertex</span> combines
             state-of-the-art technology, skilled craftsmanship, and a wide range
             of material options to deliver reliable and high-quality sheet metal

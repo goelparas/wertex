@@ -52,7 +52,7 @@ export default function DynamicShowcase({
         <div className="relative  flex flex-col justify-center  h-full max-w-xl">
           {descriptionText && (
             <motion.p
-              className={cn("text-xl2 mb-6 leading-relaxed", styles.description)}
+              className={cn("text-xl2 mb-6 leading-normal", styles.description)}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}

@@ -89,9 +89,9 @@ const CncWorkflowSection = () => {
                   <h3 className="lg:text-xl2 font-bold mb-2 text-white text-start w-full">
                     {item.title}
                   </h3>
-                  <p className="text-xs leading-relaxed lg:text-xl2 text-gray-300">{item.description}</p>
+                  <p className="text-xs leading-normal lg:text-xl2 text-gray-300">{item.description}</p>
                 </div>
-                <p className="hidden lg:block text-xs leading-relaxed lg:text-xl2 text-gray-300">{item.description}</p>
+                <p className="hidden lg:block text-xs leading-normal lg:text-xl2 text-gray-300">{item.description}</p>
               </div>
             ))}
           </div>

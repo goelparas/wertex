@@ -182,7 +182,7 @@ const Casting = (props: Props) => {
               <h3 className="text-lg lg:text-xl2  font-bold hidden lg:block mb-2 text-white text-start w-full ">
                 {item.title}
               </h3>
-                <p className="text-sm lg:text-xl2 lg:leading-relaxed text-gray-300">{item.description}</p>
+                <p className="text-sm lg:text-xl2 lg:leading-normal text-gray-300">{item.description}</p>
                 </div>
               
           ))}
@@ -245,7 +245,7 @@ const Casting = (props: Props) => {
 
               <ul className="list-disc pl-5 leading-4">
                 {Object.entries(item.points).map(([key, value]) => (
-                  <li key={key} className="text-xs lg:text-xl2 leading-relaxed text-gray-300 ">
+                  <li key={key} className="text-xs lg:text-xl2 leading-normal text-gray-300 ">
                     <strong>{key}:</strong> {value}
                   </li>
                 ))}
@@ -301,7 +301,7 @@ const Casting = (props: Props) => {
               >
 
                 <h1 className="text-xs lg:text-xl2 font-bold mb-2">{item.title}</h1>
-                <p className="text-xs lg:text-xl2 leading-relaxed text-gray-300">{item.description}</p>
+                <p className="text-xs lg:text-xl2 leading-normal text-gray-300">{item.description}</p>
               </div>
             ))}
           </div>
@@ -326,10 +326,10 @@ const Casting = (props: Props) => {
                   <span className="w-2 h-2 rounded-full lg:hidden   bg-[#B4B4B4] absolute  top-3 -left-1 -right-1"/>
                 </div>
                 <div className="flex flex-col w-4/5 lg:w-full items-start lg:items-center justify-center">
-                  <p className="text-lg lg:text-2xl leading-relaxed font-semibold mb-2 text-start lg:text-center w-[90%]">
+                  <p className="text-lg lg:text-2xl leading-normal font-semibold mb-2 text-start lg:text-center w-[90%]">
                   {item.title}
                 </p>
-                <p className="text-xs lg:text-xl2 leading-relaxed text-borderGray text-start lg:text-center">
+                <p className="text-xs lg:text-xl2 leading-normal text-borderGray text-start lg:text-center">
                   {item.description}
                 </p>
                 </div>

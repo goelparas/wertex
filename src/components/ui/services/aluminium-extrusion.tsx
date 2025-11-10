@@ -152,8 +152,8 @@ const AluminiumExtrusion = (props: Props) => {
               >
                 <div className="flex  mb-4 flex-col justify-center items-start gap-6">
                   <ImageContainer variant="red" img={type.icon} className="w-16 h-16 lg:w-24 lg:h-24" height={isMobile ? 40 : 72} width={isMobile ? 40 : 72}/>
-                  <div className="flex flex-col gap-1">  <h3 className="text-xs leading-relaxed  lg:text-xl2 w-full font-bold text-start">{type.title}</h3>
-                  <p className="text-xs  leading-relaxed lg:text-xl2 font-light">{type.description}</p></div>
+                  <div className="flex flex-col gap-1">  <h3 className="text-xs leading-normal  lg:text-xl2 w-full font-bold text-start">{type.title}</h3>
+                  <p className="text-xs  leading-normal lg:text-xl2 font-light">{type.description}</p></div>
                 
                 </div>
               </div>
@@ -175,8 +175,8 @@ const AluminiumExtrusion = (props: Props) => {
               >
                 <ImageContainer img={service.icon} variant="black"/>
                 <div className="">
-                  <span className="font-semibold text-sm lg:leading-relaxed  lg:text-xl2">{service.title}</span>
-                  <p className="font-light text-sm leading-relaxed  lg:text-xl2">{service.description}</p>
+                  <span className="font-semibold text-sm lg:leading-normal  lg:text-xl2">{service.title}</span>
+                  <p className="font-light text-sm leading-normal  lg:text-xl2">{service.description}</p>
                 </div>
               </div>
             ))}

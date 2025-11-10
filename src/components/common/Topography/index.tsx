@@ -50,14 +50,14 @@ const H4: React.FC<TypographyProps> = ({ children, className }) => (
 );
 
 const Paragraph: React.FC<TypographyProps> = ({ children, className }) => (
-  <p className={cn('text-sm sm:text-lg  leading-relaxed', className)}>
+  <p className={cn('text-sm sm:text-lg  leading-normal', className)}>
     {children}
   </p>
 );
 const MutedParagraph: React.FC<TypographyProps> = ({ children, className }) => (
   <p
     className={cn(
-      'text-sm sm:text-base  leading-relaxed text-muted',
+      'text-sm sm:text-base  leading-normal text-muted',
       className
     )}
   >

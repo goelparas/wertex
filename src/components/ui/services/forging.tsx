@@ -236,9 +236,9 @@ Advanced Post-Processing"
               <h3 className="text-xs lg:text-xl2 font-bold mb-2 text-white text-start w-full">
                 {item.title}
               </h3>
-              <p className="text-xs lg:text-xl2 leading-relaxed text-gray-300">{item.description}</p>
+              <p className="text-xs lg:text-xl2 leading-normal text-gray-300">{item.description}</p>
             </div>
-            <p className="hidden lg:block text-xs leading-relaxed lg:text-xl2 text-gray-300">{item.description}</p>
+            <p className="hidden lg:block text-xs leading-normal lg:text-xl2 text-gray-300">{item.description}</p>
           </div>
           ))}
         </div>

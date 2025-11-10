@@ -27,7 +27,7 @@ const About = (props: Props) => {
               Rooted in Heritage, Driven by{" "}
               <span className="text-orangeBg">Technology</span>
             </H1>
-            <p className=" text-center text-lg leading-relaxed lg:text-xl2">  
+            <p className=" text-center text-lg leading-normal lg:text-xl2">  
               Wertex was born out of a vision to redefine precision
               manufacturing. Nestled in Coimbatore, a city renowned for its
               engineering legacy, we’ve embraced the spirit of innovation and
@@ -36,7 +36,7 @@ const About = (props: Props) => {
               worldwide, delivering solutions that combine cutting-edge
               technology with unmatched craftsmanship.
             </p>
-            <p className=" text-center text-lg leading-relaxed lg:text-xl2">
+            <p className=" text-center text-lg leading-normal lg:text-xl2">
               Our journey is built on the foundation of engineering expertise, a
               relentless commitment to quality, and a passion for solving
               complex challenges. Whether it's automotive, aerospace, medical,
@@ -44,7 +44,7 @@ const About = (props: Props) => {
               reality. Every component we create carries the hallmark of
               precision, collaboration, and trust.{" "}
             </p>
-            <p className=" text-center text-lg leading-relaxed lg:text-xl2">
+            <p className=" text-center text-lg leading-normal lg:text-xl2">
               At Wertex, we don’t just manufacture parts—we create
               possibilities. With a focus on sustainability, scalability, and
               customer-centric solutions, we are shaping the future of
@@ -77,7 +77,7 @@ const About = (props: Props) => {
                 <Image src={logo} alt={title} width={42} height={42} />
                 <H1 className="text-xs hidden lg:block  lg:text-xl2">{title}</H1>
               </div>
-              <h1 className="text-start text-xs leading-relaxed lg:text-xl2">{description}</h1>
+              <h1 className="text-start text-xs leading-normal lg:text-xl2">{description}</h1>
             </div>
           
             <div className="w-full h-full lg:block border border-white bg-transparent absolute -top-2 p-2 lg:-top-4 -left-2 lg:-left-4  transition-all duration-300 z-10 ease-in-out  group-hover:bg-orangeBg" />

@@ -93,7 +93,7 @@ export const GridBackgroundSection: React.FC<GridBackgroundSectionProps> = ({
                 className="lg:w-96 h-40 lg:h-[500px] mx-auto flex flex-col items-start lg:items-center justify-between gap-2 p-4 z-10 text-white bg-borderGray rounded-2xl"
               >
                 {/* Title - Desktop */}
-                <p className="text-center font-bold hidden lg:block text-xs leading-relaxed lg:text-xl2 text-white">
+                <p className="text-center font-bold hidden lg:block text-xs leading-normal lg:text-xl2 text-white">
                   {item.title}
                 </p>
 
@@ -111,12 +111,12 @@ export const GridBackgroundSection: React.FC<GridBackgroundSectionProps> = ({
                 />
 
                 {/* Title - Mobile */}
-                <p className="text-center lg:text-start font-bold block lg:hidden text-xs leading-relaxed lg:text-xl2 text-white">
+                <p className="text-center lg:text-start font-bold block lg:hidden text-xs leading-normal lg:text-xl2 text-white">
                   {item.title}
                 </p>
 
                 {/* Description */}
-                <p className="text-xs lg:text-xl2 leading-relaxed text-borderGray lg:text-center text-white text-start">
+                <p className="text-xs lg:text-xl2 leading-normal text-borderGray lg:text-center text-white text-start">
                   {item.description}
                 </p>
               </div>

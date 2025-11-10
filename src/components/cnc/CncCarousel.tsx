@@ -62,7 +62,7 @@ const Card = ({
   
   if(!title || !icon) return <div className="bg-transparent w-[26.75rem]"></div>;
   return <div className="h-36 w-52 lg:h-[20.5rem] bg-white lg:w-[26.75rem] flex justify-between items-start">
-    <h1 className="text-xs leading-relaxed  lg:text-xl2 text-left p-4 text-black font-bold"> {title}</h1>
+    <h1 className="text-xs leading-normal  lg:text-xl2 text-left p-4 text-black font-bold"> {title}</h1>
     <div className="flex items-center w-2/3 h-full justify-center relative ">
 
     <Image src={icon} fill alt= {title} className="object-cover absolute bottom-0 right-0"/>

@@ -28,7 +28,7 @@ export const ValueAddedServiceCard: React.FC<ValueAddedServiceCardProps> = ({
             </div>
             <div className='lg:rounded-2xl  text-background-400  lg:border-white/5 lg:border    lg:bg-black/10 backdrop-blur-md    flex flex-col items-center justify-start w-4/5  lg:p-3  lg:w-max lg:max-w-80  lg:h-40 '>
             <h3 className=" w-full text-xs text-start lg:text-lg font-bold text-white lg:text-center ">{title}</h3>
-            <p className="text-xs text-start lg:text-lg lg:text-center lg:leading-relaxed text-wrap w-full ">{description}</p>
+            <p className="text-xs text-start lg:text-lg lg:text-center lg:leading-normal text-wrap w-full ">{description}</p>
             </div>
             
         </div>

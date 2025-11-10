@@ -248,7 +248,7 @@ const SurfaceTreatment = () => {
               <h3 className="text-white font-bold text-xs lg:text-xl2 mb-3">
                 {treatment.title}
               </h3>
-              <ul className="text-white text-xs lg:text-xl2 leading-relaxed space-y-2 list-disc list-inside">
+              <ul className="text-white text-xs lg:text-xl2 leading-normal space-y-2 list-disc list-inside">
                 {treatment.features.map((feature, featureIndex) => (
                   <li key={featureIndex}>{feature}</li>
                 ))}
@@ -278,7 +278,7 @@ const SurfaceTreatment = () => {
               <h3 className="text-black font-bold text-xs lg:text-xl2 my-2">
                 {benefit.title}
               </h3>
-              <p className="text-gray-700 text-xs leading-relaxed lg:text-xl2">{benefit.description}</p>
+              <p className="text-gray-700 text-xs leading-normal lg:text-xl2">{benefit.description}</p>
             </div>
           ))}
         </div>
