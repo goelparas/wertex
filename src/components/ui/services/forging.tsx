@@ -277,8 +277,8 @@ Advanced Post-Processing"
 
       <Section className="h-max">
         <FlexHeader
-          title={<>Your Trusted Partner for  Premium <br/> Aluminum Extrusions </>}
-          description="Experience the difference with custom-engineered, high-performance solutions."
+          title={<>Your Trusted Partner for  Premium <br/> for Forging solutions </>}
+          description="Ensuring compliance with industry standards and  client specifications."
         />
         <Section className="border border-[#E8E8E8]  flex gap-4 lg:block min-h-max">
         

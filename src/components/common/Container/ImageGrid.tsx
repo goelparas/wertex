@@ -1,6 +1,7 @@
 'use client'
 import grid from "@/cdn/images/cross.png";
 import gridBlack from '@/cdn/images/vectors/black-grid.png'
+import gridRed from '@/cdn/images/grid-red.png'
 import { cn } from "@/lib/utils";
 import { useWindowSize } from "@/utils/hooks/useWindowSize";
 import Image, { StaticImageData } from 'next/image';
@@ -14,7 +15,7 @@ export const ImageContainer = ({ img, width, height, className , node , variant=
   height?: number,
   className?: string,
   node?:ReactElement | ReactNode 
-  variant?: "black" |"white"
+  variant?: "black" |"white" | "red"
   size?: {
     smWidth?: number,
     smHeight?: number,
@@ -22,7 +23,7 @@ export const ImageContainer = ({ img, width, height, className , node , variant=
   }
 }) => {
   const {isMobile} = useWindowSize();
-  const gridColor =   variant === "white" ? grid : gridBlack;
+  const gridColor =   variant === "white" ? grid : variant === "black" ? gridBlack : gridRed;
   return <div className={cn("relative flex items-center justify-center w-16 h-16 shrink-0 flex-none", isMobile ? size?.smClassName : className)}>
     {
        node ? node : 

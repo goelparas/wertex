@@ -28,7 +28,7 @@ import { aluminiumExtrusion } from "@/components/common/ImageShowCaseContainer/c
 import divider from "@/cdn/images/aluminiumextrution/line.svg";
 import trapezium from "@/cdn/images/aluminiumextrution/trapezium.png";
 import { useWindowSize } from "@/utils/hooks/useWindowSize";
-
+import dividerVertical from '@/cdn/images/forging/divider-vertical.png'
 type Props = {};
 const forgingTypes = [
   {
@@ -126,11 +126,11 @@ const AluminiumExtrusion = (props: Props) => {
     <>
       <HeroSection
         title= {<>Precision <span className="text-orangeBg">Aluminum Extrusions</span> for Lightweight and Durable Solutions</>}
-        description="Custom-engineered profiles to meet diverse industrial needs."
+        description=""
         heading=""
         alt="Forging"
         src={heroImage}
-        longDescription="Aluminum extrusiExtrusionsons are a versatile manufacturing process used to create continuous cross-sectional profiles with exceptional lightweight, corrosion-resistant, and durable properties. At Wertex, we deliver premium aluminum extrusion solutions tailored to industries such as aerospace, automotive, construction, electronics, and renewable energy. With cutting-edge technology and precision engineering, we provide custom extrusions designed to meet exacting requirements while ensuring high performance and reliability."
+        longDescription="Aluminum extrusions are a versatile manufacturing process used to create continuous cross-sectional profiles with exceptional lightweight, corrosion-resistant, and durable properties. At Wertex, we deliver premium aluminum extrusion solutions tailored to industries such as aerospace, automotive, construction, electronics, and renewable energy. With cutting-edge technology and precision engineering, we provide custom extrusions designed to meet exacting requirements while ensuring high performance and reliability."
       />
       <Section className="bg-black">
       <FlexHeader2
@@ -138,8 +138,8 @@ const AluminiumExtrusion = (props: Props) => {
           description="Explore the unmatched benefits of aluminum for modern manufacturing."
         />
        <Section className="border bg-black ">
-          <div className="mb-8">
-            <h2 className=" text-lg lg:text-xl lg:mb-6">
+          <div className="mb-4">
+            <h2 className=" text-xs lg:text-xl lg:mb-6">
             Aluminium’s superior properties make it a preferred material for extrusion:
             </h2>
           </div>
@@ -150,10 +150,11 @@ const AluminiumExtrusion = (props: Props) => {
                 key={index}
                 className=" text-white p-2 lg:p-8  hover:shadow-xl transition-shadow duration-300 border"
               >
-                <div className="flex  mb-4 flex-col justify-center items-start gap-4">
-                  <ImageContainer img={type.icon} className="w-16 h-16 lg:w-24 lg:h-24" height={isMobile ? 40 : 72} width={isMobile ? 40 : 72}/>
-                  <h3 className="text-xs leading-relaxed  lg:text-xl2 w-full font-bold text-start">{type.title}</h3>
-                  <p className="text-xs  leading-relaxed lg:text-xl2 font-light">{type.description}</p>
+                <div className="flex  mb-4 flex-col justify-center items-start gap-6">
+                  <ImageContainer variant="red" img={type.icon} className="w-16 h-16 lg:w-24 lg:h-24" height={isMobile ? 40 : 72} width={isMobile ? 40 : 72}/>
+                  <div className="flex flex-col gap-1">  <h3 className="text-xs leading-relaxed  lg:text-xl2 w-full font-bold text-start">{type.title}</h3>
+                  <p className="text-xs  leading-relaxed lg:text-xl2 font-light">{type.description}</p></div>
+                
                 </div>
               </div>
             ))}
@@ -170,19 +171,19 @@ const AluminiumExtrusion = (props: Props) => {
             {extrusionServices.map((service, index) => (
               <div
                 key={index}
-                className="flex items-start flex-col lg:flex-row bg-[#A7A7A773] text-black p-2 lg:p-6 rounded-lg shadow-sm gap-4"
+                className="flex items-start flex-col lg:flex-row bg-[#A7A7A773] text-black p-2 lg:p-6 rounded-lg shadow-sm  gap-2 lg:gap-4"
               >
-                <ImageContainer img={service.icon}/>
-                <div className="gap-2">
-                  <span className="font-semibold text-xs leading-relaxed  lg:text-xl2">{service.title}</span>
-                  <p className="font-light text-xs leading-relaxed  lg:text-xl2">{service.description}</p>
+                <ImageContainer img={service.icon} variant="black"/>
+                <div className="">
+                  <span className="font-semibold text-sm lg:leading-relaxed  lg:text-xl2">{service.title}</span>
+                  <p className="font-light text-sm leading-relaxed  lg:text-xl2">{service.description}</p>
                 </div>
               </div>
             ))}
           </div>
         </Section>
 
-      <Section className="bg-black mt-0"> 
+      <Section className="bg-black mt-0 pt-6"> 
        <FlexHeader2
           heading={<>Versatile Aluminium Extrusions for <span className="text-orangeBg">Every Industry </span></>}
           description="From aerospace to consumer goods, we meet diverse industry needs."
@@ -218,62 +219,77 @@ const AluminiumExtrusion = (props: Props) => {
           </div>
         </Section>
         </Section> 
-        <Section className="bg-black">
+        <Section className="">
         <FlexHeader
-         
           title={<>Your Trusted Partner for  Premium <br/> Aluminum Extrusions </>}
-
           description="Experience the difference with custom-engineered, high-performance solutions."
         />
-        <Section className="bg-black border border-[#E8E8E8] lg:block hidden">
-        <FlexHeader2
-          heading=""
-          description="Why industries choose Wertex for aluminum extrusions:"
-        />
-        <div className="grid grid-cols-5  place-items-center h-48">
+          
+        <Section className="border border-[#E8E8E8]  flex gap-4 lg:p-6 lg:block min-h-max ">
+        
+        <div className="grid grid-cols-1 lg:grid-cols-5 order-3 lg:order-none ml-4 p-2 lg:ml-0  place-items-center lg:h-48">
         {
     Array.from({ length: 5 }).map((item, index) => 
-      <ImageContainer className='h-40 w-40' key={index} img={''}  node={<span className="text-[6rem] font-semibold  text-[#999999] " > 0{index+1}</span>} />
+      <ImageContainer className='h-40 w-40' key={index} img={''} size={{
+        smClassName: 'h-20 w-20',
+        smHeight: 30,
+        smWidth: 30,
+      }}  node={<span className=" text-[3rem] lg:text-[6rem]  font-semibold  text-[#999999]">0{index+1}</span>} />
     )
   }
         </div>
-         <div className="w-[71rem] h-1  border-1 border-dashed  mx-auto my-12 relative flex items-center justify-between">
-          <Image src={divider} alt="divider" fill className="object-cover z-10"/>
-          
+         <div className=" hidden lg:flex w-[71rem]  h-1  lg:rotate-0  border-1 border-dashed  order-1 lg:order-none mx-auto my-12 relative  items-center justify-between">
+            <Image src={divider} alt="divider" fill className="object-cover z-10"/>
             <Image src={trapezium} alt="trapezium" width={30} height={30} className="object-cover z-20"/>
             <Image src={trapezium} alt="trapezium" width={30} height={30} className="object-cover z-20"/>
             <Image src={trapezium} alt="trapezium" width={30} height={30} className="object-cover z-20"/>
             <Image src={trapezium} alt="trapezium" width={30} height={30} className="object-cover z-20"/>
-            <Image src={trapezium} alt="trapezium" width={30} height={30} className="object-cover z-20"/>
+           </div>
            
-         </div>
-        <div className="grid grid-cols-5  place-items-center h-40">
+        <div className="grid grid-cols-1 lg:grid-cols-5 relative place-items-center lg:h-40 gap-10  order-2 lg:order-none">
+        <Image src={dividerVertical} alt="divider"  width={2}    className="h-full absolute top-0 left-2 lg:hidden  z-10"/>
         {
-     [
-      {
- heading:"Customized Solutions",
- description:"Expertise in developing tailored profiles for diverse applications."
-      },
-      {
- heading:"End-to-End Service",
- description:"Comprehensive support from design consultation to final finishing."
-      },{
- heading:"Advanced Technology",
- description:"State-of-the-art equipment ensures accuracy, consistency, and efficiency."
-      },{
- heading:"Sustainability Focus",
- description:"Environmentally friendly processes that align with global standards."
-      },{
-         heading:"Commitment to Quality",
-         description:"Stringent quality checks ensure flawless components every time."
-      }
-     ].map((item, index) => 
-      <div className="flex flex-col items-start justify-start text-lg gap-4"><h1 className="font-bold">{item.heading}</h1><p className="text-[#8C8C8C]">{item.description}</p></div>
+         [
+        {
+          title: "Customized Solutions",
+          description:
+            "Expertise in developing tailored profiles for diverse applications.",
+        },
+        {
+          title: "End-to-End Service",
+          description:
+            "Comprehensive support from design consultation to final finishing.",
+        },
+        {
+          title: "Advanced Technology",
+          description:
+            "State-of-the-art equipment ensures accuracy, consistency, and efficiency.",
+        },
+        {
+          title: "Sustainability Focus",
+          description:
+            "Environmentally friendly processes that align with global standards.",
+        },
+        {
+          title: "Commitment to Quality",
+          description:
+            "Stringent quality checks ensure flawless components every time.",
+        },
+      ].map((item, index) => 
+      <div className="flex lg:flex-col  items-start lg:items-center   justify-start text-xs  gap-2 lg:gap-4 mx-auto max-w-52 lg:max-w-none relative">
+         <Image src={trapezium} alt="trapezium" width={40} height={40} className="lg:hidden object-cover z-20"/>
+         <div className="flex flex-col gap-2 mt-2 items-start justify-start">
+         <h1 className="font-bold text-sm lg:text-xl lg:text-center text-nowrap">{item.title}</h1>
+         <p className="text-[#8C8C8C] text-start text-xs lg:text-xl  lg:text-left ">{item.description}</p>
+         </div>
+        
+          </div>
     )
   }
         </div>
 
           </Section>
+       
           </Section>
         <Footerservice
         title="Elevate Your Projects with Wertex Aluminum Extrusions"

@@ -5,8 +5,6 @@ import {
 import Image from "next/image";
 import React from "react";
 import castingHero from "@/cdn/images/casting/casting-hero.webp";
-import gridBg from "@/cdn/images/grid-casting.png";
-import gridBgLargeScreen from '@/cdn/images/main_grid.avif'
 import HeroSection from "@/components/common/Container/HeroSection-service";
 import Footerservice from "@/components/common/footer-service/footerservice";
 
@@ -28,6 +26,7 @@ import logo2 from '@/cdn/images/casting/logo-2.svg';
 import logo3 from '@/cdn/images/casting/logo-3.svg';
 import { ImageContainer } from "@/components/common/Container/ImageGrid";
 import Section from "@/components/common/Section";
+import GridBackgroundSection from "@/components/common/GridBackgroundSection/GridBackgroundSection";
 
 // Define casting capabilities with their respective images
 const CASTING_CAPABILITIES = [
@@ -340,47 +339,11 @@ const Casting = (props: Props) => {
           ))}
         </div>
       </Section>
-      <Section className="h-auto relative m-0 lg:m-0 bg-transparent p-8">
-        <Image
-          src={gridBg}
-          alt="grid-background"
-          className="absolute lg:hidden  inset-0 z-10"
-          fill
-        />
-        <Image
-          src={gridBgLargeScreen}
-          alt="grid-background"
-          className="absolute hidden lg:block  inset-0 z-10"
-          fill
-        />
-
-        <FlexHeader2
-          className="text-white"
-          heading="Your Trusted Partner for Casting Solutions"
-          description=""
-        />
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mt-12 z-20">
-          {newItems.map((item, _) => (
-            <div key={item.title} className="lg:w-96 h-40 lg:h-[500px] mx-auto flex flex-col items-start lg:items-center justify-between gap-2 p-4 z-10 text-white bg-borderGray rounded-2xl">
-              <p className="text-center  font-bold hidden lg:block text-xs leading-relaxed lg:text-xl2 text-white">
-                {item.title}
-              </p>
-
-              <ImageContainer img={item.img} className="w-24  h-24" height={65} width={84} size={{
-                smWidth: 38,
-                smHeight: 38,
-                smClassName: 'w-12 h-12'
-              }} />
-              <p className="text-center lg:text-start font-bold block lg:hidden text-xs leading-relaxed lg:text-xl2 text-white">
-                {item.title}
-              </p>
-              <p className="text-xs lg:text-xl2 leading-relaxed text-borderGray lg:text-center text-white text-start">
-                {item.description}
-              </p>
-            </div>
-          ))}
-        </div>
-      </Section>
+      <GridBackgroundSection
+        heading="Your Trusted Partner for Casting Solutions"
+        description=""
+        items={newItems}
+      />
 
       <Footerservice
         title="Experience the Precision of "

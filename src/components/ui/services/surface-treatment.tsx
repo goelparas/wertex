@@ -17,7 +17,12 @@ import plastic from "@/cdn/images/surface/inspection-panel.png"
 import sheet from "@/cdn/images/surface/sheet.png"
 import { ImageContainer } from "@/components/common/Container/ImageGrid";
 import IndustryCard from "@/components/cnc/IndustryCard"
-;
+
+import logo1 from '@/cdn/images/casting/logo-1.svg';
+import logo2 from '@/cdn/images/casting/logo-2.svg';
+import logo3 from '@/cdn/images/casting/logo-3.svg';
+import logo4 from '@/cdn/images/vectors/vector-4.svg'
+import GridBackgroundSection from "@/components/common/GridBackgroundSection/GridBackgroundSection";
 const SurfaceTreatment = () => {
   const surfaceTreatments = [
     {
@@ -190,6 +195,28 @@ const SurfaceTreatment = () => {
       delay: 0.5,
     },
   ];
+
+
+  const trustPartnerConstant = [{
+    title:"Comprehensive Solutions",
+    description:"From corrosion protection to non-stick finishes, we provide end-to-end surface treatment services.",
+    img:logo1
+  },
+  {
+    title:"State-of-the-Art Facilities",
+    description:"Equipped with advanced tools and technologies for precise and reliable results.",
+    img:logo2
+  },
+  {
+    title:"Industry Expertise",
+    description:"Serving a wide range of sectors, including aerospace, automotive, medical, and more.",
+    img:logo3
+  },
+  {
+    title:"Commitment to Quality",
+    description:"Rigorous inspections and testing ensure flawless, high-performance finishes.",
+    img:logo4
+  }]
   return (
     <>
       <HeroSection
@@ -215,13 +242,13 @@ const SurfaceTreatment = () => {
           Advanced processes tailored to meet diverse industrial needs.
         </p>
         <Image src={gridBg} alt='grid-background' className='absolute  inset-0' fill />  
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 lg:gap-6  border-[#FFFFFF]/45 border-4 p-2 lg:p-12">
+        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-1 lg:gap-6  border-[#FFFFFF]/45 border-2 p-2 lg:p-12">
           {surfaceTreatments.map((treatment, index) => (
             <div key={index} className={`bg-black p-3 lg:p-6 border border-white`}>
-              <h3 className="text-white font-bold text-sm lg:text-xl2 mb-3">
+              <h3 className="text-white font-bold text-xs lg:text-xl2 mb-3">
                 {treatment.title}
               </h3>
-              <ul className="text-white text-sm lg:text-xl2 leading-relaxed space-y-2 list-disc list-inside">
+              <ul className="text-white text-xs lg:text-xl2 leading-relaxed space-y-2 list-disc list-inside">
                 {treatment.features.map((feature, featureIndex) => (
                   <li key={featureIndex}>{feature}</li>
                 ))}
@@ -232,12 +259,12 @@ const SurfaceTreatment = () => {
       </Section>
       <Section className="bg-white mt-0">
         <FlexHeader
-          className="text-black text-3xl"
-          title="Our Surface Treatment Process"
+          className="text-black  lg:text-3xl"
+          title="Surface Treatment for Diverse Applications"
           description=""
         />
-        <p className="text-black text-lg lg:text-xl2">
-          Meeting the demands of industries with tailored solutions.
+        <p className="text-black text-xs lg:text-xl2">
+        Meeting the demands of industries with tailored solutions.
         </p>
 
         <div className="grid grid-cols-2 lg:grid-cols-3 gap-6 mt-8 bg-white">
@@ -248,10 +275,10 @@ const SurfaceTreatment = () => {
                 smHeight: 30,
                 smClassName: 'w-12 h-12'
               }}/>
-              <h3 className="text-black font-bold text-lg lg:text-xl2 my-2">
+              <h3 className="text-black font-bold text-xs lg:text-xl2 my-2">
                 {benefit.title}
               </h3>
-              <p className="text-gray-700 text-sm leading-relaxed lg:text-xl2">{benefit.description}</p>
+              <p className="text-gray-700 text-xs leading-relaxed lg:text-xl2">{benefit.description}</p>
             </div>
           ))}
         </div>
@@ -261,7 +288,7 @@ const SurfaceTreatment = () => {
           title="Ensuring Superior Quality in Every Treatment"
           description=""
         />
-        <p className="text-lg lg:text-xl2">
+        <p className="text-xs lg:text-xl2">
           Advanced testing and inspections for consistent and reliable results.
         </p>
         
@@ -283,44 +310,19 @@ const SurfaceTreatment = () => {
 
       </Section>
 
+      <GridBackgroundSection
+        heading="Your Trusted Partner in Surface Treatment Solutions"
+        items={trustPartnerConstant}
+      />
+
       <Footerservice
-        title="Your Trusted Partner in Surface Treatment Solutions"
+        title="Elevate Your Components with Wertex Surface Treatments"
         description=""
-        longDescription={
-          <div className=""> 
-          <ul className="hidden lg:block">
-          <li>
-            -Comprehensive Solutions: From corrosion protection to non-stick
-            finishes, we provide end-to-end surface treatment services.
-          </li>
-          <li>
-            -State-of-the-Art Facilities: Equipped with advanced tools and
-            technologies for precise and reliable results.
-          </li>
-          <li>
-            -Industry Expertise: Serving a wide range of sectors, including
-            aerospace, automotive, medical, and more.
-          </li>
-          <li>
-            -Commitment to Quality: Rigorous inspections and testing ensure
-            flawless, high-performance finishes.
-          </li>
-        </ul>
-        
-        </div>
-         
-        }
+        longDescription= "Let Wertex enhance your components with cutting-edge surface treatment solutions designed to deliver unmatched durability, protection, and aesthetics. Contact us today to discuss your project requirements."
         heading=""
-        buttonText="Get in touch"
-      >
-        <div className="my-12">
-          <FlexHeader
-            title={<p>Elevate Your Components with <br/> Wertex Surface Treatments</p>}
-            description="Let Wertex enhance your components with cutting-edge surface treatment solutions designed to deliver unmatched durability, protection, and aesthetics. Contact us today to discuss your project requirements."
-            heading=""
-          />
-        </div>
-      </Footerservice>
+        logoPosition="items-end lg:items-start"
+        buttonText="Contact us"
+      />
     </>
   );
 };

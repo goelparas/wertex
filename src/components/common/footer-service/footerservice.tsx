@@ -55,7 +55,7 @@ const Footerservice = ({
       {children}
      
 
-      <Button className="w-full rounded-none text-center py-3  lg:mt-8">
+      <Button className="w-full rounded-none text-center py-3 mt-4 lg:mt-8">
         <p className="text-center text-white font-bold text-xs leading-relaxed lg:text-xl2 w-full uppercase">
           {buttonText}
         </p>
