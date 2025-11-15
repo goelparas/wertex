@@ -84,7 +84,7 @@ const JoinSection = () => {
 
   return (
     <>
-      <main className="relative mb-10 lg:mb-24 mt-12">
+      <main className="relative  ">
         <Image src={gridBg} alt='grid-background' className='absolute  inset-0' fill />  
           <div className='bg-gradient-to-b from-transparent via-white/5 to-transparent  m-2 sm:mx-12 sm:my-10  h-[90%] max-h-max'>
         <div className='border mx-auto backdrop-blur-sm border-border  p-4 lg:p-10 transition-all  h-full max-h-max'>
@@ -165,7 +165,7 @@ const JoinSection = () => {
           </p>
         </div>
         <Button
-          className="w-full rounded-none text-center py-3 lg:py-8 "
+          className="w-full rounded-none text-center py-3 lg:py-2 "
         >
           <p className="text-center text-white font-bold text-lg lg:text-3xl w-full">Click Here</p>
         </Button>

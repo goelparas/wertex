@@ -21,7 +21,7 @@ export const FlexHeader = ({
   return (
     <div
       className={cn(
-        "flex flex-col lg:flex-row justify-between items-start w-full  lg:gap-6",
+        "flex flex-col lg:flex-row justify-between items-start w-full gap-2 lg:gap-6",
         className
       )}
       id={id}

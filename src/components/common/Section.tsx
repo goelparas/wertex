@@ -8,7 +8,7 @@ interface ContainerProps {
 
 const Section: React.FC<ContainerProps> = ({ children, className }) => {
   return (
-    <div className={cn(`p-4 mt-6 lg:mt-12  lg:p-12 overflow-x-hidden`, className)}>
+    <div className={cn(`p-4 mt-6 md:p-6 md:mt-8  lg:mt-12  lg:p-12 overflow-x-hidden`, className)}>
       {children}
     </div>
   );
