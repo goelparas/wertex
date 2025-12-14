@@ -17,12 +17,12 @@ interface CardProps {
 export const ServiceCard: React.FC<CardProps> = ({ title, paragraph, image, cta, itemCount }) => {
     return (
         <Link href={`/services/${title.toString().split(" ").join("-").toLowerCase()}`} className="overflow-hidden  w-min  flex flex-col gap-5   shrink-0 ">
-            <div className=" relative  w-40 h-32 xsm:w-44 xsm:h-36 md:w-56 md:h-44    lg:w-80 lg:h-64 text-center">
+            <div className=" relative  w-[10.25rem] h-32 xsm:w-44 xsm:h-36 md:w-56 md:h-44    lg:w-80 lg:h-64 text-center">
                 <p className="absolute top-2 left-2 bg-lightGray shadow-sm font-semibold rounded-lg text-xl  p-1 lg:p-2">0{itemCount}</p>
                 <Image src={image} alt={title} className="object-cover   w-full h-full"   />
                 {cta && (
-                    <div className="p-1 px-2 lg:py-3 absolute bottom-2 left-0  bg-background flex  w-[95%] lg:w-[95%]  rounded-md lg:rounded-xl right-0 m-auto  justify-between items-center">
-                        <div className="font-semibold  text-[10px] lg:text-xl text-nowrap">{title}</div>
+                    <div className="py-1 px-2  lg:py-3 absolute bottom-2 left-0 gap-1  bg-background flex  w-full lg:w-[95%]  rounded-md lg:rounded-xl right-0 m-auto  justify-between items-center">
+                        <div className="font-semibold  text-[10px] lg:text-xl leading-tight text-nowrap">{title}</div>
                         <div className="bg-orangeBg  p-1 lg:p-2 rounded-lg">
                             <FaArrowRight width={20} height={20} />
                         </div>

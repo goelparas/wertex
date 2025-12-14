@@ -55,7 +55,7 @@ export const ImageCard = ({ image, text, className }: {
         </div>
         <h1 className='text-end  text-xxs lg:text-base font-bold'>{text}</h1>
         </div>
-        <div className='w-36  h-28  lg:w-60 lg:h-48 block border border-white bg-transparent absolute  -top-2 -left-2 lg:-top-4 lg:-left-4 transition-all z-10 ease-in-out group-hover:bg-orangeBg '/>
+        <div className='w-32  h-28  lg:w-60 lg:h-48 block border border-white bg-transparent absolute  -top-2 -left-2 lg:-top-4 lg:-left-4 transition-all z-10 ease-in-out group-hover:bg-orangeBg '/>
        
 
     </div>

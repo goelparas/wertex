@@ -252,6 +252,7 @@ const NavbarMobile = ()=>{
   </AnimatePresence>
 </>
 }
+ 
 const Navbar = () => {
   const { isMobile } = useWindowSize();
   const { scrollDirection, scrollY, isScrolling } = useScroll();

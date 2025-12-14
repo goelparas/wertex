@@ -3,7 +3,7 @@ import alCaroseul2 from '@/cdn/images/aluminiumextrution/carousel/carousel-2.web
 import alCaroseul3 from '@/cdn/images/aluminiumextrution/carousel/carousel-3.webp'
 import alCaroseul4 from '@/cdn/images/aluminiumextrution/carousel/carousel-4.webp'
 import alCaroseul5 from '@/cdn/images/aluminiumextrution/carousel/carousel-5.webp'
-
+import alCaroseul6 from '@/cdn/images/aluminiumextrution/carousel/electronics.webp'
 import foCaroseul1 from '@/cdn/images/forging/forging-carousel-1.webp'
 import foCaroseul2 from '@/cdn/images/forging/forging-carousel-2.webp'
 import foCaroseul3 from '@/cdn/images/forging/forging-carousel-3.webp'
@@ -33,7 +33,7 @@ export const variantStyles = {
       itemBox: "bg-[#ED994D]",
     },
     forging: {
-      container: "bg-white text-gray-900 border-2 border-black p-8",
+      container: "bg-white text-gray-900 border-2 border-black p-4 lg:p-8",
       imageContainer: " rounded-2xl ",
       contentContainer: "bg-transparent",
       title: "text-gray-900",
@@ -67,12 +67,12 @@ export const variantStyles = {
     },
     {
       machine: "Electronics",
-      image: alCaroseul4,
+      image: alCaroseul6,
       detail: "Heat sinks, housings, and cable management systems.",
     },
     {
       machine: "Renewable Energy",
-      image: alCaroseul5,
+      image: alCaroseul4,
       detail: "Solar panel frames, mounting systems, and wind turbine components.",
     },
     {

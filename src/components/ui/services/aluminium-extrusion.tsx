@@ -183,7 +183,7 @@ const AluminiumExtrusion = (props: Props) => {
           </div>
         </Section>
 
-      <Section className="bg-black mt-0 pt-6"> 
+      <Section className="bg-black mt-0 pt-6 "> 
        <FlexHeader2
           heading={<>Versatile Aluminium Extrusions for <span className="text-orangeBg">Every Industry </span></>}
           description="From aerospace to consumer goods, we meet diverse industry needs."
