@@ -2,6 +2,7 @@ import React from 'react'
 import Image from 'next/image';
 import { StaticImport } from 'next/dist/shared/lib/get-img-props';
 import { DetailCardConst, WhatWeOfferConst } from '@/utils/constants/constant';
+import Link from 'next/link';
 import gridBg from "@/cdn/images/main_grid.avif"
 import gridBlock from "@/cdn/images/grid blocks.avif"
 import clsx from 'clsx';
@@ -12,15 +13,15 @@ const WhatWeOffer = () => {
     return (
         <div className=' flex flex-col   overflow-hidden'>
             <Section className='relative bg-transparent   lg:p-0'>
-                <FlexHeader 
-                title='Your One-Stop Manufacturing Partner'
-                description=''
-                id='why-wertex'
-                className='lg:pl-12'/>
+                <FlexHeader
+                    title='Your One-Stop Manufacturing Partner'
+                    description=''
+                    id='why-wertex'
+                    className='lg:pl-12' />
 
                 <Section className='flex w-full justify-between gap-8 lg:gap-12  items-center py-12 overflow-hidden overflow-x-scroll lg:pl-12 bg-transparent transition-all duration-300'>
                     {
-                        WhatWeOfferConst.map((item, index) => <ImageCard image={item.image} text={item.text} key={item.text}  className={`${item.className} ${index === 0  && 'ml-12'}`}/>)
+                        WhatWeOfferConst.map((item, index) => <ImageCard image={item.image} text={item.text} href={item.href} key={item.text} className={`${item.className} ${index === 0 && 'ml-12'}`} />)
                     }
                 </Section>
             </Section>
@@ -42,23 +43,24 @@ export default WhatWeOffer;
 
 
 
-export const ImageCard = ({ image, text, className }: {
+export const ImageCard = ({ image, text, href, className }: {
     image: StaticImport,
     text: string,
+    href: string,
     className: string
 
 }) => {
-    return <div className={cn('w-36  h-28  lg:w-60 lg:h-48 cursor-pointer shrink-0 relative group hover:scale-105 transition-all duration-300', className)}>
+    return <Link href={href} className={cn('w-36  h-28  lg:w-60 lg:h-48 cursor-pointer shrink-0 relative group hover:scale-105 transition-all duration-300', className)}>
         <div className='w-full h-full flex items-center justify-between z-20 p-2 lg:p-3 bg-black relative border border-white '>
-        <div className=' w-16 h-20 lg:w-28 lg:h-24  relative z-20 '>
-            <Image src={image} fill alt={text} />
+            <div className=' w-16 h-20 lg:w-28 lg:h-24  relative z-20 '>
+                <Image src={image} fill alt={text} />
+            </div>
+            <h1 className='text-end  text-xxs lg:text-base font-bold'>{text}</h1>
         </div>
-        <h1 className='text-end  text-xxs lg:text-base font-bold'>{text}</h1>
-        </div>
-        <div className='w-32  h-28  lg:w-60 lg:h-48 block border border-white bg-transparent absolute  -top-2 -left-2 lg:-top-4 lg:-left-4 transition-all z-10 ease-in-out group-hover:bg-orangeBg '/>
-       
+        <div className='w-32  h-28  lg:w-60 lg:h-48 block border border-white bg-transparent absolute  -top-2 -left-2 lg:-top-4 lg:-left-4 transition-all z-10 ease-in-out group-hover:bg-orangeBg ' />
 
-    </div>
+
+    </Link>
 
 }
 

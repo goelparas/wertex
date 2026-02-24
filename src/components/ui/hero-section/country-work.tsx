@@ -17,24 +17,23 @@ interface ContactInfo {
 
 const CONTACT_DATA: Record<Country, ContactInfo> = {
   India: {
-    phone: "+917907651046",
+    phone: "+91 7012784242",
     email: "contact@wertex.in",
-
   },
   UAE: {
-    phone: "+917907651046",
+    phone: "+971 50 150 2829",
     email: "contact@wertex.in",
   },
   Germany: {
-    phone: "+917907651046",
+    phone: "+49 163 0035612",
     email: "contact@wertex.in",
   },
   USA: {
-    phone: "+917907651046",
+    phone: "+1 215 433 5020",
     email: "contact@wertex.in",
   },
   Netherlands: {
-    phone: "+917907651046",
+    phone: "+31 6 18529496",
     email: "contact@wertex.in",
   },
 }
@@ -58,8 +57,8 @@ const CountryWork: React.FC = () => {
   const [isAnimating, setIsAnimating] = useState(false)
   const { isMobile } = useWindowSize()
   // Memoized contact data for selected country
-  const selectedContactData = useMemo(() => 
-    CONTACT_DATA[selectedCountry], 
+  const selectedContactData = useMemo(() =>
+    CONTACT_DATA[selectedCountry],
     [selectedCountry]
   )
 
@@ -78,24 +77,24 @@ const CountryWork: React.FC = () => {
   // Memoized email link generator
   const generateEmailLink = useCallback((country: Country) => {
     const email = CONTACT_DATA[country]?.email || "contact@wertex.in"
-    const subject = encodeURIComponent("Query Regarding Manufacturing")
-    const body = encodeURIComponent("Hello,\n\nI have some queries regarding your manufacturing process.\n\nThank you.")
+    const subject = encodeURIComponent("Inquiry: Engineering & Manufacturing Services | Wertex")
+    const body = encodeURIComponent("Dear Wertex Team,\n\nI am interested in learning more about your engineering capabilities. Please find my details below:\n\n● Service of Interest: [e.g., NPI, 5-Axis CNC, Reverse Engineering]\n● Industry: [e.g., Oil & Gas, Marine, Aerospace]\n● Region: [e.g., UAE, India, Global]\n\nPlease let me know a suitable time for a brief technical discussion.\n\nRegards,\n[Name]\n[Company]")
     return `mailto:${email}?subject=${subject}&body=${body}`
   }, [])
 
   // Memoized email link for selected country
-  const selectedCountryEmailLink = useMemo(() => 
-    generateEmailLink(selectedCountry), 
+  const selectedCountryEmailLink = useMemo(() =>
+    generateEmailLink(selectedCountry),
     [selectedCountry, generateEmailLink]
   )
 
   // Memoized country list items to prevent recreation
-  const countryListItems = useMemo(() => 
+  const countryListItems = useMemo(() =>
     COUNTRIES.map((country) => ({
       country,
       isSelected: selectedCountry === country,
       className: `${COUNTRY_LIST_ITEM_CLASS} ${selectedCountry === country ? "text-white font-bold" : ""}`,
-    })), 
+    })),
     [selectedCountry]
   )
 
@@ -116,13 +115,12 @@ const CountryWork: React.FC = () => {
 
       {/* Map section */}
       <div className="h-full lg:h-[90dvh] relative w-full bg-custom-map-gradient backdrop-brightness-0">
-        <Image src={map } alt="World map" className="absolute object-cover lg:object-contain" fill quality={100} />
+        <Image src={map} alt="World map" className="absolute object-cover lg:object-contain" fill quality={100} />
         <Image src={mapBg} alt="Map background" fill className="-z-10 backdrop-brightness-110" />
         {/* Country information card */}
         <div
-          className={`backdrop-blur-0 bg-[#D9D9D980] w-52  h-24 lg:w-96 lg:h-48 absolute  top-24 lg:top-auto lg:bottom-48 p-3 left-5 z-10 transition-all duration-300 ease-in-out transform ${
-            isAnimating ? "scale-95 opacity-70" : "scale-100 opacity-100"
-          }`}
+          className={`backdrop-blur-0 bg-[#D9D9D980] w-52  h-24 lg:w-96 lg:h-48 absolute  top-24 lg:top-auto lg:bottom-48 p-3 left-5 z-10 transition-all duration-300 ease-in-out transform ${isAnimating ? "scale-95 opacity-70" : "scale-100 opacity-100"
+            }`}
         >
           <h1 className="text-white text-lg lg:text-3xl font-bold mb-2">{selectedCountry}</h1>
           <div className="text-white text-xxs lg:text-base space-y-1 opacity-90">
@@ -132,7 +130,7 @@ const CountryWork: React.FC = () => {
         </div>
 
         {/* Country markers */}
-       {isMobile ? null : <div className="absolute inset-0 z-10">
+        {isMobile ? null : <div className="absolute inset-0 z-10">
           {COUNTRIES.map((country) => {
             const position = COUNTRY_MARKERS[country]
             const isSelected = selectedCountry === country
@@ -148,23 +146,22 @@ const CountryWork: React.FC = () => {
                   onClick={() => handleCountryClick(country)}
                   aria-label={`Select ${country}`}
                 />
-                
+
                 {/* Concentric circle animation for selected country */}
                 {isSelected && (
                   <>
-                    <div className="absolute w-6 h-6 border-2 border-white rounded-full animate-ping" 
-                         style={{ top: '-6px', left: '-6px' }} />
-                    <div className="absolute w-8 h-8 border border-white rounded-full animate-pulse" 
-                         style={{ top: '-10px', left: '-10px' }} />
-                    <div className="absolute w-12 h-12 border border-white rounded-full animate-pulse" 
-                         style={{ top: '-18px', left: '-18px', animationDelay: '0.5s' }} />
+                    <div className="absolute w-6 h-6 border-2 border-white rounded-full animate-ping"
+                      style={{ top: '-6px', left: '-6px' }} />
+                    <div className="absolute w-8 h-8 border border-white rounded-full animate-pulse"
+                      style={{ top: '-10px', left: '-10px' }} />
+                    <div className="absolute w-12 h-12 border border-white rounded-full animate-pulse"
+                      style={{ top: '-18px', left: '-18px', animationDelay: '0.5s' }} />
                   </>
                 )}
-                
+
                 {/* Country name label */}
-                <div className={`absolute top-4 left-1/2 transform -translate-x-1/2 whitespace-nowrap transition-all duration-300 ${
-                  isSelected ? 'opacity-100 scale-100' : 'opacity-0 scale-75'
-                }`}>
+                <div className={`absolute top-4 left-1/2 transform -translate-x-1/2 whitespace-nowrap transition-all duration-300 ${isSelected ? 'opacity-100 scale-100' : 'opacity-0 scale-75'
+                  }`}>
                   <span className="bg-black bg-opacity-80 text-white text-xs px-2 py-1 rounded-md font-medium">
                     {country}
                   </span>

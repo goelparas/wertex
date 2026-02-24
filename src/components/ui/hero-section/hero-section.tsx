@@ -1,9 +1,9 @@
 import React from "react";
-import CustomImage from "@/components/common/Image/Image";
 import logo from "@/cdn/images/logo.avif";
 import bgDesktop from "@/cdn/images/hero_background.webp";
 import bgMobile from "@/cdn/images/hero_background_mobile.avif";
 import Image from "next/image";
+import HeroSectionMedia from "./hero-section-media";
 import WhatWeOffer from "./what-we-offer";
 import { BrandsShowCase } from "./brands-showcase";
 import { TESTIMONIALS } from "@/utils/constants/constant";
@@ -22,16 +22,16 @@ const HeroSection = () => {
   return (
     <>
       <div className="relative h-svh w-screen  flex items-center justify-center border-b-[1.5px] border-[#3F3F3F] bg-background overflow-x-hidden">
-        <div className="absolute inset-0">
-          <CustomImage
-            mobileImage={{ path: bgMobile }}
-            desktopImage={{ path: bgDesktop }}
-            fill
-            alt="background"
+        <div className="absolute inset-0" style={{ zIndex: 0 }}>
+          <HeroSectionMedia
+            desktopVideo="/videos/desktop.mp4"
+            mobileVideo="/videos/mobile.mp4"
+            desktopImage={bgDesktop}
+            mobileImage={bgMobile}
           />
         </div>
 
-        <div className="absolute w-[20rem]  sm:w-[40rem] md:w-[49rem]   h-[12rem] left-1/2 top-[40%] -translate-x-1/2 -translate-y-[40%]">
+        <div className="absolute w-[20rem]  sm:w-[40rem] md:w-[49rem]   h-[12rem] left-1/2 top-[40%] -translate-x-1/2 -translate-y-[40%] z-10">
           <div className="relative flex flex-col sm:flex-row gap-2  items-start sm:items-center justify-between  mb-2">
             <p className="font-medium text-xxs lg:text-xs">
               Since <br />
@@ -45,8 +45,8 @@ const HeroSection = () => {
             Shaping the Future of Manufacturing
           </h1>
         </div>
-        
-        <div className="absolute m-2 sm:m-12  left-0 bottom-20 lg:bottom-5 right-0 ">
+
+        <div className="absolute m-2 sm:m-12  left-0 bottom-20 lg:bottom-5 right-0 z-10">
           <div className="grid  grid-cols-3 gap-8 sm:gap-32  mx-[2%]">
             {statsData.map((stat) => (
               <div
@@ -58,12 +58,12 @@ const HeroSection = () => {
                     {stat.value}
                   </h1>
                   <div className="flex justify-between">
-                    <div className="w-1/2"/>
-                   <p className="uppercase text-start text-[6px] sm:text-sm">
-                    {stat.label}
-                  </p>{" "}
+                    <div className="w-1/2" />
+                    <p className="uppercase text-start text-[6px] sm:text-sm">
+                      {stat.label}
+                    </p>{" "}
                   </div>
-                  
+
                 </div>
               </div>
             ))}
@@ -72,7 +72,6 @@ const HeroSection = () => {
       </div>
 
       <WhatWeOffer />
-
       <Section className="mt-8 border-t border-t-smokeWhite flex flex-col  gap-8 items-center justify-between  w-full bg-transparent">
         <div className="flex flex-col lg:flex-row justify-between w-full items-start lg:items-center py-6 gap-2">
           <h1 className="font-bold lg:text-2xl uppercase hidden lg:block  ">

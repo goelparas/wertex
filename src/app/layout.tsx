@@ -3,6 +3,7 @@ import "./globals.css";
 import "./fonts.css"; // Import your local fonts
 import FooterSection from "@/components/ui/footer-section/footer-section";
 import Navbar from "@/components/ui/navbar/navbar";
+import SmoothScrollAnchor from "@/components/providers/smooth-scroll-provider";
 
 export const metadata: Metadata = {
   title: "Wertex",
@@ -19,12 +20,13 @@ export default function RootLayout({
     <html lang="en" style={{ fontFamily: 'var(--font-montserrat)' }}>
       <link rel="icon" href="/favicon.ico" type="image" />
       <body
-        className="antialiased  text-white scroll-smooth max-w-screen-3xl mx-auto relative "
+        className="antialiased  text-white max-w-screen-3xl mx-auto relative "
         style={{ fontFamily: 'var(--font-montserrat)' }}
       >
-        <Navbar/>
+        <SmoothScrollAnchor />
+        <Navbar />
         <div className="bg-background w-full h-full">
-         {children}
+          {children}
         </div>
         <FooterSection />
       </body>

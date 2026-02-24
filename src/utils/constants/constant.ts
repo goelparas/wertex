@@ -26,12 +26,12 @@ import brand12 from "@/cdn/images/testimonial-card/brand12.png"
 import { StaticImport } from "next/dist/shared/lib/get-img-props"
 
 
-import cncMachineImg from  "@/cdn/images/cnc/hero-cnc.webp";
+import cncMachineImg from "@/cdn/images/cnc/hero-cnc.webp";
 import castingImg from "@/cdn/images/casting/casting-hero.webp";
 import forgingImg from '@/cdn/images/forging/forging-hero.webp';
 import sheetfab from "@/cdn/images/sheet-fabrication/sheet-fabrication.jpg";
 import moulding from "@/cdn/images/moulding/moulding.webp";
-import aluminiumExtrusion from'@/cdn/images/aluminiumextrution/aluminium-hero.webp';
+import aluminiumExtrusion from '@/cdn/images/aluminiumextrution/aluminium-hero.webp';
 
 
 
@@ -68,37 +68,44 @@ export const WhatWeOfferConst = [
   {
     "image": cncMachine,
     "text": "CNC Machining",
+    href: "/services/cnc-machining",
     className: "flex flex-col gap-1 lg:flex-row lg:gap-0"
   },
   {
     "image": casting,
     "text": "Casting",
+    href: "/services/casting",
     className: "flex flex-col gap-1 lg:flex-row lg:gap-0"
   },
   {
     "image": forging,
     "text": "Forging",
+    href: "/services/forging",
     className: ""
   },
   {
     image: sheetMetal,
     text: "Sheet Metal Fabrication",
+    href: "/services/sheet-metal-fabrication",
     className: ""
   },
   {
     "image": aluminiumExtrusionWWO,
     "text": "Aluminum Extrusion",
-     className: "flex flex-col gap-1 lg:flex-row lg:gap-0"
+    href: "/services/aluminium-extrusion",
+    className: "flex flex-col gap-1 lg:flex-row lg:gap-0"
   },
   {
     "image": surfaceTreatMent,
     "text": "Surface Treatment",
-     className: "flex flex-col gap-1 lg:flex-row lg:gap-0"
+    href: "/services/surface-treatment",
+    className: "flex flex-col gap-1 lg:flex-row lg:gap-0"
   },
   {
     "image": molding,
     "text": "Molding",
-     className: "flex flex-col gap-1 lg:flex-row lg:gap-0"
+    href: "/services/molding",
+    className: "flex flex-col gap-1 lg:flex-row lg:gap-0"
   }
 ]
 
@@ -272,7 +279,7 @@ export const ValueAddedServices = [
   {
     title: "Quality Control (QC)",
     description: "Rigorous quality control processes to ensure product reliability and compliance with international standards",
-    icon:   valueVector1
+    icon: valueVector1
   },
   {
     title: "Logistics",
@@ -285,7 +292,7 @@ export const ValueAddedServices = [
     icon: valueVector3
   },
   {
-    title: "DFM Analysis (Design for Manufacturing)", 
+    title: "DFM Analysis (Design for Manufacturing)",
     description: "Expert design analysis to optimize your product for manufacturability and cost-effectiveness.",
     icon: valueVector4
   },

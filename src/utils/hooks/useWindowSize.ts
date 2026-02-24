@@ -1,48 +1,33 @@
 'use client'
 import { useState, useEffect } from "react";
 
+// Static default that is the same on server AND client initial render
+const DEFAULT_SIZE = {
+  width: 0,
+  height: 0,
+  isMobile: true,
+  isDesktop: false,
+};
+
 export function useWindowSize() {
-  const [size, setSize] = useState(() => {
-    if (typeof window !== 'undefined') {
-      // Try multiple methods to get the most accurate width
-      const width = document.documentElement.clientWidth || window.innerWidth || window.outerWidth;
-      const height = document.documentElement.clientHeight || window.innerHeight || window.outerHeight;
-      
-      return {
-        width,
-        height,
-        isMobile: width < 1024,
-        isDesktop: width >= 1024,
-      };
-    }
-    
-    return {
-      width: 300,
-      height: 768,
-      isMobile: true,
-      isTablet: false,
-      isDesktop: false,
-    };
-  });
+  const [size, setSize] = useState(DEFAULT_SIZE);
 
   useEffect(() => {
-    if (typeof window === 'undefined') return;
-
     const handleResize = () => {
       const width = document.documentElement.clientWidth || window.innerWidth || window.outerWidth;
       const height = document.documentElement.clientHeight || window.innerHeight || window.outerHeight;
-      
+
       setSize({
         width,
         height,
-        isMobile:width < 1024,
+        isMobile: width < 1024,
         isDesktop: width >= 1024,
       });
     };
 
     handleResize();
     window.addEventListener("resize", handleResize, { passive: true });
-    
+
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 

@@ -2,7 +2,7 @@
 import React from "react";
 import HeroSection from "@/components/common/Container/HeroSection-service";
 import mouldinghero from "@/cdn/images/moulding/moulding.webp";
-import {FlexHeader} from "@/components/common/FlexHeader/FlexHeader";
+import { FlexHeader } from "@/components/common/FlexHeader/FlexHeader";
 import grid from "@/cdn/images/cross.png";
 import {
   BentoGrid,
@@ -22,18 +22,18 @@ type Props = {};
 
 const component1 = (
   <div className="flex flex-col gap-8 justify-between items-center w-full lg:w-[31.25rem]  mx-auto">
-   
-      <ImageContainer variant="white" img={''} size={{
-        smWidth: 112,
-        smHeight: 112,
-        smClassName: 'h-28 w-28'
-      }} className="w-56 h-56" node={<p className="text-[82px] lg:text-[150px] font-bold ">01</p>}  />
-     
+
+    <ImageContainer variant="white" img={''} size={{
+      smWidth: 112,
+      smHeight: 112,
+      smClassName: 'h-28 w-28'
+    }} className="w-56 h-56" node={<p className="text-[82px] lg:text-[150px] font-bold ">01</p>} />
+
     <div className="flex flex-col gap-4">
       <h3 className="text-lg lg:text-xl2 lg:leading-normal font-bold text-center">
         <span className="text-orangeBg">Injection</span> Molding
       </h3>
-      <p className="text-xs lg:text-xl2 w-full text-left ">
+      <p className="text-xs lg:text-xl2 w-full text-left leading-normal">
         Ideal for producing precise, repeatable parts using thermoplastics and
         engineered polymers. Suitable for industries like automotive, aerospace,
         medical, and electronics.
@@ -97,10 +97,10 @@ const component3 = (
         >
           <div className="flex flex-col items-center justify-center">
             <ImageContainer img={item.img} variant="white" size={{
-              smClassName:"",
+              smClassName: "",
               smWidth: 32,
               smHeight: 32,
-            }}/>
+            }} />
           </div>
           <div>
             <span className="text-xs  lg:text-xl2 lg:leading-normal font-bold">{item.name}</span>
@@ -174,11 +174,11 @@ const component6 = (
 
 const componentTwo1 = (
   <div className="flex flex-col gap-8 justify-between items-center w-full lg:w-[31.25rem]  mx-auto">
-     <ImageContainer variant="white" img={''} size={{
-        smWidth: 112,
-        smHeight: 112,
-        smClassName: 'h-28 w-28'
-      }}  className=" h-56 w-56" node={<p className="text-[82px] lg:text-[150px] font-bold ">02</p>}  />
+    <ImageContainer variant="white" img={''} size={{
+      smWidth: 112,
+      smHeight: 112,
+      smClassName: 'h-28 w-28'
+    }} className=" h-56 w-56" node={<p className="text-[82px] lg:text-[150px] font-bold ">02</p>} />
 
     <div className="flex flex-col gap-4">
       <h3 className="text-lg lg:text-xl2 lg:leading-normal font-bold text-center">
@@ -193,13 +193,13 @@ const componentTwo1 = (
 );
 const componentTwo2 = (
   <div className="bg-white flex items-center justify-center rounded-xl w-full lg:max-w-[31.25rem] mx-auto">
-  <Image
-    src={moldingservice2}
-    alt="molding service"
-    width={500}
-    height={680}
-  />
-</div>
+    <Image
+      src={moldingservice2}
+      alt="molding service"
+      width={500}
+      height={680}
+    />
+  </div>
 );
 const componentTwo3 = (
   <div className="w-full">
@@ -296,7 +296,7 @@ const componentTwo6 = (
       <li className="font-normal">
         <span className="font-bold">Defect Inspection:</span> Identifies and eliminates surface and internal
         inconsistencies.
-      </li>   
+      </li>
     </ul>
   </div>
 );
@@ -339,7 +339,7 @@ const Molding = (props: Props) => {
     { component: componentTwo4 },
     { component: componentTwo5 },
     { component: componentTwo6 },
-    
+
   ];
 
   return (
@@ -378,10 +378,10 @@ const Molding = (props: Props) => {
         description=""
         heading=""
         longDescription={
-          <ul>
+          <p>
             Let Wertex help you achieve your project goals with precision and reliability.
-             Get in touch with us to learn how our CNC machining solutions can elevate your manufacturing needs.
-          </ul>
+            Get in touch with us to learn how our CNC machining solutions can elevate your manufacturing needs.
+          </p>
         }
         buttonText="Contact Us"
       >
